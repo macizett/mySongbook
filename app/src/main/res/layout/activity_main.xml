@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Wybierz śpiewnik:"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <Switch
+        android:id="@+id/switchMusicMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="62dp"
+        android:text="Wersja muzyczna (beta)"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switchMusicMode"></TextView>
+
+    <Button
+        android:id="@+id/buttonInfo"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/info_icon1"
+        android:textColorHighlight="#9E9797"
+        android:textColorLink="#888686"
+        app:icon="@drawable/info_icon"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"></Button>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/songbookduchowe"
+                android:layout_width="380dp"
+                android:layout_height="215dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:foreground="@drawable/shape"
+                android:src="@drawable/duchowe_light"
+                app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/songbookwedrowiec"
+                android:layout_width="380dp"
+                android:layout_height="215dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:foreground="@drawable/shape"
+                android:src="@drawable/wedrowiec_light"
+                app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/songbookbialy"
+                android:layout_width="380dp"
+                android:layout_height="215dp"
+                android:layout_gravity="center"
+                android:foreground="@drawable/shape"
+                android:src="@drawable/bialy_light"
+                app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

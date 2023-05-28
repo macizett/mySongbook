@@ -77,8 +77,8 @@
                 android:layout_height="215dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:foreground="@drawable/shape"
                 android:src="@drawable/duchowe_light"
+                android:foreground="@drawable/shape"
                 app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
 
             <com.google.android.material.imageview.ShapeableImageView

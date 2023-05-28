@@ -154,7 +154,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_weight="2"
                         android:lineSpacingExtra="2sp"
-                        android:text="@string/duchowe_TOC_Titles"
+                        android:text=" "
                         android:textAlignment="viewStart"
                         android:textSize="15sp"
                         android:layout_marginBottom="100dp"/>
@@ -166,7 +166,7 @@
                         android:layout_marginRight="16dp"
                         android:layout_weight="1"
                         android:lineSpacingExtra="2sp"
-                        android:text="@string/duchowe_TOC_Number"
+                        android:text=" "
                         android:textAlignment="viewEnd"
                         android:textSize="15sp"
                         android:layout_marginBottom="100dp"/>

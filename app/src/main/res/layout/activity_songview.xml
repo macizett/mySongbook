@@ -56,7 +56,9 @@
                 android:button="@drawable/favourites_icon"
                 app:iconSize="5sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></CheckBox>
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleX="1.45"
+                android:scaleY="1.45"></CheckBox>
         </LinearLayout>
     </LinearLayout>
 

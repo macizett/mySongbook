@@ -12,6 +12,8 @@ import com.mayonnaise.mysongbook.databinding.FavouritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.text.Collator
 
 class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
 
@@ -80,14 +82,21 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
     }
 
     fun sortAlphabetically() {
+        val collator = Collator.getInstance()
         GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy { it.title }
+            songEntities = songEntities.sortedBy { collator.getCollationKey(it.title) }
+            withContext(Dispatchers.Main){
+                notifyDataSetChanged()
+            }
         }
     }
 
     fun sortNumerically() {
         GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { it.number }
+            withContext(Dispatchers.Main){
+                notifyDataSetChanged()
+            }
         }
     }
 

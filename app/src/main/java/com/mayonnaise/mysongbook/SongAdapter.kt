@@ -10,6 +10,8 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.text.Collator
 
 class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
@@ -52,14 +54,24 @@ class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Ada
 }
 
     fun sortAlphabetically() {
+        val collator = Collator.getInstance()
         GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy { it.title }
+            songEntities = songEntities.sortedBy {
+                collator.getCollationKey(it.title)
+            }
+            withContext(Dispatchers.Main){
+                notifyDataSetChanged()
+            }
         }
     }
 
     fun sortNumerically() {
         GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { it.number }
+            withContext(Dispatchers.Main){
+                notifyDataSetChanged()
+            }
         }
+
     }
 }

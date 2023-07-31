@@ -3,9 +3,13 @@ package com.mayonnaise.mysongbook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.CheckBox
 import android.widget.Toast
 import com.github.barteksc.pdfviewer.PDFView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SongViewMusicMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +19,9 @@ class SongViewMusicMode : AppCompatActivity() {
         var pdfViewSong = findViewById<PDFView>(R.id.pdfViewSong)
         val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
         val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
+        var buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
+
+        val songDao = SongbookDatabase.getInstance(this).songDao()
 
         var songNumber = DataManager.chosenSong
         var songbook = when (DataManager.chosenSongbook){
@@ -61,5 +68,23 @@ class SongViewMusicMode : AppCompatActivity() {
                 rightArrowButton.visibility = View.INVISIBLE
             }
         }
+
+        buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
+            if (isChecked){
+                GlobalScope.launch(Dispatchers.IO) {
+                    var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    currentSong.isFavorite = true
+                    songDao.updateFavoriteSongs(currentSong)
+                }
+            }else{
+                GlobalScope.launch(Dispatchers.IO) {
+                    var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    currentSong.isFavorite = false
+                    songDao.updateFavoriteSongs(currentSong)
+                }
+            }
+        }
+
     }
+
 }

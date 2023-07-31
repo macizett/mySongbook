@@ -39,6 +39,19 @@ class SearchPhrase : AppCompatActivity() {
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
 
+        fun updateSong(){
+            textViewFoundSongs.setText("${currentDisplayedSong+1}/${foundSongs.size}")
+            foundSongTV.setText(foundSongs[currentDisplayedSong].text)
+            numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number}. ${foundSongs[currentDisplayedSong].title}")
+        }
+
+        fun reset(){
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
+            infoTV.setVisibility(View.GONE)
+            currentDisplayedSong = 0
+        }
+
         fun search(){
             var phrase: String = phraseInput.text.toString()
 
@@ -68,10 +81,10 @@ class SearchPhrase : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (foundSongs.isNotEmpty()) {
                             Toast.makeText(this@SearchPhrase, "Znaleziono ${foundSongs.size} wyników", Toast.LENGTH_LONG).show()
-                            foundSongTV.setText(foundSongs[currentDisplayedSong].text)
                             numberAndTitleTV.setVisibility(View.VISIBLE)
-                            numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number.toString()}. ${foundSongs[currentDisplayedSong].title}")
-                            textViewFoundSongs.setText("${currentDisplayedSong+1}/${foundSongs.size}")
+
+                            updateSong()
+
                             if (foundSongs.size > 1) {
                                 arrowRightButton.setVisibility(View.VISIBLE)
                             }
@@ -95,9 +108,7 @@ class SearchPhrase : AppCompatActivity() {
 
         arrowRightButton.setOnClickListener {
             currentDisplayedSong++
-            textViewFoundSongs.setText("${currentDisplayedSong+1}/${foundSongs.size}")
-            foundSongTV.setText(foundSongs[currentDisplayedSong].text)
-            numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number.toString()}. ${foundSongs[currentDisplayedSong].title}")
+            updateSong()
             if (currentDisplayedSong < foundSongs.size-1) {
                 arrowRightButton.setVisibility(View.VISIBLE)
             }
@@ -110,9 +121,7 @@ class SearchPhrase : AppCompatActivity() {
 
         arrowLeftButton.setOnClickListener{
             currentDisplayedSong--
-            textViewFoundSongs.setText("${currentDisplayedSong+1}/${foundSongs.size}")
-            foundSongTV.setText(foundSongs[currentDisplayedSong].text)
-            numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number.toString()}. ${foundSongs[currentDisplayedSong].title}")
+            updateSong()
             if(currentDisplayedSong < foundSongs.size-1){
                 arrowRightButton.setVisibility(View.VISIBLE)
             }
@@ -125,19 +134,13 @@ class SearchPhrase : AppCompatActivity() {
 
 
         searchButton.setOnClickListener{
-            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
-            infoTV.setVisibility(View.GONE)
-            currentDisplayedSong = 0
+            reset()
             search()
         }
 
         phraseInput.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
-                    val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                    inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
-                    infoTV.setVisibility(View.GONE)
-                    currentDisplayedSong = 0
+                    reset()
                     search()
                     return@OnKeyListener true
                 }

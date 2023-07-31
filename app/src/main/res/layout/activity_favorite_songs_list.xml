@@ -19,15 +19,16 @@
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginBottom="16dp"
+        android:foreground="@drawable/shape_with_stroke"
         android:orientation="vertical"
         android:padding="8dp"
-        android:foreground="@drawable/shape_with_stroke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,30 +53,30 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="Ulubione"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/sortButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-    android:id="@+id/sortButton"
-    style="?attr/materialIconButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:contentDescription="SortButton"
-    android:scaleType="center"
-    android:text=" Sortowanie"
-    android:layout_gravity="end"
-    android:textAlignment="center"
-    app:icon="@drawable/sort_icon"
-    app:iconSize="20sp"
-    app:layout_anchorGravity="center"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/sortButton"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:clickable="true"
+        android:contentDescription="SortButton"
+        android:scaleType="center"
+        android:textAlignment="center"
+        app:icon="@drawable/sort_icon"
+        app:iconSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

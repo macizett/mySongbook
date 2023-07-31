@@ -22,7 +22,7 @@ class FavoriteSongsList : AppCompatActivity() {
         var recyclerViewFavs: RecyclerView = findViewById(R.id.recyclerViewFavorites)
         var infoTV: TextView = findViewById(R.id.infoTV)
 
-        lateinit var adapter: FavouritesAdapter
+        lateinit var adapter: FavoritesAdapter
 
         lifecycleScope.launch (Dispatchers.Default) {
         var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
@@ -34,7 +34,7 @@ class FavoriteSongsList : AppCompatActivity() {
             else{
                 infoTV.visibility = View.VISIBLE
             }
-            adapter = FavouritesAdapter(favoriteSongs, applicationContext)
+            adapter = FavoritesAdapter(favoriteSongs, applicationContext)
             recyclerViewFavs.layoutManager = LinearLayoutManager(applicationContext)
             recyclerViewFavs.adapter = adapter}
         }

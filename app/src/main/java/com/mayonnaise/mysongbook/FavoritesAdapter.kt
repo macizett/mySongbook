@@ -7,15 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.mayonnaise.mysongbook.SongParser.coroutineExceptionHandler
 import com.mayonnaise.mysongbook.databinding.FavouritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
-class FavouritesAdapter(val songEntities: List<SongEntity>, context: Context): RecyclerView.Adapter<FavouritesAdapter.FavouritesViewHolder>() {
+class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
 
     var context2 = context
 
@@ -76,11 +74,20 @@ class FavouritesAdapter(val songEntities: List<SongEntity>, context: Context): R
         // Get an instance of your DAO
         val songDao = SongbookDatabase.getInstance(context2).songDao()
 
-        suspendCoroutine<Unit> { continuation ->
         GlobalScope.launch(Dispatchers.IO) {
             songDao.updateFavoriteSongs(song)
-            continuation.resume(Unit)
         }
+    }
+
+    fun sortAlphabetically() {
+        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+            songEntities = songEntities.sortedBy { it.title }
+        }
+    }
+
+    fun sortNumerically() {
+        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+            songEntities = songEntities.sortedBy { it.number }
         }
     }
 

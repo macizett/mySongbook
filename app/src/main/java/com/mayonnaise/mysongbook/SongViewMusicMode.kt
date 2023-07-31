@@ -15,11 +15,11 @@ class SongViewMusicMode : AppCompatActivity() {
         val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
         val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
 
-        var songNumber = chosenSongStore.chosenSong.toInt()
+        var songNumber = DataManager.chosenSong.toInt()
 
-        pdfViewSong.fromAsset("${chosenSongStore.chosenSongbook}${chosenSongStore.chosenSong}.pdf").load()
+        pdfViewSong.fromAsset("${DataManager.chosenSongbook}${DataManager.chosenSong}.pdf").load()
 
-        if (songNumber >= chosenSongStore.maxSongNumber){
+        if (songNumber >= DataManager.maxSongNumber){
             rightArrowButton.visibility = View.INVISIBLE
         }
         else{
@@ -35,8 +35,8 @@ class SongViewMusicMode : AppCompatActivity() {
 
         leftArrowButton.setOnClickListener{
             songNumber--
-            pdfViewSong.fromAsset("${chosenSongStore.chosenSongbook}${songNumber}.pdf").load()
-            if(songNumber < chosenSongStore.maxSongNumber && songNumber > 1){
+            pdfViewSong.fromAsset("${DataManager.chosenSongbook}${songNumber}.pdf").load()
+            if(songNumber < DataManager.maxSongNumber && songNumber > 1){
                 rightArrowButton.visibility = View.VISIBLE
             }
             else{
@@ -45,8 +45,8 @@ class SongViewMusicMode : AppCompatActivity() {
         }
         rightArrowButton.setOnClickListener{
             songNumber++
-            pdfViewSong.fromAsset("${chosenSongStore.chosenSongbook}${songNumber}.pdf").load()
-            if(songNumber > 1 && songNumber < chosenSongStore.maxSongNumber){
+            pdfViewSong.fromAsset("${DataManager.chosenSongbook}${songNumber}.pdf").load()
+            if(songNumber > 1 && songNumber < DataManager.maxSongNumber){
                 leftArrowButton.visibility = View.VISIBLE
             }
             else{

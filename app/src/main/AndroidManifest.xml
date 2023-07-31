@@ -21,6 +21,9 @@
             android:name=".SongView"
             android:exported="false" />
         <activity
+            android:name=".FavoriteSongsList"
+            android:exported="false" />
+        <activity
             android:name=".SongsList"
             android:exported="false" />
         <activity

@@ -19,7 +19,7 @@ class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Ada
 
     inner class SongViewHolder(binding: TocViewRowBinding): ViewHolder(binding.root){
         val titleTV = binding.titleTV
-        val numberTV = binding.numberTV
+        val numberTV = binding.numberAndTitleTV
 
     }
 

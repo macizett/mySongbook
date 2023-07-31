@@ -6,8 +6,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/initializeTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Inicjalizowanie zasobów..."
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"></TextView>
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/chooseTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -27,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/infoTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -51,7 +83,7 @@
         app:iconGravity="textStart"
         app:iconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/infoTV"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"></Button>
 
     <ScrollView
@@ -60,10 +92,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/infoTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/chooseTV">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -73,30 +105,30 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/songbookduchowe"
+                android:foreground="@drawable/item_clickable_background_image"
                 android:layout_width="380dp"
                 android:layout_height="215dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
                 android:src="@drawable/duchowe_light"
-                android:foreground="@drawable/shape"
                 app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/songbookwedrowiec"
+                android:foreground="@drawable/item_clickable_background_image"
                 android:layout_width="380dp"
                 android:layout_height="215dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
-                android:foreground="@drawable/shape"
                 android:src="@drawable/wedrowiec_light"
                 app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/songbookbialy"
+                android:foreground="@drawable/item_clickable_background_image"
                 android:layout_width="380dp"
                 android:layout_height="215dp"
                 android:layout_gravity="center"
-                android:foreground="@drawable/shape"
                 android:src="@drawable/bialy_light"
                 app:shapeAppearanceOverlay="@style/rounded_corner"></com.google.android.material.imageview.ShapeableImageView>
 

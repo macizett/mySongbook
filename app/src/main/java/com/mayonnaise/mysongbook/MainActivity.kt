@@ -9,13 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.google.android.material.imageview.ShapeableImageView
 import android.content.Context
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
-import com.google.android.material.slider.Slider
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +38,11 @@ class MainActivity : AppCompatActivity() {
         val songbookwedrowiec: ShapeableImageView = findViewById(R.id.songbookwedrowiec)
         val songbookbialy: ShapeableImageView = findViewById(R.id.songbookbialy)
         var infoButton: Button = findViewById(R.id.buttonInfo)
+        var infoTV: TextView = findViewById(R.id.infoTV)
+        var chooseTV: TextView = findViewById(R.id.chooseTV)
+        var initializeTV: TextView = findViewById(R.id.initializeTV)
         var musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
+        var progressBar: ProgressBar = findViewById(R.id.progressBar)
 
         var Color = Color.WHITE
 
@@ -61,22 +71,71 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val PREF_INITIALIZED_KEY = "pref_initialized_key"
+        var isInitialized = false
+
+
+        suspend fun initializeSongsIfNeeded(context: Context) {
+            if (!isInitialized) {
+                val sharedPrefs = context.getSharedPreferences("your_shared_prefs_name", Context.MODE_PRIVATE)
+
+                // Check if the initialization has already been done
+                if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
+                    // Perform the initialization
+                    progressBar.setVisibility(View.VISIBLE)
+                    initializeTV.setVisibility(View.VISIBLE)
+                    infoTV.setVisibility(View.GONE)
+                    chooseTV.setVisibility(View.GONE)
+                    songbookduchowe.setVisibility(View.GONE)
+                    songbookwedrowiec.setVisibility(View.GONE)
+                    songbookbialy.setVisibility(View.GONE)
+                    infoButton.setVisibility(View.GONE)
+                    musicModeSwitch.setVisibility(View.GONE)
+
+                    // Run the initialization in the background
+                    withContext(Dispatchers.Default) {
+                        SongParser.initialize(context, false)
+                        delay(1000)
+                    }
+
+                    // Switch back to the main thread for UI updates
+                    withContext(Dispatchers.Main) {
+                        initializeTV.setVisibility(View.GONE)
+                        infoTV.setVisibility(View.VISIBLE)
+                        chooseTV.setVisibility(View.VISIBLE)
+                        progressBar.setVisibility(View.GONE)
+                        songbookduchowe.setVisibility(View.VISIBLE)
+                        songbookwedrowiec.setVisibility(View.VISIBLE)
+                        songbookbialy.setVisibility(View.VISIBLE)
+                        infoButton.setVisibility(View.VISIBLE)
+                        musicModeSwitch.setVisibility(View.VISIBLE)
+                    }
+
+                    // Save the initialization status in SharedPreferences
+                    sharedPrefs.edit().putBoolean(PREF_INITIALIZED_KEY, true).apply()
+                }
+
+                // Set the initialization flag to true
+                isInitialized = true
+            }
+        }
+
         val sharedPrefs by lazy {
             getSharedPreferences(
                 "${BuildConfig.APPLICATION_ID}_sharedPreferences",
             Context.MODE_PRIVATE)
         }
 
-        if(sharedPrefs.getBoolean("musicSwitchStatement", false) == true){
+        if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
             musicSwitch = true
             musicModeSwitch.setChecked(true)
-            chosenSongStore.musicMode = true
+            DataManager.musicMode = true
 
         }
         else{
             musicSwitch = false
             musicModeSwitch.setChecked(false)
-            chosenSongStore.musicMode = false
+            DataManager.musicMode = false
         }
 
 
@@ -84,32 +143,32 @@ class MainActivity : AppCompatActivity() {
             if(musicModeSwitch.isChecked == true){
                 musicSwitch = true
                 sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                chosenSongStore.musicMode = true
+                DataManager.musicMode = true
             }
             else{
                 musicSwitch = false
                 sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                chosenSongStore.musicMode = false
+                DataManager.musicMode = false
             }
 
         }
 
 
         songbookduchowe.setOnClickListener{
-            chosenSongStore.chosenSongbook = "duchowe"
-            chosenSongStore.maxSongNumber = 285
+            DataManager.chosenSongbook = 1
+            DataManager.maxSongNumber = 285
             startActivity(songslistopen)
         }
 
         songbookwedrowiec.setOnClickListener{
-            chosenSongStore.chosenSongbook = "wedrowiec"
-            chosenSongStore.maxSongNumber = 299
+            DataManager.chosenSongbook = 2
+            DataManager.maxSongNumber = 299
             startActivity(songslistopen)
         }
 
         songbookbialy.setOnClickListener{
-            chosenSongStore.chosenSongbook = "bialy"
-            chosenSongStore.maxSongNumber = 146
+            DataManager.chosenSongbook = 3
+            DataManager.maxSongNumber = 146
             startActivity(songslistopen)
         }
 
@@ -120,7 +179,8 @@ class MainActivity : AppCompatActivity() {
                 infoDialog.show()
         }
 
-
-
+        GlobalScope.launch(Dispatchers.IO){
+            initializeSongsIfNeeded(this@MainActivity)
+        }
     }
 }

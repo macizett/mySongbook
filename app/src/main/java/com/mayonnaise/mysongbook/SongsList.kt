@@ -1,101 +1,127 @@
 package com.mayonnaise.mysongbook
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.FrameLayout
-import android.widget.ScrollView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDragHandleView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SongsList : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songslist)
 
         var buttonGo: Button = findViewById(R.id.buttonGo)
         var getNumber: EditText = findViewById(R.id.textInputEditText)
-        var searchButton: FloatingActionButton = findViewById(R.id.searchActionButton)
-        var TableOfContentsTV: TextView = findViewById(R.id.TOC_TV)
-        var TableOfContentsNumberTV: TextView = findViewById(R.id.TOC_Number_TV)
-        var ConstraintLayoutClick: ConstraintLayout = findViewById(R.id.constraintLayout)
-        var dragButton: Button = findViewById(R.id.buttonDrag)
-        val standardBottomSheet = findViewById<FrameLayout>(R.id.standard_bottom_sheet)
-        val standardBottomSheetBehavior = BottomSheetBehavior.from(standardBottomSheet)
+        var searchButton: Button = findViewById(R.id.searchButton)
+        var favoritesButton: Button = findViewById(R.id.favoritesButton)
+        var sortButton: Button = findViewById(R.id.sortButton)
+        var recyclerViewTOC: RecyclerView = findViewById(R.id.recyclerViewTOC)
 
-        var maxSongNr = chosenSongStore.maxSongNumber
+        var maxSongNr = DataManager.maxSongNumber
 
-        if(chosenSongStore.chosenSongbook == "duchowe"){
-            TableOfContentsTV.setText(R.string.duchowe_TOC_Titles)
-            TableOfContentsNumberTV.setText(R.string.duchowe_TOC_Number)
-        }
-        if(chosenSongStore.chosenSongbook == "wedrowiec"){
-            TableOfContentsTV.setText(R.string.wedrowiec_TOC)
-            TableOfContentsNumberTV.setVisibility(View.INVISIBLE)
-        }
-        if(chosenSongStore.chosenSongbook == "bialy"){
-            TableOfContentsTV.setText(R.string.bialy_TOC)
-            TableOfContentsNumberTV.setVisibility(View.INVISIBLE)
+        lateinit var adapter: SongAdapter
+
+        val sharedPrefs by lazy {
+            getSharedPreferences(
+                "${BuildConfig.APPLICATION_ID}_sharedPreferences",
+                Context.MODE_PRIVATE)
         }
 
+        GlobalScope.launch (Dispatchers.IO) {
+            var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
+            var allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
+            withContext(Dispatchers.Main){
+                adapter = SongAdapter(allSongs)
+                recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
+                recyclerViewTOC.adapter = adapter
+                if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", false)){
+                    adapter.sortAlphabetically()
+                    adapter.notifyDataSetChanged()
+                }
+                else{
+                    adapter.sortNumerically()
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        }
 
-        buttonGo.setOnClickListener{
+        fun goToNumber(){
             if (getNumber.text.isEmpty()){
                 Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
             }
             else{
-                var numberoo = getNumber.text.toString()
-                if(numberoo.toInt() <= maxSongNr && numberoo.toInt() > 0) {
-                    var number = getNumber.text.toString()
-                    chosenSongStore.chosenSong = number
+                var number = getNumber.text.toString().toInt()
+                if(number <= maxSongNr && number > 0) {
+                    DataManager.chosenSong = number
 
-                        if(chosenSongStore.musicMode == true){
-                            val showSongViewMusicMode = Intent(this, SongViewMusicMode::class.java)
-                            startActivity(showSongViewMusicMode)
-                        }
+                    if(DataManager.musicMode == true){
+                        val showSongViewMusicMode = Intent(this, SongViewMusicMode::class.java)
+                        startActivity(showSongViewMusicMode)
+                    }
                     else{
-                            val showSongView = Intent(this, SongView::class.java)
-                            startActivity(showSongView)
-                        }
+                        val showSongView = Intent(this, SongView::class.java)
+                        startActivity(showSongView)
+                    }
                 }
                 else{
                     Toast.makeText(this, "Nieprawidłowy numer pieśni!", Toast.LENGTH_SHORT).show()
+                    val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
                 }
             }
-
         }
+
+
+        buttonGo.setOnClickListener{
+            goToNumber()
+        }
+
         searchButton.setOnClickListener {
             val searchActivity = Intent(this, SearchPhrase::class.java)
             startActivity(searchActivity)
-            }
-
-        ConstraintLayoutClick.setOnClickListener{
-            standardBottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
 
-        dragButton.setOnClickListener{
-            if(standardBottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED){
-                standardBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        sortButton.setOnClickListener{
+            if(sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", true)){
+                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", false).apply()
+                adapter.sortAlphabetically()
+                adapter.notifyDataSetChanged()
+                Toast.makeText(this, "Sortowanie alfabetyczne", Toast.LENGTH_SHORT).show()
             }
             else{
-                standardBottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", true).apply()
+                adapter.sortNumerically()
+                adapter.notifyDataSetChanged()
+                Toast.makeText(this, "Sortowanie numeryczne", Toast.LENGTH_SHORT).show()
             }
         }
-        standardBottomSheet.setOnClickListener{
-            if(standardBottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED){
-                standardBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            }
-            else{
-                standardBottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-            }
+
+        favoritesButton.setOnClickListener{
+            val showFavoritesActivity = Intent(this, FavoriteSongsList::class.java)
+            startActivity(showFavoritesActivity)
         }
-        }
+
+        getNumber.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
+                goToNumber()
+                return@OnKeyListener true
+            }
+            false
+        })
     }
+}

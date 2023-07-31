@@ -44,10 +44,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginRight="8dp"
+            android:button="@drawable/delete_icon"
             android:checked="true"
-            android:button="@drawable/favourites_icon"
-            android:gravity="bottom"
-            app:iconSize="5sp"></CheckBox>
+            app:useMaterialThemeColors="false"></CheckBox>
     </LinearLayout>
 
     <LinearLayout

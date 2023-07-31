@@ -7,35 +7,40 @@
     tools:context=".SongsList"
     android:id="@+id/constraintLayout">
 
-
-    <Button
-        android:id="@+id/buttonGo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Idź do numeru"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Wpisz numer pieśni:"
-        android:textSize="25sp"
+        android:layout_marginTop="50dp"
+        android:text="SPIS TREŚCI"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Button
+        android:id="@+id/buttonGo"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
+        app:icon="@drawable/arrowrightgoto"
+        app:iconSize="42sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        android:hint="numer"
+        android:layout_marginTop="12dp"
+        android:hint="numer pieśni"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -44,140 +49,124 @@
             android:id="@+id/textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="„Chcę śpiewać duchem, ale chcę śpiewać także rozumem.”"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGo" />
-
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/sortButton"
+        style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="1 Kor. 14,15"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/searchActionButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_gravity="end"
         android:clickable="true"
-        android:contentDescription="fabSearch"
+        android:contentDescription="SortButton"
         android:scaleType="center"
-        android:src="@drawable/ic_launcher_monochrome"
+        android:text=" Sortowanie"
+        android:textSize="14sp"
         android:textAlignment="center"
+        app:icon="@drawable/sort_icon"
+        app:iconSize="20sp"
         app:layout_anchorGravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:foreground="@drawable/shape_with_stroke"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
 
-        <FrameLayout
-            android:id="@+id/standard_bottom_sheet"
-            style="@style/Widget.Material3.BottomSheet"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTOC"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            app:behavior_hideable="false"
-            app:behavior_draggable="false"
-            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
 
             <Button
-                android:id="@+id/buttonDrag"
+                android:id="@+id/favoritesButton"
                 style="?attr/materialIconButtonStyle"
-                android:layout_width="48dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="48dp"
-                android:src="@drawable/icon_drag_up"
-                android:textColorHighlight="#9E9797"
-                android:textColorLink="#888686"
-                app:icon="@drawable/icon_drag_up"
-                app:iconGravity="textStart"
-                app:iconSize="30dp"></Button>
-
-            <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SPIS TREŚCI"
-                android:layout_marginTop="32dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:contentDescription="fabSearch"
+                android:scaleType="center"
+                app:icon="@drawable/baseline_favorite_24"
+                android:text="  Ulubione"
                 android:textAlignment="center"
-                android:textStyle="bold"></TextView>
+                app:layout_anchorGravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
+        </LinearLayout>
 
-            <ScrollView
-                android:id="@+id/scrollView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="68dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/searchButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:contentDescription="SearchButton"
+            android:scaleType="center"
+            app:icon="@drawable/ic_launcher_monochrome"
+            android:text=" Szukaj"
+            android:textAlignment="center"
+            app:layout_anchorGravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/TOC_TV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_weight="2"
-                        android:lineSpacingExtra="2sp"
-                        android:text=" "
-                        android:textAlignment="viewStart"
-                        android:textSize="15sp"
-                        android:layout_marginBottom="100dp"/>
+    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/TOC_Number_TV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="16dp"
-                        android:layout_weight="1"
-                        android:lineSpacingExtra="2sp"
-                        android:text=" "
-                        android:textAlignment="viewEnd"
-                        android:textSize="15sp"
-                        android:layout_marginBottom="100dp"/>
-                </LinearLayout>
-            </ScrollView>
-
-
-        </FrameLayout>
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

@@ -28,7 +28,6 @@
         android:orientation="vertical"
         android:padding="8dp"
         android:foreground="@drawable/shape_with_stroke"
-        app:shapeAppearanceOverlay="@style/rounded_corner2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,13 +52,30 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="Ulubione"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sortButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+    android:id="@+id/sortButton"
+    style="?attr/materialIconButtonStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:contentDescription="SortButton"
+    android:scaleType="center"
+    android:text=" Sortowanie"
+    android:layout_gravity="end"
+    android:textAlignment="center"
+    app:icon="@drawable/sort_icon"
+    app:iconSize="20sp"
+    app:layout_anchorGravity="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

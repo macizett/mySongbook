@@ -23,9 +23,9 @@ class SongsList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songslist)
 
-        var buttonGo: Button = findViewById(R.id.buttonGo)
-        var getNumber: EditText = findViewById(R.id.textInputEditText)
-        var searchButton: Button = findViewById(R.id.searchButton)
+        val buttonGo: Button = findViewById(R.id.buttonGo)
+        val getNumber: EditText = findViewById(R.id.textInputEditText)
+        val searchButton: Button = findViewById(R.id.searchButton)
         var favoritesButton: Button = findViewById(R.id.favoritesButton)
         var sortButton: Button = findViewById(R.id.sortButton)
         var recyclerViewTOC: RecyclerView = findViewById(R.id.recyclerViewTOC)

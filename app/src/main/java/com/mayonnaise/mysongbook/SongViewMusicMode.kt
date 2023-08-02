@@ -3,10 +3,12 @@ package com.mayonnaise.mysongbook
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.Data
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.CheckBox
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +16,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.util.FitPolicy
+import kotlinx.coroutines.withContext
 
 class SongViewMusicMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +27,7 @@ class SongViewMusicMode : AppCompatActivity() {
         val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
         val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
         var buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
+        var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
@@ -46,13 +50,26 @@ class SongViewMusicMode : AppCompatActivity() {
             pdfViewSong.fromAsset(fileName)
                 .enableSwipe(true)
                 .swipeHorizontal(false)
-                .enableDoubletap(true)
+                .enableDoubletap(false)
+                .pageSnap(true)
+                .autoSpacing(true)
+                .pageFling(true)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load()
         }
 
+        fun updateSong(){
+            displayPdfFromAsset("${songbook}${songNumber}.pdf")
+            GlobalScope.launch(Dispatchers.IO){
+                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                withContext(Dispatchers.Main){
+                    numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                }
+            }
+        }
+
         try {
-                displayPdfFromAsset("${songbook}${songNumber}.pdf")
+            updateSong()
         } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
             Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
         }
@@ -73,7 +90,7 @@ class SongViewMusicMode : AppCompatActivity() {
 
         leftArrowButton.setOnClickListener{
             songNumber--
-            displayPdfFromAsset("${songbook}${songNumber}.pdf")
+            updateSong()
             if(songNumber < DataManager.maxSongNumber && songNumber > 1){
                 rightArrowButton.visibility = View.VISIBLE
             }
@@ -83,7 +100,7 @@ class SongViewMusicMode : AppCompatActivity() {
         }
         rightArrowButton.setOnClickListener{
             songNumber++
-            displayPdfFromAsset("${songbook}${songNumber}.pdf")
+            updateSong()
             if(songNumber > 1 && songNumber < DataManager.maxSongNumber){
                 leftArrowButton.visibility = View.VISIBLE
             }

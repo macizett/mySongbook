@@ -10,9 +10,11 @@ import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.view.KeyEvent
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,6 +37,7 @@ class SearchPhrase : AppCompatActivity() {
         var textViewFoundSongs: TextView = findViewById(R.id.textView7)
         var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
         var infoTV: TextView = findViewById(R.id.infoTV)
+        var scrollView: ScrollView = findViewById(R.id.scrollView)
 
         var currentDisplayedSong: Int = 0
         lateinit var foundSongs: List<SongEntity>
@@ -45,6 +48,32 @@ class SearchPhrase : AppCompatActivity() {
 
         fun isWordBoundary(text: String, index: Int): Boolean {
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
+        }
+
+        fun scrollScrollViewToHighlightedWord(spannable: SpannableStringBuilder, originalText: String) {
+            // Find the first highlighted word in the spannable text.
+            val highlightSpans = spannable.getSpans(0, spannable.length, ForegroundColorSpan::class.java)
+            if (highlightSpans.isNotEmpty()) {
+                val firstHighlightedSpan = highlightSpans[0]
+                val startIndex = spannable.getSpanStart(firstHighlightedSpan)
+
+                // Listen to layout changes to ensure the TextView is measured before scrolling.
+                foundSongTV.viewTreeObserver.addOnGlobalLayoutListener(object :
+                    ViewTreeObserver.OnGlobalLayoutListener {
+                    override fun onGlobalLayout() {
+                        // Remove the listener to avoid multiple calls.
+                        foundSongTV.viewTreeObserver.removeOnGlobalLayoutListener(this)
+
+                        // Calculate the approximate line number where the highlighted word starts.
+                        val layout = foundSongTV.layout
+                        val line = layout.getLineForOffset(startIndex)
+                        val y = layout.getLineTop(line)
+
+                        // Smoothly scroll the ScrollView to the position of the highlighted word.
+                        scrollView.smoothScrollTo(0, y)
+                    }
+                })
+            }
         }
 
         fun updateSong() {
@@ -74,7 +103,9 @@ class SearchPhrase : AppCompatActivity() {
                 }
             }
             foundSongTV.setText(spannable)
+            scrollScrollViewToHighlightedWord(spannable, foundSongs[currentDisplayedSong].text)
         }
+
 
         fun reset(){
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
@@ -103,6 +134,7 @@ class SearchPhrase : AppCompatActivity() {
                 if (phrase.endsWith(" ")){
                     phrase = phrase.dropLast(1)
                 }
+
                 GlobalScope.launch(Dispatchers.Default){
                     var searchResults = songDao.searchForPhrase(phrase, DataManager.chosenSongbook)
                     var searchResultsWithoutMarks = songDao.searchForPhraseWithoutMarks(phrase, DataManager.chosenSongbook)
@@ -180,8 +212,14 @@ class SearchPhrase : AppCompatActivity() {
 
         numberAndTitleTV.setOnClickListener{
             DataManager.chosenSong = foundSongs[currentDisplayedSong].number
-            val showSongView = Intent(this, SongView::class.java)
-            startActivity(showSongView)
+            if(DataManager.musicMode == true){
+                val showSongViewMusicMode = Intent(this, SongViewMusicMode::class.java)
+                startActivity(showSongViewMusicMode)
+            }
+            else{
+                val showSongView = Intent(this, SongView::class.java)
+                startActivity(showSongView)
+            }
         }
 
     }

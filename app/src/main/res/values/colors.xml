@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="seed">#86B9EF</color>
     <color name="foundphrase">#44AAE3</color>
+    <color name="textTitle">#89CFF6</color>
     <color name="status_bar_color">#FFFFFF</color>
     <color name="md_theme_light_primary">#1D5FA6</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

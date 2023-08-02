@@ -37,7 +37,9 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
 
     override fun onBindViewHolder(holder: FavouritesViewHolder, position: Int) {
         val song = songEntities[position]
+
         holder.songNumberTV.text = song.number.toString()
+
         holder.songTitleTV.text = song.title
 
             holder.itemView.setOnClickListener{
@@ -73,7 +75,6 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
     }
 
     suspend fun updateSongInDatabase(song: SongEntity) {
-        // Get an instance of your DAO
         val songDao = SongbookDatabase.getInstance(context2).songDao()
 
         GlobalScope.launch(Dispatchers.IO) {
@@ -83,6 +84,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
 
     fun sortAlphabetically() {
         val collator = Collator.getInstance()
+
         GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { collator.getCollationKey(it.title) }
             withContext(Dispatchers.Main){
@@ -98,6 +100,11 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
                 notifyDataSetChanged()
             }
         }
+    }
+
+    fun updateData(newDataList: List<SongEntity>) {
+        songEntities = newDataList
+        notifyDataSetChanged()
     }
 
 }

@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
 
         songbookbialy.setOnClickListener{
             DataManager.chosenSongbook = 3
-            DataManager.maxSongNumber = 146
+            DataManager.maxSongNumber = 144
             startActivity(songslistopen)
         }
 

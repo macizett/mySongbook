@@ -1,17 +1,25 @@
 package com.mayonnaise.mysongbook
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.widget.CheckBox
+import android.widget.ScrollView
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.slider.Slider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SongView : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songview)
@@ -21,10 +29,25 @@ class SongView : AppCompatActivity() {
         val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
         val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
         val buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
+        var sliderTextSize: Slider = findViewById(R.id.sliderTextSize)
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
         var songNumber = DataManager.chosenSong
+
+
+        val sharedPrefs by lazy {
+            getSharedPreferences(
+                "${BuildConfig.APPLICATION_ID}_sharedPreferences",
+                Context.MODE_PRIVATE)
+        }
+
+        var textSize = sharedPrefs.getFloat("textSize", 0.0F)
+
+        sliderTextSize.value = textSize
+        songTV.textSize = sliderTextSize.value
+        numberAndTitleTV.textSize = sliderTextSize.value+2
+
 
         fun checkSong(currentSong: SongEntity){
             if (currentSong.isFavorite){
@@ -84,7 +107,7 @@ class SongView : AppCompatActivity() {
                     songTV.setText(currentSong.text)
                     checkSong(currentSong)
                     numberAndTitleTV.setText("${currentSong.number}. ${currentSong.title}")
-                    if(songNumber < DataManager.maxSongNumber-1 && songNumber > 1){
+                    if(songNumber < DataManager.maxSongNumber && songNumber > 1){
                         rightArrowButton.visibility = View.VISIBLE
                     }
                     else{
@@ -108,6 +131,12 @@ class SongView : AppCompatActivity() {
                 songDao.updateFavoriteSongs(currentSong)
             }
         }
+        }
+
+        sliderTextSize.addOnChangeListener { slider, value, fromUser ->
+            songTV.textSize = sliderTextSize.value
+            numberAndTitleTV.textSize = sliderTextSize.value+2
+            sharedPrefs.edit().putFloat("textSize", sliderTextSize.value).apply()
         }
 
     }

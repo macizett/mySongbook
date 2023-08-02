@@ -2,7 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="seed">#1f60a6</color>
+    <color name="seed">#86B9EF</color>
+    <color name="foundphrase">#44AAE3</color>
     <color name="md_theme_light_primary">#1D5FA6</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#D4E3FF</color>

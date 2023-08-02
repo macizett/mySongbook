@@ -32,7 +32,9 @@ class SongViewMusicMode : AppCompatActivity() {
                 Toast.makeText(this, "ERROR READING PDF", Toast.LENGTH_SHORT).show()}
         }
 
-        pdfViewSong.fromAsset("${songbook}${DataManager.chosenSong}.pdf").load()
+        GlobalScope.launch(Dispatchers.IO) {
+            pdfViewSong.fromAsset("${songbook}${DataManager.chosenSong}.pdf").load()
+        }
 
         if (songNumber >= DataManager.maxSongNumber){
             rightArrowButton.visibility = View.INVISIBLE

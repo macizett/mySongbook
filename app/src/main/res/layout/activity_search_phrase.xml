@@ -98,7 +98,7 @@
             android:background="@drawable/item_clickable_background"
             android:clickable="true"
             android:text="number"
-            android:textColor="#54A9EC"
+            android:textColor="@color/seed"
             android:textSize="22sp"
             android:textStyle="bold"
             android:visibility="invisible"></TextView>

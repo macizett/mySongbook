@@ -1,14 +1,18 @@
 package com.mayonnaise.mysongbook
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.BackgroundColorSpan
+import android.text.style.ForegroundColorSpan
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -34,15 +38,42 @@ class SearchPhrase : AppCompatActivity() {
 
         var currentDisplayedSong: Int = 0
         lateinit var foundSongs: List<SongEntity>
+        lateinit var phrase: String
 
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
+        fun isWordBoundary(text: String, index: Int): Boolean {
+            return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
+        }
 
-        fun updateSong(){
-            textViewFoundSongs.setText("${currentDisplayedSong+1}/${foundSongs.size}")
-            foundSongTV.setText(foundSongs[currentDisplayedSong].text)
+        fun updateSong() {
+            textViewFoundSongs.setText("${currentDisplayedSong + 1}/${foundSongs.size}")
             numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number}. ${foundSongs[currentDisplayedSong].title}")
+
+            val originalText = foundSongs[currentDisplayedSong].text
+            val wordsToHighlight = phrase.split(" ")
+            val spannable = SpannableStringBuilder(originalText)
+
+            for (word in wordsToHighlight) {
+                var startIndex = originalText.indexOf(word, 0, true)
+
+                while (startIndex != -1) {
+
+                    val endIndex = startIndex + word.length
+                    if (isWordBoundary(originalText, startIndex) && isWordBoundary(originalText, endIndex)) {
+
+                        spannable.setSpan(
+                            ForegroundColorSpan(resources.getColor(R.color.foundphrase)),
+                            startIndex,
+                            endIndex,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+                    startIndex = originalText.indexOf(word, startIndex + word.length, true)
+                }
+            }
+            foundSongTV.setText(spannable)
         }
 
         fun reset(){
@@ -53,7 +84,7 @@ class SearchPhrase : AppCompatActivity() {
         }
 
         fun search(){
-            var phrase: String = phraseInput.text.toString()
+            phrase = phraseInput.text.toString()
 
             arrowLeftButton.setVisibility(View.INVISIBLE)
             arrowRightButton.setVisibility(View.INVISIBLE)

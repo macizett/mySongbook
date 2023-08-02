@@ -3,6 +3,8 @@ package com.mayonnaise.mysongbook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.CheckBox
 import android.widget.Toast
 import com.github.barteksc.pdfviewer.PDFView
@@ -10,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.io.FileNotFoundException
 
 class SongViewMusicMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +26,10 @@ class SongViewMusicMode : AppCompatActivity() {
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
+        val window: Window = window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = getColor(R.color.status_bar_color)
+
         var songNumber = DataManager.chosenSong
         var songbook = when (DataManager.chosenSongbook){
             1 -> "duchowe"
@@ -32,8 +39,12 @@ class SongViewMusicMode : AppCompatActivity() {
                 Toast.makeText(this, "ERROR READING PDF", Toast.LENGTH_SHORT).show()}
         }
 
-        GlobalScope.launch(Dispatchers.IO) {
-            pdfViewSong.fromAsset("${songbook}${DataManager.chosenSong}.pdf").load()
+        try {
+            GlobalScope.launch(Dispatchers.IO) {
+                pdfViewSong.fromAsset("${songbook}${DataManager.chosenSong}.pdf").load()
+            }
+        } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
+            Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
         }
 
         if (songNumber >= DataManager.maxSongNumber){

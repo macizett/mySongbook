@@ -1,5 +1,6 @@
 package com.mayonnaise.mysongbook
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,12 +8,12 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.CheckBox
 import android.widget.Toast
-import com.github.barteksc.pdfviewer.PDFView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.io.FileNotFoundException
+import com.github.barteksc.pdfviewer.PDFView
+import com.github.barteksc.pdfviewer.util.FitPolicy
 
 class SongViewMusicMode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,8 @@ class SongViewMusicMode : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.status_bar_color)
 
         var songNumber = DataManager.chosenSong
+
+
         var songbook = when (DataManager.chosenSongbook){
             1 -> "duchowe"
             2 -> "wedrowiec"
@@ -39,10 +42,17 @@ class SongViewMusicMode : AppCompatActivity() {
                 Toast.makeText(this, "ERROR READING PDF", Toast.LENGTH_SHORT).show()}
         }
 
+        fun displayPdfFromAsset(fileName: String) {
+            pdfViewSong.fromAsset(fileName)
+                .enableSwipe(true)
+                .swipeHorizontal(false)
+                .enableDoubletap(true)
+                .pageFitPolicy(FitPolicy.BOTH)
+                .load()
+        }
+
         try {
-            GlobalScope.launch(Dispatchers.IO) {
-                pdfViewSong.fromAsset("${songbook}${DataManager.chosenSong}.pdf").load()
-            }
+                displayPdfFromAsset("${songbook}${songNumber}.pdf")
         } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
             Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
         }
@@ -63,7 +73,7 @@ class SongViewMusicMode : AppCompatActivity() {
 
         leftArrowButton.setOnClickListener{
             songNumber--
-            pdfViewSong.fromAsset("${songbook}${songNumber}.pdf").load()
+            displayPdfFromAsset("${songbook}${songNumber}.pdf")
             if(songNumber < DataManager.maxSongNumber && songNumber > 1){
                 rightArrowButton.visibility = View.VISIBLE
             }
@@ -73,7 +83,7 @@ class SongViewMusicMode : AppCompatActivity() {
         }
         rightArrowButton.setOnClickListener{
             songNumber++
-            pdfViewSong.fromAsset("${songbook}${songNumber}.pdf").load()
+            displayPdfFromAsset("${songbook}${songNumber}.pdf")
             if(songNumber > 1 && songNumber < DataManager.maxSongNumber){
                 leftArrowButton.visibility = View.VISIBLE
             }

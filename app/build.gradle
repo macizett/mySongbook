@@ -45,7 +45,7 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.2")
 
     implementation 'androidx.core:core-ktx:1.10.0'
-    implementation 'com.github.barteksc:AndroidPdfViewer:1.0.0'
+    implementation 'com.github.barteksc:AndroidPdfViewer:master-SNAPSHOT'
     implementation 'com.itextpdf:itextg:5.5.10'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'

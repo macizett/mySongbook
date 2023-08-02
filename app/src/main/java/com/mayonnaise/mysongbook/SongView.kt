@@ -42,7 +42,7 @@ class SongView : AppCompatActivity() {
                 Context.MODE_PRIVATE)
         }
 
-        var textSize = sharedPrefs.getFloat("textSize", 0.0F)
+        var textSize = sharedPrefs.getFloat("textSize", 14.0F)
 
         sliderTextSize.value = textSize
         songTV.textSize = sliderTextSize.value

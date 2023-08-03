@@ -3,9 +3,6 @@ package com.mayonnaise.mysongbook
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.TypedValue
-import android.view.MotionEvent
-import android.view.ScaleGestureDetector
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ScrollView
@@ -19,7 +16,6 @@ import kotlinx.coroutines.withContext
 
 class SongView : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songview)
@@ -29,9 +25,12 @@ class SongView : AppCompatActivity() {
         val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
         val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
         val buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
-        var sliderTextSize: Slider = findViewById(R.id.sliderTextSize)
+        val scrollView: ScrollView = findViewById(R.id.scrollView)
+        val sliderTextSize: Slider = findViewById(R.id.sliderTextSize)
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
+
+        lateinit var currentSong: SongEntity
 
         var songNumber = DataManager.chosenSong
 
@@ -48,22 +47,40 @@ class SongView : AppCompatActivity() {
         songTV.textSize = sliderTextSize.value
         numberAndTitleTV.textSize = sliderTextSize.value+2
 
+        fun songFavSaving(isFav: Boolean){
+            currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+            currentSong.isFavorite = isFav
+            songDao.updateFavoriteSongs(currentSong)
+        }
 
-        fun checkSong(currentSong: SongEntity){
-            if (currentSong.isFavorite){
-                buttonAddToFav.isChecked = true
-            }
-            else{
-                buttonAddToFav.isChecked = false
+        fun animateText(textView: TextView, text: String,  side: Float){
+            textView.apply {
+                animate().apply {
+                    translationXBy(side)
+                    alpha(0f)
+                    duration = 200
+                    withEndAction {
+                        textView.text = text
+                        translationX = 1f
+                        animate().alpha(1f).start()
+                    }
+                }.start()
             }
         }
 
+        fun updateSong(currentSong: SongEntity, side: Float){
+            animateText(numberAndTitleTV, "${currentSong.number}. ${currentSong.title}", side)
+            animateText(songTV, currentSong.text, side)
+
+            scrollView.smoothScrollTo(1, 1)
+
+            buttonAddToFav.isChecked = currentSong.isFavorite
+        }
+
         GlobalScope.launch(Dispatchers.IO) {
-            var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+            currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
             withContext(Dispatchers.Main) {
-                numberAndTitleTV.setText("${currentSong.number}. ${currentSong.title}")
-                songTV.setText(currentSong.text)
-                checkSong(currentSong)
+                updateSong(currentSong, -songTV.width.toFloat())
             }
         }
 
@@ -84,11 +101,10 @@ class SongView : AppCompatActivity() {
         rightArrowButton.setOnClickListener{
             songNumber++
             GlobalScope.launch(Dispatchers.IO) {
-                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
-                    songTV.setText(currentSong.text)
-                    checkSong(currentSong)
-                    numberAndTitleTV.setText("${currentSong.number}. ${currentSong.title}")
+                    updateSong(currentSong, -songTV.width.toFloat())
+
                     if(songNumber > 1 && songNumber < DataManager.maxSongNumber-1){
                         leftArrowButton.visibility = View.VISIBLE
                     }
@@ -102,11 +118,10 @@ class SongView : AppCompatActivity() {
         leftArrowButton.setOnClickListener{
             songNumber--
             GlobalScope.launch(Dispatchers.IO) {
-                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
-                    songTV.setText(currentSong.text)
-                    checkSong(currentSong)
-                    numberAndTitleTV.setText("${currentSong.number}. ${currentSong.title}")
+                    updateSong(currentSong, songTV.width.toFloat())
+
                     if(songNumber < DataManager.maxSongNumber && songNumber > 1){
                         rightArrowButton.visibility = View.VISIBLE
                     }
@@ -120,15 +135,11 @@ class SongView : AppCompatActivity() {
         buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
         if (isChecked){
             GlobalScope.launch(Dispatchers.IO) {
-                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                currentSong.isFavorite = true
-                songDao.updateFavoriteSongs(currentSong)
+                songFavSaving(true)
             }
         }else{
             GlobalScope.launch(Dispatchers.IO) {
-                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                currentSong.isFavorite = false
-                songDao.updateFavoriteSongs(currentSong)
+                songFavSaving(false)
             }
         }
         }

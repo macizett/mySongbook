@@ -50,6 +50,21 @@ class SearchPhrase : AppCompatActivity() {
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
         }
 
+        fun animateText(textView: TextView, text: String,  side: Float){
+            textView.apply {
+                animate().apply {
+                    translationXBy(side)
+                    alpha(0f)
+                    duration = 200
+                    withEndAction {
+                        textView.text = text
+                        translationX = 1f
+                        animate().alpha(1f).start()
+                    }
+                }.start()
+            }
+        }
+
         fun scrollScrollViewToHighlightedWord(spannable: SpannableStringBuilder, originalText: String) {
             // Find the first highlighted word in the spannable text.
             val highlightSpans = spannable.getSpans(0, spannable.length, ForegroundColorSpan::class.java)
@@ -76,9 +91,7 @@ class SearchPhrase : AppCompatActivity() {
             }
         }
 
-        fun updateSong() {
-            textViewFoundSongs.setText("${currentDisplayedSong + 1}/${foundSongs.size}")
-            numberAndTitleTV.setText("${foundSongs[currentDisplayedSong].number}. ${foundSongs[currentDisplayedSong].title}")
+        fun updateSong(side: Float) {
 
             val originalText = foundSongs[currentDisplayedSong].text
             val wordsToHighlight = phrase.split(" ")
@@ -102,7 +115,22 @@ class SearchPhrase : AppCompatActivity() {
                     startIndex = originalText.indexOf(word, startIndex + word.length, true)
                 }
             }
-            foundSongTV.setText(spannable)
+
+            foundSongTV.apply {
+                animate().apply {
+                    translationXBy(side)
+                    alpha(0f)
+                    duration = 200
+                    withEndAction {
+                        foundSongTV.text = spannable
+                        translationX = 1f
+                        animate().alpha(1f).start()
+                    }
+                }.start()
+            }
+
+            animateText(numberAndTitleTV, "${foundSongs[currentDisplayedSong].number}. ${foundSongs[currentDisplayedSong].title}", side)
+            textViewFoundSongs.text = "${currentDisplayedSong + 1}/${foundSongs.size}"
             scrollScrollViewToHighlightedWord(spannable, foundSongs[currentDisplayedSong].text)
         }
 
@@ -122,8 +150,10 @@ class SearchPhrase : AppCompatActivity() {
 
             if(phrase.isEmpty()){                                                                            //if empty
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
-                numberAndTitleTV.setText(" ")
-                foundSongTV.setText(" ")
+                animateText(numberAndTitleTV, " ", -foundSongTV.width.toFloat())
+                animateText(foundSongTV, " ", -foundSongTV.width.toFloat())
+                textViewFoundSongs.text = "0/0"
+
                 infoTV.setVisibility(View.VISIBLE)
                 arrowLeftButton.setVisibility(View.INVISIBLE)
                 arrowRightButton.setVisibility(View.INVISIBLE)
@@ -146,7 +176,7 @@ class SearchPhrase : AppCompatActivity() {
                             Toast.makeText(this@SearchPhrase, "Znaleziono ${foundSongs.size} wyników", Toast.LENGTH_LONG).show()
                             numberAndTitleTV.setVisibility(View.VISIBLE)
 
-                            updateSong()
+                            updateSong(-foundSongTV.width.toFloat())
 
                             if (foundSongs.size > 1) {
                                 arrowRightButton.setVisibility(View.VISIBLE)
@@ -157,8 +187,10 @@ class SearchPhrase : AppCompatActivity() {
 
                         else{
                             Toast.makeText(this@SearchPhrase, "Nie znaleziono frazy", Toast.LENGTH_LONG).show()
-                            numberAndTitleTV.setText("")
-                            foundSongTV.setText("")
+                            animateText(numberAndTitleTV, " ", -foundSongTV.width.toFloat())
+                            animateText(foundSongTV, " ", -foundSongTV.width.toFloat())
+                            textViewFoundSongs.text = "0/0"
+
                             infoTV.setVisibility(View.VISIBLE)
                             arrowLeftButton.setVisibility(View.INVISIBLE)
                             arrowRightButton.setVisibility(View.INVISIBLE)
@@ -171,7 +203,7 @@ class SearchPhrase : AppCompatActivity() {
 
         arrowRightButton.setOnClickListener {
             currentDisplayedSong++
-            updateSong()
+            updateSong(-foundSongTV.width.toFloat())
             if (currentDisplayedSong < foundSongs.size-1) {
                 arrowRightButton.setVisibility(View.VISIBLE)
             }
@@ -184,7 +216,7 @@ class SearchPhrase : AppCompatActivity() {
 
         arrowLeftButton.setOnClickListener{
             currentDisplayedSong--
-            updateSong()
+            updateSong(foundSongTV.width.toFloat())
             if(currentDisplayedSong < foundSongs.size-1){
                 arrowRightButton.setVisibility(View.VISIBLE)
             }

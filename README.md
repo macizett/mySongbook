@@ -9,17 +9,21 @@ The backend is made in Kotlin, using some external libraries (thanks to barteksc
 
 I used:
 - Kotlin SharedPreferences
+- ROOM database
 - Android XML
 - Material You 3
 - PDFViewer API from barteksc
 - PDF Assets
+- JSON data files
+- RecyclerViews
 - Custom Dialogs
 - ArrayLists
 - Modifiable TextViews
 - Shapeable ImageViews
-- BottomSheetDialogs
 - FloatingActionButtons
+  
 And many more things for this app.
+
 
 It's a really fast, smooth, stable and secure app, and it works on all android devices I have had an opportunity to test.
 
@@ -28,20 +32,19 @@ Here's some screenshots:
 Main Screen:
 
 Night Mode
-![Screenshot_20230521-000730](https://github.com/macizett/mySongbook/assets/123411141/5d6a5024-a8bd-47f6-9403-7bca52de46da)
+![Screenshot_20230803-152128](https://github.com/macizett/mySongbook/assets/123411141/b2a3ead1-8b40-434f-ad2b-94c882b0beec)
 Light Mode
-![Screenshot_20230521-001611](https://github.com/macizett/mySongbook/assets/123411141/cfc3f9a1-ca4d-4aa6-a5ea-70eb457e3a5b)
+![Screenshot_20230803-152119](https://github.com/macizett/mySongbook/assets/123411141/65c4df6c-66e3-45e6-8eb5-a6e6b4cfd681)
+
 
 
 Song choosing menu with the table of contents:
 
 Night Mode
-![Screenshot_20230521-000756](https://github.com/macizett/mySongbook/assets/123411141/aa7f8fd3-b3d6-4c9c-9c30-1b47be3b3f30)
-![Screenshot_20230521-000858](https://github.com/macizett/mySongbook/assets/123411141/8daeec1d-8686-45ab-a8eb-8c125fecd734)
-
+![Screenshot_20230803-151118](https://github.com/macizett/mySongbook/assets/123411141/d5a2592e-ab50-424e-ae24-1f0e26a84cd6)
 Light Mode
-![Screenshot_20230521-001615](https://github.com/macizett/mySongbook/assets/123411141/049c4bb4-14ac-420f-a7e1-ecdb1eb6b7d0)
-![Screenshot_20230521-001617](https://github.com/macizett/mySongbook/assets/123411141/5aca812d-ca75-4f8c-a1ba-806f5eef76a8)
+![Screenshot_20230803-151127](https://github.com/macizett/mySongbook/assets/123411141/e401aaed-673c-4ca3-b076-f15fb56816c6)
+
 
 Music mode info dialog:
 
@@ -55,20 +58,27 @@ Light Mode
 Phrase searching dialog:
 
 Night Mode
-![Screenshot_20230521-000800](https://github.com/macizett/mySongbook/assets/123411141/b5e267e5-1690-4c62-955a-3a8f2aadae63)
-![Screenshot_20230521-000805](https://github.com/macizett/mySongbook/assets/123411141/7e7e50e9-0334-4820-b657-d2552357d2fa)
-
+![Screenshot_20230803-151145](https://github.com/macizett/mySongbook/assets/123411141/8fe0a2a0-cd78-4fd8-af8f-14534cdf55fd)
 Light Mode
-![Screenshot_20230521-001624](https://github.com/macizett/mySongbook/assets/123411141/0950418a-c0dd-430d-b918-a5dc71162d29)
-![Screenshot_20230521-001629](https://github.com/macizett/mySongbook/assets/123411141/29beba88-3415-4046-b9cf-620954f53348)
+![Screenshot_20230803-151219](https://github.com/macizett/mySongbook/assets/123411141/d458b311-6193-490f-a997-b8955ed708aa)
+
 
 Song viewing screen:
 
 Night Mode
-![Screenshot_20230521-000847](https://github.com/macizett/mySongbook/assets/123411141/65564d4c-8946-4bd7-b2ec-d20e1a61b4d9)
-
+![Screenshot_20230803-151118](https://github.com/macizett/mySongbook/assets/123411141/1aae18d4-8300-44c3-b97a-b693161b8401)
 Light Mode
-![Screenshot_20230521-001644](https://github.com/macizett/mySongbook/assets/123411141/8d806116-eafa-4d23-8503-1d8a9879fafa)
+![Screenshot_20230803-151256](https://github.com/macizett/mySongbook/assets/123411141/8af7b8e6-e572-4a7f-8526-b1a584b8bb87)
 
 Song viewing screen (music mode enabled):
 ![Screenshot_20230521-000905](https://github.com/macizett/mySongbook/assets/123411141/5ab47e33-c7df-4be8-974e-829f06ce2d63)
+
+Favorites List screen:
+
+Night mode
+![Screenshot_20230803-151149](https://github.com/macizett/mySongbook/assets/123411141/502e77ed-f331-4fa3-b197-35f5f81b4ca1)
+![Screenshot_20230803-151159](https://github.com/macizett/mySongbook/assets/123411141/56d3cc81-4f96-41c0-a056-63ac3a2a6cdd)
+Light Mode
+![Screenshot_20230803-151232](https://github.com/macizett/mySongbook/assets/123411141/b72f5f00-53eb-48a9-8b41-fe19e163c3c0)
+![Screenshot_20230803-151226](https://github.com/macizett/mySongbook/assets/123411141/c75bf020-a150-4a01-be27-252277e757d4)
+

@@ -58,7 +58,7 @@ class SongView : AppCompatActivity() {
                 animate().apply {
                     translationXBy(side)
                     alpha(0f)
-                    duration = 200
+                    duration = 70L
                     withEndAction {
                         textView.text = text
                         translationX = 1f

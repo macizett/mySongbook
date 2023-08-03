@@ -11,10 +11,12 @@ import com.google.android.material.imageview.ShapeableImageView
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -37,14 +39,17 @@ class MainActivity : AppCompatActivity() {
         val songbookduchowe: ShapeableImageView = findViewById(R.id.songbookduchowe)
         val songbookwedrowiec: ShapeableImageView = findViewById(R.id.songbookwedrowiec)
         val songbookbialy: ShapeableImageView = findViewById(R.id.songbookbialy)
-        var infoButton: Button = findViewById(R.id.buttonInfo)
-        var infoTV: TextView = findViewById(R.id.infoTV)
-        var chooseTV: TextView = findViewById(R.id.chooseTV)
-        var initializeTV: TextView = findViewById(R.id.initializeTV)
-        var musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
-        var progressBar: ProgressBar = findViewById(R.id.progressBar)
+        val infoButton: Button = findViewById(R.id.buttonInfo)
+        val reportButton: Button = findViewById(R.id.buttonReport)
+        val infoTV: TextView = findViewById(R.id.infoTV)
+        val chooseTV: TextView = findViewById(R.id.chooseTV)
+        val initializeTV: TextView = findViewById(R.id.initializeTV)
+        val musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
+        val progressBar: ProgressBar = findViewById(R.id.progressBar)
 
         var Color = Color.WHITE
+
+        val reportEmail = "mysongbook.report@gmail.com"
 
         var musicSwitch: Boolean = false
 
@@ -175,8 +180,21 @@ class MainActivity : AppCompatActivity() {
         infoButton.setOnClickListener{
                 val infoDialog = Dialog(this)
                 infoDialog.setContentView(R.layout.music_info_dialog)
-                infoDialog.window!!.setBackgroundDrawable(ColorDrawable(Color))
+                infoDialog.window!!.setBackgroundDrawable(ColorDrawable())
                 infoDialog.show()
+        }
+
+        reportButton.setOnClickListener{
+            val emailIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "message/rfc822"
+                putExtra(Intent.EXTRA_EMAIL, arrayOf(reportEmail))
+            }
+
+            if (emailIntent.resolveActivity(packageManager) != null) {
+                startActivity(emailIntent)
+            } else {
+                Toast.makeText(this, "Brak aplikacji do obsługi email!", Toast.LENGTH_LONG).show()
+            }
         }
 
         GlobalScope.launch(Dispatchers.IO){

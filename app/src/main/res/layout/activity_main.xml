@@ -55,7 +55,7 @@
         android:id="@+id/switchMusicMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="62dp"
-        android:text="Wersja muzyczna (beta)"
+        android:text="Tryb muz."
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/switchMusicMode"></TextView>
@@ -86,6 +86,24 @@
         app:iconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infoTV"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"></Button>
+
+    <Button
+        android:id="@+id/buttonReport"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/info_icon1"
+        android:textColorHighlight="#9E9797"
+        android:textColorLink="#888686"
+        android:layout_marginRight="16dp"
+        app:icon="@drawable/baseline_report_24"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"></Button>
 
     <ScrollView
@@ -137,4 +155,13 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:text="Zgłoś"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonReport" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,7 +66,7 @@ Light Mode
 Song viewing screen:
 
 Night Mode
-![Screenshot_20230803-151118](https://github.com/macizett/mySongbook/assets/123411141/1aae18d4-8300-44c3-b97a-b693161b8401)
+![Screenshot_20230803-152501](https://github.com/macizett/mySongbook/assets/123411141/5bb2da00-048f-46d0-a10b-44a3d03f5541)
 Light Mode
 ![Screenshot_20230803-151256](https://github.com/macizett/mySongbook/assets/123411141/8af7b8e6-e572-4a7f-8526-b1a584b8bb87)
 

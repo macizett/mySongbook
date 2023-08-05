@@ -17,6 +17,8 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -41,13 +43,15 @@ class MainActivity : AppCompatActivity() {
         val songbookbialy: ShapeableImageView = findViewById(R.id.songbookbialy)
         val infoButton: Button = findViewById(R.id.buttonInfo)
         val reportButton: Button = findViewById(R.id.buttonReport)
+        val reportTV: TextView = findViewById(R.id.reportTV)
         val infoTV: TextView = findViewById(R.id.infoTV)
         val chooseTV: TextView = findViewById(R.id.chooseTV)
         val initializeTV: TextView = findViewById(R.id.initializeTV)
         val musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
+        val contextView: ConstraintLayout = findViewById(R.id.constraintlayout)
 
-        var Color = Color.WHITE
+        val songDao = SongbookDatabase.getInstance(this).songDao()
 
         val reportEmail = "mysongbook.report@gmail.com"
 
@@ -55,24 +59,22 @@ class MainActivity : AppCompatActivity() {
 
         val songslistopen = Intent(this, SongsList::class.java)
 
+
         when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
                 songbookduchowe.setImageResource(R.drawable.duchowe_dark)
                 songbookwedrowiec.setImageResource(R.drawable.wedrowiec_dark)
                 songbookbialy.setImageResource(R.drawable.bialy_dark)
-                Color = android.graphics.Color.BLACK
             }
             Configuration.UI_MODE_NIGHT_NO -> {
                 songbookduchowe.setImageResource(R.drawable.duchowe_light)
                 songbookwedrowiec.setImageResource(R.drawable.wedrowiec_light)
                 songbookbialy.setImageResource(R.drawable.bialy_light)
-                Color = android.graphics.Color.WHITE
             }
             Configuration.UI_MODE_NIGHT_UNDEFINED -> {
                 songbookduchowe.setImageResource(R.drawable.duchowe_light)
                 songbookwedrowiec.setImageResource(R.drawable.wedrowiec_light)
                 songbookbialy.setImageResource(R.drawable.bialy_light)
-                Color = android.graphics.Color.WHITE
             }
         }
 
@@ -84,9 +86,7 @@ class MainActivity : AppCompatActivity() {
             if (!isInitialized) {
                 val sharedPrefs = context.getSharedPreferences("your_shared_prefs_name", Context.MODE_PRIVATE)
 
-                // Check if the initialization has already been done
                 if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
-                    // Perform the initialization
                     progressBar.setVisibility(View.VISIBLE)
                     initializeTV.setVisibility(View.VISIBLE)
                     infoTV.setVisibility(View.GONE)
@@ -96,14 +96,13 @@ class MainActivity : AppCompatActivity() {
                     songbookbialy.setVisibility(View.GONE)
                     infoButton.setVisibility(View.GONE)
                     musicModeSwitch.setVisibility(View.GONE)
+                    reportButton.visibility = View.GONE
+                    reportTV.visibility = View.GONE
 
-                    // Run the initialization in the background
                     withContext(Dispatchers.Default) {
                         SongParser.initialize(context, false)
-                        delay(1000)
                     }
 
-                    // Switch back to the main thread for UI updates
                     withContext(Dispatchers.Main) {
                         initializeTV.setVisibility(View.GONE)
                         infoTV.setVisibility(View.VISIBLE)
@@ -114,14 +113,23 @@ class MainActivity : AppCompatActivity() {
                         songbookbialy.setVisibility(View.VISIBLE)
                         infoButton.setVisibility(View.VISIBLE)
                         musicModeSwitch.setVisibility(View.VISIBLE)
+                        reportButton.visibility = View.VISIBLE
+                        reportTV.visibility = View.VISIBLE
                     }
-
-                    // Save the initialization status in SharedPreferences
                     sharedPrefs.edit().putBoolean(PREF_INITIALIZED_KEY, true).apply()
                 }
 
-                // Set the initialization flag to true
                 isInitialized = true
+            }
+        }
+
+        fun openSongbook(songbook: Int){
+            DataManager.chosenSongbook = songbook
+            GlobalScope.launch(Dispatchers.IO) {
+                DataManager.maxSongNumber = songDao.getAllSongsBySongbook(songbook).size
+                withContext(Dispatchers.Main){
+                    startActivity(songslistopen)
+                }
             }
         }
 
@@ -160,41 +168,43 @@ class MainActivity : AppCompatActivity() {
 
 
         songbookduchowe.setOnClickListener{
-            DataManager.chosenSongbook = 1
-            DataManager.maxSongNumber = 285
-            startActivity(songslistopen)
+            openSongbook(1)
         }
 
         songbookwedrowiec.setOnClickListener{
-            DataManager.chosenSongbook = 2
-            DataManager.maxSongNumber = 299
-            startActivity(songslistopen)
+            openSongbook(2)
         }
 
         songbookbialy.setOnClickListener{
-            DataManager.chosenSongbook = 3
-            DataManager.maxSongNumber = 144
-            startActivity(songslistopen)
+            openSongbook(3)
         }
 
         infoButton.setOnClickListener{
                 val infoDialog = Dialog(this)
                 infoDialog.setContentView(R.layout.music_info_dialog)
-                infoDialog.window!!.setBackgroundDrawable(ColorDrawable())
                 infoDialog.show()
         }
 
         reportButton.setOnClickListener{
-            val emailIntent = Intent(Intent.ACTION_SEND).apply {
-                type = "message/rfc822"
-                putExtra(Intent.EXTRA_EMAIL, arrayOf(reportEmail))
-            }
 
-            if (emailIntent.resolveActivity(packageManager) != null) {
-                startActivity(emailIntent)
-            } else {
-                Toast.makeText(this, "Brak aplikacji do obsługi email!", Toast.LENGTH_LONG).show()
-            }
+            //Toast.makeText(this, "Użyj twojej aplikacji do obsługi Email", Toast.LENGTH_LONG).show()
+            var snackbar = Snackbar.make(contextView, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
+
+                snackbar.setAction("OK") {
+                    val emailIntent = Intent(Intent.ACTION_SEND).apply {
+                        type = "message/rfc822"
+                        putExtra(Intent.EXTRA_EMAIL, arrayOf(reportEmail))
+                    }
+
+                    if (emailIntent.resolveActivity(packageManager) != null) {
+                        startActivity(emailIntent)
+                    } else {
+                        Toast.makeText(this, "Nie znaleziono aplikacji do obsługi Email", Toast.LENGTH_LONG).show()
+                    }
+                }.show()
+
+            snackbar.setActionTextColor(Color.RED)
+
         }
 
         GlobalScope.launch(Dispatchers.IO){

@@ -68,6 +68,17 @@ class SongView : AppCompatActivity() {
             }
         }
 
+        fun animateButton(button: FloatingActionButton, visible: Boolean){
+            if (visible){
+                button.visibility = View.VISIBLE
+                button.alpha = 0f
+                button.animate().alpha(1f).setDuration(100).start()
+            }
+            else{
+                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+            }
+        }
+
         fun updateSong(currentSong: SongEntity, side: Float){
             animateText(numberAndTitleTV, "${currentSong.number}. ${currentSong.title}", side)
             animateText(songTV, currentSong.text, side)
@@ -84,49 +95,59 @@ class SongView : AppCompatActivity() {
             }
         }
 
-        if (songNumber >= DataManager.maxSongNumber-1){
-            rightArrowButton.visibility = View.INVISIBLE
+        if (songNumber >= DataManager.maxSongNumber){
+            animateButton(rightArrowButton, false)
         }
         else{
-            rightArrowButton.visibility = View.VISIBLE
+            animateButton(rightArrowButton, true)
         }
 
         if (songNumber <= 1){
-            leftArrowButton.visibility = View.INVISIBLE
+            animateButton(leftArrowButton, false)
         }
         else{
-            leftArrowButton.visibility = View.VISIBLE
+            animateButton(leftArrowButton, true)
         }
 
         rightArrowButton.setOnClickListener{
-            songNumber++
-            GlobalScope.launch(Dispatchers.IO) {
-                currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                withContext(Dispatchers.Main){
-                    updateSong(currentSong, -songTV.width.toFloat())
+            if (songNumber < DataManager.maxSongNumber) {
+                songNumber++
+                GlobalScope.launch(Dispatchers.IO) {
+                    currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    withContext(Dispatchers.Main) {
+                        updateSong(currentSong, -songTV.width.toFloat())
 
-                    if(songNumber > 1 && songNumber < DataManager.maxSongNumber-1){
-                        leftArrowButton.visibility = View.VISIBLE
-                    }
-                    else{
-                        rightArrowButton.visibility = View.INVISIBLE
+                        if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
+                            if (leftArrowButton.visibility == View.INVISIBLE) {
+                                animateButton(leftArrowButton, true)
+                            }
+                        } else {
+                            if (rightArrowButton.visibility == View.VISIBLE) {
+                                animateButton(rightArrowButton, false)
+                            }
+                        }
                     }
                 }
             }
         }
 
         leftArrowButton.setOnClickListener{
-            songNumber--
-            GlobalScope.launch(Dispatchers.IO) {
-                currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                withContext(Dispatchers.Main){
-                    updateSong(currentSong, songTV.width.toFloat())
+            if (songNumber > 1) {
+                songNumber--
+                GlobalScope.launch(Dispatchers.IO) {
+                    currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    withContext(Dispatchers.Main) {
+                        updateSong(currentSong, songTV.width.toFloat())
 
-                    if(songNumber < DataManager.maxSongNumber && songNumber > 1){
-                        rightArrowButton.visibility = View.VISIBLE
-                    }
-                    else{
-                        leftArrowButton.visibility = View.INVISIBLE
+                        if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
+                            if (rightArrowButton.visibility == View.INVISIBLE) {
+                                animateButton(rightArrowButton, true)
+                            }
+                        } else {
+                            if (leftArrowButton.visibility == View.VISIBLE) {
+                                animateButton(leftArrowButton, false)
+                            }
+                        }
                     }
                 }
             }

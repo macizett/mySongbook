@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-@Database(entities = [SongEntity::class], version = 1)
+@Database(entities = [SongEntity::class, VerseEntity::class], version = 1)
 abstract class SongbookDatabase: RoomDatabase() {
 
     abstract fun songDao(): SongInterfaceDao
+    abstract fun verseDao(): VerseInterfaceDao
 
     companion object {
         @Volatile

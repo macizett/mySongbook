@@ -46,6 +46,17 @@ class SearchPhrase : AppCompatActivity() {
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
+        fun animateButton(button: FloatingActionButton, visible: Boolean){
+            if (visible){
+                button.visibility = View.VISIBLE
+                button.alpha = 0f
+                button.animate().alpha(1f).setDuration(100).start()
+            }
+            else{
+                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+            }
+        }
+
         fun isWordBoundary(text: String, index: Int): Boolean {
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
         }

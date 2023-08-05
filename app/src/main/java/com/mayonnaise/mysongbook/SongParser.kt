@@ -27,6 +27,7 @@ object SongParser {
                 parseAndInsertSongs(context, "duchowe.json", 1)
                 parseAndInsertSongs(context, "wedrowiec.json", 2)
                 parseAndInsertSongs(context, "bialy.json", 3)
+                parseAndInsertVerses(context, "verses.json")
             }
         }
     }
@@ -60,4 +61,34 @@ object SongParser {
                 dao.insertAll(songsList)
             }
     }
+
+    private suspend fun parseAndInsertVerses(context: Context, jsonFileName: String) {
+        val dao = SongbookDatabase.getInstance(context).verseDao()
+
+        var jsonString = context.assets.open(jsonFileName).bufferedReader().use {
+            it.readText()}
+
+        var versesJsonArray = JSONArray(jsonString)
+
+        var verseList = mutableListOf<VerseEntity>()
+
+        verseList.clear()
+
+        for (i in 0 until versesJsonArray.length()) {
+            var songJsonObject: JSONObject = versesJsonArray.getJSONObject(i)
+            var id = songJsonObject.getInt("id")
+            var place = songJsonObject.getString("place")
+            var text = songJsonObject.getString("text")
+
+            var song = VerseEntity(id = id, place = place, text = text)
+            verseList.add(song)
+            id++
+        }
+
+
+        withContext(Dispatchers.IO) {
+            dao.insertAll(verseList)
+        }
+    }
+
 }

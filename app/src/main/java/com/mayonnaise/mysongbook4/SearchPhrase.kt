@@ -1,12 +1,10 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
-import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.view.KeyEvent
 import android.view.View
@@ -45,6 +43,17 @@ class SearchPhrase : AppCompatActivity() {
 
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
+
+        fun animateButton(button: FloatingActionButton, visible: Boolean){
+            if (visible){
+                button.visibility = View.VISIBLE
+                button.alpha = 0f
+                button.animate().alpha(1f).setDuration(100).start()
+            }
+            else{
+                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+            }
+        }
 
         fun isWordBoundary(text: String, index: Int): Boolean {
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])

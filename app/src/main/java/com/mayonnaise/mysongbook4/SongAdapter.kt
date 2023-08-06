@@ -1,11 +1,11 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.mayonnaise.mysongbook.databinding.TocViewRowBinding
+import com.mayonnaise.mysongbook4.databinding.TocViewRowBinding
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

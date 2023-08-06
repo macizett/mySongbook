@@ -94,12 +94,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="200dp"
-                android:fontFamily="sans-serif-medium"
                 android:lineSpacingExtra="4sp"
                 android:paddingBottom="200dp"
                 android:textAlignment="viewStart"
                 android:textIsSelectable="true"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"/>
         </ScrollView>
     </LinearLayout>
 

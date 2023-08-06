@@ -1,15 +1,9 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 import android.content.Context
-import android.widget.Toast
-import com.mayonnaise.mysongbook.SongbookDatabase.Companion.getInstance
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.async
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -27,6 +21,7 @@ object SongParser {
                 parseAndInsertSongs(context, "duchowe.json", 1)
                 parseAndInsertSongs(context, "wedrowiec.json", 2)
                 parseAndInsertSongs(context, "bialy.json", 3)
+                parseAndInsertVerses(context, "verses.json")
             }
         }
     }
@@ -60,4 +55,34 @@ object SongParser {
                 dao.insertAll(songsList)
             }
     }
+
+    private suspend fun parseAndInsertVerses(context: Context, jsonFileName: String) {
+        val dao = SongbookDatabase.getInstance(context).verseDao()
+
+        var jsonString = context.assets.open(jsonFileName).bufferedReader().use {
+            it.readText()}
+
+        var versesJsonArray = JSONArray(jsonString)
+
+        var verseList = mutableListOf<VerseEntity>()
+
+        verseList.clear()
+
+        for (i in 0 until versesJsonArray.length()) {
+            var songJsonObject: JSONObject = versesJsonArray.getJSONObject(i)
+            var id = songJsonObject.getInt("id")
+            var place = songJsonObject.getString("place")
+            var text = songJsonObject.getString("text")
+
+            var song = VerseEntity(id = id, place = place, text = text)
+            verseList.add(song)
+            id++
+        }
+
+
+        withContext(Dispatchers.IO) {
+            dao.insertAll(verseList)
+        }
+    }
+
 }

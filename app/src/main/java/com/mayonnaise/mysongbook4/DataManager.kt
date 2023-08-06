@@ -1,4 +1,4 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 object DataManager {
     var chosenSong: Int = 0

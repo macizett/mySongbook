@@ -1,4 +1,4 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

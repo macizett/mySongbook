@@ -1,4 +1,4 @@
-package com.mayonnaise.mysongbook
+package com.mayonnaise.mysongbook4
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.mayonnaise.mysongbook.SongParser.coroutineExceptionHandler
-import com.mayonnaise.mysongbook.databinding.FavouritesViewRowBinding
+import com.mayonnaise.mysongbook4.SongParser.coroutineExceptionHandler
+import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -19,7 +19,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
 
     var context2 = context
 
-    inner class FavouritesViewHolder(binding: FavouritesViewRowBinding): ViewHolder(binding.root){
+    inner class FavouritesViewHolder(binding: FavoritesViewRowBinding): ViewHolder(binding.root){
         val songTitleTV = binding.songTitleTV
         val songNumberTV = binding.songNumberTV
         val buttonFavourites = binding.buttonAddToFav
@@ -27,7 +27,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouritesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val favouritesRowBinding = FavouritesViewRowBinding.inflate(inflater, parent, false)
+        val favouritesRowBinding = FavoritesViewRowBinding.inflate(inflater, parent, false)
         return FavouritesViewHolder(favouritesRowBinding)
     }
 

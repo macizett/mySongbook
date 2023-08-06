@@ -3,9 +3,6 @@
     android:color="?android:attr/colorControlHighlight">
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
-            <stroke android:width="2dp"
-                android:color="@color/material_on_surface_stroke">
-            </stroke>
             <corners
                 android:radius="16dp"   >
             </corners>
@@ -14,8 +11,6 @@
     </item>
     <item>
         <shape android:shape="rectangle">
-            <stroke android:width="2dp"
-                android:color="@color/material_on_surface_stroke"></stroke>
             <corners
                 android:radius="16dp"   >
             </corners>

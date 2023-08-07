@@ -89,18 +89,17 @@ class MainActivity : AppCompatActivity() {
         val runnable = object : Runnable {
             override fun run() {
                 if (scrollView.scrollX >= scrollView.getChildAt(0).width - scrollView.width) {
-                    // When reaching the end, smooth scroll back to the beginning
                     val animator = ValueAnimator.ofInt(scrollView.scrollX, 0)
                     animator.addUpdateListener { animation ->
                         val value = animation.animatedValue as Int
                         scrollView.scrollTo(value, 0)
                     }
-                    animator.duration = 800 // Adjust the duration for desired scrolling speed (in milliseconds)
+                    animator.duration = 1200
                     animator.start()
                 } else {
                     scrollView.smoothScrollBy(2, 0)
                 }
-                Handler().postDelayed(this, 15) // Adjust the delay for desired scrolling speed
+                Handler().postDelayed(this, 20)
             }
         }
 
@@ -126,7 +125,7 @@ class MainActivity : AppCompatActivity() {
 
                     delay(400)
 
-                    Handler().postDelayed(runnable, 1000)
+                    Handler().postDelayed(runnable, 20)
 
                     lineLayout.visibility = View.VISIBLE
                     lineLayout.alpha = 0f
@@ -256,6 +255,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         else{
+            verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
+            Handler().postDelayed(runnable, 20)
             sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
         }
 

@@ -29,8 +29,8 @@ class SearchPhrase : AppCompatActivity() {
 
         var phraseInput: EditText = findViewById(R.id.phraseSearch)
         var searchButton: Button = findViewById(R.id.buttonSearch)
-        var arrowLeftButton: FloatingActionButton = findViewById(R.id.arrowLeft)
-        var arrowRightButton: FloatingActionButton = findViewById(R.id.arrowRight)
+        var leftArrowButton: FloatingActionButton = findViewById(R.id.arrowLeft)
+        var rightArrowButton: FloatingActionButton = findViewById(R.id.arrowRight)
         var foundSongTV: TextView = findViewById(R.id.foundSongTV)
         var textViewFoundSongs: TextView = findViewById(R.id.textView7)
         var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
@@ -43,17 +43,6 @@ class SearchPhrase : AppCompatActivity() {
 
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
-
-        fun animateButton(button: FloatingActionButton, visible: Boolean){
-            if (visible){
-                button.visibility = View.VISIBLE
-                button.alpha = 0f
-                button.animate().alpha(1f).setDuration(100).start()
-            }
-            else{
-                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
-            }
-        }
 
         fun isWordBoundary(text: String, index: Int): Boolean {
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
@@ -74,26 +63,32 @@ class SearchPhrase : AppCompatActivity() {
             }
         }
 
+        fun animateButton(button: FloatingActionButton, visible: Boolean){
+            if (visible){
+                button.visibility = View.VISIBLE
+                button.alpha = 0f
+                button.animate().alpha(1f).setDuration(800).start()
+            }
+            else{
+                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+            }
+        }
+
         fun scrollScrollViewToHighlightedWord(spannable: SpannableStringBuilder, originalText: String) {
-            // Find the first highlighted word in the spannable text.
             val highlightSpans = spannable.getSpans(0, spannable.length, ForegroundColorSpan::class.java)
             if (highlightSpans.isNotEmpty()) {
                 val firstHighlightedSpan = highlightSpans[0]
                 val startIndex = spannable.getSpanStart(firstHighlightedSpan)
 
-                // Listen to layout changes to ensure the TextView is measured before scrolling.
                 foundSongTV.viewTreeObserver.addOnGlobalLayoutListener(object :
                     ViewTreeObserver.OnGlobalLayoutListener {
                     override fun onGlobalLayout() {
-                        // Remove the listener to avoid multiple calls.
                         foundSongTV.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                        // Calculate the approximate line number where the highlighted word starts.
                         val layout = foundSongTV.layout
                         val line = layout.getLineForOffset(startIndex)
                         val y = layout.getLineTop(line)
 
-                        // Smoothly scroll the ScrollView to the position of the highlighted word.
                         scrollView.smoothScrollTo(0, y)
                     }
                 })
@@ -154,8 +149,8 @@ class SearchPhrase : AppCompatActivity() {
         fun search(){
             phrase = phraseInput.text.toString()
 
-            arrowLeftButton.setVisibility(View.INVISIBLE)
-            arrowRightButton.setVisibility(View.INVISIBLE)
+            leftArrowButton.setVisibility(View.INVISIBLE)
+            rightArrowButton.setVisibility(View.INVISIBLE)
 
             if(phrase.isEmpty()){                                                                            //if empty
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
@@ -164,8 +159,8 @@ class SearchPhrase : AppCompatActivity() {
                 textViewFoundSongs.text = "0/0"
 
                 infoTV.setVisibility(View.VISIBLE)
-                arrowLeftButton.setVisibility(View.INVISIBLE)
-                arrowRightButton.setVisibility(View.INVISIBLE)
+                leftArrowButton.setVisibility(View.INVISIBLE)
+                rightArrowButton.setVisibility(View.INVISIBLE)
 
             }
             else{
@@ -188,7 +183,7 @@ class SearchPhrase : AppCompatActivity() {
                             updateSong(-foundSongTV.width.toFloat())
 
                             if (foundSongs.size > 1) {
-                                arrowRightButton.setVisibility(View.VISIBLE)
+                                rightArrowButton.setVisibility(View.VISIBLE)
                             }
 
 
@@ -201,8 +196,8 @@ class SearchPhrase : AppCompatActivity() {
                             textViewFoundSongs.text = "0/0"
 
                             infoTV.setVisibility(View.VISIBLE)
-                            arrowLeftButton.setVisibility(View.INVISIBLE)
-                            arrowRightButton.setVisibility(View.INVISIBLE)
+                            leftArrowButton.setVisibility(View.INVISIBLE)
+                            rightArrowButton.setVisibility(View.INVISIBLE)
                         }
                     }
                 }
@@ -210,30 +205,38 @@ class SearchPhrase : AppCompatActivity() {
 
         }
 
-        arrowRightButton.setOnClickListener {
-            currentDisplayedSong++
-            updateSong(-foundSongTV.width.toFloat())
-            if (currentDisplayedSong < foundSongs.size-1) {
-                arrowRightButton.setVisibility(View.VISIBLE)
+        rightArrowButton.setOnClickListener {
+            if(currentDisplayedSong < foundSongs.size-1) {
+                currentDisplayedSong++
+                updateSong(-foundSongTV.width.toFloat())
+
+                if (currentDisplayedSong < foundSongs.size - 1) {
+                    if (leftArrowButton.visibility == View.INVISIBLE) {
+                        animateButton(leftArrowButton, true)
+                    }
+                } else {
+                    if (rightArrowButton.visibility == View.VISIBLE) {
+                        animateButton(rightArrowButton, false)
+                    }
+                }
             }
-            else{arrowRightButton.setVisibility(View.INVISIBLE)}
-            if (currentDisplayedSong > 0) {
-                arrowLeftButton.setVisibility(View.VISIBLE)
-            }
-            else{arrowLeftButton.setVisibility(View.INVISIBLE)}
         }
 
-        arrowLeftButton.setOnClickListener{
-            currentDisplayedSong--
-            updateSong(foundSongTV.width.toFloat())
-            if(currentDisplayedSong < foundSongs.size-1){
-                arrowRightButton.setVisibility(View.VISIBLE)
+        leftArrowButton.setOnClickListener{
+            if(currentDisplayedSong > 0) {
+                currentDisplayedSong--
+                updateSong(foundSongTV.width.toFloat())
+
+                if (currentDisplayedSong > 1) {
+                    if (rightArrowButton.visibility == View.INVISIBLE) {
+                        animateButton(rightArrowButton, true)
+                    }
+                } else {
+                    if (leftArrowButton.visibility == View.VISIBLE) {
+                        animateButton(leftArrowButton, false)
+                    }
+                }
             }
-            else{arrowRightButton.setVisibility(View.INVISIBLE)}
-            if(currentDisplayedSong > 0){
-                arrowLeftButton.setVisibility(View.VISIBLE)
-            }
-            else{arrowLeftButton.setVisibility(View.INVISIBLE)}
         }
 
 

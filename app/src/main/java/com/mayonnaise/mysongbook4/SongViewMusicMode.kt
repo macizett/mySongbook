@@ -35,6 +35,17 @@ class SongViewMusicMode : AppCompatActivity() {
 
         var songNumber = DataManager.chosenSong
 
+        fun animateButton(button: FloatingActionButton, visible: Boolean){
+            if (visible){
+                button.visibility = View.VISIBLE
+                button.alpha = 0f
+                button.animate().alpha(1f).setDuration(800).start()
+            }
+            else{
+                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+            }
+        }
+
 
         var songbook = when (DataManager.chosenSongbook){
             1 -> "duchowe"
@@ -86,24 +97,37 @@ class SongViewMusicMode : AppCompatActivity() {
             leftArrowButton.visibility = View.VISIBLE
         }
 
+
         leftArrowButton.setOnClickListener{
-            songNumber--
-            updateSong()
-            if(songNumber < DataManager.maxSongNumber && songNumber > 1){
-                rightArrowButton.visibility = View.VISIBLE
-            }
-            else{
-                leftArrowButton.visibility = View.INVISIBLE
+            if(songNumber > 1) {
+                songNumber--
+                updateSong()
+                if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
+                    if (rightArrowButton.visibility == View.INVISIBLE) {
+                        animateButton(rightArrowButton, true)
+                    }
+                } else {
+                    if (leftArrowButton.visibility == View.VISIBLE) {
+                        animateButton(leftArrowButton, false)
+                    }
+                }
             }
         }
+
+
         rightArrowButton.setOnClickListener{
-            songNumber++
-            updateSong()
-            if(songNumber > 1 && songNumber < DataManager.maxSongNumber){
-                leftArrowButton.visibility = View.VISIBLE
-            }
-            else{
-                rightArrowButton.visibility = View.INVISIBLE
+            if(songNumber < DataManager.maxSongNumber) {
+                songNumber++
+                updateSong()
+                if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
+                    if (leftArrowButton.visibility == View.INVISIBLE) {
+                        animateButton(leftArrowButton, true)
+                    }
+                } else {
+                    if (rightArrowButton.visibility == View.VISIBLE) {
+                        animateButton(rightArrowButton, false)
+                    }
+                }
             }
         }
 

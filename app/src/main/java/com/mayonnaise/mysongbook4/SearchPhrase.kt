@@ -67,7 +67,7 @@ class SearchPhrase : AppCompatActivity() {
             if (visible){
                 button.visibility = View.VISIBLE
                 button.alpha = 0f
-                button.animate().alpha(1f).setDuration(800).start()
+                button.animate().alpha(1f).setDuration(300).start()
             }
             else{
                 button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()

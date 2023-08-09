@@ -42,19 +42,6 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/chooseTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:text="WYBIERZ ŚPIEWNIK:"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
-
     <Switch
         android:id="@+id/switchMusicMode"
         android:layout_width="wrap_content"
@@ -109,16 +96,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/carousel_recycler_view"
         android:layout_width="match_parent"
-        android:layout_marginTop="24dp"
-        android:layout_height="330dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:clipChildren="false"
         android:clipToPadding="false"
         app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/lineLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseTV" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/lineLayout2"
@@ -127,28 +116,29 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
         android:background="#66B7E5"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/carousel_recycler_view"
+        app:layout_constraintBottom_toTopOf="@+id/verseTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <LinearLayout
         android:id="@+id/lineLayout"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:background="#66B7E5"
         android:orientation="horizontal"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMSB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verse_place_TV" />
+        />
 
     <TextView
         android:id="@+id/reportTV"
@@ -159,42 +149,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonReport" />
 
-    <HorizontalScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineLayout2">
-
     <TextView
         android:id="@+id/verseTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:autoSizeMaxTextSize="18sp"
         android:fontFamily="sans-serif-medium"
         android:foreground="@drawable/item_clickable_background_image"
-        android:paddingLeft="64dp"
-        android:autoSizeMaxTextSize="18sp"
-        android:paddingRight="64dp"
-        android:maxLines="1"
-        android:layout_marginTop="8dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
         android:textAlignment="center"
         android:textSize="16sp"
-         />
+        app:layout_constraintBottom_toTopOf="@+id/verse_place_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/verse_place_TV"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lineLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"></TextView>
+        app:layout_constraintStart_toStartOf="parent"></TextView>
 
 
     <LinearLayout
@@ -211,16 +193,16 @@
         android:id="@+id/textViewMSB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:letterSpacing="0.4"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
         android:text="MYSONGBOOK"
-        android:visibility="invisible"
+        android:textAlignment="center"
         android:textSize="12sp"
         android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/lineLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineLayout" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

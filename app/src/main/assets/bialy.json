@@ -1,866 +1,878 @@
 [
-    {
-       "title":"Chrystus Pan, Boży Syn, Zbawca nasz zgodził się",
-       "text":"Chrystus Pan, Boży Syn, Zbawca nasz zgodził się\r\nWziąć mój grzech, za mnie umrzeć chciał\r\nAżebym znał mój ogrom win i wiedział, że\r\nKrew Jego zbawia, oczyszcza i leczy.\r\n\r\nWywyższony bądź, Jezu, Baranku mój.\r\nTyś jedyny Odkupiciel, Tyś mój Król!\r\nWywyższony bądź, Boży Baranku!\r\nPrzed Twym tronem dziś najwyższy składam hołd.",
-       "number":1,
-       "numberString":"1"
-    },
-    {
-       "text":"Jak skowronek w błękitach, śpiewam zima czy lato,\r\nBo mam serce radosne, bo mam duszę skrzydlatą.\r\n\r\nI serdecznej mej pieśni żadna siła nie wstrzyma,\r\nBo w mym sercu jest wiosna, choć na świecie jest zima.\r\n\r\nSerca struny radosne Bóg poruszył Swą dłonią\r\nI tak ciągle nad ziemią sobie dzwonią i dzwonią.",
-       "numberString":"2",
-       "number":2,
-       "title":"Jak skowronek w błękitach, śpiewam zima czy lato"
-    },
-    {
-       "numberString":"3",
-       "number":3,
-       "text":"Chwal Go, chwal Go,\r\nchwal Go pieśnią swą\r\nChwal Go, chwal Go,\r\nchwal Go cały dzień.\r\n\r\nRef.:\r\nBowiem Bóg jest godzien,\r\ngodzien naszej chwały, czci,\r\nBowiem Bóg jest godzien,\r\ngodzien naszej chwały, czci.\r\n\r\nChwal Go, chwal Go,\r\nchwal Go sercem swym\r\nChwal Go, chwal Go,\r\ndaj Mu serce swe.\r\n\r\nChwal Go, chwal Go,\r\nchwal Go życiem swym\r\nChwal Go, chwal Go,\r\noddaj Jemu hołd.",
-       "title":"Chwal Go, chwal Go"
-    },
-    {
-       "text":"Chwalę Ciebie Panie i uwielbiam,\r\nWznoszę w górę swoje ręce,\r\nUwielbiając Imię Twe!\r\n\r\nBo wielkiś Ty,\r\nwielkie dzieła czynisz dziś,\r\nNie dorówna Tobie nikt,\r\nnie dorówna Tobie nikt!\r\n\r\nChwalę Ciebie Panie...",
-       "numberString":"4",
-       "number":4,
-       "title":"Chwalę Ciebie Panie i uwielbiam"
-    },
-    {
-       "text":"Hołd składam Ci, o Panie,\r\nWywyższam Imię Twe\r\nTy stworzyłeś wszechświat cały\r\nTyś wszystkiego Panem jest.\r\n\r\nRef.:\r\nWielbię Imię Twe, oddaję życie Swe,\r\nNajwyższy składam hołd\r\nPanie, wielbię Cię, daję Ci życie swe\r\nNajwyższy składam hołd.\r\n\r\nGdy Twój Duch w mym działa sercu\r\nNajgłębszy koisz ból\r\nPrzed Twym tronem wznoszę ręce\r\nPrzyjmuję łaskę Twą.\r\n\r\nTy zniszczyłeś moje więzy\r\nDarując wolność mi\r\nWznoszę głos, by Ciebie wielbić\r\nCałą wieczność śpiewać Ci.",
-       "number":5,
-       "title":"Hołd składam Ci, o Panie",
-       "numberString":"5"
-    },
-    {
-       "numberString":"6",
-       "number":6,
-       "text":"Jezus najwyższej godzien chwały\r\nJezus najwyższej godzien czci\r\nJego Imię jest ponad wszystko.\r\nNiech niebo, ziemia zgodnie chwalą Go.\r\n\r\nI my w pokorze chcemy Go uwielbiać\r\nNa Imię Jezus każdy skłoni się\r\nI każdy język wyzna, że to Chrystus, Boży Syn.\r\nPanie nasz najwyższy przyjmij hołd!\r\n\r\nWszelka władza i moc, i majestat\r\nSą w rękach Twych, są w rękach Twych,\r\nTak! Władza i moc, i majestat\r\nSą w rękach Twych, są w rękach Twych\r\nTyś Pan i Król, Boży jedyny Syn.",
-       "title":"Jezus najwyższej godzien chwały"
-    },
-    {
-       "number":7,
-       "numberString":"7",
-       "text":"Już ponad dwa tysiące lat minęło\r\nGdy Jezus Chrystus przyszedł na ten świat\r\n\/Zbawienie nasze wtedy się zaczęło\r\nI nie przemija mimo tylu lat.\/x2\r\n\r\nOn życie oddał za mnie i za ciebie\r\nPrzekleństwa nasze zaniósł aż na krzyż\r\n\/By przygotować miejsce dla nas w niebie\r\nA potem uniesiony został wzwyż.\/x2\r\n\r\nOn przyjdzie aby zabrać nas do siebie\r\nOjczyzna nasza tam u Niego jest\r\n\/On chciałby także zabrać z nami ciebie\r\nW ojczyźnie tej nie będzie smutku, łez.\/x2",
-       "title":"Już ponad dwa tysiące lat minęło"
-    },
-    {
-       "numberString":"8",
-       "title":"Nadzieją moją jest Jezus",
-       "number":8,
-       "text":"Nadzieją moją jest Jezus\r\nPokarmem jest Jego Słowo\r\nWprowadza mnie w prawdę Boży Duch\r\nAlleluja, o alleluja."
-    },
-    {
-       "number":9,
-       "numberString":"9",
-       "title":"Stwórz serce czyste we mnie",
-       "text":"Stwórz serce czyste we mnie\r\nO Boże mój\r\nA prawego Ducha we mnie odnów\r\nPanie, nie odrzucaj mnie\r\nOd oblicza swego dziś\r\nI nie zabieraj mi swojego Ducha,\r\nLecz proszę, przywróć mi\r\nRadość z Twojego zbawienia\r\nTak przywróć i wesprzyj Duchem swym."
-    },
-    {
-       "number":10,
-       "numberString":"10",
-       "title":"Miłość wielką jak ocean Ojciec Bóg okazał nam",
-       "text":"Miłość wielką jak ocean Ojciec Bóg okazał nam\r\nGdy Syn Boży Odkupiciel przelał krew bezcenny dar\r\nCzy ktoś może to zrozumieć co w Jezusie Bóg nam dał?\r\nNie zapomnij tej miłości, która wiecznie będzie trwać.\r\n\r\nNa Golgocie - wzgórzu hańby trysło źródło życia wód\r\nNiesie miłość, pojednanie i omywa grzechu bród.\r\nŁaski tej potężne rzeki z Chrystusowych płyną ran\r\nPokój, Bożą sprawiedliwość wszystkim chce dać Chrystus Pan."
-    },
-    {
-       "title":"Chwalmy Go! Pan w majestacie swym",
-       "numberString":"11",
-       "text":"Chwalmy Go! Pan w majestacie swym\r\nJezus godzien wszelkiej chwały, mocy i czci\r\nChwalmy Go! Złóżmy korony swe\r\nPan nasz na tron zasiadł wśród chwał, wszyscy Go czczą.\r\n\r\nBowiem Bóg wywyższył sam Imię Jezusa\r\nWszelki stwór niech wyzna więc, że Jezus - to Pan\r\nChwalmy Go! Pan w majestacie swym\r\nJezus, co zmarł, teraz wśród chwał, to królów Król!",
-       "number":11
-    },
-    {
-       "text":"Jezu, Zbawicielu,\r\nZa nas krzyż przyjąłeś, Panie,\r\nOdkupiłeś z grzechu tych,\r\nCo Twojej dziś pomocy szukać chcą..\r\n\r\nStojąc dziś przed Tobą\r\nWiny chcę ci wyznać swoje,\r\nWiem, że nie odrzucisz mnie,\r\nBo miłość Twa przewyższa to, co złe.\r\n\r\nChcę uwielbiać Ciebie,\r\nImię Twe wywyższać, Panie,\r\nWszystkim w życiu jesteś mi\r\nWięc będę chwalić Cię do końca,\r\n\r\nBędę chwalić Cię do końca\r\nBędę chwalić Cię do końca dni.",
-       "title":"Jezu, Zbawicielu",
-       "number":12,
-       "numberString":"12"
-    },
-    {
-       "title":"Królów Król, panów Pan",
-       "numberString":"13",
-       "text":"Królów Król, panów Pan,\r\nStworzyciel nieba, ziemi, ciebie też\r\nOddaj Mu chwałę!\r\nPan wszechświata, Boży Syn,\r\nKsiążę pokoju, uzdrowiciel dusz\r\nOddaj Mu chwałę!\r\nChwałę Mu daj! 3x\r\nWszechmocnemu Bogu.",
-       "number":13
-    },
-    {
-       "numberString":"14",
-       "title":"Śpiewajmy Panu",
-       "text":"Śpiewajmy Panu,\r\nna wieki Jego chwała trwa.\r\nŚpiewajmy Panu,\r\nz radością klaszczmy w dłonie swe.\r\nŚpiewajmy Panu,\r\nbo On jest żywy pośród nas.\r\nŚpiewajmy Panu, alleluja.",
-       "number":14
-    },
-    {
-       "number":15,
-       "numberString":"15",
-       "title":"Czy prawda to, co mówią ludzie mi",
-       "text":"Czy prawda to, co mówią ludzie mi\r\nZstąpiłeś tu, miłość kazała Ci\r\nUmrzeć bez słowa za mój grzech, a ja\r\nUpieram się, grzech powtarzając wciąż.\r\n\r\nCzy prawda to, że nie odrzucisz mnie\r\nŻe podasz dłoń, wymażesz grzechu ślad\r\nJak mam uwierzyć w to, gdy dotąd nikt\r\nProblemów mych nie mógł wyjaśnić mi?\r\n\r\nTak prawda to, to Ty znalazłeś mnie\r\nZabrałeś lęk, a dałeś pokój swój\r\nTy jesteś teraz treścią moich dni\r\nO Panie mój, jak mam dziękować Ci?"
-    },
-    {
-       "number":16,
-       "title":"Chrystus jest życiem mym",
-       "text":"Chrystus jest życiem mym\r\nA śmierć zyskiem jest\r\nChrystus jest życiem mym\r\nA śmierć zyskiem jest.\r\n\r\nTo mój Król, moja pieśń\r\nŻycie me i radość ma\r\nMoja moc i mój miecz\r\nPokój mój - tym jest mój Pan.\r\n\r\nChrystus jest życiem mym...",
-       "numberString":"16"
-    },
-    {
-       "title":"Miłość da - co da?",
-       "text":"Miłość da - co da?\r\nDa szczęście, radość pośród dnia - tak?\r\nPokochaj, a zobaczysz, że - że co?\r\nPan także umiłował ciebie!\r\n\r\nWybierz ślad - jaki ślad?\r\nŚlad, który ci wyznaczył Pan - Pan?\r\nMiłością przezwyciężaj zło - i co?\r\nNa końcu drogi będzie stał On!",
-       "numberString":"17",
-       "number":17
-    },
-    {
-       "text":"Miłość Twa\r\nOd najwyższych gór wyższa jest,\r\nWielka jest wierność Twa,\r\nDo nieba sięga wzwyż.\r\nMiłość Twa\r\nGłębsza niż ocean bez dna,\r\nWielka jest wierność Twa,\r\nGdy do mnie zbliżasz się.",
-       "number":18,
-       "title":"Miłość Twa",
-       "numberString":"18"
-    },
-    {
-       "title":"Przyszedł bezbronny na świat",
-       "numberString":"19",
-       "number":19,
-       "text":"Przyszedł bezbronny na świat\r\nDo ludzi, których stworzył sam\r\nNie aby żąć, lecz by siać\r\nNie aby wziąć, lecz siebie dać.\r\n\r\nTo jest nasz Bóg, Sługa i Król\r\nDziś tak jak On chcę służyć Mu\r\nSwe całe życie na Jego ołtarz kłaść\r\nTo, co mi dał, chcę teraz dać."
-    },
-    {
-       "number":20,
-       "text":"Dotknął mnie dziś Pan\r\nI radość ogromną w sercu mam\r\nZ tej radości chcę\r\nŚpiewać i klaskać w dłonie swe!\r\n\r\n\/:Więc wszyscy razem chwalmy Go\r\nZa to, że trzyma nas ręką swą :\/",
-       "numberString":"20",
-       "title":"Dotknął mnie dziś Pan"
-    },
-    {
-       "numberString":"21",
-       "text":"\/:Bóg kocha mnie, na pewno to wiem\r\nBo Jezus w swym Słowie o tym mówi mi\r\nPrzychodzę więc dziś przed Twój święty tron\r\nI w gronie Twoich dzieci, Panie, śpiewam Ci.\r\n\r\nChcę wielbić Cię z całej ludzkiej mej siły\r\nPragnę miłością moją uczcić Cię\r\nBo tylko Ty jesteś Bogiem prawdziwym\r\nPrawdziwym - mówię - bo poznałem Cię:\/\r\nPoznałem Cię, poznałem Cię.",
-       "number":21,
-       "title":"Bóg kocha mnie, na pewno to wiem"
-    },
-    {
-       "number":22,
-       "title":"Jeśli na piasku zbudujesz swój dom",
-       "text":"Jeśli na piasku zbudujesz swój dom\r\nGdyby na piasku on stał\r\nWiedz, że choćby piękny był\r\nI podwójne mury miał\r\nBudować będziesz jeszcze raz.\r\n\r\nRef.:\r\nNa mocnej skale dom twój ma stać\r\nI fundament on solidny musi mieć\r\nBo gdy uderzy wiatr i deszcz\r\nTwój dom będzie pewnie stać.\r\n\r\nJeśli na skale zbudujesz swój dom\r\nGdyby na skale on stał\r\nWiedz, że choćby skromny był\r\nPojedyncze mury miał\r\nBudować będziesz tylko raz.\r\n\r\nTą Skałą jest Jezus Chrystus Pan\r\nI na Nim buduj swój dom\r\nWiedz, że choćby skromny był\r\nPojedyncze mury miał\r\nBudować będziesz tylko raz.",
-       "numberString":"22"
-    },
-    {
-       "title":"Pamiętamy, jak mówiłeś nam:",
-       "numberString":"23",
-       "text":"Pamiętamy, jak mówiłeś nam:\r\n„Jam krzewem winnym jest,\r\nKażdy z was jest latoroślą,\r\nKtóra owoc wydać ma.\r\nA mój Ojciec ogrodnikiem jest\r\nOn o was troszczy się,\r\nPragnąc, by wzrastały, owoc przynosiły.”\r\n\r\nRef.:\r\nMy rośniemy ciągle w mocy Twej\r\nKu niebu w górze tam\r\nPozostaniemy wszyscy w Nim\r\nW miłości Jego wciąż\r\nOn nazwał przyjaciółmi nas\r\nTak bardzo zniżył się\r\nI będąc w społeczności z Nim\r\nWzrastamy w każdy czas.\r\n\r\nGdy nie trwamy w społeczności z Nim\r\nTo nie zrobimy nic,\r\nLecz Ty obiecałeś mieszkać w nas,\r\nGdy w Tobie trwamy my.\r\nI chcesz, by posłusznym tobie być\r\nW tym, co mówiłeś nam,\r\nBy nawzajem troszczyć się i kochać innych.",
-       "number":23
-    },
-    {
-       "text":"Rozsławiamy Imię Twe\r\nGłosić chcemy Twą moc i Twój majestat\r\nTy królujesz niepodzielnie, rządzisz sprawiedliwie\r\nMoc Twą widzieć może cały świat.\r\nWielbimy Cię, Boże potężny\r\nSławimy Cię, jedynie święty!\r\nNiech płynie pieśń, Tyś Bóg, Pan wszechmocny\r\nSkładamy pokłon przed tronem Twoim dziś.",
-       "numberString":"24",
-       "number":24,
-       "title":"Rozsławiamy Imię Twe"
-    },
-    {
-       "title":"Pan wywyższony, nasz Król wywyższony wśród chwał",
-       "number":25,
-       "numberString":"25",
-       "text":"Pan wywyższony, nasz Król wywyższony wśród chwał\r\nUwielbiajmy Go!\r\nPan wywyższony, nasz Król wywyższony\r\nOddajmy Jemu cześć!\r\nKrólem jest Pan, Jego łaska na wieki trwa,\r\nNiebo i ziemio radujcie się Jego Imieniem!\r\nPan wywyższony, nasz Król wywyższony wśród chwał."
-    },
-    {
-       "number":26,
-       "text":"Raz po wielkim połowie Jezus z uczniami siadł\r\nSpytał Piotra Szymona tak jak dziś pyta nas:\r\n\r\nBracie, siostro, czy miłujesz mnie?\r\nTak Panie, Ty wiesz, że kocham Cię!\r\n\r\nBracie, siostro, czy ty modlisz się?\r\nTak Panie, Ty wiesz, że modlę się!\r\n\r\nBracie, siostro, czy niesiesz krzyż?\r\nTak Panie, Ty wiesz, że niosę go!\r\n\r\nBracie, siostro, czy idziesz mą drogą?\r\nTak Panie, Ty wiesz, że idę nią!",
-       "numberString":"26",
-       "title":"Raz po wielkim połowie Jezus z uczniami siadł"
-    },
-    {
-       "title":"Ty jesteś Bogiem mym",
-       "text":"Ty jesteś Bogiem mym,\r\nwspaniałym Bogiem mym,\r\nUwielbiam Cię,\r\nwywyższam święte Imię Twe.\r\n\r\nO Panie chcę dziękować Ci,\r\nza to żeś mnie obdarował,\r\nDałeś tak wspaniałe życie,\r\ndałeś tak wspaniały świat.",
-       "numberString":"27",
-       "number":27
-    },
-    {
-       "text":"Bogiem moim jest, światłem moim jest\r\nBóg Abrahama, Izaaka, Jakuba\r\nOdwiecznym Bogiem On\r\nCo stworzył ziemi krąg\r\nWięc chwalmy Go w Imieniu Jezusa.\r\n\r\nObdarował nas miłością swą\r\nBóg Abrahama, Izaaka, Jakuba\r\nCóż Ci mogę dać Panie mój\r\nPrócz wdzięczności mej\r\nWięc chwalę Cię w Imieniu Jezusa.",
-       "numberString":"28",
-       "number":28,
-       "title":"Bogiem moim jest, światłem moim jest"
-    },
-    {
-       "text":"Zmartwychwstał Pan\r\nZwycięstwa chwałą niebo brzmi\r\nKtóż tak jak On\r\nMajestatu blaskiem lśni.\r\n\r\nRef.:\r\nBaranek Królem jest\r\nNajwyższy zajął tron\r\nW pokorze chylę się\r\nZ radością składam hołd.\r\n\r\nRozgłosić chcę\r\nRadosną zmartwychwstania wieść\r\nNa krzyżu Pan\r\nPrzezwyciężył śmierć i grzech",
-       "number":29,
-       "title":"Zmartwychwstał Pan",
-       "numberString":"29"
-    },
-    {
-       "number":30,
-       "title":"Panie, pragnę kochać Cię",
-       "text":"\/:Panie, pragnę kochać Cię\r\nCoraz mocniej z dnia na dzień\r\nJesteś wspaniałością mą\r\nPanie, pragnę kochać Cię :\/\r\n\r\nWszystko daję Jezusowi\r\nZ Jego łaski pragnę żyć\r\nCzy ktoś może zgłębić miłość\r\nKtórą Bóg okazał nam?\r\n\r\nJak cudowna jest ta chwila\r\nGdy przebywać mogę z Nim\r\nWidzieć piękno Jego twarzy\r\nI kochać Go!",
-       "numberString":"30"
-    },
-    {
-       "title":"Szeroko Twojej łaski rzeka płynie wciąż",
-       "numberString":"31",
-       "number":31,
-       "text":"Szeroko Twojej łaski rzeka płynie wciąż\r\nZ miłością darmo dajesz życia dar\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\n\r\nDo końca ukochałeś Panie Kościół swój\r\nNa krzyżu z grzechem świata tocząc bój\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\n\r\nTak łatwo można przyjść do Ciebie, łaskę wziąć\r\nZ radością darmo dajesz życia dar\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą."
-    },
-    {
-       "text":"Tyś jest schronieniem mym\r\nNapełniasz serce me wolnością swych pieśni,\r\nKiedy strach ogarnia duszę mą.\r\nBędę ufać Ci, będę ufać Ci\r\nSłaby niechaj wyzna: Mocą i siłą mą Bóg!",
-       "title":"Tyś jest schronieniem mym",
-       "numberString":"32",
-       "number":32
-    },
-    {
-       "numberString":"33",
-       "text":"Ty jesteś skałą zbawienia mego\r\nI siłą w życiu mym.\r\nTyś mą nadzieją i mym natchnieniem,\r\nDo Ciebie wołać chcę.\r\n\r\nPanie wierzę Ci, tak wierzę Ci,\r\nBo Twa miłość wierną jest.\r\nW każdej chwili życia wspierasz mnie,\r\nPanie do Ciebie ja lgnę.",
-       "number":33,
-       "title":"Ty jesteś skałą zbawienia mego"
-    },
-    {
-       "number":34,
-       "title":"Dziękować Ci Panie chcę",
-       "text":"\/ Dziękować Ci Panie chcę\r\nDziękować, boś świętym jest\r\nDziękować, żeś Jezusa, Syna Swego nam dał \/x2\r\n\r\n\/ A dziś słaby mocnym staje się\r\nBiedny niechaj wyzna, że\r\nBogatym jest, bo wszystko dał mu Pan \/x2",
-       "numberString":"34"
-    },
-    {
-       "title":"Wspaniałym Panem Tyś",
-       "number":35,
-       "numberString":"35",
-       "text":"Wspaniałym Panem Tyś,\r\nTwej twarzy szukam wciąż.\r\nGdy Twe spojrzenie jest na dziecku Twym\r\nŁaska Twa dotyka mnie.\r\n\r\nPanie Tyś cenniejszym jest od srebra,\r\nPanie Tyś od złota droższym mi.\r\nPanie Tyś piękniejszym od diamentów\r\nI nic na świecie nie dorówna Ci \/x3"
-    },
-    {
-       "numberString":"36",
-       "title":"Hosanna, Hosanna, Królowi królów cześć",
-       "number":36,
-       "text":"Hosanna, Hosanna, Królowi królów cześć \/x2\r\n\r\nRef.:\r\nChwalcie Pana, śpiew niech brzmi\r\nZmartwychwstał Król i żyje dziś\r\nChwalcie Go, najwyższy On\r\nI godzien wszelkiej czci\r\n\r\nWielbimy, wielbimy, wielbimy Panie Cię.\r\nKochamy, kochamy, kochamy Panie Cię."
-    },
-    {
-       "text":"Zbawionym ja przez Baranka krew \/x2\r\nZbawionym ja przez Baranka krew\r\nJezus on także za mnie zmarł\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nMój Pan i ja blisko siebie tak \/x2\r\nMój Pan i ja blisko siebie tak\r\nOn swego Ducha dał, alleluja\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nWięc idę wciąż do Pana tam \/x2\r\nWięc idę wciąż do Pana tam\r\nI opowiadam wszystkim że\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nOn przyjdzie znów, zabierze nas \/x2\r\nOn przyjdzie znów, zabierze nas\r\nDo siebie tam, alleluja\r\nPrzebaczone grzechy me, zbawionym ja.",
-       "numberString":"37",
-       "number":37,
-       "title":"Zbawionym ja przez Baranka krew"
-    },
-    {
-       "text":"Tak, jakim jest, nic nie mam, nie,\r\nPrócz tego, że mnie głos Twój zwie,\r\nŻe krew Twa lała się za mnie\r\nBaranku Boży, idę już.\r\n\r\nTak, jaki jestem, pełen wad,\r\nObdarty z niewinności szat\r\nBy w serce promyk łaski wpadł\r\nTak idę już, Baranku mój.\r\n\r\nTak, jaki jestem, pełen skruch,\r\nOdwaga ma rozwiana w puch\r\nW Twej łasce tylko ufa duch\r\nWięc idę już, Baranku mój.\r\n\r\nTak, jakim jest - Tyś łaskaw mi\r\nPrzebaczasz i obmywasz z win\r\nDla Twych obietnic wierzę Ci\r\nBaranku Boży, idę już.\r\n\r\nTak, jaki jestem, Panie mój\r\nMiłością swoją serce zgój\r\nBym wiecznie już pozostał Twój\r\nBaranku Boży, idę już.",
-       "title":"Tak, jakim jest, nic nie mam, nie",
-       "numberString":"38",
-       "number":38
-    },
-    {
-       "numberString":"39",
-       "number":39,
-       "title":"Kiedyś sam błądziłem pośród życia dróg",
-       "text":"Kiedyś sam błądziłem pośród życia dróg\r\nBłądziłem tak, bo nie wiedziałem, kto to Bóg\r\nCzęsto myślałem więc, czy życie to ma jakiś sens\r\nCzy warto żyć na ziemi tej, pełnej trosk i zła?\r\n\r\nMijały dni i smutek rósł w sercu mym\r\nNa wiele pytań nie odpowiedział mi nikt\r\nCzęsto myślałem więc, czy życie to ma jakiś sens\r\nCzy warto żyć na ziemi tej, pełnej trosk i zła?\r\n\r\nZnalazł się Ktoś, kto znał problemy me\r\nTo był Jezus, który wyjaśnił mi\r\nŻe życie to ma właśnie sens, bo On przelał za mnie krew\r\nI daje mi zbawienie swe, bym radość miał już dziś.\r\n\r\nOd chwili tej życie me zmieniło się\r\nBo celem mym jest innym głosić dobrą wieść,\r\nŻe Jezus moim Królem jest i twoim może stać się też\r\nWięc przyjmij dziś zbawienie te, jeśli chcesz, jeśli chcesz."
-    },
-    {
-       "number":40,
-       "text":"Kiedy tak idziesz sam proszę cię zatrzymaj się\r\nDziś do ciebie mówi Pan przez szum lasów, ptaków śpiew\r\nJeśli chcesz, zobaczysz Go dziś do ciebie zbliża się\r\nOn ci daje przyjaźń swą chciej dziś przyjąć ją.\r\n\r\nRef.:\r\nPrzyjaźń to największy dar, jaki daje tobie Bóg\r\nPrzyjaźń to największy skarb zechciej go wziąć\r\nOn w przyjaźni tobie dał zieleń lasów i toń mórz\r\nBłękit nieba, górski szczyt On tobie dał.\r\n\r\nGdy w twym życiu zdarzy się, że twym sercem ściśnie ból\r\nOn jest z tobą, wspiera cię On twój Bóg, przyjaciel twój\r\nGdybyś nawet został sam cały świat opuścił cię\r\nOn przy tobie zawsze trwa, Jezus bardzo kocha Cię.",
-       "title":"Kiedy tak idziesz sam proszę cię zatrzymaj się",
-       "numberString":"40"
-    },
-    {
-       "numberString":"41",
-       "number":41,
-       "title":"Wieczór jest już blisko",
-       "text":"Wieczór jest już blisko,\r\nOgnisk gaśnie żar\r\nPrzyjm Panie Jezu,\r\nZbawco i Królu, serca mego dar,\r\nSerca mego dar.\r\n\r\nPrzyjmij pracy znoje,\r\nPokrzywdzonych łzy\r\nDaj wszystkim ludziom\r\nSiłę i pomoc, dzieciom jasne sny,\r\nDzieciom jasne sny.\r\n\r\nI dla tych, co w mroku\r\ndaj nadziei nić\r\nAby znaleźli prawdy drogę,\r\nMogli wiecznie żyć,\r\nMogli wiecznie żyć."
-    },
-    {
-       "number":42,
-       "numberString":"42",
-       "text":"Będę Cię uwielbiać póki będę żyć\r\nChcę się Tobą karmić, z Twego źródła pić\r\nJeszcze wczoraj głupstwem dla mnie był Twój krzyż\r\nDzisiaj przekonałeś mnie swą miłością\r\nJeszcze wczoraj głupstwem dla mnie był Twój krzyż\r\nDzisiaj przekonałeś mnie miłością swą.\r\n\r\nChcę Ci wręczyć klucze do pałaców mych\r\nPootwieraj wszystkie i zamieszkaj w nich\r\nTyle lat pukałeś do zamkniętych drzwi\r\nDzisiaj otworzyłeś je swą miłością\r\nTyle lat pukałeś do zamkniętych drzwi\r\nDzisiaj otworzyłeś je miłością swą.",
-       "title":"Będę Cię uwielbiać póki będę żyć"
-    },
-    {
-       "text":"Alleluja, miłość Twa\r\nJak blask Słońca nad nami wciąż trwa\r\nAlleluja niech biją dziś dzwony,\r\nNiech wielbi Cię cały świat, alleluja.\r\n\r\nAlleluja, płynie pieśń\r\nWięc wraz z nami ku niebu ją wznieś\r\nAlleluja niech biją dziś dzwony,\r\nNiech wielbi Cię cały świat, alleluja.",
-       "number":43,
-       "numberString":"43",
-       "title":"Alleluja, miłość Twa"
-    },
-    {
-       "numberString":"44",
-       "text":"Wśród tylu trosk mieć marzeń czas,\r\nA kłamstwem nie plamić swoich ust.\r\n\r\nRef.:\r\nPo prostu z Jezusem żyć\r\nZwyczajnie, bez wielkich słów,\r\nKażdy dzień powierzać Mu,\r\nStale przy Nim być.\r\n\r\nMiłość do ludzi czerpać zeń,\r\nDobrocią koić wszelki ból.\r\n\r\nSzczęściem radosnych cieszyć się,\r\nA krzywdą smutnych przejąć się.\r\n\r\nMocno uścisnąć bratnią dłoń,\r\nKażdemu w oczy spojrzeć móc.",
-       "title":"Wśród tylu trosk mieć marzeń czas",
-       "number":44
-    },
-    {
-       "numberString":"45",
-       "number":45,
-       "title":"Oznajmiono ci człowiecze",
-       "text":"Oznajmiono ci człowiecze,\r\nCo jest dobre, czego żąda Bóg od ciebie:\r\nByś wypełniał prawo, okazywał miłość\r\nI w pokorze chodził z Nim."
-    },
-    {
-       "number":46,
-       "title":"Ref.:",
-       "text":"Ref.:\r\nBo nikt nie ma z nas\r\nTego, co mamy razem\r\nKażdy wnosi ze sobą to, co ma\r\nZatem, aby wszystko mieć\r\nPotrzebujemy siebie razem\r\nBracie, siostro ręka w rękę razem idź!\r\n\r\nCzasami dziwię się, dlaczego wciąż zwalczamy się\r\nWszak Jezus modlił się, byśmy jedno byli\r\nCzyż nie najwyższy czas, by w końcu Jego miłość w nas\r\nKu Jego chwale stale panowała.\r\n\r\nZawsze razem, wszyscy razem\r\nNie tylko ja, nie tylko ty\r\nAle razem, wszyscy razem\r\nMamy miłość, by w niej żyć\r\nBo nikt nie ma z nas...",
-       "numberString":"46"
-    },
-    {
-       "numberString":"47",
-       "number":47,
-       "title":"O przyjdź, w przedsionkach Króla, Pana swego stań",
-       "text":"O przyjdź, w przedsionkach Króla, Pana swego stań\r\nNiech z wdzięczności z serca twego płynie pieśń\r\nŻe Jezusa Syna swego Bóg darował nam\r\nChwała Mu i cześć\r\nI niech płyną pieśni chwały z naszych ust\r\nNiech na nowo święty Duch napełnia nas\r\nAby każdy coś od Pana dziś otrzymać mógł\r\nBy nie odszedł taki sam."
-    },
-    {
-       "numberString":"48",
-       "title":"Oblubieniec czeka już",
-       "number":48,
-       "text":"Oblubieniec czeka już\r\nPierzmy szaty, blisko dzień wesela\r\nNieproszonych gości tłum\r\nStanie u bram, które Pan otwiera.\r\n\r\nRef.:\r\nJezus oblubieńcem naszym jest\r\nA Kościół świętą panną, którą umiłował\r\nJezus oblubieńcem naszym jest\r\nA Kościół świętą panną,\r\nKtórą zdobył swoją krwią.\r\n\r\nTylko Oblubieniec wie\r\nKto naprawdę jest w Nim zakochany\r\nW dniu wesela znajdzie ich\r\nWniesie przez próg, przez żywota bramy."
-    },
-    {
-       "number":49,
-       "title":"Ścieżyna, którą Bóg dla moich wybrał nóg",
-       "numberString":"49",
-       "text":"Ścieżyna, którą Bóg dla moich wybrał nóg\r\nPrzywiodła mnie do Bożych stóp\r\nChoć na niej ostry głaz wyciska łzy nie raz\r\nLecz końcem jej jest niebios gród.\r\n\r\nRef.:\r\nNie tam, gdzie ja bym szedł\r\nNie to co ja bym chciał\r\nBo którzem ja, bym wybór robić miał?\r\nTy za mnie wybór zrób\r\nTy lepiej wiesz, Tyś Bóg\r\nNiech Twoja wola stanie się.\r\n\r\nChoć ciężar krzyża gnie do ziemi barki me\r\nI chętnie bym zamienił go\r\nLecz Bóg mi dał ten krzyż chcę wiernie nieść go wzwyż\r\nDo nieba bram, gdzie gwiazdy lśnią.\r\n\r\nNietrudno poddać się Temu, co kocha mnie\r\nCo za mnie oddał życie swe\r\nZapomnę swoje „ja”, Bóg w zamian szczęście da\r\nZwycięstwo me w poddaniu się."
-    },
-    {
-       "number":50,
-       "numberString":"50",
-       "title":"Wszechświat cały dziełem Twym jest",
-       "text":"Wszechświat cały dziełem Twym jest\r\nDałeś Panie życie swe nam\r\nTyś królewską godność nam dał\r\nPrzez swą krew\r\nJesteś Boże zawsze ten sam\r\nGodzien, aby śpiewać Ci pieśń\r\nChcemy sławić wciąż Imię Twe\r\nZ wszystkich sił.\r\n\r\nGdy wielbimy Twoją moc\r\nSławimy wielką łaskę Twą\r\nSkosztować musi klęski wróg z ręki Twej\r\nGdy idziemy drogą Twą\r\nPrzed tronem twym korzymy się\r\nZwycięstwo świętej armii Twej pewne jest."
-    },
-    {
-       "numberString":"51",
-       "number":51,
-       "title":"Miłości Twojej, Panie nasz",
-       "text":"Miłości Twojej, Panie nasz\r\nI łaski Twej nie pojmie nikt\r\nPrzyjdź, otwórz oczy nasze dziś\r\nI oświeć wszystkich nas\r\nTwoją prawdą niezmienną na wieki\r\nUtwierdź w wierze nas.\r\n\r\nTy Panie tak miłujesz świat\r\nŻe swego Syna dałeś, by\r\nZa ludzki grzech na krzyżu zmarł\r\nI dał nam poznać Cię\r\nTwoją prawdę niezmienną na wieki\r\nI wielką miłość Twą"
-    },
-    {
-       "title":"Ty mówisz: przyjdź, ja troski twe wezmę",
-       "text":"Ty mówisz: przyjdź, ja troski twe wezmę\r\nMówisz z poranku ja też z tobą będę\r\nMyślałem nieraz, czy możliwe to,\r\nA jednak w swym sercu uwierzyłem, bo\r\nJuż chcę ufać Ci.\r\n\r\nRef.:\r\n„Chodź do wody mej, chodź i pij”-\r\nJezus sam mówi tak\r\n„Wiem, jesteś pragnący, pokoju ci brak.\r\nTwe łzy też widziałem w wielkim żalu twym\r\nGdyś krzyż mój zobaczył w rozmyślaniu swym”.\r\n\r\nTy jesteś wielki, któż Ciebie zrozumie,\r\nW ten wspaniały plan kto uwierzyć umie?\r\nTy znasz już drogę i ja idę nią\r\nTwa krew zmywa winy, jam własnością Twą\r\nTak Pan mój i Bóg!",
-       "numberString":"52",
-       "number":52
-    },
-    {
-       "title":"Na świat przyszedł pokój nieść",
-       "numberString":"53",
-       "text":"Na świat przyszedł pokój nieść\r\nChciał mym przyjacielem być\r\nPrzyniósł nam radosną wieść\r\nByśmy mogli wiecznie żyć\r\nBył tak dobry, miły tak,\r\nŻe aż słów i łez mi brak\r\nKiedy myślę, jak On cierpiał,\r\nJak na krzyżu za mnie zmarł\r\nDla mnie zrobił to mój Pan, mój Jezus.\r\n\r\nZa mnie życie swoje dał\r\nCóż większego mógł mi dać?\r\nŻebym żywot wieczny miał\r\nOn się musiał grzechem stać\r\nKrew płynęła z jego ran\r\nNa Golgocie, gdzie stał krzyż\r\nDla mnie cierpiał tam mój Pan,\r\nBy mnie poprowadzić wzwyż\r\nDla mnie zrobił to mój Pan, mój Jezus.\r\n\r\nTeraz chce mym Panem być\r\nŻebym mógł z Nim wiecznie żyć\r\nBiałą szatę chce mi dać Jezus mój\r\nCzy chcesz ze mną za Nim iść\r\nNie być jak jesienny liść,\r\nKtóry leci, nie wie po co i dokąd.",
-       "number":53
-    },
-    {
-       "numberString":"54",
-       "number":54,
-       "text":"Gdy wpatruję się w Twą świętą twarz\r\nGdy rozmyślam nad miłością Twą\r\nKiedy to, co wokół mnie niknie w cień\r\nŚwiatłości Twej.\r\n\r\nGdy dotykam sobą serca Twego,\r\nGdy swą wolę składam u Twych stóp\r\nWtedy to, co wokół mnie niknie w cień\r\nŚwiatłości Twej.\r\n\r\nUwielbiam Cię, uwielbiam Cię\r\nBo mego życia cel - to wielbić Cię.",
-       "title":"Gdy wpatruję się w Twą świętą twarz"
-    },
-    {
-       "number":55,
-       "text":"Tak jak jeleń do źródła wody,\r\nDusza ma do Ciebie lgnie.\r\nTyś pragnieniem mojego serca\r\nCiebie Panie wielbić chcę.\r\n\r\nRef.:\r\nTyś mą siłą, Tyś tarczą jest,\r\nNa Tobie tylko polegać chcę.\r\nTyś pragnieniem mojego serca\r\nCiebie Panie wielbić chcę.\r\n\r\nJesteś mi jak mój Brat i jak Przyjaciel,\r\nChoć Tyś królów Król.\r\nI miłuję Cię, Jezu, ponad wszystko,\r\nZ całej duszy mej.\r\n\r\nJesteś droższy mi ponad skarby świata!\r\nWszystko w Tobie mam!\r\nTylko Ty dajesz mi prawdziwą radość,\r\nWszystkim jesteś mi!",
-       "numberString":"55",
-       "title":"Tak jak jeleń do źródła wody"
-    },
-    {
-       "number":56,
-       "title":"Któż jest Bogiem, jeśli nie nasz Pan",
-       "text":"Któż jest Bogiem, jeśli nie nasz Pan\r\nI któż jest tą skałą, jeśli nie nasz Bóg?\r\nOn twierdzą naszą jest i pewnym wybawieniem\r\nDzień po dniu na nowo pomoc swoją śle.\r\n\r\nKtóż jest Bogiem, jeśli nie nasz Pan\r\nI któż jest tą skałą, jeśli nie nasz Bóg?\r\nOpoką naszą jest, On tarczą i warownią\r\nKtóra wciąż od wieków aż na wieki trwa.",
-       "numberString":"56"
-    },
-    {
-       "number":57,
-       "numberString":"57",
-       "title":"Oczyść serce me",
-       "text":"Oczyść serce me\r\nChcę jak złoto lśnić\r\nI jak czyste srebro\r\nOczyść serce me\r\nChcę czystego złota blaskiem lśnić.\r\n\r\nZstąp ogniu, zstąp\r\nPrzyjdź, oczyść serce me\r\nPragnę być święty\r\nTobie oddany, Panie\r\nChcę zawsze być święty\r\nTobie, mój Mistrzu na zawsze oddany\r\nGotów, by służyć Ci.\r\n\r\nOczyść serce me\r\nObmyj swoją krwią\r\nSpraw, bym mógł być święty\r\nOczyść serce me\r\nZ najtajniejszych grzechów oczyść mnie"
-    },
-    {
-       "numberString":"58",
-       "text":"Pan jest Pasterzem moim\r\nNiczego mi nie braknie\r\nNa zielonych niwach pasie mnie\r\nNad spokojne wody mnie prowadzi\r\nDuszę mą pokrzepia\r\nI wiedzie mnie ścieżkami\r\nSprawiedliwości swojej.\r\n\r\nChoćbym nawet szedł ciemną doliną\r\nZła się nie ulęknę, boś Ty ze mną\r\nLaska Twoja i kij Twój mnie\r\nPocieszają",
-       "number":58,
-       "title":"Pan jest Pasterzem moim"
-    },
-    {
-       "numberString":"59",
-       "number":59,
-       "title":"Chwalcie dziś Pana, wszystkie narody",
-       "text":"\/Chwalcie dziś Pana, wszystkie narody\r\nNiech Imię Jego wysławia świat\r\nBo Jego łaska jest wciąż nad nami\r\nA wierność Jego na wieki trwa. \/×2\r\n\r\nAlleluja, alleluja \/×4\r\nA wierność Jego na wieki trwa."
-    },
-    {
-       "title":"Choćby góry zmieniły się",
-       "number":60,
-       "numberString":"60",
-       "text":"Choćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb\r\nChoćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb.\r\n\r\nTwoja miłość, Panie mój\r\nNie zmieni się, nigdy nie\r\nTwoja miłość, Panie mój\r\nNie zmieni się, nigdy nie.\r\n\r\nChoćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb\r\nTy spełnisz wszystko, coś obiecał nam\r\nTy spełnisz wszystko, coś obiecał nam."
-    },
-    {
-       "numberString":"61",
-       "number":61,
-       "title":"On przyjdzie znów, On przyjdzie znów",
-       "text":"On przyjdzie znów, On przyjdzie znów\r\nTak, mój Pan przyjdzie znów\r\nJezus, mój Pan przyjdzie znów\r\nNa dźwięk trąby powstaną\r\nZbawieni wszystkich ras\r\nTam, na obłokach Pan spotka wszystkich nas\r\nOn przyjdzie znów, On przyjdzie znów\r\nTak, mój Pan przyjdzie znów\r\nJezus, mój Pan przyjdzie znów\r\nJa nie wiem, jak i nie znam dnia\r\nAle wiem, że mój Pan przyjdzie znów."
-    },
-    {
-       "text":"Zaufaj swemu Panu\r\nCałym sercem\r\nI nie polegaj na własnym rozumie\r\nPamiętaj o Nim wszędzie\r\nOn wyprostuje ścieżki Twe.",
-       "numberString":"62",
-       "number":62,
-       "title":"Zaufaj swemu Panu"
-    },
-    {
-       "text":"Ref.:\r\n\/ On jest moim życiem, On jest moją siłą,\r\nOn jest mą nadzieją, Jezus, mój Pan \/ ×2\r\n\r\nWielbić Cię chcę życiem mym\r\nWielbić Cię chcę pieśnią mą\r\nZe wszystkich mych sił\r\nUwielbiać Cię chcę\r\nMoja nadzieja – to Ty!",
-       "numberString":"63",
-       "title":"Ref.:",
-       "number":63
-    },
-    {
-       "numberString":"64",
-       "text":"Nie ma problemu, by Bóg rozwiązać nie mógł\r\nBurzy tak strasznej, by Pan uciszyć nie mógł\r\nBólu takiego, by Pan ukoić nie mógł\r\nGóry wysokiej, by Pan przesunąć nie mógł.\r\n\r\nRef.:\r\nSkoro poniósł On na barkach swych ciężary świata,\r\nJa wiem, mój bracie, że On poradzi i twym.\r\nSkoro poniósł On na barkach swych ciężary świata,\r\nWiem moja siostro, że On poradzi i twym.\r\n\r\nNie ma choroby, by Bóg wyleczyć nie mógł,\r\nGrzechu, nieszczęścia, by On wyrwać cię nie mógł.\r\nJezus chce pomóc ci dziś, pospiesz do Niego\r\nJedynie On ma tę moc zachować cię od złego.\r\n\r\nNie ma problemu, by Bóg rozwiązać nie mógł,\r\nModlitwy, której by Pan usłyszeć nie mógł.\r\nObietnic, których by On wykonać nie mógł,\r\nI serc, których by Pan ukoić nie mógł.",
-       "title":"Nie ma problemu, by Bóg rozwiązać nie mógł",
-       "number":64
-    },
-    {
-       "title":"Tak, jesteś godzien chwały i mocy",
-       "numberString":"65",
-       "number":65,
-       "text":"Tak, jesteś godzien chwały i mocy,\r\nBłogosławieństwa i czci\r\nWszystkie narody, całe stworzenie\r\nZłoży pokłon przed tronem Twym\r\n\r\nRef.:\r\nKażdy język wyzna, że jesteś Panem Panów\r\nNa Twój widok zegnie się każde kolano\r\nNiebo, ziemia odda Ci hołd\r\nTwe Królestwo od wieków już na wieki trwa.\r\n\r\nKrólestwo Chrystusa zwycięża świat\r\nBrzmi triumfalna pieśń\r\nNa tronie zasiada odwieczny Pan\r\nWszyscy oddają Mu cześć\r\nKażdy język…"
-    },
-    {
-       "numberString":"66",
-       "number":66,
-       "title":"Tyś jest ucieczką mą",
-       "text":"Tyś jest ucieczką mą,\r\nTyś jest ochroną mą\r\nW ucisku strzeżesz mnie od zguby\r\nOtaczasz mnie zbawieniem swym\r\nI dajesz radości pieśń\r\nGdy przyjdzie lęk i strach\r\nBędę ufać Ci."
-    },
-    {
-       "title":"Śpiewaj Panu dziś nową pieśń",
-       "text":"Śpiewaj Panu dziś nową pieśń\r\nChwała niech wypełni to miejsce\r\nOn Królem królów jest,\r\nOn jest panów Pan,\r\n\r\nWięc hołd Mu oddajmy\r\nAlleluja, wielbimy Cię\r\nAlleluja, Panu daj cześć!",
-       "numberString":"67",
-       "number":67
-    },
-    {
-       "number":68,
-       "title":"Pan łaskę słabym dał",
-       "numberString":"68",
-       "text":"Pan łaskę słabym dał\r\nI pokornym dom w mieście swym.\r\nOn mrok zamienia w dzień\r\nUświęceniem jest martwych ciał.\r\n\r\nRef.:\r\nBo Pan wybawieniem jest\r\nWodą pośród skał, światłem w ciemną noc\r\nBo Pan wybawieniem jest\r\nSam wykupił nas i pokonał śmierć.\r\n\r\nBóg Ojcem naszym jest\r\nSyna swego dał, stworzył świat.\r\nWiatr wieje dokąd chce\r\nJezus łączy nas w ciało swe."
-    },
-    {
-       "title":"Pamiętaj, że",
-       "number":69,
-       "text":"Pamiętaj, że\r\nTo, że żyjesz nie pomysłem twoim jest\r\nTo, że oddychasz, nie twoją wolą jest\r\nPamiętaj, że\r\nO twym życiu zdecydował inny Ktoś,\r\nJego darem jest to, że jesteś tu.\r\n\r\nRef.:\r\nDla Boga ważnym jesteś,\r\nBo to On jest Stworzycielem twym\r\nNieważne to, czy swą życia pieśń\r\nZaśpiewasz w moll, czy w dur\r\nBóg uczynił cię i w żadnej rzeczy\r\nNie pomylił się\r\nTyś dziełem Pana, dziełem cudownym\r\nBóg kocha cię, tak kocha mnie.\r\n\r\nPamiętaj, że\r\nNikt nie myśli, nie odczuwa tak, jak ty\r\nA twój uśmiech jedyny w świecie jest\r\nPamiętaj, że\r\nNikt nie umie patrzeć w niebo tak, jak ty\r\nNie potrafi tego, co potrafisz ty.\r\n\r\nPamiętaj, że\r\nTwojej twarzy nikt nie będzie nigdy miał\r\nTakie oczy masz jedynie ty\r\nPamiętaj, że\r\nTyś bogatym jest, bo życie twe to skarb\r\nŻycie twe jest jedyne tak jak ty.\r\n\r\nPamiętaj, że\r\nChrystus przyszedł, aby umrzeć za ten świat\r\nZmarł za ciebie, żebyś wolnym był\r\nPamiętaj, że\r\nTą decyzję musisz podjąć w życiu sam\r\nMusisz wybrać, gdzie wieczność spędzisz ty.",
-       "numberString":"69"
-    },
-    {
-       "title":"Zostawiłeś majestat swój",
-       "text":"Zostawiłeś majestat swój\r\nPorzuciłeś wszystko dla mnie\r\nI cierpiałeś z rąk tych, których sam stworzyłeś\r\nWziąłeś winę mą i wstyd\r\nŻeby zanieść je na krzyż\r\nI królujesz dziś wywyższony na ziemi i w niebie\r\n\r\nJa chcę uwielbiać Ciebie, Panie mój\r\nZdobyłeś moje serce, jestem Twój\r\nJa zawsze będę kochać Ciebie\r\nBoś tylko ty jedynie za mnie zmarł\r\nŻycie swoje za mą wolność dał\r\nWięc śpiewam Tobie dziś z wdzięczności wielkiej",
-       "numberString":"70",
-       "number":70
-    },
-    {
-       "title":"Oczy moje wznoszę wzwyż –",
-       "number":71,
-       "numberString":"71",
-       "text":"Oczy moje wznoszę wzwyż –\r\nSkąd nadejdzie pomoc mi?\r\nPomoc moją sam Pan\r\nCo dzień z nieba zsyła mi.\r\nPan cię będzie strzec od wszelkiego zła\r\nStrzec będzie duszy twej\r\nPan strzec będzie wyjścia i wejścia twego\r\nOdtąd aż i na wieki!\r\nPan jest Stróżem twym!"
-    },
-    {
-       "title":"Alleluja, alleluja",
-       "number":72,
-       "text":"\/Alleluja, alleluja,\r\nalleluja, alleluja\r\nPan blisko jest. \/ ×2\r\n\r\nPan blisko jest, alleluja\r\nPan blisko jest, alleluja\r\nPan blisko jest, alleluja\r\nPan blisko jest!",
-       "numberString":"72"
-    },
-    {
-       "number":73,
-       "title":"Święte Imię Jezus, święte Imię Jezus",
-       "text":"\/ Święte Imię Jezus, święte Imię Jezus\r\nJest na ustach mych i w sercu mym\r\nW mocy Ducha uwielbiam Cię \/ ×2\r\n\r\n\/ Nie ma w innym zbawienia,\r\nGdyż nie dano nam, ludziom\r\nInnego imienia –\r\nW Nim zbawienie jest \/ ×2",
-       "numberString":"73"
-    },
-    {
-       "numberString":"74",
-       "title":"Uwielbiajcie Pana ludzkich serc bijące dzwony.",
-       "number":74,
-       "text":"Uwielbiajcie Pana ludzkich serc bijące dzwony.\r\nPadnij na kolana przed Nim ludu utrudzony.\r\n\r\nOn osuszy twoje łzy,\r\nOn ratunkiem będzie ci\r\nU Jego stóp padnie wróg,\r\nBo On Bóg niezwyciężony.\r\n\r\nNiepojęty w swej mądrości,\r\nŚwięty, święty Bóg miłości.\r\nŚpiewaj Panu, ziemio,\r\nChwalcie wszystkie świata strony."
-    },
-    {
-       "number":75,
-       "title":"Stań, wycisz się dziś duszo ma",
-       "numberString":"75",
-       "text":"Stań, wycisz się dziś duszo ma\r\nNiech znój i trud odejdą w dal.\r\nOżywczy Duch rozlewa się\r\nZranionych serc balsamem jest.\r\nStań wycisz się, Bóg zna twój los\r\nNa ścieżkach swych prowadzi cię.\r\nChodź, zanurz się w łasce, co trwa,\r\nA Jego dłoń ukoi cię.\r\n\r\nStań, wycisz się dziś duszo ma\r\nChoć wokół zgiełk i bitew gwar\r\nI tylko tego trzeba ci,\r\nBy Pana dziś usłyszeć głos.\r\nStań wycisz się, dziś dziecię me,\r\nJa znam twój los, prowadzę cię.\r\nChodź, zanurz się w mej łaski zdrój,\r\nA moja dłoń ukoi cię."
-    },
-    {
-       "number":76,
-       "title":"O, Ojcze mój, Panie mego życia",
-       "text":"O, Ojcze mój, Panie mego życia\r\nBędę wielbić Cię i dziś i na wieki\r\nOgłaszać chcę Twą dobroć i łaskę\r\nMiłość, co wciąż dajesz mi.\r\nTwa dobroć, Panie, ogarnia świat\r\nTy mnie podnosisz, kiedy sam nie mogę wstać.\r\nTwa dobroć, Panie, pokoju źródłem jest\r\nOczyszczasz z nieprawości mnie,\r\nNowe życie dajesz swe.",
-       "numberString":"76"
-    },
-    {
-       "title":"Skłaniam się u Twoich stóp",
-       "numberString":"77",
-       "text":"Skłaniam się u Twoich stóp\r\nSkłaniam się u Twoich stóp\r\nŚwięty i wierny, mądrości pełny,\r\nPanem mym jesteś Ty!\r\n\r\n\/ O, mój Jezu, Zbawicielu,\r\nWszystko, co jest w duszy mojej\r\nSkładam dziś u Twych stóp. \/ ×2\r\n\r\nKlękać chcę u Twoich stóp\r\nKlękać chcę u Twoich stóp\r\nUwalniasz i leczysz – Wszechmocny Bóg\r\nPanem mym jesteś Ty!",
-       "number":77
-    },
-    {
-       "title":"Uwielbiam Imię Twoje, Panie",
-       "number":78,
-       "numberString":"78",
-       "text":"Uwielbiam Imię Twoje, Panie\r\nWywyższam Cię i daję Ci hołd\r\nW przedsionku chwały Twej staję\r\nZ wdzięcznością śpiewam Ci pieśń.\r\n\r\nO Panie Jezu, chcę wyznać, że\r\nJa kocham Ciebie, Ty zmieniasz mnie\r\nChcę Ci dziękować dziś ze wszystkich sił\r\nDajesz mi siebie, bym na wieki żył."
-    },
-    {
-       "text":"Mój Jezu, mój Zbawco\r\nPanie, któż jest jak Ty\r\nWszystkie me dni\r\nChwalić Cię chcę\r\nMiłość Twoja wielka jest.\r\n\r\nTyś moją osłoną\r\nW Tobie nadzieja i moc\r\nWszystkie me dni\r\nZe wszystkich sił\r\nZawsze pragnę wielbić Cię.\r\n\r\nPodnieś swój głos, śpiewaj dla Króla chwał\r\nMoc i majestat, i chwałę Mu daj\r\nGóry i morza niech drżą\r\nGdy usłyszą Imię Twe.\r\n\r\nWołam z radości bo wielkie są dzieła Twe\r\nKochać Cię, Twoim na zawsze być chcę\r\nNic nie dorówna nadziei, którą w Tobie mam.",
-       "title":"Mój Jezu, mój Zbawco",
-       "numberString":"79",
-       "number":79
-    },
-    {
-       "number":80,
-       "text":"Idziemy z twarzą jasną\r\nI z pieśnią przeradosną\r\nMy wieści Boże w świat cały chcemy nieść\r\nIdziemy z twarzą jasną\r\nI z pieśnią przeradosną\r\nBo mamy Zbawcę, w którym życie nowe jest.\r\n\r\nChcemy, by świat Mu śpiewał cały\r\nChcemy, by wydzwaniały dzwony\r\nTa pieśń radosna brzmi o Panu Jezusie\r\nChcemy Mu przynieść wieść o wielkim zbawieniu\r\nO łasce, która serca przemieni\r\nChcemy, by świat śpiewał o Panu Jezusie.",
-       "title":"Idziemy z twarzą jasną",
-       "numberString":"80"
-    },
-    {
-       "numberString":"81",
-       "title":"Serce me wciąż raduje się",
-       "number":81,
-       "text":"Serce me wciąż raduje się\r\nSerce me wciąż raduje się\r\nBo Zbawca blisko przy mnie jest\r\nW moim Panu mogę wciąż radować się."
-    },
-    {
-       "number":82,
-       "numberString":"82",
-       "title":"Wiele było łez i bólu",
-       "text":"Wiele było łez i bólu\r\nSmutku, trosk i strach przed jutrem\r\nBył czas – nie wiedziałam, jak mam dalej żyć\r\nAle zawsze w takich chwilach\r\nBóg pokazał mi, że moje łzy\r\nWylały po to się, by wzmocnić mnie.\r\n\r\nRef.:\r\nWłaśnie Ty, właśnie Ty\r\nUczysz mnie, jak ufać Tobie,\r\nChcesz zawsze mówić mi\r\nUczysz mnie właśnie Ty\r\nPanie zależną być od woli Twej.\r\n\r\nWiele było miejsc i twarzy\r\nKtóre w swoim życiu znałam\r\nLecz jakże często tak samotną czułam się\r\nAle w swojej samotności\r\nTam w tych cudnych chwilach ciszy\r\nPokazałeś mi, że jestem dzieckiem Twym."
-    },
-    {
-       "number":83,
-       "numberString":"83",
-       "title":"Zasnął wieczór snem niespokojnym",
-       "text":"Zasnął wieczór snem niespokojnym\r\nKlucz obłoków niebem mknie.\r\nO takiej porze rozmyślać lubię sam,\r\nJak dokonało się zbawienie me.\r\n\r\nW zwykły dzień, tak jak wiele innych\r\nLos wieczności ważył się\r\nGdy Chrystus Pan pod ciężarem krzyża szedł\r\nNa miejsce, gdzie miał ponieść śmierć.\r\n\r\nRef.:\r\nCzy musiał tak straszną śmiercią zginąć Pan\r\nAby zbawienie mi dać?\r\nCzy ja naprawdę dla Niego więcej znaczę\r\nNiż życie, że za mnie zmarł?\r\n\r\nZbity, znieważony Pan Jezus\r\nZ trudem wszedł na wzgórza szczyt\r\nI tam Go ludzie zwyczajni tak jak my\r\nRozpięli bez litości na drewniany krzyż.\r\nRęce przygwoździli do belki,\r\nAby zadać większy ból\r\nPomiędzy niebem a ziemią skonał Pan\r\nW wielkich męczarniach – wielki nieba Król.\r\n\r\nZasnął wieczór snem niespokojnym\r\nNiebem mknie obłoków klucz.\r\nWiem, że mój Jezus tak bardzo kocha mnie\r\nLecz w pełni nie zrozumiem tego tu.\r\nMoże kiedyś, gdy mnie zabierze\r\nTam, gdzie wieczne szczęście trwa\r\nGdzie wybawieni przez wieczność całą wraz\r\nBędziem wdzięczności śpiewać psalm"
-    },
-    {
-       "title":"Był czas, kiedym żył dla siebie",
-       "numberString":"84",
-       "number":84,
-       "text":"Był czas, kiedym żył dla siebie\r\nŻyło tylko moje ja\r\nRozważałem przyjść do Ciebie,\r\nLecz me serce mnie zwodziło:\r\nNic tu Ty, bo wszystko ja. \/×2\r\n\r\nAż na krzyżu Cię ujrzałem\r\nSkąd pomimo krwawych ran\r\nGłos miłości usłyszałem –\r\nW sercu cicho zadzwoniło:\r\nTrochę Ty i trochę ja. \/×2\r\n\r\nW Duchu cudnie serce wzniosłeś\r\nMogłem z bliska widzieć Cię\r\nPrzyciągnąłeś mnie do siebie\r\nTak zmałałem, Ty urosłeś\r\nWiększym Ty, a mniejszym ja. \/×2\r\n\r\nChoć górzysta często droga,\r\nMorze życia wzdyma się\r\nMiłość większa, niż ma trwoga\r\nJuż zupełnie mnie przemogła\r\nWszystkim Ty, a niczym ja. \/×2"
-    },
-    {
-       "numberString":"85",
-       "title":"Poszedłeś sam na Golgotę",
-       "number":85,
-       "text":"Poszedłeś sam na Golgotę\r\nBy za mnie ponieść męki krzyża\r\nTy za mnie zniosłeś drwiny, śmiech\r\nGdy człowiek bił Cię i poniżał.\r\n\r\nRef.:\r\nTwa miłość, Panie większa jest\r\nNiż może pojąć rozum mój\r\nWięc Tobie wciąż dziękować chcę\r\nTwa miłość, Panie większa jest\r\nNiż może pojąć rozum mój\r\nUwielbiam więc Cię.\r\n\r\nZa mnie kaleczył Ciebie cierń,\r\nW strasznej ciemności Bóg zostawił,\r\nGdyż włożył na Cię winy me\r\nZa moje grzechy Tyś się wstawił.\r\n\r\nPan Jezus Chrystus wszelki grzech\r\nI winy wszystkie mi darował\r\nI życie, wolność, radość już\r\nNa wieki wszystkim ofiarował."
-    },
-    {
-       "number":86,
-       "title":"Do zwycięstwa prowadzi mnie mój Pan",
-       "text":"Do zwycięstwa prowadzi mnie mój Pan\r\nDo zwycięstwa prowadzi mnie mój Bóg\r\nChcę wyśpiewać Tobie chwałę\r\nAlleluja Panu cześć.\r\n\r\nRef.:\r\nPrzyjdzie dzień, gdy w chwale ujrzę Ciebie\r\nTwarzą w twarz, będę oglądać Cię\r\nLecz na razie na ziemi tu\r\nMuszę toczyć mój bój.\r\n\r\nDo zwycięstwa prowadzi mnie mój Pan\r\nDo zwycięstwa prowadzi mnie mój Bóg\r\nChcę wyśpiewać Tobie chwałę\r\nAlleluja Panu cześć.\r\n\r\nDodaj sił i mocy wiary Panie\r\nWesprzyj mnie mocnym ramieniem swym\r\nAbym w sercu miał Słowo Twe\r\nI podążał za Tobą, za Tobą.",
-       "numberString":"86"
-    },
-    {
-       "number":87,
-       "numberString":"87",
-       "title":"Hosanna, hosanna",
-       "text":"Hosanna, hosanna\r\nHosanna na niebiosach \/×2\r\n\r\nRef.:\r\nSławić chcemy Cię wciąż\r\nZ radością i czcią\r\nWywyższony bądź, Boże nasz\r\nHosanna niechaj ciągle brzmi.\r\n\r\nChwała, chwała\r\nKrólowi królów chwała, cześć \/×2\r\n\r\nJezus, Jezus\r\nJezus Królem królów jest \/×2"
-    },
-    {
-       "text":"Ty prowadzisz mnie,\r\nNawet, gdy nie widzę Cię\r\nCzynisz to, co dobre jest\r\nTak jak pragniesz tego dla mnie\r\nPrzewodnikiem bądź,\r\nBlisko Ciebie kroczyć chcę\r\nW miłości Twej i w mocy Twej\r\nUczyń każdy dzień,\r\nUczyń każdy dzień.",
-       "number":88,
-       "numberString":"88",
-       "title":"Ty prowadzisz mnie"
-    },
-    {
-       "number":89,
-       "text":"Z głębokości mórz, aż po szczyty gór\r\nStworzenie objawia majestat Twój.\r\nOd kolorów jesieni po wiosenny nów\r\nWszystko śpiewa Ci pieśń pełną cudownych słów,\r\nOgłaszając:\r\n\r\nRef.:\r\nNiepojęty, Niezmierzony,\r\nGwiazdy stworzyłeś na niebie i każdą z nich znasz.\r\nWspaniałym Bogiem Tyś jest,\r\nWszechmogący, Nieskończony,\r\nW zachwycie klękamy przed Tobą, by wyznać to, że,\r\nWspaniałym Bogiem Tyś jest.\r\n\r\nKto uwalnia błyskawic moc w czasie burz,\r\nKto maluje kolory polarnych zórz,\r\nSłońce stworzył na niebie i dał mu swą moc,\r\nOrzeźwienie przynosi w gwieździstą noc? Tylko Ty:\r\nRef. Zawsze dobry, miłujący\r\nZnasz moje serce i mimo to wciąż kochasz mnie\r\nWspaniałym Bogiem Tyś jest \/x2",
-       "title":"Z głębokości mórz, aż po szczyty gór",
-       "numberString":"89"
-    },
-    {
-       "number":90,
-       "title":"Panie mój przychodzę dziś",
-       "text":"Panie mój przychodzę dziś,\r\nSerce me skruszone przyjm,\r\nSkłaniam się przed świętym tronem Twym.\r\nWznoszę ręce moje wzwyż,\r\nMiłość mą wyznaję Ci,\r\nUwielbiam Ciebie w Duchu,\r\nUwielbiam w prawdzie Cię,\r\nŻycie me oddaję Tobie, uświęć je.",
-       "numberString":"90"
-    },
-    {
-       "number":91,
-       "title":"Jezu, tyś wszystkim dla mnie jest",
-       "text":"Jezu, tyś wszystkim dla mnie jest\r\nJak żyć bez miłości Twej\r\nJezu, otwórz me oczy\r\nBym ujrzeć mógł Twej miłości cud.\r\n\r\nPrzyjdź i napełnij nas\r\nMocą Bożą co dnia\r\nTyś pokoju księciem, lekarzem dusz\r\nJesteś światłem, co w ciemnościach\r\nNie gaśnie",
-       "numberString":"91"
-    },
-    {
-       "title":"Otwórz oczy duszy mej Panie.",
-       "text":"\/\/Otwórz oczy duszy mej Panie.\r\nOtwórz oczy duszy mej,\r\nChcę widzieć Ciebie\r\nChcę widzieć Ciebie \/x2\r\n\r\nRef.:\r\nWidzieć wielkość, Twe wywyższenie,\r\nŚwieć światłem Swojej chwały.\r\nWidzieć Twą moc i miłość,\r\nŚpiewam: Święty, Święty, Święty. \/\/x2\r\n\r\n\/Święty, Święty, Święty\r\nŚwięty, Święty, Święty\r\nŚwięty, Święty, Święty\r\nChcę widzieć Ciebie. \/x2",
-       "number":92,
-       "numberString":"92"
-    },
-    {
-       "text":"Nadzieję odnalazłem w Nim,\r\nOn moją siłą, światłem mym.\r\nOn fundamentem, twierdzą mą,\r\nCo zniesie najstraszniejszy grom.\r\n\r\nMiłości szczyt, pokoju Bóg,\r\nUciszy strach, nasyci głód,\r\nOn Pocieszyciel, życia sens,\r\nW Jego miłości schronię się.\r\n\r\nW Chrystusie Bóg objawił się\r\nW bezbronnym dziecku w Betlejem\r\nNa ziemię zszedł by zbawić nas\r\nBy przebaczenia nastał czas.\r\n\r\nNa krzyżu zmarł za każdy grzech\r\nBy uspokoić Boży gniew\r\nUwolnił mnie z ciężaru win\r\nUmarłem z Nim i żyję w Nim.\r\n\r\nZatriumfował stary wróg\r\nGdy w ciemnym grobie spoczął Bóg\r\nLecz krótko trwała złego moc\r\nZmartwychwstał Pan minęła noc.\r\n\r\nPrzez swoją śmierć uwolnił mnie\r\nUmierać z Nim i żyć z Nim chcę\r\nPrzekleństwo zdjął odkupił z win\r\nOn we mnie jest ja jestem w Nim.\r\n\r\nW Nim nawet śmierć niestraszna jest\r\nChrystusa moc ochrania mnie\r\nOd pierwszych chwil po życia kres\r\nWytycza drogi mojej bieg.\r\n\r\nNi grzechu zło ni ludzki sąd\r\nNie wydrze mnie z Chrystusa rąk\r\nA gdy mnie weźmie gdzie mój dom\r\nZ radością pójdę tam gdzie On.",
-       "numberString":"93",
-       "number":93,
-       "title":"Nadzieję odnalazłem w Nim"
-    },
-    {
-       "title":"Tylko w Bogu moje jest zbawienie",
-       "text":"Tylko w Bogu moje jest zbawienie\r\nW Nim jedynie duszy ukojenie\r\nMoja chwała i skała\r\nW Nim pokładam mą nadzieję.\r\n\r\nUfaj Mu, Kościele, w każdym czasie\r\nWylewajcie przed Nim serca wasze\r\nLudzie lżejsi niż tchnienie\r\nTylko w Bogu jest zbawienie.\r\n\r\nRef.:\r\n\/Sprawiedliwy jest nasz Pan\r\nKażdy zbierze to, co siał\r\nKto uwierzy nie zawiedzie się!\r\nPrzychodzimy przed Twój tron\r\nChcemy widzieć Twoją moc\r\nI doświadczyć, Panie, łaski Twej \/x2\r\n\r\nTylko w Bogu moje jest zbawienie\r\nW Nim jedynie duszy ukojenie\r\nMoja chwała i skała\r\nW Nim pokładam mą nadzieję",
-       "numberString":"94",
-       "number":94
-    },
-    {
-       "numberString":"95",
-       "text":"W tej ciszy przebywać wciąż chcę,\r\nW tej ciszy daleki świat ten.\r\nTy koisz mój ból, usuwasz mój strach,\r\nGdy widzę Cię Zbawco przez łzy.\r\n\r\nJa widzę Cię Jezu mój tam,\r\nJak wiele masz sińców i ran.\r\nMiłości Twej moc, zawiodła Cię tam,\r\nUwolnić mnie z grzechów i win.\r\n\r\nRef.:\r\nTo nie gwoździe Cię przybiły,\r\nLecz mój grzech\r\nTo nie ludzie Cię skrzywdzili,\r\nLecz mój grzech\r\nTo nie gwoździe Cię trzymały,\r\nLecz mój grzech\r\nChoć tak dawno to się stało,\r\nWidziałeś mnie.\r\n\r\nWspominam tak często ten dzień,\r\nGolgotę i słodki jej cień.\r\nPrzyszedłem pod Krzyż z ciężarem swych win,\r\nUwolnił mnie tam Boży Syn.",
-       "number":95,
-       "title":"W tej ciszy przebywać wciąż chcę"
-    },
-    {
-       "title":"Lepszy jeden dzień w przedsionkach Twych",
-       "numberString":"96",
-       "number":96,
-       "text":"Lepszy jeden dzień w przedsionkach Twych\r\nLepszy jeden dzień w mieszkaniu Twym\r\nNiż gdzie indziej Panie mój tysiąc dni\r\nLepiej w domu Twoim być\r\nNiż gdzie indziej spędzać czas\r\nW Tobie radość pokój i zbawienie jest\r\n\r\nRef.:\r\nJesteś mą nadzieją,\r\nJesteś mym schronieniem\r\nMoją twierdzą – nie boję się\r\nUwielbiam, wywyższam, ja kocham Cię"
-    },
-    {
-       "number":97,
-       "text":"Ref.:\r\nBłogosław duszo moja Pana,\r\nWszystko co we mnie Jego Najświętsze Imię.\r\nBłogosław duszo moja Pana,\r\nJego dobroci nigdy nie zapominaj.\r\n\r\nOn odpuszcza wszystkie twoje grzechy,\r\nLeczy wszystkie twoje choroby.\r\nOkazuje Swoje miłosierdzie,\r\nOn ratuje Ciebie od zguby.\r\nOn napełnia twoje życie dobrem,\r\nAż odnowi się twoja młodość jak u orła.\r\n\r\nNie odpłaca według grzechów,\r\nNie chce wiecznie gniewać się.\r\nOn pamięta żeśmy prochem,\r\nOn najlepiej wie!\r\n\r\nTak jak ojciec nad swoimi dziećmi,\r\nPan lituje się nad pokornym.\r\nOn oddala od nas nasze winy,\r\nJak daleko wschód od zachodu.\r\nJak wysoko niebo jest nad ziemią\r\nTak jest wielka dobroć dla ludzi, \r\nKtórzy się Go boją.\r\n\r\nDni człowieka są jak trawa,\r\nKwitnie On jak polny kwiat.\r\nKiedy mocniej wiatr zawieje,\r\nZnika po nim ślad!\r\n\r\n\r\n\/ Błogosławcie Pana - wszyscy aniołowie!\r\nBłogosławcie Pana - wszyscy Jego ludzie!\r\nBłogosławcie Pana - wszystkie Jego dzieła!\r\nBłogosławcie Go! \/x2",
-       "numberString":"97",
-       "title":"Ref.:"
-    },
-    {
-       "numberString":"98",
-       "number":98,
-       "text":"Wziąłeś za nas cały strach\r\nKażdy wstyd i każdy ból\r\nPrzejąłeś sam\r\nChociaż nikt nie był tego wart\r\nKażdą winę i każdy grzech\r\nTam na krzyżu przybiłeś Ty\r\nSzedłeś sam\r\nBy swą łaskę pokazać nam.\r\n\r\nRef.:\r\nJestem tu\r\nCzekam na Ciebie\r\nZanim przyjdziesz znów\r\nChcę poznać Cię lepiej.\r\nJestem już\r\nWolny od grzechu\r\nMogę śpiewać Tobie, że\r\nNależę do Ciebie.\r\n\r\n\/Wszelka chwała moc i cześć\r\nTobie należą się\r\nW Tobie mam najdroższy skarb -\r\nMoje imię w sercu Twym \/x2\r\n\r\nRef.: ...",
-       "title":"Wziąłeś za nas cały strach"
-    },
-    {
-       "number":99,
-       "numberString":"99",
-       "text":"Przed obliczem Pana uniżmy się. \/2x\r\nPan sam wywyższy nas,\r\nJego jest Ziemia i czas,\r\nPan sam wywyższy nas.\r\nWszystkie swoje troski oddajmy Mu. \/2x\r\nKroczmy wszyscy za Nim po kres swych dni. \/2x\r\nW Jego chwale kiedyś spotkamy się. \/2x",
-       "title":"Przed obliczem Pana uniżmy się"
-    },
-    {
-       "numberString":"100",
-       "title":"Jezus daje nam zbawienie",
-       "number":100,
-       "text":"Jezus daje nam zbawienie,\r\nJezus daje pokój nam.\r\nJemu składam dziękczynienie,\r\nChwałę z serca mego dam.\r\n\r\nRef.:\r\nJezus siłą mą,\r\nJezus pieśnią mego życia.\r\nKrólem wiecznym On,\r\nNiepojęty w mocy swej.\r\nW Nim znalazłem to,\r\nCzego szukałem do dzisiaj.\r\nSam mi podał dłoń,\r\nBym zwyciężał w każdy dzień.\r\n\r\nW Jego ranach uzdrowienie,\r\nW Jego śmierci życia dar.\r\nJego krew to oczyszczenie,\r\nJego życie chwałą nam."
-    },
-    {
-       "numberString":"101",
-       "title":"Łańcuch gór otacza w krąg święte Jeruzalem",
-       "text":"Łańcuch gór otacza w krąg święte Jeruzalem,\r\nTak jak dzieci swoje Pan ogarnia \r\n\r\nRef.:\r\nDziś, jutro, na wieki,\r\nOtacza sobą Pan swe dzieci.\r\nDziś, jutro, zawsze, w każdy czas,\r\nOtacza sobą Pan swe dzieci.\r\n\r\nGóra Syjon wznosi się w sercu Jeruzalem,\r\nNie zachwieje nią nic, nie zachwieje nic.\r\nMy, jak Syjon, który trwa w sercu Jeruzalem,\r\nNie zachwieje nami nic, nie zachwieje nic.",
-       "number":101
-    },
-    {
-       "numberString":"102",
-       "number":102,
-       "title":"Mów do mnie Panie chcę słyszeć Cię",
-       "text":"Mów do mnie Panie chcę słyszeć Cię\r\nPrzyjąć od Ciebie co masz dla mnie.\r\nNie chcę się chować lecz w Tobie skryć\r\nW cieniu Twym Panie chcę iść.\r\n\r\nŚwięty, potężny jesteś Panie nasz\r\nPrzed Tobą dziś możemy stać\r\nDzięki łasce, nie dzięki nam samym."
-    },
-    {
-       "number":103,
-       "text":"W cieniu Twoich rąk\r\nUkryj proszę mnie,\r\nGdy boję się, gdy wokół mrok\r\nBądź światłem,\r\nBądź nadziei dniem.\r\n\r\nWszystkim o czym śnię,\r\nGłosem w sercu mym.\r\nJak ręka, która trzyma mnie\r\nNad brzegiem nocy, brzegiem dni.\r\nBądź jak skrzydła dwa,\r\nKiedy braknie sił.\r\n\r\nRef.:\r\nChwyć mnie i nieś,\r\nNiech niebo bliżej będzie,\r\nTak bardzo chcę\r\nW ramionach skryć się Twych.",
-       "title":"W cieniu Twoich rąk",
-       "numberString":"103"
-    },
-    {
-       "numberString":"104",
-       "number":104,
-       "title":"My, którzy wszystko liczymy",
-       "text":"My, którzy wszystko liczymy\r\nCiebie mamy za darmo,\r\nDajesz nam siebie w całości\r\nI jesteś taki rozrzutny.\r\n\r\nRef.:\r\nKażdy wschód słońca Ciebie zapowiada,\r\nNie pozwól nam przespać poranka. \/2x\r\n\r\nDałeś nam siebie za darmo,\r\nTwoja hojność zdumiewa,\r\nNaucz nas liczyć dni nasze,\r\nNiech człowiek już nie umiera.\r\n\r\nTy jesteś pełnią życia,\r\nDaj nam Twojego chleba,\r\nDaj nam oddychać wiecznością,\r\nTwój oddech ożywia i wspiera.\r\n\r\nPrzyjdź, Panie, przyjdź nareszcie\r\nJak przyszedłeś już kiedyś,\r\nA co dzień nowy wschód słońca\r\nNiech Ciebie nam zapowiada."
-    },
-    {
-       "number":105,
-       "title":"Przyjaciela mam co pociesza mnie",
-       "numberString":"105",
-       "text":"Przyjaciela mam co pociesza mnie\r\nGdy o Jego ramię oprę się\r\nW Nim nadzieję mam, uleciał strach\r\nOn najbliżej jest, zawsze troszczy się.\r\nKrólów Król, z nami Bóg \/2x\r\nJezus, Jezus \/ 2x"
-    },
-    {
-       "text":"W lekkim powiewie przychodzisz do mnie, Panie \/ 2x\r\nNie przez wicher ogromny i nie przez ogień,\r\nAle w lekkim powiewie przychodzisz do mnie.\r\nW lekkim powiewie nawiedzasz duszę mą.",
-       "numberString":"106",
-       "number":106,
-       "title":"W lekkim powiewie przychodzisz do mnie, Panie"
-    },
-    {
-       "text":"Nie bój się, bo jestem z tobą\r\nNie bój się, bo jestem z tobą\r\nNie bój się, bo jestem z tobą, mówi Pan.\r\n\r\nOdkupiłem cię, dałem ci imię swe,\r\nMoim jesteś więc już.\r\nNie utoniesz gdy będziesz po wodzie szedł,\r\nOgień nie strawi cię.\r\nNie, nie, nie utoniesz,\r\nNie, nie, nie spłoniesz\r\nBo ja jestem z tobą - mówi Pan",
-       "title":"Nie bój się, bo jestem z tobą",
-       "numberString":"107",
-       "number":107
-    },
-    {
-       "title":"To nasz Pan i Król",
-       "text":"To nasz Pan i Król\r\nOdziany w majestat Swój\r\nZiemio raduj się, ziemio raduj się\r\nOkrywa światłość Go\r\nUcieka ciemność i zło\r\nDrży na Jego głos, drży na Jego głos.\r\n\r\nRef.:\r\nJak wielki jest Bóg\r\nWysławiaj Go,\r\nJak wielki jest Bóg\r\nŚwiat ujrzy Go\r\nJak wielki, wielki jest Bóg.\r\n\r\nNa wieki wieków trwa\r\nW rękach Jego czas\r\nPoczątkiem końcem On,\r\nPoczątkiem końcem On\r\nJedyny w Trójcy Bóg\r\nOjciec, Syn i Duch\r\nBarankiem jest i lwem,\r\nBarankiem jest i lwem.\r\n\r\nNa wieki godzien jest\r\nPrzyjąć chwałę moc i cześć\r\nOgłaszać chcę\r\nJak wielki jest Bóg",
-       "numberString":"108",
-       "number":108
-    },
-    {
-       "title":"Zawsze wierny byłeś mi",
-       "number":109,
-       "text":"Zawsze wierny byłeś mi\r\nKiedy zawodziłem ja,\r\nNiepojęty w miłości swej,\r\nDobrze jest z Tobą być.\r\nDarowałeś życie mi!\r\nZabrałeś winę mą i grzech\r\nNikt nie kocha tak jak Ty,\r\nDałeś życie swe.\r\n\r\nRef.:\r\nBo jesteś dobry\r\nDla mnie zawsze Twoja łaska\r\nWiecznie trwa.\r\nBo jesteś dobry\r\nDla mnie zawsze Twoja łaska\r\nNa wieki trwa.\r\n\r\nPonad wszystko jesteś Ty,\r\nJednak sługą stałeś się\r\nSłyszysz każdy płacz i szept!\r\nMiłosierny mój Pan!\r\nPrzed świętością Twoją drżę,\r\nSpraw bym czyste serce miał\r\nWobec świata chcę kochać Cię,\r\nDawać miłość Twą.",
-       "numberString":"109"
-    },
-    {
-       "title":"Oddajmy cześć",
-       "numberString":"110",
-       "number":110,
-       "text":"Oddajmy cześć\r\nWiecznemu Panu chwał,\r\nPokłońmy się temu,\r\nKtóry rozpostarł niebiosa\r\nI utwierdził ziemi krąg.\r\nJego chwała wznosi\r\nSię ponad szczyty gór.\r\nJego łaska nad nami jest,\r\nA niebo – Jego Tron.\r\nBóg to nasz Pan i tylko On. \/2x"
-    },
-    {
-       "numberString":"111",
-       "text":"Jak Dawid kiedy przed Bogiem był\r\nBędę tańczył ze wszystkich sił\r\nPrzed Panem Królem mym.\r\n\r\nJak Miriam grała na bębnie swym\r\nBędę klaskać ze wszystkich sił\r\nPrzed Panem Królem mym.\r\n\r\nRef.:\r\nPokłońmy się przed Bogiem\r\nOddajmy Jemu cześć\r\nWielbijmy imię Jezus\r\nŚpiewajmy Panu pieśń.\r\n\r\nJak Judejczycy przed bitwą swą\r\nZawierzmy Panu i chwalmy Go\r\nPobity będzie wróg.\r\n\r\nJak Jozue wznieśmy bojową pieśń Oddajmy\r\nPanu chwałę i cześć\r\nA wróg ucieknie wnet.",
-       "number":111,
-       "title":"Jak Dawid kiedy przed Bogiem był"
-    },
-    {
-       "text":"Nie chcę więcej samych słów\r\nChcę naprawdę Ciebie znać\r\nNowe serce we mnie stwórz\r\nAbym bardziej szukał Ciebie\r\nOjcze duch mój pragnie\r\nSpocznie tylko w Tobie\r\n\r\nRef.:\r\nAbba Ojcze należę do Ciebie \/2x\r\n\r\nNiepojęty wielki Bóg\r\nTy stworzyłeś wszechświat cały\r\nJakże jasny jest dom Twój\r\nTwe królestwo przebaczenia\r\nCzłowiek powstał z Twoich rąk\r\nTak by kochać Ciebie.",
-       "number":112,
-       "title":"Nie chcę więcej samych słów",
-       "numberString":"112"
-    },
-    {
-       "number":113,
-       "text":"Błogosławię Cię,\r\nKiedy ziemia wydaje plon\r\nGdy obfitość Panie zlewasz Swą,\r\nBłogosławię Cię.\r\n\r\nBłogosławię Cię,\r\nGdy pustynia w krąg otacza mnie,\r\nChoćbym nawet przez pustkowie szedł,\r\nBłogosławię Cię.\r\n\r\nRef.:\r\nZa Twą łaskę, którą zsyłasz,\r\nja chwalę Cię\r\nChoćby ciemność mnie przykryła,\r\nja powiem, że:\r\n\/ Panie, błogosławię imię Twe,\r\nBłogosławię Cię\r\nPanie, błogosławię imię Twe\r\nBłogosławię święte imię Twe \/2x\r\n\r\nBłogosławię Cię,\r\nKiedy słońca blask oświeca mnie,\r\nTo co dajesz mi, najlepsze jest,\r\nBłogosławię Cię.\r\n\r\nBłogosławię Cię,\r\nKiedy drogę moją znaczy cień,\r\nChociaż cierpię, pragnę chwalić Cię,\r\nBłogosławię Cię.\r\n\r\nTy dajesz z woli swej,\r\nZabierasz, kiedy chcesz\r\nW mym sercu zawsze chcę\r\nBłogosławić Cię!",
-       "numberString":"113",
-       "title":"Błogosławię Cię"
-    },
-    {
-       "numberString":"114",
-       "title":"Kto zaufał Ci, ten uwierzył",
-       "text":"Kto zaufał Ci, ten uwierzył,\r\nŻe nie zawstydzi go nic\r\nMoc Twego ramienia\r\nJest skałą schronienia\r\nKiedy skrada się wróg.\r\n\r\nSzczęśliwy ten, kto uwierzył,\r\nŻe nie zawstydzi go nic\r\nMoc Twego ramienia\r\nJest skałą schronienia\r\nKiedy skrada się wróg.\r\n\r\nZawsze będę ufać,\r\nPomnażać wszelką Twą chwałę\r\nI głosić Twą sprawiedliwość,\r\n\r\nGdyż sięga ona aż do nieba\r\nUbierasz mą duszę w dostojność\r\nTo co umarłe ożywiasz\r\nRaduje się moje serce,\r\nWierność Wszechmocnego\r\nNieustannie opowiadać chcę.",
-       "number":114
-    },
-    {
-       "number":115,
-       "title":"Ref.:",
-       "text":"Ref.:\r\n\/O ho ho laj laj laj laj laj laj laj laj laj \/x2 ...laj\r\n\r\nWrócą w wielkiej liczbie, przyjdą z krańców ziemi\r\nAż z północy przyprowadzę ich\r\nŚlepi i zranieni, chromi, utrudzeni\r\nI brzemienne i rodzące razem tu powrócą.\r\n\r\nTo są słowa Pana, mówcie o tym wszędzie:\r\nTen, który rozproszył Izraela zbierze go\r\nStrzec go będzie tak, jak pasterz swoich owiec.\r\n\r\nOto przyjdą z płaczem wszyscy jak tułacze\r\nA Ja pocieszenie dla nich mam\r\nPójdą prostą drogą, na niej się nie potkną\r\nDobrym Ojcem dla nich będę, los ich znów odmienię.\r\n\r\nŚpiewać i radować, wykrzykiwać będą\r\nI niczego nigdy więcej nie zabraknie im\r\nIch żałobę zmienię w radość i wesele.",
-       "numberString":"115"
-    },
-    {
-       "numberString":"116",
-       "number":116,
-       "text":"Wiem że Ojciec o mnie troszczy się\r\nBóg dobry jest, dobry jest\r\nW każdej chwili, wszędzie chroni mnie\r\nBóg dobry dla mnie jest.\r\n\r\nI choć sztorm i choć noc, choćby coś\r\nWszystko będzie dobrze, bo\r\nWiem że Ojciec o mnie troszczy się\r\nBóg dobry dla mnie jest.",
-       "title":"Wiem że Ojciec o mnie troszczy się"
-    },
-    {
-       "number":117,
-       "title":"Któż tak jak On",
-       "text":"Któż tak jak On\r\nBarankiem jest i lwem\r\nBóg na tronie swym\r\nGóry kłonią się\r\nOceany grzmią\r\nWielbiąc Pana chwał\r\n\r\nRef.:\r\nChwal Adonai\r\nOd pierwszego blasku zórz,\r\nż po kres każdego dnia\r\nChwal Adonai\r\nKażdy naród ziemi tej,\r\nCałe Niebo śpiewa Ci tę pieśń.",
-       "numberString":"117"
-    },
-    {
-       "text":"Nie ma za trudnych spraw,\r\nNie ma zbyt błahych też dla Ciebie, Panie,\r\nTy przecież wszystko wiesz.\r\n\r\nKażdą potrzebę znasz,\r\nSłyszysz mój śmiech i płacz.\r\nDla Ciebie, Panie, to przecież ważne jest.\r\n\r\nRef.:\r\nJa wiem, że wszystko jest możliwe,\r\nŻe nie ma rzeczy bez znaczenia\r\nDlatego modlę się do Ciebie, dobry Panie.\r\nI wiem, że zanim powiem słowo,\r\nTy, Boże, znasz już całe zdanie.\r\nUwielbiam Cię, Twoja wola niech się stanie.\r\n\r\nNie zaskoczę Cię, wiesz o mnie wszystko,\r\nWiesz, co było, znasz moją przyszłość.\r\nNiepojęte, że Ty, Panie, kochasz mnie, kochasz mnie.",
-       "numberString":"118",
-       "title":"Nie ma za trudnych spraw",
-       "number":118
-    },
-    {
-       "title":"Nie szczycę się mądrością Panie",
-       "number":119,
-       "numberString":"119",
-       "text":"Nie szczycę się mądrością Panie\r\nNie szczycę się z dostatku swych sił\r\nNie jestem dumny z tego co posiadam\r\nTylko Tobą Panie szczycę się.\r\n\r\nJakże wzniosły jest Twój Tron\r\nTy rządzisz narodami\r\nJakże wzniosły jest Twój Tron\r\nCała ziemia drży\r\nJakże wzniosły jest Twój Tron\r\n\r\nStwórco mój, Zbawco mój\r\nTylko Tobą szczycę się."
-    },
-    {
-       "number":120,
-       "text":"Ref.:\r\nNiepojęta łaska Jego wciąż dosięga nas,\r\nGdy podnosi, przemienia serca i uwalnia nas \/2x\r\nprawda ta...\r\n\r\nOn jest Ojcem sierot,\r\nOpiekunem wdów jest dobry Bóg.\r\nDom swój daje wszystkim opuszczonym.\r\nZsyła deszcz obfity\r\nNa to co spragnione i wyczerpane jest\r\nDobry jest dla biednych.\r\nW łasce swej nasz Bóg do nas uniżył się.\r\n\r\nOn zna każde serce,\r\nNie odwraca się, gdy wzywamy Go\r\nKocha nas pomimo\r\nTego, że tak niewiele możemy mu dać.",
-       "numberString":"120",
-       "title":"Niepojęta łaska Jego"
-    },
-    {
-       "title":"Jeśli chcę tego czego nie chcesz Ty",
-       "number":121,
-       "text":"Jeśli chcę tego czego nie chcesz Ty\r\nZatrzymaj mnie i powiedz mi czego pragniesz\r\nJeśli idę tam gdzie nie idziesz Ty\r\nZatrzymaj mnie, nie pozwól dalej iść.\r\n\r\nRef.:\r\nBo chcę widzieć Cię w życiu mym\r\nWywyższonego\r\nChcę widzieć Cię w życiu mym\r\nChcę widzieć Cię w życiu mym\r\nWywyższonego\r\nChcę widzieć Cię w życiu mym.\r\n\r\nCokolwiek czynię dla swojej własnej chwały\r\nZatrzymaj mnie i zbadaj moje serce\r\nGdy oceniam innych bez miłości\r\nZatrzymaj mnie I zniszcz moją pychę.\r\n\r\nGdy boję się o to co pomyślą inni\r\nZatrzymaj mnie ważne jest co myślisz Ty\r\nGdy troszczę się tylko o to, co jest moje\r\nZatrzymaj mnie i skrusz moje serce.\r\n\r\nBo tylko Twoja jest Chwała,\r\nTwoja jest Chwała\r\nI tylko Tobie się kłaniam,\r\nTobie się kłaniam \/3x",
-       "numberString":"121"
-    },
-    {
-       "number":122,
-       "numberString":"122",
-       "title":"Niech ma śmierć nie smuci cię, w domu Ojca znajdę się",
-       "text":"Niech ma śmierć nie smuci cię, w domu Ojca znajdę się\r\nWszystkie rany duszy mej znikną, Pan uleczy je.\r\n\r\nŚwiatła nocy, światło dnia Jezusa zastąpi blask\r\nWięcej już nie zawstydzę się, mój Zbawiciel pozna mnie\r\n\r\nRef.:\r\nBez znaczenia, gdzie pochowasz mnie,\r\nW Panu wolny stanę się\r\nBez znaczenia, gdzie będę spał,\r\nKażdą łzę mój otrze Pan.\r\n\r\nSkarby oślepiają wzrok, bogactwo pociąga w mrok\r\nŻywą wodę daje Bóg - skosztuj i nie pragnij już.\r\n\r\nWięc nie opłakujcie mnie, gdy mój czas zakończy się\r\nMoje życie Jego jest, który sam pokonał śmierć."
-    },
-    {
-       "numberString":"123",
-       "number":123,
-       "text":"Znad oceanów do mnie wołasz\r\nGdzie każdy krok niepewny jest\r\nTy jesteś tam, gdzie niewiadoma\r\nTam znajdę grunt dla wiary mej.\r\n\r\nRef.:\r\nBędę wzywać imię Twe\r\nI ponad fale patrzeć chcę\r\nGdy burzą się\r\nMej duszy pokój w Tobie jest\r\nGdzie pójdziesz Ty, ja pójdę też.\r\n\r\nMój strach utonie w Twojej łasce\r\nBo ręka Twa prowadzi mnie\r\nI Ty mnie nigdy nie zawiodłeś\r\nWiem, teraz też nie zawiedziesz mnie.\r\n\r\nPanie, prowadź mnie, \r\nGdzie wiara nie ma granic\r\nDaj mi chodzić nad wodami\r\nGdziekolwiek mnie prowadzisz\r\nWeź mnie głębiej\r\nNiż pójść mogą moje stopy\r\nMoja wiara się umocni\r\nW Twojej obecności \/2x",
-       "title":"Znad oceanów do mnie wołasz"
-    },
-    {
-       "title":"Bóg jest dla nas ucieczką i mocą",
-       "text":"Bóg jest dla nas ucieczką i mocą,\r\nŁatwo znaleźć u Niego pomoc\r\nWięc się nie boimy\r\nChoćby waliła się ziemia,\r\nA góry zapadały\r\nW otchłań morza\r\nWszelka woda niech się wzburzy,\r\nA góra się zachwieje Pod Jego siłą!\r\n\r\nRef.:\r\nPan... Zastępów\r\nJest z nami\r\nA Bóg... Najwyższy\r\nJest dla nas obroną.\r\n\r\nPowstały narody do walki,\r\nWzburzyły się królestwa\r\nA głos Boga zagrzmiał\r\nRozpłynęła się ziemia,\r\nKażda broń skruszyła\r\nKażda siła zmalała\r\nBo On pali tarcze w ogniu,\r\nUśmierza wszelkie wojny\r\nPo krańce ziemi.\r\n\r\nPrzyjdźcie i zobaczcie dzieła Pana\r\nZdumiewające, których dokonuje\r\nStójcie i uznajcie, że jest Bogiem\r\nNad narodami, nad wszelkimi ludźmi \/2x",
-       "numberString":"124",
-       "number":124
-    },
-    {
-       "numberString":"125",
-       "title":"Jezus jest Królem, Królem",
-       "text":"Jezus jest Królem, Królem \/2x\r\nPotęgi Jego moc,\r\nWznosi się nad nami dziś.\r\nWznieśmy ręce uwielbiając Go,\r\nOddajmy Mu cześć\r\nWychwalajmy Jezusa,\r\nOn jedynym Bogiem jest.",
-       "number":125
-    },
-    {
-       "title":"Nie ma takich gorzkich łez",
-       "number":126,
-       "numberString":"126",
-       "text":"Nie ma takich gorzkich łez, ( za 2x laj, laj, laj...)\r\nNie ma takich smutnych chwil,\r\nKtórych nie uleczy mój Bóg.\r\n\r\nWstanę, ach, poderwę się,\r\nPo otwieram wszystkie drzwi,\r\nDobry Bóg przebaczył mój grzech.\r\n\r\nWielbię Cię Panie mój,\r\nChcę się przytulić do Twoich stóp\r\nTańczyć dla Ciebie chwały pieśń."
-    },
-    {
-       "text":"Prawda jedyna, słowa Jezusa z Nazaretu\r\nŻe swego Syna posłał z nieba Bóg na świat\r\nAby niewinnie cierpiąc zmarł za nasze grzechy\r\nI w pohańbieniu przyjął winy wszystkich nas.\r\n\r\nRef.:\r\nDzięki Ci, Boże mój za ten krzyż\r\nKtóry Jezus cierpiał za mnie,\r\nJezus cierpiał za mnie. \/2x\r\n\r\nUwierz w Jezusa, przecież on za Ciebie umarł\r\nZ miłości do nas przyszedł z nieba na ten świat\r\nBłogosławiony ten, kto wierzy, choć nie widział\r\nZaufaj dziś Bogu, a na wieki będziesz żyć.",
-       "number":127,
-       "title":"Prawda jedyna, słowa Jezusa z Nazaretu",
-       "numberString":"127"
-    },
-    {
-       "numberString":"128",
-       "number":128,
-       "title":"Pan Bóg jest moim pasterzem",
-       "text":"Pan Bóg jest moim pasterzem\r\nNad wody spokojne mnie wiedzie\r\nNa łąkach zielonych mnie pasie\r\nNiczego mi dziś nie zabraknie.\r\n\r\nDuszę moją pokrzepiasz\r\nTwa obietnica jest pewna\r\nBezpieczną mnie drogą prowadzisz\r\nPocieszasz, gdy smutek na twarzy.\r\n\r\nRef.:\r\nChoćbym szedł ciemną doliną\r\nZła się nie ulęknę,\r\nBo Ty jesteś ze mną\r\nChoćbym szedł ciemną doliną\r\nZła się nie ulęknę,\r\nBo Tyś ze mną jest.\r\n\r\nOliwą mą głowę namaszczasz\r\nKielich bez końca napełniasz\r\nTwa dobroć i łaska na wieki\r\nJuż przy mnie są."
-    },
-    {
-       "text":"Aż sponad mórz i szczytów gór\r\nTwa miłość spływa na mnie w dół\r\nA ja otwieram serce swe\r\nNiech miłość Twa uwolni mnie.\r\n\r\nSzczęśliwy jestem w prawdzie Twej\r\nDo Ciebie wznoszę ręce me\r\nChcę zawsze śpiewać o miłości Twojej Panie.\r\n\r\n\/ O miłości Twej zawsze śpiewać\r\nO miłości Twej zawsze śpiewać chcę \/x2",
-       "number":129,
-       "title":"Aż sponad mórz i szczytów gór",
-       "numberString":"129"
-    },
-    {
-       "text":"Nie, nie chodzi o mnie\r\nJestem tu dla Ciebie\r\nNie chcę śpiewać pustych słów\r\n\r\nNie, nie szukam wrażeń\r\nSzukam Ciebie Panie\r\nPrzyjmij chwałę z moich ust.\r\n\r\nRef.:\r\nJa tylko śpiewać chcę,\r\nJeśli z tego cieszysz się,\r\nJeśli to uwielbia Cię.\r\nSam śpiew nie znaczy nic,\r\nJeśli serca nie ma w nim\r\nNajważniejszy jesteś Ty.\r\n\r\nNie chcesz ideału\r\nTylko duszę całą\r\nTo co mam oddaję Ci.\r\n\r\nNie tylko śpiewem, co trwa przez chwile,\r\nA całym życiem chcę wielbić Ciebie,\r\nJeśli mam śpiewać to w jednym celu,\r\nWszelka chwała Panie Twoja jest.",
-       "numberString":"130",
-       "number":130,
-       "title":"Nie, nie chodzi o mnie"
-    },
-    {
-       "text":"Wszystko, Panie, Ciebie chwali,\r\nPtaki, kwiaty, wicher, woda\r\nBo Ty wszystkim jesteś, Boże,\r\nWszystko Tobie się podobać chce.\r\n\r\n\/Panie jestem Twoim dzieckiem,\r\nPokochałeś mnie nad życie,\r\nMocną ręką mnie prowadzisz,\r\nBłogosławisz mi obficie sam.\/ x2",
-       "numberString":"131",
-       "number":131,
-       "title":"Wszystko, Panie, Ciebie chwali"
-    },
-    {
-       "title":"Kim ja jestem, że wciąż myślisz o mnie",
-       "number":132,
-       "text":"Kim ja jestem, że wciąż myślisz o mnie\r\nŻe mnie słyszysz gdy wołam Cię.\r\nCzy prawdą jest,\r\nŻe ty wciąż myślisz o mnie,\r\nJak mnie kochasz- To niezwykłe!\r\n\r\nRef.:\r\nBóg przyjacielem mym,\r\nOn przyjacielem mym\r\nBóg przyjacielem swym\r\nNazwał mnie dziś! \/x2\r\n\r\nPrzyjacielem swoim nazwał\r\nMnie wszechmocny Bóg \/x3",
-       "numberString":"132"
-    },
-    {
-       "number":133,
-       "numberString":"133",
-       "title":"Kiedy wątpię i zmagam się",
-       "text":"Kiedy wątpię i zmagam się\r\nGdy upadam podnosisz mnie.\r\nTwoja miłość tak wierna jest\r\nI w burzach życia dajesz pokój mi O-o\r\nTy w burzach życia dajesz pokój mi.\r\n\r\nKiedy cierpię przy mnie trwasz,\r\nKiedy pytam odpowiedz masz,\r\nTwoja miłość przystanią jest,\r\nI kiedy tonę Ty ratujesz mnie\r\nI kiedy tonę Ty ratujesz mnie.\r\n\r\nRef.:\r\nLatarnią Tyś, Latarnią Tyś\r\nŚwiecisz w mych ciemnościach\r\nChcę za Tobą iść O-o\r\nLatarnią Tyś, Latarnią Tyś\r\nWierzę w obietnicę,\r\nŻe przeprowadzisz mnie na drugi brzeg\r\nE-e-e Na drugi brzeg x2\r\n\r\nNie boję się już przyszłości mej,\r\nKażdy dzień pieśnią chwały jest,\r\nBo Twa miłość tak wielka jest\r\nWięc w sztormach życia uspokaja mnie\r\nWięc w sztormach życia uspokajasz mnie."
-    },
-    {
-       "text":"Chcemy Ciebie wielbić\r\nSzukać Twojej twarzy\r\nWcześnie o poranku i gdy noc kładzie cień\r\nTobie chcemy śpiewać\r\nWznieść niebiańską chwałę\r\nDając nasze serca byś je stale zmieniać mógł.\r\nNiech się wznosi dziś Twa chwała\r\nO Panie nasz\r\nTo dla Ciebie nasze serca otwarte są.",
-       "number":134,
-       "title":"Chcemy Ciebie wielbić",
-       "numberString":"134"
-    },
-    {
-       "numberString":"135",
-       "number":135,
-       "title":"To co jest kruche i rozsypane",
-       "text":"To co jest kruche i rozsypane\r\nW łasce zebrane\r\nZnów całym jest. Moje życie\r\nTy odzyskałeś |zbawiłeś mnie| x2\r\n\r\nRef.:\r\nCudowna jest ta łaska, co\r\nZbawiła z grzechów mnie\r\nZnalazła mnie, zwróciła wzrok\r\nI mogę widzieć Cię.\r\nJuż widzę Twoją twarz\r\nW Twych oczach widzę, jak kochasz nas\r\nZmarłeś za ten świat\r\nŻeby w zamian życie mu dać.\r\n\r\nZabierasz niemoc, zabierasz winy\r\nI wkładasz skarb swój w gliniany dzban\r\nWięc weź me serce, niech jest naczyniem\r\nNiech widzi świat Twe życie w nas."
-    },
-    {
-       "title":"Pan skałą i twierdzą, i wybawieniem moim",
-       "number":136,
-       "numberString":"136",
-       "text":"Pan skałą i twierdzą, i wybawieniem moim,\r\nBóg moją opoką, na której polegać chcę.\r\nTarczą, rogiem zbawienia mego,\r\nwarownią moją jest.\r\nWołam: niech będzie pochwalony Pan!"
-    },
-    {
-       "numberString":"137",
-       "title":"Niech słaby powie: „Mam moc”",
-       "number":137,
-       "text":"Niech słaby powie: „Mam moc”,\r\nBiedny wyzna: „Wszystko mam”,\r\nŚlepy mówi: „Widzę znów”,\r\nWe mnie to uczynił Bóg.\r\n\r\nRef.:\r\nHosanna, hosanna Barankowi, co siebie dał.\r\nHosanna, hosanna, Jezus zmarł i zmartwychwstał.\r\n\r\nWejdę w rzekę, gdzie grzechy me\r\nZmywasz, Zbawco, swoją krwią.\r\nZ niebios miłość wylewa się,\r\nŁaską swą ogarnij mnie.\r\n\r\nZ wód głębokich podniosę się\r\nWprost w ramiona, Panie, Twe\r\nI zaśpiewam nową pieśń,\r\nJezus Król uwolnił mnie."
-    },
-    {
-       "text":"W czasie swym, w czasie swym\r\nCzynisz wszystko doskonale w czasie swym\r\n\/: Panie pragnę widzieć to\r\nJak wciąż działa Twoja moc\r\nJak wypełniasz Słowo swe\r\nW czasie swym\r\n\r\nW czasie swym, w czasie swym\r\nCzynisz wszystko doskonale w czasie swym,\r\n\/: Panie dziś powierzam Ci,\r\nMoje plany, wszystkie dni,\r\nByś mnie użył jak sam chcesz\r\nW czasie swym.",
-       "number":138,
-       "title":"W czasie swym, w czasie swym",
-       "numberString":"138"
-    },
-    {
-       "text":"Skoro miłość zniosła śmierć\r\nJak cenna jest Jezusa krew\r\nGdy piękno nieba skryło mój wstyd\r\nObrazem miłości był Twój krzyż.\r\n\r\nUznałeś, że warto znieść ten ból\r\nZ radością patrzyłeś poza grób\r\nUznałeś, że warto znieść tę śmierć.\r\n\r\nRef.:\r\nCudowny tak\r\nWspaniały tak\r\nMoc Twoich ran\r\nZwycięża świat\r\nMój cały dług\r\nSpłacony już\r\nI żyję znów\r\nPrzez łaski cud.\r\n\r\nNa zawsze już pusty Jego grób\r\nJak wielką nadzieją jest nasz Bóg\r\nPasja przebiła piekło na wskroś\r\nŚmierć pokonana, zwycięzcą On.\r\n\r\nOddałeś swą wolność za mnie\r\nWięc gdzie jest mój wstyd i gdzie mój grzech\r\nMiłością zdobyłeś serce me.\r\n\r\nKiedy widzę krzyż, widzę wolność\r\nGdy zobaczę grób, będę z Tobą\r\nI przez życie wieczne uwielbię Cię\r\nDoświadczając łaski Twej.\r\n\r\nMoja dusza wielbi Cię\r\nDoświadczając łaski Twej\r\nMoja dusza wielbi Cię.",
-       "numberString":"139",
-       "title":"Skoro miłość zniosła śmierć",
-       "number":139
-    },
-    {
-       "title":"Nasz Ojcze nieskończony",
-       "number":140,
-       "numberString":"140",
-       "text":"Nasz Ojcze nieskończony\r\nWszystko stworzyłeś Ty\r\nWszechmogący.\r\n\r\nŚwiętego Ducha mocą\r\nPoczęty został Syn\r\nJezus, nasz Zbawca.\r\n\r\nRef.:\r\nTak, ja wierzę w Boga Ojca\r\nW Syna, którym Jezus jest\r\nWierzę też w Świętego Ducha\r\nBóg jest w osobach trzech.\r\nWierzę także w zmartwychwstanie\r\nŻe powstaniemy znów\r\nWyznaję to\r\nWierzę w imię Jezus.\r\n\r\nNasz Sędzio, nasz Obrońco\r\nCierpiałeś za nasz grzech\r\nA nam przebaczono.\r\n\r\nTy zszedłeś do ciemności\r\nI w chwale wzniosłeś się\r\nZająłeś w niebie tron.\r\n\r\nWierzę, że Bóg jest\r\nWierzę, że pokonał śmierć\r\nWierzę, że to Chrystus Panem jest\r\n\r\nRef.:\r\nWierzę, że jest życie wieczne\r\nŻe na ziemię przyszedł Bóg\r\nWierzę we wspólnotę świętych\r\nI święty Kościół Twój\r\nWierzę w nasze zmartwychwstanie\r\nGdy Jezus przyjdzie znów\r\nWyznaję to\r\nWierzę w imię Jezus."
-    },
-    {
-       "numberString":"141",
-       "number":141,
-       "text":"Są ludzie, co pragną się dostać do nieba,\r\nLecz droga nieznana im jest.\r\nZgadują, szukają, w rozterkach wciąż żyją,\r\nA ja wiem, że Bóg zbawił mnie.\r\n\r\nRef.:\r\nBo otwarłem drzwi serca,\r\nPan Jezus w nie wszedł.\r\nOn zna drogę do nieba,\r\nProwadzi tam mnie.\r\nDuch Boży poświadcza w mym sercu nadzieję;\r\nJa wiem, że Bóg zbawił mnie.\r\n\r\nSą ludzie, co wierzą, że czyny, zasługi\r\nDo nieba pozwolą im wejść.\r\nWięc mierzą swe siły, pytają o cenę,\r\nA ja wiem, że Bóg zbawił mnie.",
-       "title":"Są ludzie, co pragną się dostać do nieba"
-    },
-    {
-       "title":"Kimże jestem, by nieba Król",
-       "number":142,
-       "text":"Kimże jestem, by nieba Król\r\nChciał przyjąć mnie\r\nDzięki Niemu dziś jestem tu\r\nOn pokochał mnie\r\nOn pokochał mnie.\r\n\r\nRef.:\r\nKto zaufa Ci\r\nMoże wolnym być\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\n\r\nŁaską swą On odkupił mnie\r\nW Nim wolność mam\r\nKiedy więził mnie strach i grzech\r\nJezus za mnie zmarł\r\nTak, On za mnie zmarł.\r\n\r\nRef. Kto zaufa Ci\r\nMoże wolnym być\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\nSwego domu drzwi\r\nOtworzyłeś mi\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\n\r\nTy mnie kochasz\r\nNie opuszczasz\r\nNazwałeś mnie dzieckiem swym\r\nJesteś ze mną Tobie ufam\r\nNazwałeś mnie dzieckiem swym.",
-       "numberString":"142"
-    },
-    {
-       "numberString":"143",
-       "number":143,
-       "title":"Rozpal ogień, Panie, w moim sercu już",
-       "text":"Rozpal ogień, Panie, w moim sercu już,\r\nNiech jasno płonie chwaląc Ciebie wciąż!\r\nWszystko, co posiadam, jest własnością Twą.\r\nNiech mnie Twe ręce mocno objąć chcą!\r\n\r\nRef.:\r\nTyś źródłem życia i radości mej!\r\nPrzez Ciebie ciemność już rozjaśnia się.\r\nMoje modlitwy słyszysz w chwili trwóg.\r\nJezu, mój Zbawco, Tyś mój Pan i Bóg!\r\n\r\nZechciej nas odgrodzić od działania zła.\r\nNiech da mi pokój mocna ręka Twa!\r\nW ciemność świata tego Gwiazdą Swą mi świeć!\r\nBądź przy mnie, Panie, nie oddalaj się!\r\n\r\nWieczne światło Boże wnet zaświeci mi.\r\nNie trać nadziei, duszo, światło lśni!\r\nUcisz narzekania, gdy usłyszysz pieśń!\r\nPan już nadchodzi! Śpiesz Go witać, śpiesz!"
-    },
-    {
-       "numberString":"144",
-       "title":"Ty na początku byłeś Słowem",
-       "number":144,
-       "text":"Ty na początku byłeś Słowem\r\nTam, gdzie sam Najwyższy Pan\r\nSwą chwałę ukrył w tym, co stworzył\r\nLecz objawił Ciebie nam.\r\n\r\nRef.:\r\nJakie piękne jest imię Twe\r\nJakie piękne jest imię Twe\r\nTwe imię, Jezu, Królu nasz\r\nJakie piękne jest imię Twe\r\nNic z nim nie równa się\r\nJakie piękne jest imię Twe\r\nTwe imię, Jezu.\r\n\r\nNie chciałeś mieszkać w niebie bez nas\r\nWięc przyniosłeś niebo tu\r\nTwa miłość, Jezu, jest największa\r\nNic nas nie rozłączy już.\r\n\r\nŚmierć pokonana, zasłona rozdarta\r\nZamilkł już grzech i zamilkł grób\r\nGłośno grzmi niebo, chwałę Twą wielbiąc\r\nBo z martwych wstał nasz Pan i Bóg.\r\n\r\nNie masz rywala, sobie równego\r\nNa zawsze rządzisz w mocy swej\r\nTwoja jest chwała, Twoje królestwo\r\nA imię Twe najwyższe jest."
-    }
- ]
+   {
+      "number":1,
+      "numberString":"1",
+      "title":"Boże Ojcze nie wiem",
+      "text":"Boże Ojcze nie wiem,\r\nJak ja mogłem żyć tak długo,\r\nNic nie wiedząc, że mam Ojca w niebie,\r\nKtóry kocha mnie.\r\n\r\nLecz teraz jestem dzieckiem Twym,\r\nPrzyjętym do rodziny Bożej\r\nI nigdy już nie będę sam,\r\nBo Boże Ojcze jesteś ze mną!\r\n\r\nBędę śpiewać Ci na chwałę,\r\nŚpiewać Ci na chwałę,\r\nBędę śpiewać\r\nNa zawsze już!"
+   },
+   {
+      "number":2,
+      "numberString":"2",
+      "title":"Chrystus Pan, Boży Syn, Zbawca nasz zgodził się",
+      "text":"Chrystus Pan, Boży Syn, Zbawca nasz zgodził się\r\nWziąć mój grzech, za mnie umrzeć chciał\r\nAżebym znał mój ogrom win i wiedział, że\r\nKrew Jego zbawia, oczyszcza i leczy.\r\n\r\nWywyższony bądź, Jezu, Baranku mój.\r\nTyś jedyny Odkupiciel, Tyś mój Król!\r\nWywyższony bądź, Boży Baranku!\r\nPrzed Twym tronem dziś najwyższy składam hołd."
+   },
+   {
+      "number":3,
+      "numberString":"3",
+      "title":"Jak skowronek w błękitach, śpiewam zima czy lato",
+      "text":"Jak skowronek w błękitach, śpiewam zima czy lato,\r\nBo mam serce radosne, bo mam duszę skrzydlatą.\r\n\r\nI serdecznej mej pieśni żadna siła nie wstrzyma,\r\nBo w mym sercu jest wiosna, choć na świecie jest zima.\r\n\r\nSerca struny radosne Bóg poruszył Swą dłonią\r\nI tak ciągle nad ziemią sobie dzwonią i dzwonią."
+   },
+   {
+      "number":4,
+      "numberString":"4",
+      "title":"Chwal Go, chwal Go",
+      "text":"Chwal Go, chwal Go,\r\nchwal Go pieśnią swą\r\nChwal Go, chwal Go,\r\nchwal Go cały dzień.\r\n\r\nRef.:\r\nBowiem Bóg jest godzien,\r\ngodzien naszej chwały, czci,\r\nBowiem Bóg jest godzien,\r\ngodzien naszej chwały, czci.\r\n\r\nChwal Go, chwal Go,\r\nchwal Go sercem swym\r\nChwal Go, chwal Go,\r\ndaj Mu serce swe.\r\n\r\nChwal Go, chwal Go,\r\nchwal Go życiem swym\r\nChwal Go, chwal Go,\r\noddaj Jemu hołd."
+   },
+   {
+      "number":5,
+      "numberString":"5",
+      "title":"Chwalę Ciebie Panie i uwielbiam",
+      "text":"Chwalę Ciebie Panie i uwielbiam,\r\nWznoszę w górę swoje ręce,\r\nUwielbiając Imię Twe!\r\n\r\nBo wielkiś Ty,\r\nwielkie dzieła czynisz dziś,\r\nNie dorówna Tobie nikt,\r\nnie dorówna Tobie nikt!\r\n\r\nChwalę Ciebie Panie..."
+   },
+   {
+      "number":6,
+      "numberString":"6",
+      "title":"Hołd składam Ci, o Panie",
+      "text":"Hołd składam Ci, o Panie,\r\nWywyższam Imię Twe\r\nTy stworzyłeś wszechświat cały\r\nTyś wszystkiego Panem jest.\r\n\r\nRef.:\r\nWielbię Imię Twe, oddaję życie Swe,\r\nNajwyższy składam hołd\r\nPanie, wielbię Cię, daję Ci życie swe\r\nNajwyższy składam hołd.\r\n\r\nGdy Twój Duch w mym działa sercu\r\nNajgłębszy koisz ból\r\nPrzed Twym tronem wznoszę ręce\r\nPrzyjmuję łaskę Twą.\r\n\r\nTy zniszczyłeś moje więzy\r\nDarując wolność mi\r\nWznoszę głos, by Ciebie wielbić\r\nCałą wieczność śpiewać Ci."
+   },
+   {
+      "number":7,
+      "numberString":"7",
+      "title":"Jezus najwyższej godzien chwały",
+      "text":"Jezus najwyższej godzien chwały\r\nJezus najwyższej godzien czci\r\nJego Imię jest ponad wszystko.\r\nNiech niebo, ziemia zgodnie chwalą Go.\r\n\r\nI my w pokorze chcemy Go uwielbiać\r\nNa Imię Jezus każdy skłoni się\r\nI każdy język wyzna, że to Chrystus, Boży Syn.\r\nPanie nasz najwyższy przyjmij hołd!\r\n\r\nWszelka władza i moc, i majestat\r\nSą w rękach Twych, są w rękach Twych,\r\nTak! Władza i moc, i majestat\r\nSą w rękach Twych, są w rękach Twych\r\nTyś Pan i Król, Boży jedyny Syn."
+   },
+   {
+      "number":8,
+      "numberString":"8",
+      "title":"Już ponad dwa tysiące lat minęło",
+      "text":"Już ponad dwa tysiące lat minęło\r\nGdy Jezus Chrystus przyszedł na ten świat\r\n\/Zbawienie nasze wtedy się zaczęło\r\nI nie przemija mimo tylu lat.\/x2\r\n\r\nOn życie oddał za mnie i za ciebie\r\nPrzekleństwa nasze zaniósł aż na krzyż\r\n\/By przygotować miejsce dla nas w niebie\r\nA potem uniesiony został wzwyż.\/x2\r\n\r\nOn przyjdzie aby zabrać nas do siebie\r\nOjczyzna nasza tam u Niego jest\r\n\/On chciałby także zabrać z nami ciebie\r\nW ojczyźnie tej nie będzie smutku, łez.\/x2"
+   },
+   {
+      "number":9,
+      "numberString":"9",
+      "title":"Nadzieją moją jest Jezus",
+      "text":"Nadzieją moją jest Jezus\r\nPokarmem jest Jego Słowo\r\nWprowadza mnie w prawdę Boży Duch\r\nAlleluja, o alleluja."
+   },
+   {
+      "number":10,
+      "numberString":"10",
+      "title":"Stwórz serce czyste we mnie",
+      "text":"Stwórz serce czyste we mnie\r\nO Boże mój\r\nA prawego Ducha we mnie odnów\r\nPanie, nie odrzucaj mnie\r\nOd oblicza swego dziś\r\nI nie zabieraj mi swojego Ducha,\r\nLecz proszę, przywróć mi\r\nRadość z Twojego zbawienia\r\nTak przywróć i wesprzyj Duchem swym."
+   },
+   {
+      "number":11,
+      "numberString":"11",
+      "title":"Miłość wielką jak ocean Ojciec Bóg okazał nam",
+      "text":"Miłość wielką jak ocean Ojciec Bóg okazał nam\r\nGdy Syn Boży Odkupiciel przelał krew bezcenny dar\r\nCzy ktoś może to zrozumieć co w Jezusie Bóg nam dał?\r\nNie zapomnij tej miłości, która wiecznie będzie trwać.\r\n\r\nNa Golgocie - wzgórzu hańby trysło źródło życia wód\r\nNiesie miłość, pojednanie i omywa grzechu bród.\r\nŁaski tej potężne rzeki z Chrystusowych płyną ran\r\nPokój, Bożą sprawiedliwość wszystkim chce dać Chrystus Pan."
+   },
+   {
+      "number":12,
+      "numberString":"12",
+      "title":"Chwalmy Go! Pan w majestacie swym",
+      "text":"Chwalmy Go! Pan w majestacie swym\r\nJezus godzien wszelkiej chwały, mocy i czci\r\nChwalmy Go! Złóżmy korony swe\r\nPan nasz na tron zasiadł wśród chwał, wszyscy Go czczą.\r\n\r\nBowiem Bóg wywyższył sam Imię Jezusa\r\nWszelki stwór niech wyzna więc, że Jezus - to Pan\r\nChwalmy Go! Pan w majestacie swym\r\nJezus, co zmarł, teraz wśród chwał, to królów Król!"
+   },
+   {
+      "number":13,
+      "numberString":"13",
+      "title":"Jezu, Zbawicielu",
+      "text":"Jezu, Zbawicielu,\r\nZa nas krzyż przyjąłeś, Panie,\r\nOdkupiłeś z grzechu tych,\r\nCo Twojej dziś pomocy szukać chcą..\r\n\r\nStojąc dziś przed Tobą\r\nWiny chcę ci wyznać swoje,\r\nWiem, że nie odrzucisz mnie,\r\nBo miłość Twa przewyższa to, co złe.\r\n\r\nChcę uwielbiać Ciebie,\r\nImię Twe wywyższać, Panie,\r\nWszystkim w życiu jesteś mi\r\nWięc będę chwalić Cię do końca,\r\n\r\nBędę chwalić Cię do końca\r\nBędę chwalić Cię do końca dni."
+   },
+   {
+      "number":14,
+      "numberString":"14",
+      "title":"Królów Król, panów Pan",
+      "text":"Królów Król, panów Pan,\r\nStworzyciel nieba, ziemi, ciebie też\r\nOddaj Mu chwałę!\r\nPan wszechświata, Boży Syn,\r\nKsiążę pokoju, uzdrowiciel dusz\r\nOddaj Mu chwałę!\r\nChwałę Mu daj! 3x\r\nWszechmocnemu Bogu."
+   },
+   {
+      "number":15,
+      "numberString":"15",
+      "title":"Śpiewajmy Panu",
+      "text":"Śpiewajmy Panu,\r\nna wieki Jego chwała trwa.\r\nŚpiewajmy Panu,\r\nz radością klaszczmy w dłonie swe.\r\nŚpiewajmy Panu,\r\nbo On jest żywy pośród nas.\r\nŚpiewajmy Panu, alleluja."
+   },
+   {
+      "number":16,
+      "numberString":"16",
+      "title":"Czy prawda to, co mówią ludzie mi",
+      "text":"Czy prawda to, co mówią ludzie mi\r\nZstąpiłeś tu, miłość kazała Ci\r\nUmrzeć bez słowa za mój grzech, a ja\r\nUpieram się, grzech powtarzając wciąż.\r\n\r\nCzy prawda to, że nie odrzucisz mnie\r\nŻe podasz dłoń, wymażesz grzechu ślad\r\nJak mam uwierzyć w to, gdy dotąd nikt\r\nProblemów mych nie mógł wyjaśnić mi?\r\n\r\nTak prawda to, to Ty znalazłeś mnie\r\nZabrałeś lęk, a dałeś pokój swój\r\nTy jesteś teraz treścią moich dni\r\nO Panie mój, jak mam dziękować Ci?"
+   },
+   {
+      "number":17,
+      "numberString":"17",
+      "title":"Chrystus jest życiem mym",
+      "text":"Chrystus jest życiem mym\r\nA śmierć zyskiem jest\r\nChrystus jest życiem mym\r\nA śmierć zyskiem jest.\r\n\r\nTo mój Król, moja pieśń\r\nŻycie me i radość ma\r\nMoja moc i mój miecz\r\nPokój mój - tym jest mój Pan.\r\n\r\nChrystus jest życiem mym..."
+   },
+   {
+      "number":18,
+      "numberString":"18",
+      "title":"Miłość da - co da?",
+      "text":"Miłość da - co da?\r\nDa szczęście, radość pośród dnia - tak?\r\nPokochaj, a zobaczysz, że - że co?\r\nPan także umiłował ciebie!\r\n\r\nWybierz ślad - jaki ślad?\r\nŚlad, który ci wyznaczył Pan - Pan?\r\nMiłością przezwyciężaj zło - i co?\r\nNa końcu drogi będzie stał On!"
+   },
+   {
+      "number":19,
+      "numberString":"19",
+      "title":"Miłość Twa",
+      "text":"Miłość Twa\r\nOd najwyższych gór wyższa jest,\r\nWielka jest wierność Twa,\r\nDo nieba sięga wzwyż.\r\nMiłość Twa\r\nGłębsza niż ocean bez dna,\r\nWielka jest wierność Twa,\r\nGdy do mnie zbliżasz się."
+   },
+   {
+      "number":20,
+      "numberString":"20",
+      "title":"Przyszedł bezbronny na świat",
+      "text":"Przyszedł bezbronny na świat\r\nDo ludzi, których stworzył sam\r\nNie aby żąć, lecz by siać\r\nNie aby wziąć, lecz siebie dać.\r\n\r\nTo jest nasz Bóg, Sługa i Król\r\nDziś tak jak On chcę służyć Mu\r\nSwe całe życie na Jego ołtarz kłaść\r\nTo, co mi dał, chcę teraz dać."
+   },
+   {
+      "number":21,
+      "numberString":"21",
+      "title":"Dotknął mnie dziś Pan",
+      "text":"Dotknął mnie dziś Pan\r\nI radość ogromną w sercu mam\r\nZ tej radości chcę\r\nŚpiewać i klaskać w dłonie swe!\r\n\r\n\/:Więc wszyscy razem chwalmy Go\r\nZa to, że trzyma nas ręką swą :\/"
+   },
+   {
+      "number":22,
+      "numberString":"22",
+      "title":"Bóg kocha mnie, na pewno to wiem",
+      "text":"\/:Bóg kocha mnie, na pewno to wiem\r\nBo Jezus w swym Słowie o tym mówi mi\r\nPrzychodzę więc dziś przed Twój święty tron\r\nI w gronie Twoich dzieci, Panie, śpiewam Ci.\r\n\r\nChcę wielbić Cię z całej ludzkiej mej siły\r\nPragnę miłością moją uczcić Cię\r\nBo tylko Ty jesteś Bogiem prawdziwym\r\nPrawdziwym - mówię - bo poznałem Cię:\/\r\nPoznałem Cię, poznałem Cię."
+   },
+   {
+      "number":23,
+      "numberString":"23",
+      "title":"Jeśli na piasku zbudujesz swój dom",
+      "text":"Jeśli na piasku zbudujesz swój dom\r\nGdyby na piasku on stał\r\nWiedz, że choćby piękny był\r\nI podwójne mury miał\r\nBudować będziesz jeszcze raz.\r\n\r\nRef.:\r\nNa mocnej skale dom twój ma stać\r\nI fundament on solidny musi mieć\r\nBo gdy uderzy wiatr i deszcz\r\nTwój dom będzie pewnie stać.\r\n\r\nJeśli na skale zbudujesz swój dom\r\nGdyby na skale on stał\r\nWiedz, że choćby skromny był\r\nPojedyncze mury miał\r\nBudować będziesz tylko raz.\r\n\r\nTą Skałą jest Jezus Chrystus Pan\r\nI na Nim buduj swój dom\r\nWiedz, że choćby skromny był\r\nPojedyncze mury miał\r\nBudować będziesz tylko raz."
+   },
+   {
+      "number":24,
+      "numberString":"24",
+      "title":"Pamiętamy, jak mówiłeś nam:",
+      "text":"Pamiętamy, jak mówiłeś nam:\r\n„Jam krzewem winnym jest,\r\nKażdy z was jest latoroślą,\r\nKtóra owoc wydać ma.\r\nA mój Ojciec ogrodnikiem jest\r\nOn o was troszczy się,\r\nPragnąc, by wzrastały, owoc przynosiły.”\r\n\r\nRef.:\r\nMy rośniemy ciągle w mocy Twej\r\nKu niebu w górze tam\r\nPozostaniemy wszyscy w Nim\r\nW miłości Jego wciąż\r\nOn nazwał przyjaciółmi nas\r\nTak bardzo zniżył się\r\nI będąc w społeczności z Nim\r\nWzrastamy w każdy czas.\r\n\r\nGdy nie trwamy w społeczności z Nim\r\nTo nie zrobimy nic,\r\nLecz Ty obiecałeś mieszkać w nas,\r\nGdy w Tobie trwamy my.\r\nI chcesz, by posłusznym tobie być\r\nW tym, co mówiłeś nam,\r\nBy nawzajem troszczyć się i kochać innych."
+   },
+   {
+      "number":25,
+      "numberString":"25",
+      "title":"Rozsławiamy Imię Twe",
+      "text":"Rozsławiamy Imię Twe\r\nGłosić chcemy Twą moc i Twój majestat\r\nTy królujesz niepodzielnie, rządzisz sprawiedliwie\r\nMoc Twą widzieć może cały świat.\r\nWielbimy Cię, Boże potężny\r\nSławimy Cię, jedynie święty!\r\nNiech płynie pieśń, Tyś Bóg, Pan wszechmocny\r\nSkładamy pokłon przed tronem Twoim dziś."
+   },
+   {
+      "number":26,
+      "numberString":"26",
+      "title":"Pan wywyższony, nasz Król wywyższony wśród chwał",
+      "text":"Pan wywyższony, nasz Król wywyższony wśród chwał\r\nUwielbiajmy Go!\r\nPan wywyższony, nasz Król wywyższony\r\nOddajmy Jemu cześć!\r\nKrólem jest Pan, Jego łaska na wieki trwa,\r\nNiebo i ziemio radujcie się Jego Imieniem!\r\nPan wywyższony, nasz Król wywyższony wśród chwał."
+   },
+   {
+      "number":27,
+      "numberString":"27",
+      "title":"Raz po wielkim połowie Jezus z uczniami siadł",
+      "text":"Raz po wielkim połowie Jezus z uczniami siadł\r\nSpytał Piotra Szymona tak jak dziś pyta nas:\r\n\r\nBracie, siostro, czy miłujesz mnie?\r\nTak Panie, Ty wiesz, że kocham Cię!\r\n\r\nBracie, siostro, czy ty modlisz się?\r\nTak Panie, Ty wiesz, że modlę się!\r\n\r\nBracie, siostro, czy niesiesz krzyż?\r\nTak Panie, Ty wiesz, że niosę go!\r\n\r\nBracie, siostro, czy idziesz mą drogą?\r\nTak Panie, Ty wiesz, że idę nią!"
+   },
+   {
+      "number":28,
+      "numberString":"28",
+      "title":"Ty jesteś Bogiem mym",
+      "text":"Ty jesteś Bogiem mym,\r\nwspaniałym Bogiem mym,\r\nUwielbiam Cię,\r\nwywyższam święte Imię Twe.\r\n\r\nO Panie chcę dziękować Ci,\r\nza to żeś mnie obdarował,\r\nDałeś tak wspaniałe życie,\r\ndałeś tak wspaniały świat."
+   },
+   {
+      "number":29,
+      "numberString":"29",
+      "title":"Bogiem moim jest, światłem moim jest",
+      "text":"Bogiem moim jest, światłem moim jest\r\nBóg Abrahama, Izaaka, Jakuba\r\nOdwiecznym Bogiem On\r\nCo stworzył ziemi krąg\r\nWięc chwalmy Go w Imieniu Jezusa.\r\n\r\nObdarował nas miłością swą\r\nBóg Abrahama, Izaaka, Jakuba\r\nCóż Ci mogę dać Panie mój\r\nPrócz wdzięczności mej\r\nWięc chwalę Cię w Imieniu Jezusa."
+   },
+   {
+      "number":30,
+      "numberString":"30",
+      "title":"Zmartwychwstał Pan",
+      "text":"Zmartwychwstał Pan\r\nZwycięstwa chwałą niebo brzmi\r\nKtóż tak jak On\r\nMajestatu blaskiem lśni.\r\n\r\nRef.:\r\nBaranek Królem jest\r\nNajwyższy zajął tron\r\nW pokorze chylę się\r\nZ radością składam hołd.\r\n\r\nRozgłosić chcę\r\nRadosną zmartwychwstania wieść\r\nNa krzyżu Pan\r\nPrzezwyciężył śmierć i grzech"
+   },
+   {
+      "number":31,
+      "numberString":"31",
+      "title":"Panie, pragnę kochać Cię",
+      "text":"\/:Panie, pragnę kochać Cię\r\nCoraz mocniej z dnia na dzień\r\nJesteś wspaniałością mą\r\nPanie, pragnę kochać Cię :\/\r\n\r\nWszystko daję Jezusowi\r\nZ Jego łaski pragnę żyć\r\nCzy ktoś może zgłębić miłość\r\nKtórą Bóg okazał nam?\r\n\r\nJak cudowna jest ta chwila\r\nGdy przebywać mogę z Nim\r\nWidzieć piękno Jego twarzy\r\nI kochać Go!"
+   },
+   {
+      "number":32,
+      "numberString":"32",
+      "title":"Szeroko Twojej łaski rzeka płynie wciąż",
+      "text":"Szeroko Twojej łaski rzeka płynie wciąż\r\nZ miłością darmo dajesz życia dar\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\n\r\nDo końca ukochałeś Panie Kościół swój\r\nNa krzyżu z grzechem świata tocząc bój\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą.\r\n\r\nTak łatwo można przyjść do Ciebie, łaskę wziąć\r\nZ radością darmo dajesz życia dar\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą\r\nPrzed Tobą korzę się,\r\nchcę w pełni pojąć miłość Twą."
+   },
+   {
+      "number":33,
+      "numberString":"33",
+      "title":"Tyś jest schronieniem mym",
+      "text":"Tyś jest schronieniem mym\r\nNapełniasz serce me wolnością swych pieśni,\r\nKiedy strach ogarnia duszę mą.\r\nBędę ufać Ci, będę ufać Ci\r\nSłaby niechaj wyzna: Mocą i siłą mą Bóg!"
+   },
+   {
+      "number":34,
+      "numberString":"34",
+      "title":"Ty jesteś skałą zbawienia mego",
+      "text":"Ty jesteś skałą zbawienia mego\r\nI siłą w życiu mym.\r\nTyś mą nadzieją i mym natchnieniem,\r\nDo Ciebie wołać chcę.\r\n\r\nPanie wierzę Ci, tak wierzę Ci,\r\nBo Twa miłość wierną jest.\r\nW każdej chwili życia wspierasz mnie,\r\nPanie do Ciebie ja lgnę."
+   },
+   {
+      "number":35,
+      "numberString":"35",
+      "title":"Dziękować Ci Panie chcę",
+      "text":"\/ Dziękować Ci Panie chcę\r\nDziękować, boś świętym jest\r\nDziękować, żeś Jezusa, Syna Swego nam dał \/x2\r\n\r\n\/ A dziś słaby mocnym staje się\r\nBiedny niechaj wyzna, że\r\nBogatym jest, bo wszystko dał mu Pan \/x2"
+   },
+   {
+      "number":36,
+      "numberString":"36",
+      "title":"Wspaniałym Panem Tyś",
+      "text":"Wspaniałym Panem Tyś,\r\nTwej twarzy szukam wciąż.\r\nGdy Twe spojrzenie jest na dziecku Twym\r\nŁaska Twa dotyka mnie.\r\n\r\nPanie Tyś cenniejszym jest od srebra,\r\nPanie Tyś od złota droższym mi.\r\nPanie Tyś piękniejszym od diamentów\r\nI nic na świecie nie dorówna Ci \/x3"
+   },
+   {
+      "number":37,
+      "numberString":"37",
+      "title":"Hosanna, Hosanna, Królowi królów cześć",
+      "text":"Hosanna, Hosanna, Królowi królów cześć \/x2\r\n\r\nRef.:\r\nChwalcie Pana, śpiew niech brzmi\r\nZmartwychwstał Król i żyje dziś\r\nChwalcie Go, najwyższy On\r\nI godzien wszelkiej czci\r\n\r\nWielbimy, wielbimy, wielbimy Panie Cię.\r\nKochamy, kochamy, kochamy Panie Cię."
+   },
+   {
+      "number":38,
+      "numberString":"38",
+      "title":"Zbawionym ja przez Baranka krew",
+      "text":"Zbawionym ja przez Baranka krew \/x2\r\nZbawionym ja przez Baranka krew\r\nJezus on także za mnie zmarł\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nMój Pan i ja blisko siebie tak \/x2\r\nMój Pan i ja blisko siebie tak\r\nOn swego Ducha dał, alleluja\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nWięc idę wciąż do Pana tam \/x2\r\nWięc idę wciąż do Pana tam\r\nI opowiadam wszystkim że\r\nPrzebaczone grzechy me, zbawionym ja.\r\n\r\nOn przyjdzie znów, zabierze nas \/x2\r\nOn przyjdzie znów, zabierze nas\r\nDo siebie tam, alleluja\r\nPrzebaczone grzechy me, zbawionym ja."
+   },
+   {
+      "number":39,
+      "numberString":"39",
+      "title":"Tak, jakim jest, nic nie mam, nie",
+      "text":"Tak, jakim jest, nic nie mam, nie,\r\nPrócz tego, że mnie głos Twój zwie,\r\nŻe krew Twa lała się za mnie\r\nBaranku Boży, idę już.\r\n\r\nTak, jaki jestem, pełen wad,\r\nObdarty z niewinności szat\r\nBy w serce promyk łaski wpadł\r\nTak idę już, Baranku mój.\r\n\r\nTak, jaki jestem, pełen skruch,\r\nOdwaga ma rozwiana w puch\r\nW Twej łasce tylko ufa duch\r\nWięc idę już, Baranku mój.\r\n\r\nTak, jakim jest - Tyś łaskaw mi\r\nPrzebaczasz i obmywasz z win\r\nDla Twych obietnic wierzę Ci\r\nBaranku Boży, idę już.\r\n\r\nTak, jaki jestem, Panie mój\r\nMiłością swoją serce zgój\r\nBym wiecznie już pozostał Twój\r\nBaranku Boży, idę już."
+   },
+   {
+      "number":40,
+      "numberString":"40",
+      "title":"Kiedyś sam błądziłem pośród życia dróg",
+      "text":"Kiedyś sam błądziłem pośród życia dróg\r\nBłądziłem tak, bo nie wiedziałem, kto to Bóg\r\nCzęsto myślałem więc, czy życie to ma jakiś sens\r\nCzy warto żyć na ziemi tej, pełnej trosk i zła?\r\n\r\nMijały dni i smutek rósł w sercu mym\r\nNa wiele pytań nie odpowiedział mi nikt\r\nCzęsto myślałem więc, czy życie to ma jakiś sens\r\nCzy warto żyć na ziemi tej, pełnej trosk i zła?\r\n\r\nZnalazł się Ktoś, kto znał problemy me\r\nTo był Jezus, który wyjaśnił mi\r\nŻe życie to ma właśnie sens, bo On przelał za mnie krew\r\nI daje mi zbawienie swe, bym radość miał już dziś.\r\n\r\nOd chwili tej życie me zmieniło się\r\nBo celem mym jest innym głosić dobrą wieść,\r\nŻe Jezus moim Królem jest i twoim może stać się też\r\nWięc przyjmij dziś zbawienie te, jeśli chcesz, jeśli chcesz."
+   },
+   {
+      "number":41,
+      "numberString":"41",
+      "title":"Kiedy tak idziesz sam proszę cię zatrzymaj się",
+      "text":"Kiedy tak idziesz sam proszę cię zatrzymaj się\r\nDziś do ciebie mówi Pan przez szum lasów, ptaków śpiew\r\nJeśli chcesz, zobaczysz Go dziś do ciebie zbliża się\r\nOn ci daje przyjaźń swą chciej dziś przyjąć ją.\r\n\r\nRef.:\r\nPrzyjaźń to największy dar, jaki daje tobie Bóg\r\nPrzyjaźń to największy skarb zechciej go wziąć\r\nOn w przyjaźni tobie dał zieleń lasów i toń mórz\r\nBłękit nieba, górski szczyt On tobie dał.\r\n\r\nGdy w twym życiu zdarzy się, że twym sercem ściśnie ból\r\nOn jest z tobą, wspiera cię On twój Bóg, przyjaciel twój\r\nGdybyś nawet został sam cały świat opuścił cię\r\nOn przy tobie zawsze trwa, Jezus bardzo kocha Cię."
+   },
+   {
+      "number":42,
+      "numberString":"42",
+      "title":"Wieczór jest już blisko",
+      "text":"Wieczór jest już blisko,\r\nOgnisk gaśnie żar\r\nPrzyjm Panie Jezu,\r\nZbawco i Królu, serca mego dar,\r\nSerca mego dar.\r\n\r\nPrzyjmij pracy znoje,\r\nPokrzywdzonych łzy\r\nDaj wszystkim ludziom\r\nSiłę i pomoc, dzieciom jasne sny,\r\nDzieciom jasne sny.\r\n\r\nI dla tych, co w mroku\r\ndaj nadziei nić\r\nAby znaleźli prawdy drogę,\r\nMogli wiecznie żyć,\r\nMogli wiecznie żyć."
+   },
+   {
+      "number":43,
+      "numberString":"43",
+      "title":"Będę Cię uwielbiać póki będę żyć",
+      "text":"Będę Cię uwielbiać póki będę żyć\r\nChcę się Tobą karmić, z Twego źródła pić\r\nJeszcze wczoraj głupstwem dla mnie był Twój krzyż\r\nDzisiaj przekonałeś mnie swą miłością\r\nJeszcze wczoraj głupstwem dla mnie był Twój krzyż\r\nDzisiaj przekonałeś mnie miłością swą.\r\n\r\nChcę Ci wręczyć klucze do pałaców mych\r\nPootwieraj wszystkie i zamieszkaj w nich\r\nTyle lat pukałeś do zamkniętych drzwi\r\nDzisiaj otworzyłeś je swą miłością\r\nTyle lat pukałeś do zamkniętych drzwi\r\nDzisiaj otworzyłeś je miłością swą."
+   },
+   {
+      "number":44,
+      "numberString":"44",
+      "title":"Alleluja, miłość Twa",
+      "text":"Alleluja, miłość Twa\r\nJak blask Słońca nad nami wciąż trwa\r\nAlleluja niech biją dziś dzwony,\r\nNiech wielbi Cię cały świat, alleluja.\r\n\r\nAlleluja, płynie pieśń\r\nWięc wraz z nami ku niebu ją wznieś\r\nAlleluja niech biją dziś dzwony,\r\nNiech wielbi Cię cały świat, alleluja."
+   },
+   {
+      "number":45,
+      "numberString":"45",
+      "title":"Wśród tylu trosk mieć marzeń czas",
+      "text":"Wśród tylu trosk mieć marzeń czas,\r\nA kłamstwem nie plamić swoich ust.\r\n\r\nRef.:\r\nPo prostu z Jezusem żyć\r\nZwyczajnie, bez wielkich słów,\r\nKażdy dzień powierzać Mu,\r\nStale przy Nim być.\r\n\r\nMiłość do ludzi czerpać zeń,\r\nDobrocią koić wszelki ból.\r\n\r\nSzczęściem radosnych cieszyć się,\r\nA krzywdą smutnych przejąć się.\r\n\r\nMocno uścisnąć bratnią dłoń,\r\nKażdemu w oczy spojrzeć móc."
+   },
+   {
+      "number":46,
+      "numberString":"46",
+      "title":"Twoje Słowo jest pochodnią moim nogom",
+      "text":"Ref.:\r\nTwoje Słowo jest pochodnią moim nogom\r\nTwoje Słowo jest światłością moim ścieżkom\r\nTwoje Słowo jest pochodnią nogom mym\r\nI światłością ścieżce mej.\r\n\r\nMów do mnie Panie, mów do mnie w Słowie Swym\r\nMów do mnie Panie, mów do mnie w Słowie Swym\r\nPokrzepiaj wciąż duszę mą, mądrości Swej naucz mnie\r\nMów do mnie Panie, mów do mnie Panie mój.\r\n\r\nRef.: ..."
+   },
+   {
+      "number":47,
+      "numberString":"47",
+      "title":"Oznajmiono ci człowiecze",
+      "text":"Oznajmiono ci człowiecze,\r\nCo jest dobre, czego żąda Bóg od ciebie:\r\nByś wypełniał prawo, okazywał miłość\r\nI w pokorze chodził z Nim."
+   },
+   {
+      "number":48,
+      "numberString":"48",
+      "title":"Bo nikt nie ma z nas",
+      "text":"Ref.:\r\nBo nikt nie ma z nas\r\nTego, co mamy razem\r\nKażdy wnosi ze sobą to, co ma\r\nZatem, aby wszystko mieć\r\nPotrzebujemy siebie razem\r\nBracie, siostro ręka w rękę razem idź!\r\n\r\nCzasami dziwię się, dlaczego wciąż zwalczamy się\r\nWszak Jezus modlił się, byśmy jedno byli\r\nCzyż nie najwyższy czas, by w końcu Jego miłość w nas\r\nKu Jego chwale stale panowała.\r\n\r\nZawsze razem, wszyscy razem\r\nNie tylko ja, nie tylko ty\r\nAle razem, wszyscy razem\r\nMamy miłość, by w niej żyć\r\nBo nikt nie ma z nas..."
+   },
+   {
+      "number":49,
+      "numberString":"49",
+      "title":"O przyjdź, w przedsionkach Króla, Pana swego stań",
+      "text":"O przyjdź, w przedsionkach Króla, Pana swego stań\r\nNiech z wdzięczności z serca twego płynie pieśń\r\nŻe Jezusa Syna swego Bóg darował nam\r\nChwała Mu i cześć\r\nI niech płyną pieśni chwały z naszych ust\r\nNiech na nowo święty Duch napełnia nas\r\nAby każdy coś od Pana dziś otrzymać mógł\r\nBy nie odszedł taki sam."
+   },
+   {
+      "number":50,
+      "numberString":"50",
+      "title":"Oblubieniec czeka już",
+      "text":"Oblubieniec czeka już\r\nPierzmy szaty, blisko dzień wesela\r\nNieproszonych gości tłum\r\nStanie u bram, które Pan otwiera.\r\n\r\nRef.:\r\nJezus oblubieńcem naszym jest\r\nA Kościół świętą panną, którą umiłował\r\nJezus oblubieńcem naszym jest\r\nA Kościół świętą panną,\r\nKtórą zdobył swoją krwią.\r\n\r\nTylko Oblubieniec wie\r\nKto naprawdę jest w Nim zakochany\r\nW dniu wesela znajdzie ich\r\nWniesie przez próg, przez żywota bramy."
+   },
+   {
+      "number":51,
+      "numberString":"51",
+      "title":"Ścieżyna, którą Bóg dla moich wybrał nóg",
+      "text":"Ścieżyna, którą Bóg dla moich wybrał nóg\r\nPrzywiodła mnie do Bożych stóp\r\nChoć na niej ostry głaz wyciska łzy nie raz\r\nLecz końcem jej jest niebios gród.\r\n\r\nRef.:\r\nNie tam, gdzie ja bym szedł\r\nNie to co ja bym chciał\r\nBo którzem ja, bym wybór robić miał?\r\nTy za mnie wybór zrób\r\nTy lepiej wiesz, Tyś Bóg\r\nNiech Twoja wola stanie się.\r\n\r\nChoć ciężar krzyża gnie do ziemi barki me\r\nI chętnie bym zamienił go\r\nLecz Bóg mi dał ten krzyż chcę wiernie nieść go wzwyż\r\nDo nieba bram, gdzie gwiazdy lśnią.\r\n\r\nNietrudno poddać się Temu, co kocha mnie\r\nCo za mnie oddał życie swe\r\nZapomnę swoje „ja”, Bóg w zamian szczęście da\r\nZwycięstwo me w poddaniu się."
+   },
+   {
+      "number":52,
+      "numberString":"52",
+      "title":"Wszechświat cały dziełem Twym jest",
+      "text":"Wszechświat cały dziełem Twym jest\r\nDałeś Panie życie swe nam\r\nTyś królewską godność nam dał\r\nPrzez swą krew\r\nJesteś Boże zawsze ten sam\r\nGodzien, aby śpiewać Ci pieśń\r\nChcemy sławić wciąż Imię Twe\r\nZ wszystkich sił.\r\n\r\nGdy wielbimy Twoją moc\r\nSławimy wielką łaskę Twą\r\nSkosztować musi klęski wróg z ręki Twej\r\nGdy idziemy drogą Twą\r\nPrzed tronem twym korzymy się\r\nZwycięstwo świętej armii Twej pewne jest."
+   },
+   {
+      "number":53,
+      "numberString":"53",
+      "title":"Miłości Twojej, Panie nasz",
+      "text":"Miłości Twojej, Panie nasz\r\nI łaski Twej nie pojmie nikt\r\nPrzyjdź, otwórz oczy nasze dziś\r\nI oświeć wszystkich nas\r\nTwoją prawdą niezmienną na wieki\r\nUtwierdź w wierze nas.\r\n\r\nTy Panie tak miłujesz świat\r\nŻe swego Syna dałeś, by\r\nZa ludzki grzech na krzyżu zmarł\r\nI dał nam poznać Cię\r\nTwoją prawdę niezmienną na wieki\r\nI wielką miłość Twą"
+   },
+   {
+      "number":54,
+      "numberString":"54",
+      "title":"Ty mówisz: przyjdź, ja troski twe wezmę",
+      "text":"Ty mówisz: przyjdź, ja troski twe wezmę\r\nMówisz z poranku ja też z tobą będę\r\nMyślałem nieraz, czy możliwe to,\r\nA jednak w swym sercu uwierzyłem, bo\r\nJuż chcę ufać Ci.\r\n\r\nRef.:\r\n„Chodź do wody mej, chodź i pij”-\r\nJezus sam mówi tak\r\n„Wiem, jesteś pragnący, pokoju ci brak.\r\nTwe łzy też widziałem w wielkim żalu twym\r\nGdyś krzyż mój zobaczył w rozmyślaniu swym”.\r\n\r\nTy jesteś wielki, któż Ciebie zrozumie,\r\nW ten wspaniały plan kto uwierzyć umie?\r\nTy znasz już drogę i ja idę nią\r\nTwa krew zmywa winy, jam własnością Twą\r\nTak Pan mój i Bóg!"
+   },
+   {
+      "number":55,
+      "numberString":"55",
+      "title":"Na świat przyszedł pokój nieść",
+      "text":"Na świat przyszedł pokój nieść\r\nChciał mym przyjacielem być\r\nPrzyniósł nam radosną wieść\r\nByśmy mogli wiecznie żyć\r\nBył tak dobry, miły tak,\r\nŻe aż słów i łez mi brak\r\nKiedy myślę, jak On cierpiał,\r\nJak na krzyżu za mnie zmarł\r\nDla mnie zrobił to mój Pan, mój Jezus.\r\n\r\nZa mnie życie swoje dał\r\nCóż większego mógł mi dać?\r\nŻebym żywot wieczny miał\r\nOn się musiał grzechem stać\r\nKrew płynęła z jego ran\r\nNa Golgocie, gdzie stał krzyż\r\nDla mnie cierpiał tam mój Pan,\r\nBy mnie poprowadzić wzwyż\r\nDla mnie zrobił to mój Pan, mój Jezus.\r\n\r\nTeraz chce mym Panem być\r\nŻebym mógł z Nim wiecznie żyć\r\nBiałą szatę chce mi dać Jezus mój\r\nCzy chcesz ze mną za Nim iść\r\nNie być jak jesienny liść,\r\nKtóry leci, nie wie po co i dokąd."
+   },
+   {
+      "number":56,
+      "numberString":"56",
+      "title":"Gdy wpatruję się w Twą świętą twarz",
+      "text":"Gdy wpatruję się w Twą świętą twarz\r\nGdy rozmyślam nad miłością Twą\r\nKiedy to, co wokół mnie niknie w cień\r\nŚwiatłości Twej.\r\n\r\nGdy dotykam sobą serca Twego,\r\nGdy swą wolę składam u Twych stóp\r\nWtedy to, co wokół mnie niknie w cień\r\nŚwiatłości Twej.\r\n\r\nUwielbiam Cię, uwielbiam Cię\r\nBo mego życia cel - to wielbić Cię."
+   },
+   {
+      "number":57,
+      "numberString":"57",
+      "title":"Tak jak jeleń do źródła wody",
+      "text":"Tak jak jeleń do źródła wody,\r\nDusza ma do Ciebie lgnie.\r\nTyś pragnieniem mojego serca\r\nCiebie Panie wielbić chcę.\r\n\r\nRef.:\r\nTyś mą siłą, Tyś tarczą jest,\r\nNa Tobie tylko polegać chcę.\r\nTyś pragnieniem mojego serca\r\nCiebie Panie wielbić chcę.\r\n\r\nJesteś mi jak mój Brat i jak Przyjaciel,\r\nChoć Tyś królów Król.\r\nI miłuję Cię, Jezu, ponad wszystko,\r\nZ całej duszy mej.\r\n\r\nJesteś droższy mi ponad skarby świata!\r\nWszystko w Tobie mam!\r\nTylko Ty dajesz mi prawdziwą radość,\r\nWszystkim jesteś mi!"
+   },
+   {
+      "number":58,
+      "numberString":"58",
+      "title":"Któż jest Bogiem, jeśli nie nasz Pan",
+      "text":"Któż jest Bogiem, jeśli nie nasz Pan\r\nI któż jest tą skałą, jeśli nie nasz Bóg?\r\nOn twierdzą naszą jest i pewnym wybawieniem\r\nDzień po dniu na nowo pomoc swoją śle.\r\n\r\nKtóż jest Bogiem, jeśli nie nasz Pan\r\nI któż jest tą skałą, jeśli nie nasz Bóg?\r\nOpoką naszą jest, On tarczą i warownią\r\nKtóra wciąż od wieków aż na wieki trwa."
+   },
+   {
+      "number":59,
+      "numberString":"59",
+      "title":"Oczyść serce me",
+      "text":"Oczyść serce me\r\nChcę jak złoto lśnić\r\nI jak czyste srebro\r\nOczyść serce me\r\nChcę czystego złota blaskiem lśnić.\r\n\r\nZstąp ogniu, zstąp\r\nPrzyjdź, oczyść serce me\r\nPragnę być święty\r\nTobie oddany, Panie\r\nChcę zawsze być święty\r\nTobie, mój Mistrzu na zawsze oddany\r\nGotów, by służyć Ci.\r\n\r\nOczyść serce me\r\nObmyj swoją krwią\r\nSpraw, bym mógł być święty\r\nOczyść serce me\r\nZ najtajniejszych grzechów oczyść mnie"
+   },
+   {
+      "number":60,
+      "numberString":"60",
+      "title":"Pan jest Pasterzem moim",
+      "text":"Pan jest Pasterzem moim\r\nNiczego mi nie braknie\r\nNa zielonych niwach pasie mnie\r\nNad spokojne wody mnie prowadzi\r\nDuszę mą pokrzepia\r\nI wiedzie mnie ścieżkami\r\nSprawiedliwości swojej.\r\n\r\nChoćbym nawet szedł ciemną doliną\r\nZła się nie ulęknę, boś Ty ze mną\r\nLaska Twoja i kij Twój mnie\r\nPocieszają"
+   },
+   {
+      "number":61,
+      "numberString":"61",
+      "title":"Chwalcie dziś Pana, wszystkie narody",
+      "text":"\/Chwalcie dziś Pana, wszystkie narody\r\nNiech Imię Jego wysławia świat\r\nBo Jego łaska jest wciąż nad nami\r\nA wierność Jego na wieki trwa. \/×2\r\n\r\nAlleluja, alleluja \/×4\r\nA wierność Jego na wieki trwa."
+   },
+   {
+      "number":62,
+      "numberString":"62",
+      "title":"Choćby góry zmieniły się",
+      "text":"Choćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb\r\nChoćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb.\r\n\r\nTwoja miłość, Panie mój\r\nNie zmieni się, nigdy nie\r\nTwoja miłość, Panie mój\r\nNie zmieni się, nigdy nie.\r\n\r\nChoćby góry zmieniły się\r\nChoćby jeziora zapadły się w głąb\r\nTy spełnisz wszystko, coś obiecał nam\r\nTy spełnisz wszystko, coś obiecał nam."
+   },
+   {
+      "number":63,
+      "numberString":"63",
+      "title":"On przyjdzie znów, On przyjdzie znów",
+      "text":"On przyjdzie znów, On przyjdzie znów\r\nTak, mój Pan przyjdzie znów\r\nJezus, mój Pan przyjdzie znów\r\nNa dźwięk trąby powstaną\r\nZbawieni wszystkich ras\r\nTam, na obłokach Pan spotka wszystkich nas\r\nOn przyjdzie znów, On przyjdzie znów\r\nTak, mój Pan przyjdzie znów\r\nJezus, mój Pan przyjdzie znów\r\nJa nie wiem, jak i nie znam dnia\r\nAle wiem, że mój Pan przyjdzie znów."
+   },
+   {
+      "number":64,
+      "numberString":"64",
+      "title":"Zaufaj swemu Panu",
+      "text":"Zaufaj swemu Panu\r\nCałym sercem\r\nI nie polegaj na własnym rozumie\r\nPamiętaj o Nim wszędzie\r\nOn wyprostuje ścieżki Twe."
+   },
+   {
+      "number":65,
+      "numberString":"65",
+      "title":"On jest moim życiem",
+      "text":"Ref.:\r\n\/ On jest moim życiem, On jest moją siłą,\r\nOn jest mą nadzieją, Jezus, mój Pan \/ ×2\r\n\r\nWielbić Cię chcę życiem mym\r\nWielbić Cię chcę pieśnią mą\r\nZe wszystkich mych sił\r\nUwielbiać Cię chcę\r\nMoja nadzieja – to Ty!"
+   },
+   {
+      "number":66,
+      "numberString":"66",
+      "title":"Nie ma problemu, by Bóg rozwiązać nie mógł",
+      "text":"Nie ma problemu, by Bóg rozwiązać nie mógł\r\nBurzy tak strasznej, by Pan uciszyć nie mógł\r\nBólu takiego, by Pan ukoić nie mógł\r\nGóry wysokiej, by Pan przesunąć nie mógł.\r\n\r\nRef.:\r\nSkoro poniósł On na barkach swych ciężary świata,\r\nJa wiem, mój bracie, że On poradzi i twym.\r\nSkoro poniósł On na barkach swych ciężary świata,\r\nWiem moja siostro, że On poradzi i twym.\r\n\r\nNie ma choroby, by Bóg wyleczyć nie mógł,\r\nGrzechu, nieszczęścia, by On wyrwać cię nie mógł.\r\nJezus chce pomóc ci dziś, pospiesz do Niego\r\nJedynie On ma tę moc zachować cię od złego.\r\n\r\nNie ma problemu, by Bóg rozwiązać nie mógł,\r\nModlitwy, której by Pan usłyszeć nie mógł.\r\nObietnic, których by On wykonać nie mógł,\r\nI serc, których by Pan ukoić nie mógł."
+   },
+   {
+      "number":67,
+      "numberString":"67",
+      "title":"Tak, jesteś godzien chwały i mocy",
+      "text":"Tak, jesteś godzien chwały i mocy,\r\nBłogosławieństwa i czci\r\nWszystkie narody, całe stworzenie\r\nZłoży pokłon przed tronem Twym\r\n\r\nRef.:\r\nKażdy język wyzna, że jesteś Panem Panów\r\nNa Twój widok zegnie się każde kolano\r\nNiebo, ziemia odda Ci hołd\r\nTwe Królestwo od wieków już na wieki trwa.\r\n\r\nKrólestwo Chrystusa zwycięża świat\r\nBrzmi triumfalna pieśń\r\nNa tronie zasiada odwieczny Pan\r\nWszyscy oddają Mu cześć\r\nKażdy język…"
+   },
+   {
+      "number":68,
+      "numberString":"68",
+      "title":"Tyś jest ucieczką mą",
+      "text":"Tyś jest ucieczką mą,\r\nTyś jest ochroną mą\r\nW ucisku strzeżesz mnie od zguby\r\nOtaczasz mnie zbawieniem swym\r\nI dajesz radości pieśń\r\nGdy przyjdzie lęk i strach\r\nBędę ufać Ci."
+   },
+   {
+      "number":69,
+      "numberString":"69",
+      "title":"Śpiewaj Panu dziś nową pieśń",
+      "text":"Śpiewaj Panu dziś nową pieśń\r\nChwała niech wypełni to miejsce\r\nOn Królem królów jest,\r\nOn jest panów Pan,\r\n\r\nWięc hołd Mu oddajmy\r\nAlleluja, wielbimy Cię\r\nAlleluja, Panu daj cześć!"
+   },
+   {
+      "number":70,
+      "numberString":"70",
+      "title":"Pan łaskę słabym dał",
+      "text":"Pan łaskę słabym dał\r\nI pokornym dom w mieście swym.\r\nOn mrok zamienia w dzień\r\nUświęceniem jest martwych ciał.\r\n\r\nRef.:\r\nBo Pan wybawieniem jest\r\nWodą pośród skał, światłem w ciemną noc\r\nBo Pan wybawieniem jest\r\nSam wykupił nas i pokonał śmierć.\r\n\r\nBóg Ojcem naszym jest\r\nSyna swego dał, stworzył świat.\r\nWiatr wieje dokąd chce\r\nJezus łączy nas w ciało swe."
+   },
+   {
+      "number":71,
+      "numberString":"71",
+      "title":"Pamiętaj, że",
+      "text":"Pamiętaj, że\r\nTo, że żyjesz nie pomysłem twoim jest\r\nTo, że oddychasz, nie twoją wolą jest\r\nPamiętaj, że\r\nO twym życiu zdecydował inny Ktoś,\r\nJego darem jest to, że jesteś tu.\r\n\r\nRef.:\r\nDla Boga ważnym jesteś,\r\nBo to On jest Stworzycielem twym\r\nNieważne to, czy swą życia pieśń\r\nZaśpiewasz w moll, czy w dur\r\nBóg uczynił cię i w żadnej rzeczy\r\nNie pomylił się\r\nTyś dziełem Pana, dziełem cudownym\r\nBóg kocha cię, tak kocha mnie.\r\n\r\nPamiętaj, że\r\nNikt nie myśli, nie odczuwa tak, jak ty\r\nA twój uśmiech jedyny w świecie jest\r\nPamiętaj, że\r\nNikt nie umie patrzeć w niebo tak, jak ty\r\nNie potrafi tego, co potrafisz ty.\r\n\r\nPamiętaj, że\r\nTwojej twarzy nikt nie będzie nigdy miał\r\nTakie oczy masz jedynie ty\r\nPamiętaj, że\r\nTyś bogatym jest, bo życie twe to skarb\r\nŻycie twe jest jedyne tak jak ty.\r\n\r\nPamiętaj, że\r\nChrystus przyszedł, aby umrzeć za ten świat\r\nZmarł za ciebie, żebyś wolnym był\r\nPamiętaj, że\r\nTą decyzję musisz podjąć w życiu sam\r\nMusisz wybrać, gdzie wieczność spędzisz ty."
+   },
+   {
+      "number":72,
+      "numberString":"72",
+      "title":"Zostawiłeś majestat swój",
+      "text":"Zostawiłeś majestat swój\r\nPorzuciłeś wszystko dla mnie\r\nI cierpiałeś z rąk tych, których sam stworzyłeś\r\nWziąłeś winę mą i wstyd\r\nŻeby zanieść je na krzyż\r\nI królujesz dziś wywyższony na ziemi i w niebie\r\n\r\nJa chcę uwielbiać Ciebie, Panie mój\r\nZdobyłeś moje serce, jestem Twój\r\nJa zawsze będę kochać Ciebie\r\nBoś tylko ty jedynie za mnie zmarł\r\nŻycie swoje za mą wolność dał\r\nWięc śpiewam Tobie dziś z wdzięczności wielkiej"
+   },
+   {
+      "number":73,
+      "numberString":"73",
+      "title":"Oczy moje wznoszę wzwyż",
+      "text":"Oczy moje wznoszę wzwyż –\r\nSkąd nadejdzie pomoc mi?\r\nPomoc moją sam Pan\r\nCo dzień z nieba zsyła mi.\r\nPan cię będzie strzec od wszelkiego zła\r\nStrzec będzie duszy twej\r\nPan strzec będzie wyjścia i wejścia twego\r\nOdtąd aż i na wieki!\r\nPan jest Stróżem twym!"
+   },
+   {
+      "number":74,
+      "numberString":"74",
+      "title":"Alleluja, alleluja",
+      "text":"\/Alleluja, alleluja,\r\nalleluja, alleluja\r\nPan blisko jest. \/ ×2\r\n\r\nPan blisko jest, alleluja\r\nPan blisko jest, alleluja\r\nPan blisko jest, alleluja\r\nPan blisko jest!"
+   },
+   {
+      "number":75,
+      "numberString":"75",
+      "title":"Święte Imię Jezus, święte Imię Jezus",
+      "text":"\/ Święte Imię Jezus, święte Imię Jezus\r\nJest na ustach mych i w sercu mym\r\nW mocy Ducha uwielbiam Cię \/ ×2\r\n\r\n\/ Nie ma w innym zbawienia,\r\nGdyż nie dano nam, ludziom\r\nInnego imienia –\r\nW Nim zbawienie jest \/ ×2"
+   },
+   {
+      "number":76,
+      "numberString":"76",
+      "title":"Uwielbiajcie Pana ludzkich serc bijące dzwony.",
+      "text":"Uwielbiajcie Pana ludzkich serc bijące dzwony.\r\nPadnij na kolana przed Nim ludu utrudzony.\r\n\r\nOn osuszy twoje łzy,\r\nOn ratunkiem będzie ci\r\nU Jego stóp padnie wróg,\r\nBo On Bóg niezwyciężony.\r\n\r\nNiepojęty w swej mądrości,\r\nŚwięty, święty Bóg miłości.\r\nŚpiewaj Panu, ziemio,\r\nChwalcie wszystkie świata strony."
+   },
+   {
+      "number":77,
+      "numberString":"77",
+      "title":"Stań, wycisz się dziś duszo ma",
+      "text":"Stań, wycisz się dziś duszo ma\r\nNiech znój i trud odejdą w dal.\r\nOżywczy Duch rozlewa się\r\nZranionych serc balsamem jest.\r\nStań wycisz się, Bóg zna twój los\r\nNa ścieżkach swych prowadzi cię.\r\nChodź, zanurz się w łasce, co trwa,\r\nA Jego dłoń ukoi cię.\r\n\r\nStań, wycisz się dziś duszo ma\r\nChoć wokół zgiełk i bitew gwar\r\nI tylko tego trzeba ci,\r\nBy Pana dziś usłyszeć głos.\r\nStań wycisz się, dziś dziecię me,\r\nJa znam twój los, prowadzę cię.\r\nChodź, zanurz się w mej łaski zdrój,\r\nA moja dłoń ukoi cię."
+   },
+   {
+      "number":78,
+      "numberString":"78",
+      "title":"O, Ojcze mój, Panie mego życia",
+      "text":"O, Ojcze mój, Panie mego życia\r\nBędę wielbić Cię i dziś i na wieki\r\nOgłaszać chcę Twą dobroć i łaskę\r\nMiłość, co wciąż dajesz mi.\r\nTwa dobroć, Panie, ogarnia świat\r\nTy mnie podnosisz, kiedy sam nie mogę wstać.\r\nTwa dobroć, Panie, pokoju źródłem jest\r\nOczyszczasz z nieprawości mnie,\r\nNowe życie dajesz swe."
+   },
+   {
+      "number":79,
+      "numberString":"79",
+      "title":"Skłaniam się u Twoich stóp",
+      "text":"Skłaniam się u Twoich stóp\r\nSkłaniam się u Twoich stóp\r\nŚwięty i wierny, mądrości pełny,\r\nPanem mym jesteś Ty!\r\n\r\n\/ O, mój Jezu, Zbawicielu,\r\nWszystko, co jest w duszy mojej\r\nSkładam dziś u Twych stóp. \/ ×2\r\n\r\nKlękać chcę u Twoich stóp\r\nKlękać chcę u Twoich stóp\r\nUwalniasz i leczysz – Wszechmocny Bóg\r\nPanem mym jesteś Ty!"
+   },
+   {
+      "number":80,
+      "numberString":"80",
+      "title":"Uwielbiam Imię Twoje, Panie",
+      "text":"Uwielbiam Imię Twoje, Panie\r\nWywyższam Cię i daję Ci hołd\r\nW przedsionku chwały Twej staję\r\nZ wdzięcznością śpiewam Ci pieśń.\r\n\r\nO Panie Jezu, chcę wyznać, że\r\nJa kocham Ciebie, Ty zmieniasz mnie\r\nChcę Ci dziękować dziś ze wszystkich sił\r\nDajesz mi siebie, bym na wieki żył."
+   },
+   {
+      "number":81,
+      "numberString":"81",
+      "title":"Mój Jezu, mój Zbawco",
+      "text":"Mój Jezu, mój Zbawco\r\nPanie, któż jest jak Ty\r\nWszystkie me dni\r\nChwalić Cię chcę\r\nMiłość Twoja wielka jest.\r\n\r\nTyś moją osłoną\r\nW Tobie nadzieja i moc\r\nWszystkie me dni\r\nZe wszystkich sił\r\nZawsze pragnę wielbić Cię.\r\n\r\nPodnieś swój głos, śpiewaj dla Króla chwał\r\nMoc i majestat, i chwałę Mu daj\r\nGóry i morza niech drżą\r\nGdy usłyszą Imię Twe.\r\n\r\nWołam z radości bo wielkie są dzieła Twe\r\nKochać Cię, Twoim na zawsze być chcę\r\nNic nie dorówna nadziei, którą w Tobie mam."
+   },
+   {
+      "number":82,
+      "numberString":"82",
+      "title":"Idziemy z twarzą jasną",
+      "text":"Idziemy z twarzą jasną\r\nI z pieśnią przeradosną\r\nMy wieści Boże w świat cały chcemy nieść\r\nIdziemy z twarzą jasną\r\nI z pieśnią przeradosną\r\nBo mamy Zbawcę, w którym życie nowe jest.\r\n\r\nChcemy, by świat Mu śpiewał cały\r\nChcemy, by wydzwaniały dzwony\r\nTa pieśń radosna brzmi o Panu Jezusie\r\nChcemy Mu przynieść wieść o wielkim zbawieniu\r\nO łasce, która serca przemieni\r\nChcemy, by świat śpiewał o Panu Jezusie."
+   },
+   {
+      "number":83,
+      "numberString":"83",
+      "title":"Serce me wciąż raduje się",
+      "text":"Serce me wciąż raduje się\r\nSerce me wciąż raduje się\r\nBo Zbawca blisko przy mnie jest\r\nW moim Panu mogę wciąż radować się."
+   },
+   {
+      "number":84,
+      "numberString":"84",
+      "title":"Wiele było łez i bólu",
+      "text":"Wiele było łez i bólu\r\nSmutku, trosk i strach przed jutrem\r\nBył czas – nie wiedziałam, jak mam dalej żyć\r\nAle zawsze w takich chwilach\r\nBóg pokazał mi, że moje łzy\r\nWylały po to się, by wzmocnić mnie.\r\n\r\nRef.:\r\nWłaśnie Ty, właśnie Ty\r\nUczysz mnie, jak ufać Tobie,\r\nChcesz zawsze mówić mi\r\nUczysz mnie właśnie Ty\r\nPanie zależną być od woli Twej.\r\n\r\nWiele było miejsc i twarzy\r\nKtóre w swoim życiu znałam\r\nLecz jakże często tak samotną czułam się\r\nAle w swojej samotności\r\nTam w tych cudnych chwilach ciszy\r\nPokazałeś mi, że jestem dzieckiem Twym."
+   },
+   {
+      "number":85,
+      "numberString":"85",
+      "title":"Zasnął wieczór snem niespokojnym",
+      "text":"Zasnął wieczór snem niespokojnym\r\nKlucz obłoków niebem mknie.\r\nO takiej porze rozmyślać lubię sam,\r\nJak dokonało się zbawienie me.\r\n\r\nW zwykły dzień, tak jak wiele innych\r\nLos wieczności ważył się\r\nGdy Chrystus Pan pod ciężarem krzyża szedł\r\nNa miejsce, gdzie miał ponieść śmierć.\r\n\r\nRef.:\r\nCzy musiał tak straszną śmiercią zginąć Pan\r\nAby zbawienie mi dać?\r\nCzy ja naprawdę dla Niego więcej znaczę\r\nNiż życie, że za mnie zmarł?\r\n\r\nZbity, znieważony Pan Jezus\r\nZ trudem wszedł na wzgórza szczyt\r\nI tam Go ludzie zwyczajni tak jak my\r\nRozpięli bez litości na drewniany krzyż.\r\nRęce przygwoździli do belki,\r\nAby zadać większy ból\r\nPomiędzy niebem a ziemią skonał Pan\r\nW wielkich męczarniach – wielki nieba Król.\r\n\r\nZasnął wieczór snem niespokojnym\r\nNiebem mknie obłoków klucz.\r\nWiem, że mój Jezus tak bardzo kocha mnie\r\nLecz w pełni nie zrozumiem tego tu.\r\nMoże kiedyś, gdy mnie zabierze\r\nTam, gdzie wieczne szczęście trwa\r\nGdzie wybawieni przez wieczność całą wraz\r\nBędziem wdzięczności śpiewać psalm"
+   },
+   {
+      "number":86,
+      "numberString":"86",
+      "title":"Był czas, kiedym żył dla siebie",
+      "text":"Był czas, kiedym żył dla siebie\r\nŻyło tylko moje ja\r\nRozważałem przyjść do Ciebie,\r\nLecz me serce mnie zwodziło:\r\nNic tu Ty, bo wszystko ja. \/×2\r\n\r\nAż na krzyżu Cię ujrzałem\r\nSkąd pomimo krwawych ran\r\nGłos miłości usłyszałem –\r\nW sercu cicho zadzwoniło:\r\nTrochę Ty i trochę ja. \/×2\r\n\r\nW Duchu cudnie serce wzniosłeś\r\nMogłem z bliska widzieć Cię\r\nPrzyciągnąłeś mnie do siebie\r\nTak zmałałem, Ty urosłeś\r\nWiększym Ty, a mniejszym ja. \/×2\r\n\r\nChoć górzysta często droga,\r\nMorze życia wzdyma się\r\nMiłość większa, niż ma trwoga\r\nJuż zupełnie mnie przemogła\r\nWszystkim Ty, a niczym ja. \/×2"
+   },
+   {
+      "number":87,
+      "numberString":"87",
+      "title":"Poszedłeś sam na Golgotę",
+      "text":"Poszedłeś sam na Golgotę\r\nBy za mnie ponieść męki krzyża\r\nTy za mnie zniosłeś drwiny, śmiech\r\nGdy człowiek bił Cię i poniżał.\r\n\r\nRef.:\r\nTwa miłość, Panie większa jest\r\nNiż może pojąć rozum mój\r\nWięc Tobie wciąż dziękować chcę\r\nTwa miłość, Panie większa jest\r\nNiż może pojąć rozum mój\r\nUwielbiam więc Cię.\r\n\r\nZa mnie kaleczył Ciebie cierń,\r\nW strasznej ciemności Bóg zostawił,\r\nGdyż włożył na Cię winy me\r\nZa moje grzechy Tyś się wstawił.\r\n\r\nPan Jezus Chrystus wszelki grzech\r\nI winy wszystkie mi darował\r\nI życie, wolność, radość już\r\nNa wieki wszystkim ofiarował."
+   },
+   {
+      "number":88,
+      "numberString":"88",
+      "title":"Do zwycięstwa prowadzi mnie mój Pan",
+      "text":"Do zwycięstwa prowadzi mnie mój Pan\r\nDo zwycięstwa prowadzi mnie mój Bóg\r\nChcę wyśpiewać Tobie chwałę\r\nAlleluja Panu cześć.\r\n\r\nRef.:\r\nPrzyjdzie dzień, gdy w chwale ujrzę Ciebie\r\nTwarzą w twarz, będę oglądać Cię\r\nLecz na razie na ziemi tu\r\nMuszę toczyć mój bój.\r\n\r\nDo zwycięstwa prowadzi mnie mój Pan\r\nDo zwycięstwa prowadzi mnie mój Bóg\r\nChcę wyśpiewać Tobie chwałę\r\nAlleluja Panu cześć.\r\n\r\nDodaj sił i mocy wiary Panie\r\nWesprzyj mnie mocnym ramieniem swym\r\nAbym w sercu miał Słowo Twe\r\nI podążał za Tobą, za Tobą."
+   },
+   {
+      "number":89,
+      "numberString":"89",
+      "title":"Hosanna, hosanna",
+      "text":"Hosanna, hosanna\r\nHosanna na niebiosach \/×2\r\n\r\nRef.:\r\nSławić chcemy Cię wciąż\r\nZ radością i czcią\r\nWywyższony bądź, Boże nasz\r\nHosanna niechaj ciągle brzmi.\r\n\r\nChwała, chwała\r\nKrólowi królów chwała, cześć \/×2\r\n\r\nJezus, Jezus\r\nJezus Królem królów jest \/×2"
+   },
+   {
+      "number":90,
+      "numberString":"90",
+      "title":"Ty prowadzisz mnie",
+      "text":"Ty prowadzisz mnie,\r\nNawet, gdy nie widzę Cię\r\nCzynisz to, co dobre jest\r\nTak jak pragniesz tego dla mnie\r\nPrzewodnikiem bądź,\r\nBlisko Ciebie kroczyć chcę\r\nW miłości Twej i w mocy Twej\r\nUczyń każdy dzień,\r\nUczyń każdy dzień."
+   },
+   {
+      "number":91,
+      "numberString":"91",
+      "title":"Z głębokości mórz, aż po szczyty gór",
+      "text":"Z głębokości mórz, aż po szczyty gór\r\nStworzenie objawia majestat Twój.\r\nOd kolorów jesieni po wiosenny nów\r\nWszystko śpiewa Ci pieśń pełną cudownych słów,\r\nOgłaszając:\r\n\r\nRef.:\r\nNiepojęty, Niezmierzony,\r\nGwiazdy stworzyłeś na niebie i każdą z nich znasz.\r\nWspaniałym Bogiem Tyś jest,\r\nWszechmogący, Nieskończony,\r\nW zachwycie klękamy przed Tobą, by wyznać to, że,\r\nWspaniałym Bogiem Tyś jest.\r\n\r\nKto uwalnia błyskawic moc w czasie burz,\r\nKto maluje kolory polarnych zórz,\r\nSłońce stworzył na niebie i dał mu swą moc,\r\nOrzeźwienie przynosi w gwieździstą noc? Tylko Ty:\r\nRef. Zawsze dobry, miłujący\r\nZnasz moje serce i mimo to wciąż kochasz mnie\r\nWspaniałym Bogiem Tyś jest \/x2"
+   },
+   {
+      "number":92,
+      "numberString":"92",
+      "title":"Panie mój przychodzę dziś",
+      "text":"Panie mój przychodzę dziś,\r\nSerce me skruszone przyjm,\r\nSkłaniam się przed świętym tronem Twym.\r\nWznoszę ręce moje wzwyż,\r\nMiłość mą wyznaję Ci,\r\nUwielbiam Ciebie w Duchu,\r\nUwielbiam w prawdzie Cię,\r\nŻycie me oddaję Tobie, uświęć je."
+   },
+   {
+      "number":93,
+      "numberString":"93",
+      "title":"Jezu, tyś wszystkim dla mnie jest",
+      "text":"Jezu, tyś wszystkim dla mnie jest\r\nJak żyć bez miłości Twej\r\nJezu, otwórz me oczy\r\nBym ujrzeć mógł Twej miłości cud.\r\n\r\nPrzyjdź i napełnij nas\r\nMocą Bożą co dnia\r\nTyś pokoju księciem, lekarzem dusz\r\nJesteś światłem, co w ciemnościach\r\nNie gaśnie"
+   },
+   {
+      "number":94,
+      "numberString":"94",
+      "title":"Otwórz oczy duszy mej Panie.",
+      "text":"\/\/Otwórz oczy duszy mej Panie.\r\nOtwórz oczy duszy mej,\r\nChcę widzieć Ciebie\r\nChcę widzieć Ciebie \/x2\r\n\r\nRef.:\r\nWidzieć wielkość, Twe wywyższenie,\r\nŚwieć światłem Swojej chwały.\r\nWidzieć Twą moc i miłość,\r\nŚpiewam: Święty, Święty, Święty. \/\/x2\r\n\r\n\/Święty, Święty, Święty\r\nŚwięty, Święty, Święty\r\nŚwięty, Święty, Święty\r\nChcę widzieć Ciebie. \/x2"
+   },
+   {
+      "number":95,
+      "numberString":"95",
+      "title":"Nadzieję odnalazłem w Nim",
+      "text":"Nadzieję odnalazłem w Nim,\r\nOn moją siłą, światłem mym.\r\nOn fundamentem, twierdzą mą,\r\nCo zniesie najstraszniejszy grom.\r\n\r\nMiłości szczyt, pokoju Bóg,\r\nUciszy strach, nasyci głód,\r\nOn Pocieszyciel, życia sens,\r\nW Jego miłości schronię się.\r\n\r\nW Chrystusie Bóg objawił się\r\nW bezbronnym dziecku w Betlejem\r\nNa ziemię zszedł by zbawić nas\r\nBy przebaczenia nastał czas.\r\n\r\nNa krzyżu zmarł za każdy grzech\r\nBy uspokoić Boży gniew\r\nUwolnił mnie z ciężaru win\r\nUmarłem z Nim i żyję w Nim.\r\n\r\nZatriumfował stary wróg\r\nGdy w ciemnym grobie spoczął Bóg\r\nLecz krótko trwała złego moc\r\nZmartwychwstał Pan minęła noc.\r\n\r\nPrzez swoją śmierć uwolnił mnie\r\nUmierać z Nim i żyć z Nim chcę\r\nPrzekleństwo zdjął odkupił z win\r\nOn we mnie jest ja jestem w Nim.\r\n\r\nW Nim nawet śmierć niestraszna jest\r\nChrystusa moc ochrania mnie\r\nOd pierwszych chwil po życia kres\r\nWytycza drogi mojej bieg.\r\n\r\nNi grzechu zło ni ludzki sąd\r\nNie wydrze mnie z Chrystusa rąk\r\nA gdy mnie weźmie gdzie mój dom\r\nZ radością pójdę tam gdzie On."
+   },
+   {
+      "number":96,
+      "numberString":"96",
+      "title":"Tylko w Bogu moje jest zbawienie",
+      "text":"Tylko w Bogu moje jest zbawienie\r\nW Nim jedynie duszy ukojenie\r\nMoja chwała i skała\r\nW Nim pokładam mą nadzieję.\r\n\r\nUfaj Mu, Kościele, w każdym czasie\r\nWylewajcie przed Nim serca wasze\r\nLudzie lżejsi niż tchnienie\r\nTylko w Bogu jest zbawienie.\r\n\r\nRef.:\r\n\/Sprawiedliwy jest nasz Pan\r\nKażdy zbierze to, co siał\r\nKto uwierzy nie zawiedzie się!\r\nPrzychodzimy przed Twój tron\r\nChcemy widzieć Twoją moc\r\nI doświadczyć, Panie, łaski Twej \/x2\r\n\r\nTylko w Bogu moje jest zbawienie\r\nW Nim jedynie duszy ukojenie\r\nMoja chwała i skała\r\nW Nim pokładam mą nadzieję"
+   },
+   {
+      "number":97,
+      "numberString":"97",
+      "title":"W tej ciszy przebywać wciąż chcę",
+      "text":"W tej ciszy przebywać wciąż chcę,\r\nW tej ciszy daleki świat ten.\r\nTy koisz mój ból, usuwasz mój strach,\r\nGdy widzę Cię Zbawco przez łzy.\r\n\r\nJa widzę Cię Jezu mój tam,\r\nJak wiele masz sińców i ran.\r\nMiłości Twej moc, zawiodła Cię tam,\r\nUwolnić mnie z grzechów i win.\r\n\r\nRef.:\r\nTo nie gwoździe Cię przybiły,\r\nLecz mój grzech\r\nTo nie ludzie Cię skrzywdzili,\r\nLecz mój grzech\r\nTo nie gwoździe Cię trzymały,\r\nLecz mój grzech\r\nChoć tak dawno to się stało,\r\nWidziałeś mnie.\r\n\r\nWspominam tak często ten dzień,\r\nGolgotę i słodki jej cień.\r\nPrzyszedłem pod Krzyż z ciężarem swych win,\r\nUwolnił mnie tam Boży Syn."
+   },
+   {
+      "number":98,
+      "numberString":"98",
+      "title":"Lepszy jeden dzień w przedsionkach Twych",
+      "text":"Lepszy jeden dzień w przedsionkach Twych\r\nLepszy jeden dzień w mieszkaniu Twym\r\nNiż gdzie indziej Panie mój tysiąc dni\r\nLepiej w domu Twoim być\r\nNiż gdzie indziej spędzać czas\r\nW Tobie radość pokój i zbawienie jest\r\n\r\nRef.:\r\nJesteś mą nadzieją,\r\nJesteś mym schronieniem\r\nMoją twierdzą – nie boję się\r\nUwielbiam, wywyższam, ja kocham Cię"
+   },
+   {
+      "number":99,
+      "numberString":"99",
+      "title":"Błogosław duszo moja Pana",
+      "text":"Ref.:\r\nBłogosław duszo moja Pana,\r\nWszystko co we mnie Jego Najświętsze Imię.\r\nBłogosław duszo moja Pana,\r\nJego dobroci nigdy nie zapominaj.\r\n\r\nOn odpuszcza wszystkie twoje grzechy,\r\nLeczy wszystkie twoje choroby.\r\nOkazuje Swoje miłosierdzie,\r\nOn ratuje Ciebie od zguby.\r\nOn napełnia twoje życie dobrem,\r\nAż odnowi się twoja młodość jak u orła.\r\n\r\nNie odpłaca według grzechów,\r\nNie chce wiecznie gniewać się.\r\nOn pamięta żeśmy prochem,\r\nOn najlepiej wie!\r\n\r\nTak jak ojciec nad swoimi dziećmi,\r\nPan lituje się nad pokornym.\r\nOn oddala od nas nasze winy,\r\nJak daleko wschód od zachodu.\r\nJak wysoko niebo jest nad ziemią\r\nTak jest wielka dobroć dla ludzi, \r\nKtórzy się Go boją.\r\n\r\nDni człowieka są jak trawa,\r\nKwitnie On jak polny kwiat.\r\nKiedy mocniej wiatr zawieje,\r\nZnika po nim ślad!\r\n\r\n\r\n\/ Błogosławcie Pana - wszyscy aniołowie!\r\nBłogosławcie Pana - wszyscy Jego ludzie!\r\nBłogosławcie Pana - wszystkie Jego dzieła!\r\nBłogosławcie Go! \/x2"
+   },
+   {
+      "number":100,
+      "numberString":"100",
+      "title":"Wziąłeś za nas cały strach",
+      "text":"Wziąłeś za nas cały strach\r\nKażdy wstyd i każdy ból\r\nPrzejąłeś sam\r\nChociaż nikt nie był tego wart\r\nKażdą winę i każdy grzech\r\nTam na krzyżu przybiłeś Ty\r\nSzedłeś sam\r\nBy swą łaskę pokazać nam.\r\n\r\nRef.:\r\nJestem tu\r\nCzekam na Ciebie\r\nZanim przyjdziesz znów\r\nChcę poznać Cię lepiej.\r\nJestem już\r\nWolny od grzechu\r\nMogę śpiewać Tobie, że\r\nNależę do Ciebie.\r\n\r\n\/Wszelka chwała moc i cześć\r\nTobie należą się\r\nW Tobie mam najdroższy skarb -\r\nMoje imię w sercu Twym \/x2\r\n\r\nRef.: ..."
+   },
+   {
+      "number":101,
+      "numberString":"101",
+      "title":"Przed obliczem Pana uniżmy się",
+      "text":"Przed obliczem Pana uniżmy się. \/2x\r\nPan sam wywyższy nas,\r\nJego jest Ziemia i czas,\r\nPan sam wywyższy nas.\r\nWszystkie swoje troski oddajmy Mu. \/2x\r\nKroczmy wszyscy za Nim po kres swych dni. \/2x\r\nW Jego chwale kiedyś spotkamy się. \/2x"
+   },
+   {
+      "number":102,
+      "numberString":"102",
+      "title":"Jezus daje nam zbawienie",
+      "text":"Jezus daje nam zbawienie,\r\nJezus daje pokój nam.\r\nJemu składam dziękczynienie,\r\nChwałę z serca mego dam.\r\n\r\nRef.:\r\nJezus siłą mą,\r\nJezus pieśnią mego życia.\r\nKrólem wiecznym On,\r\nNiepojęty w mocy swej.\r\nW Nim znalazłem to,\r\nCzego szukałem do dzisiaj.\r\nSam mi podał dłoń,\r\nBym zwyciężał w każdy dzień.\r\n\r\nW Jego ranach uzdrowienie,\r\nW Jego śmierci życia dar.\r\nJego krew to oczyszczenie,\r\nJego życie chwałą nam."
+   },
+   {
+      "number":103,
+      "numberString":"103",
+      "title":"Łańcuch gór otacza w krąg święte Jeruzalem",
+      "text":"Łańcuch gór otacza w krąg święte Jeruzalem,\r\nTak jak dzieci swoje Pan ogarnia \r\n\r\nRef.:\r\nDziś, jutro, na wieki,\r\nOtacza sobą Pan swe dzieci.\r\nDziś, jutro, zawsze, w każdy czas,\r\nOtacza sobą Pan swe dzieci.\r\n\r\nGóra Syjon wznosi się w sercu Jeruzalem,\r\nNie zachwieje nią nic, nie zachwieje nic.\r\nMy, jak Syjon, który trwa w sercu Jeruzalem,\r\nNie zachwieje nami nic, nie zachwieje nic."
+   },
+   {
+      "number":104,
+      "numberString":"104",
+      "title":"Mów do mnie Panie chcę słyszeć Cię",
+      "text":"Mów do mnie Panie chcę słyszeć Cię\r\nPrzyjąć od Ciebie co masz dla mnie.\r\nNie chcę się chować lecz w Tobie skryć\r\nW cieniu Twym Panie chcę iść.\r\n\r\nŚwięty, potężny jesteś Panie nasz\r\nPrzed Tobą dziś możemy stać\r\nDzięki łasce, nie dzięki nam samym."
+   },
+   {
+      "number":105,
+      "numberString":"105",
+      "title":"W cieniu Twoich rąk",
+      "text":"W cieniu Twoich rąk\r\nUkryj proszę mnie,\r\nGdy boję się, gdy wokół mrok\r\nBądź światłem,\r\nBądź nadziei dniem.\r\n\r\nWszystkim o czym śnię,\r\nGłosem w sercu mym.\r\nJak ręka, która trzyma mnie\r\nNad brzegiem nocy, brzegiem dni.\r\nBądź jak skrzydła dwa,\r\nKiedy braknie sił.\r\n\r\nRef.:\r\nChwyć mnie i nieś,\r\nNiech niebo bliżej będzie,\r\nTak bardzo chcę\r\nW ramionach skryć się Twych."
+   },
+   {
+      "number":106,
+      "numberString":"106",
+      "title":"My, którzy wszystko liczymy",
+      "text":"My, którzy wszystko liczymy\r\nCiebie mamy za darmo,\r\nDajesz nam siebie w całości\r\nI jesteś taki rozrzutny.\r\n\r\nRef.:\r\nKażdy wschód słońca Ciebie zapowiada,\r\nNie pozwól nam przespać poranka. \/2x\r\n\r\nDałeś nam siebie za darmo,\r\nTwoja hojność zdumiewa,\r\nNaucz nas liczyć dni nasze,\r\nNiech człowiek już nie umiera.\r\n\r\nTy jesteś pełnią życia,\r\nDaj nam Twojego chleba,\r\nDaj nam oddychać wiecznością,\r\nTwój oddech ożywia i wspiera.\r\n\r\nPrzyjdź, Panie, przyjdź nareszcie\r\nJak przyszedłeś już kiedyś,\r\nA co dzień nowy wschód słońca\r\nNiech Ciebie nam zapowiada."
+   },
+   {
+      "number":107,
+      "numberString":"107",
+      "title":"Przyjaciela mam co pociesza mnie",
+      "text":"Przyjaciela mam co pociesza mnie\r\nGdy o Jego ramię oprę się\r\nW Nim nadzieję mam, uleciał strach\r\nOn najbliżej jest, zawsze troszczy się.\r\nKrólów Król, z nami Bóg \/2x\r\nJezus, Jezus \/ 2x"
+   },
+   {
+      "number":108,
+      "numberString":"108",
+      "title":"W lekkim powiewie przychodzisz do mnie, Panie",
+      "text":"W lekkim powiewie przychodzisz do mnie, Panie \/ 2x\r\nNie przez wicher ogromny i nie przez ogień,\r\nAle w lekkim powiewie przychodzisz do mnie.\r\nW lekkim powiewie nawiedzasz duszę mą."
+   },
+   {
+      "number":109,
+      "numberString":"109",
+      "title":"Nie bój się, bo jestem z tobą",
+      "text":"Nie bój się, bo jestem z tobą\r\nNie bój się, bo jestem z tobą\r\nNie bój się, bo jestem z tobą, mówi Pan.\r\n\r\nOdkupiłem cię, dałem ci imię swe,\r\nMoim jesteś więc już.\r\nNie utoniesz gdy będziesz po wodzie szedł,\r\nOgień nie strawi cię.\r\nNie, nie, nie utoniesz,\r\nNie, nie, nie spłoniesz\r\nBo ja jestem z tobą - mówi Pan"
+   },
+   {
+      "number":110,
+      "numberString":"110",
+      "title":"To nasz Pan i Król",
+      "text":"To nasz Pan i Król\r\nOdziany w majestat Swój\r\nZiemio raduj się, ziemio raduj się\r\nOkrywa światłość Go\r\nUcieka ciemność i zło\r\nDrży na Jego głos, drży na Jego głos.\r\n\r\nRef.:\r\nJak wielki jest Bóg\r\nWysławiaj Go,\r\nJak wielki jest Bóg\r\nŚwiat ujrzy Go\r\nJak wielki, wielki jest Bóg.\r\n\r\nNa wieki wieków trwa\r\nW rękach Jego czas\r\nPoczątkiem końcem On,\r\nPoczątkiem końcem On\r\nJedyny w Trójcy Bóg\r\nOjciec, Syn i Duch\r\nBarankiem jest i lwem,\r\nBarankiem jest i lwem.\r\n\r\nNa wieki godzien jest\r\nPrzyjąć chwałę moc i cześć\r\nOgłaszać chcę\r\nJak wielki jest Bóg"
+   },
+   {
+      "number":111,
+      "numberString":"111",
+      "title":"Zawsze wierny byłeś mi",
+      "text":"Zawsze wierny byłeś mi\r\nKiedy zawodziłem ja,\r\nNiepojęty w miłości swej,\r\nDobrze jest z Tobą być.\r\nDarowałeś życie mi!\r\nZabrałeś winę mą i grzech\r\nNikt nie kocha tak jak Ty,\r\nDałeś życie swe.\r\n\r\nRef.:\r\nBo jesteś dobry\r\nDla mnie zawsze Twoja łaska\r\nWiecznie trwa.\r\nBo jesteś dobry\r\nDla mnie zawsze Twoja łaska\r\nNa wieki trwa.\r\n\r\nPonad wszystko jesteś Ty,\r\nJednak sługą stałeś się\r\nSłyszysz każdy płacz i szept!\r\nMiłosierny mój Pan!\r\nPrzed świętością Twoją drżę,\r\nSpraw bym czyste serce miał\r\nWobec świata chcę kochać Cię,\r\nDawać miłość Twą."
+   },
+   {
+      "number":112,
+      "numberString":"112",
+      "title":"Oddajmy cześć",
+      "text":"Oddajmy cześć\r\nWiecznemu Panu chwał,\r\nPokłońmy się temu,\r\nKtóry rozpostarł niebiosa\r\nI utwierdził ziemi krąg.\r\nJego chwała wznosi\r\nSię ponad szczyty gór.\r\nJego łaska nad nami jest,\r\nA niebo – Jego Tron.\r\nBóg to nasz Pan i tylko On. \/2x"
+   },
+   {
+      "number":113,
+      "numberString":"113",
+      "title":"Jak Dawid kiedy przed Bogiem był",
+      "text":"Jak Dawid kiedy przed Bogiem był\r\nBędę tańczył ze wszystkich sił\r\nPrzed Panem Królem mym.\r\n\r\nJak Miriam grała na bębnie swym\r\nBędę klaskać ze wszystkich sił\r\nPrzed Panem Królem mym.\r\n\r\nRef.:\r\nPokłońmy się przed Bogiem\r\nOddajmy Jemu cześć\r\nWielbijmy imię Jezus\r\nŚpiewajmy Panu pieśń.\r\n\r\nJak Judejczycy przed bitwą swą\r\nZawierzmy Panu i chwalmy Go\r\nPobity będzie wróg.\r\n\r\nJak Jozue wznieśmy bojową pieśń Oddajmy\r\nPanu chwałę i cześć\r\nA wróg ucieknie wnet."
+   },
+   {
+      "number":114,
+      "numberString":"114",
+      "title":"Nie chcę więcej samych słów",
+      "text":"Nie chcę więcej samych słów\r\nChcę naprawdę Ciebie znać\r\nNowe serce we mnie stwórz\r\nAbym bardziej szukał Ciebie\r\nOjcze duch mój pragnie\r\nSpocznie tylko w Tobie\r\n\r\nRef.:\r\nAbba Ojcze należę do Ciebie \/2x\r\n\r\nNiepojęty wielki Bóg\r\nTy stworzyłeś wszechświat cały\r\nJakże jasny jest dom Twój\r\nTwe królestwo przebaczenia\r\nCzłowiek powstał z Twoich rąk\r\nTak by kochać Ciebie."
+   },
+   {
+      "number":115,
+      "numberString":"115",
+      "title":"Błogosławię Cię",
+      "text":"Błogosławię Cię,\r\nKiedy ziemia wydaje plon\r\nGdy obfitość Panie zlewasz Swą,\r\nBłogosławię Cię.\r\n\r\nBłogosławię Cię,\r\nGdy pustynia w krąg otacza mnie,\r\nChoćbym nawet przez pustkowie szedł,\r\nBłogosławię Cię.\r\n\r\nRef.:\r\nZa Twą łaskę, którą zsyłasz,\r\nja chwalę Cię\r\nChoćby ciemność mnie przykryła,\r\nja powiem, że:\r\n\/ Panie, błogosławię imię Twe,\r\nBłogosławię Cię\r\nPanie, błogosławię imię Twe\r\nBłogosławię święte imię Twe \/2x\r\n\r\nBłogosławię Cię,\r\nKiedy słońca blask oświeca mnie,\r\nTo co dajesz mi, najlepsze jest,\r\nBłogosławię Cię.\r\n\r\nBłogosławię Cię,\r\nKiedy drogę moją znaczy cień,\r\nChociaż cierpię, pragnę chwalić Cię,\r\nBłogosławię Cię.\r\n\r\nTy dajesz z woli swej,\r\nZabierasz, kiedy chcesz\r\nW mym sercu zawsze chcę\r\nBłogosławić Cię!"
+   },
+   {
+      "number":116,
+      "numberString":"116",
+      "title":"Kto zaufał Ci, ten uwierzył",
+      "text":"Kto zaufał Ci, ten uwierzył,\r\nŻe nie zawstydzi go nic\r\nMoc Twego ramienia\r\nJest skałą schronienia\r\nKiedy skrada się wróg.\r\n\r\nSzczęśliwy ten, kto uwierzył,\r\nŻe nie zawstydzi go nic\r\nMoc Twego ramienia\r\nJest skałą schronienia\r\nKiedy skrada się wróg.\r\n\r\nZawsze będę ufać,\r\nPomnażać wszelką Twą chwałę\r\nI głosić Twą sprawiedliwość,\r\n\r\nGdyż sięga ona aż do nieba\r\nUbierasz mą duszę w dostojność\r\nTo co umarłe ożywiasz\r\nRaduje się moje serce,\r\nWierność Wszechmocnego\r\nNieustannie opowiadać chcę."
+   },
+   {
+      "number":117,
+      "numberString":"117",
+      "title":"O ho ho laj laj laj",
+      "text":"Ref.:\r\n\/O ho ho laj laj laj laj laj laj laj laj laj \/x2 ...laj\r\n\r\nWrócą w wielkiej liczbie, przyjdą z krańców ziemi\r\nAż z północy przyprowadzę ich\r\nŚlepi i zranieni, chromi, utrudzeni\r\nI brzemienne i rodzące razem tu powrócą.\r\n\r\nTo są słowa Pana, mówcie o tym wszędzie:\r\nTen, który rozproszył Izraela zbierze go\r\nStrzec go będzie tak, jak pasterz swoich owiec.\r\n\r\nOto przyjdą z płaczem wszyscy jak tułacze\r\nA Ja pocieszenie dla nich mam\r\nPójdą prostą drogą, na niej się nie potkną\r\nDobrym Ojcem dla nich będę, los ich znów odmienię.\r\n\r\nŚpiewać i radować, wykrzykiwać będą\r\nI niczego nigdy więcej nie zabraknie im\r\nIch żałobę zmienię w radość i wesele."
+   },
+   {
+      "number":118,
+      "numberString":"118",
+      "title":"Wiem że Ojciec o mnie troszczy się",
+      "text":"Wiem że Ojciec o mnie troszczy się\r\nBóg dobry jest, dobry jest\r\nW każdej chwili, wszędzie chroni mnie\r\nBóg dobry dla mnie jest.\r\n\r\nI choć sztorm i choć noc, choćby coś\r\nWszystko będzie dobrze, bo\r\nWiem że Ojciec o mnie troszczy się\r\nBóg dobry dla mnie jest."
+   },
+   {
+      "number":119,
+      "numberString":"119",
+      "title":"Któż tak jak On",
+      "text":"Któż tak jak On\r\nBarankiem jest i lwem\r\nBóg na tronie swym\r\nGóry kłonią się\r\nOceany grzmią\r\nWielbiąc Pana chwał\r\n\r\nRef.:\r\nChwal Adonai\r\nOd pierwszego blasku zórz,\r\nż po kres każdego dnia\r\nChwal Adonai\r\nKażdy naród ziemi tej,\r\nCałe Niebo śpiewa Ci tę pieśń."
+   },
+   {
+      "number":120,
+      "numberString":"120",
+      "title":"Nie ma za trudnych spraw",
+      "text":"Nie ma za trudnych spraw,\r\nNie ma zbyt błahych też dla Ciebie, Panie,\r\nTy przecież wszystko wiesz.\r\n\r\nKażdą potrzebę znasz,\r\nSłyszysz mój śmiech i płacz.\r\nDla Ciebie, Panie, to przecież ważne jest.\r\n\r\nRef.:\r\nJa wiem, że wszystko jest możliwe,\r\nŻe nie ma rzeczy bez znaczenia\r\nDlatego modlę się do Ciebie, dobry Panie.\r\nI wiem, że zanim powiem słowo,\r\nTy, Boże, znasz już całe zdanie.\r\nUwielbiam Cię, Twoja wola niech się stanie.\r\n\r\nNie zaskoczę Cię, wiesz o mnie wszystko,\r\nWiesz, co było, znasz moją przyszłość.\r\nNiepojęte, że Ty, Panie, kochasz mnie, kochasz mnie."
+   },
+   {
+      "number":121,
+      "numberString":"121",
+      "title":"Nie szczycę się mądrością Panie",
+      "text":"Nie szczycę się mądrością Panie\r\nNie szczycę się z dostatku swych sił\r\nNie jestem dumny z tego co posiadam\r\nTylko Tobą Panie szczycę się.\r\n\r\nJakże wzniosły jest Twój Tron\r\nTy rządzisz narodami\r\nJakże wzniosły jest Twój Tron\r\nCała ziemia drży\r\nJakże wzniosły jest Twój Tron\r\n\r\nStwórco mój, Zbawco mój\r\nTylko Tobą szczycę się."
+   },
+   {
+      "number":122,
+      "numberString":"122",
+      "title":"Niepojęta łaska",
+      "text":"Ref.:\r\nNiepojęta łaska Jego wciąż dosięga nas,\r\nGdy podnosi, przemienia serca i uwalnia nas \/2x\r\nprawda ta...\r\n\r\nOn jest Ojcem sierot,\r\nOpiekunem wdów jest dobry Bóg.\r\nDom swój daje wszystkim opuszczonym.\r\nZsyła deszcz obfity\r\nNa to co spragnione i wyczerpane jest\r\nDobry jest dla biednych.\r\nW łasce swej nasz Bóg do nas uniżył się.\r\n\r\nOn zna każde serce,\r\nNie odwraca się, gdy wzywamy Go\r\nKocha nas pomimo\r\nTego, że tak niewiele możemy mu dać."
+   },
+   {
+      "number":123,
+      "numberString":"123",
+      "title":"Jeśli chcę tego czego nie chcesz Ty",
+      "text":"Jeśli chcę tego czego nie chcesz Ty\r\nZatrzymaj mnie i powiedz mi czego pragniesz\r\nJeśli idę tam gdzie nie idziesz Ty\r\nZatrzymaj mnie, nie pozwól dalej iść.\r\n\r\nRef.:\r\nBo chcę widzieć Cię w życiu mym\r\nWywyższonego\r\nChcę widzieć Cię w życiu mym\r\nChcę widzieć Cię w życiu mym\r\nWywyższonego\r\nChcę widzieć Cię w życiu mym.\r\n\r\nCokolwiek czynię dla swojej własnej chwały\r\nZatrzymaj mnie i zbadaj moje serce\r\nGdy oceniam innych bez miłości\r\nZatrzymaj mnie I zniszcz moją pychę.\r\n\r\nGdy boję się o to co pomyślą inni\r\nZatrzymaj mnie ważne jest co myślisz Ty\r\nGdy troszczę się tylko o to, co jest moje\r\nZatrzymaj mnie i skrusz moje serce.\r\n\r\nBo tylko Twoja jest Chwała,\r\nTwoja jest Chwała\r\nI tylko Tobie się kłaniam,\r\nTobie się kłaniam \/3x"
+   },
+   {
+      "number":124,
+      "numberString":"124",
+      "title":"Niech ma śmierć nie smuci cię, w domu Ojca znajdę się",
+      "text":"Niech ma śmierć nie smuci cię, w domu Ojca znajdę się\r\nWszystkie rany duszy mej znikną, Pan uleczy je.\r\n\r\nŚwiatła nocy, światło dnia Jezusa zastąpi blask\r\nWięcej już nie zawstydzę się, mój Zbawiciel pozna mnie\r\n\r\nRef.:\r\nBez znaczenia, gdzie pochowasz mnie,\r\nW Panu wolny stanę się\r\nBez znaczenia, gdzie będę spał,\r\nKażdą łzę mój otrze Pan.\r\n\r\nSkarby oślepiają wzrok, bogactwo pociąga w mrok\r\nŻywą wodę daje Bóg - skosztuj i nie pragnij już.\r\n\r\nWięc nie opłakujcie mnie, gdy mój czas zakończy się\r\nMoje życie Jego jest, który sam pokonał śmierć."
+   },
+   {
+      "number":125,
+      "numberString":"125",
+      "title":"Znad oceanów do mnie wołasz",
+      "text":"Znad oceanów do mnie wołasz\r\nGdzie każdy krok niepewny jest\r\nTy jesteś tam, gdzie niewiadoma\r\nTam znajdę grunt dla wiary mej.\r\n\r\nRef.:\r\nBędę wzywać imię Twe\r\nI ponad fale patrzeć chcę\r\nGdy burzą się\r\nMej duszy pokój w Tobie jest\r\nGdzie pójdziesz Ty, ja pójdę też.\r\n\r\nMój strach utonie w Twojej łasce\r\nBo ręka Twa prowadzi mnie\r\nI Ty mnie nigdy nie zawiodłeś\r\nWiem, teraz też nie zawiedziesz mnie.\r\n\r\nPanie, prowadź mnie, \r\nGdzie wiara nie ma granic\r\nDaj mi chodzić nad wodami\r\nGdziekolwiek mnie prowadzisz\r\nWeź mnie głębiej\r\nNiż pójść mogą moje stopy\r\nMoja wiara się umocni\r\nW Twojej obecności \/2x"
+   },
+   {
+      "number":126,
+      "numberString":"126",
+      "title":"Bóg jest dla nas ucieczką i mocą",
+      "text":"Bóg jest dla nas ucieczką i mocą,\r\nŁatwo znaleźć u Niego pomoc\r\nWięc się nie boimy\r\nChoćby waliła się ziemia,\r\nA góry zapadały\r\nW otchłań morza\r\nWszelka woda niech się wzburzy,\r\nA góra się zachwieje Pod Jego siłą!\r\n\r\nRef.:\r\nPan... Zastępów\r\nJest z nami\r\nA Bóg... Najwyższy\r\nJest dla nas obroną.\r\n\r\nPowstały narody do walki,\r\nWzburzyły się królestwa\r\nA głos Boga zagrzmiał\r\nRozpłynęła się ziemia,\r\nKażda broń skruszyła\r\nKażda siła zmalała\r\nBo On pali tarcze w ogniu,\r\nUśmierza wszelkie wojny\r\nPo krańce ziemi.\r\n\r\nPrzyjdźcie i zobaczcie dzieła Pana\r\nZdumiewające, których dokonuje\r\nStójcie i uznajcie, że jest Bogiem\r\nNad narodami, nad wszelkimi ludźmi \/2x"
+   },
+   {
+      "number":127,
+      "numberString":"127",
+      "title":"Jezus jest Królem, Królem",
+      "text":"Jezus jest Królem, Królem \/2x\r\nPotęgi Jego moc,\r\nWznosi się nad nami dziś.\r\nWznieśmy ręce uwielbiając Go,\r\nOddajmy Mu cześć\r\nWychwalajmy Jezusa,\r\nOn jedynym Bogiem jest."
+   },
+   {
+      "number":128,
+      "numberString":"128",
+      "title":"Nie ma takich gorzkich łez",
+      "text":"Nie ma takich gorzkich łez, ( za 2x laj, laj, laj...)\r\nNie ma takich smutnych chwil,\r\nKtórych nie uleczy mój Bóg.\r\n\r\nWstanę, ach, poderwę się,\r\nPo otwieram wszystkie drzwi,\r\nDobry Bóg przebaczył mój grzech.\r\n\r\nWielbię Cię Panie mój,\r\nChcę się przytulić do Twoich stóp\r\nTańczyć dla Ciebie chwały pieśń."
+   },
+   {
+      "number":129,
+      "numberString":"129",
+      "title":"Prawda jedyna, słowa Jezusa z Nazaretu",
+      "text":"Prawda jedyna, słowa Jezusa z Nazaretu\r\nŻe swego Syna posłał z nieba Bóg na świat\r\nAby niewinnie cierpiąc zmarł za nasze grzechy\r\nI w pohańbieniu przyjął winy wszystkich nas.\r\n\r\nRef.:\r\nDzięki Ci, Boże mój za ten krzyż\r\nKtóry Jezus cierpiał za mnie,\r\nJezus cierpiał za mnie. \/2x\r\n\r\nUwierz w Jezusa, przecież on za Ciebie umarł\r\nZ miłości do nas przyszedł z nieba na ten świat\r\nBłogosławiony ten, kto wierzy, choć nie widział\r\nZaufaj dziś Bogu, a na wieki będziesz żyć."
+   },
+   {
+      "number":130,
+      "numberString":"130",
+      "title":"Pan Bóg jest moim pasterzem",
+      "text":"Pan Bóg jest moim pasterzem\r\nNad wody spokojne mnie wiedzie\r\nNa łąkach zielonych mnie pasie\r\nNiczego mi dziś nie zabraknie.\r\n\r\nDuszę moją pokrzepiasz\r\nTwa obietnica jest pewna\r\nBezpieczną mnie drogą prowadzisz\r\nPocieszasz, gdy smutek na twarzy.\r\n\r\nRef.:\r\nChoćbym szedł ciemną doliną\r\nZła się nie ulęknę,\r\nBo Ty jesteś ze mną\r\nChoćbym szedł ciemną doliną\r\nZła się nie ulęknę,\r\nBo Tyś ze mną jest.\r\n\r\nOliwą mą głowę namaszczasz\r\nKielich bez końca napełniasz\r\nTwa dobroć i łaska na wieki\r\nJuż przy mnie są."
+   },
+   {
+      "number":131,
+      "numberString":"131",
+      "title":"Aż sponad mórz i szczytów gór",
+      "text":"Aż sponad mórz i szczytów gór\r\nTwa miłość spływa na mnie w dół\r\nA ja otwieram serce swe\r\nNiech miłość Twa uwolni mnie.\r\n\r\nSzczęśliwy jestem w prawdzie Twej\r\nDo Ciebie wznoszę ręce me\r\nChcę zawsze śpiewać o miłości Twojej Panie.\r\n\r\n\/ O miłości Twej zawsze śpiewać\r\nO miłości Twej zawsze śpiewać chcę \/x2"
+   },
+   {
+      "number":132,
+      "numberString":"132",
+      "title":"Nie, nie chodzi o mnie",
+      "text":"Nie, nie chodzi o mnie\r\nJestem tu dla Ciebie\r\nNie chcę śpiewać pustych słów\r\n\r\nNie, nie szukam wrażeń\r\nSzukam Ciebie Panie\r\nPrzyjmij chwałę z moich ust.\r\n\r\nRef.:\r\nJa tylko śpiewać chcę,\r\nJeśli z tego cieszysz się,\r\nJeśli to uwielbia Cię.\r\nSam śpiew nie znaczy nic,\r\nJeśli serca nie ma w nim\r\nNajważniejszy jesteś Ty.\r\n\r\nNie chcesz ideału\r\nTylko duszę całą\r\nTo co mam oddaję Ci.\r\n\r\nNie tylko śpiewem, co trwa przez chwile,\r\nA całym życiem chcę wielbić Ciebie,\r\nJeśli mam śpiewać to w jednym celu,\r\nWszelka chwała Panie Twoja jest."
+   },
+   {
+      "number":133,
+      "numberString":"133",
+      "title":"Wszystko, Panie, Ciebie chwali",
+      "text":"Wszystko, Panie, Ciebie chwali,\r\nPtaki, kwiaty, wicher, woda\r\nBo Ty wszystkim jesteś, Boże,\r\nWszystko Tobie się podobać chce.\r\n\r\n\/Panie jestem Twoim dzieckiem,\r\nPokochałeś mnie nad życie,\r\nMocną ręką mnie prowadzisz,\r\nBłogosławisz mi obficie sam.\/ x2"
+   },
+   {
+      "number":134,
+      "numberString":"134",
+      "title":"Kim ja jestem, że wciąż myślisz o mnie",
+      "text":"Kim ja jestem, że wciąż myślisz o mnie\r\nŻe mnie słyszysz gdy wołam Cię.\r\nCzy prawdą jest,\r\nŻe ty wciąż myślisz o mnie,\r\nJak mnie kochasz- To niezwykłe!\r\n\r\nRef.:\r\nBóg przyjacielem mym,\r\nOn przyjacielem mym\r\nBóg przyjacielem swym\r\nNazwał mnie dziś! \/x2\r\n\r\nPrzyjacielem swoim nazwał\r\nMnie wszechmocny Bóg \/x3"
+   },
+   {
+      "number":135,
+      "numberString":"135",
+      "title":"Kiedy wątpię i zmagam się",
+      "text":"Kiedy wątpię i zmagam się\r\nGdy upadam podnosisz mnie.\r\nTwoja miłość tak wierna jest\r\nI w burzach życia dajesz pokój mi O-o\r\nTy w burzach życia dajesz pokój mi.\r\n\r\nKiedy cierpię przy mnie trwasz,\r\nKiedy pytam odpowiedz masz,\r\nTwoja miłość przystanią jest,\r\nI kiedy tonę Ty ratujesz mnie\r\nI kiedy tonę Ty ratujesz mnie.\r\n\r\nRef.:\r\nLatarnią Tyś, Latarnią Tyś\r\nŚwiecisz w mych ciemnościach\r\nChcę za Tobą iść O-o\r\nLatarnią Tyś, Latarnią Tyś\r\nWierzę w obietnicę,\r\nŻe przeprowadzisz mnie na drugi brzeg\r\nE-e-e Na drugi brzeg x2\r\n\r\nNie boję się już przyszłości mej,\r\nKażdy dzień pieśnią chwały jest,\r\nBo Twa miłość tak wielka jest\r\nWięc w sztormach życia uspokaja mnie\r\nWięc w sztormach życia uspokajasz mnie."
+   },
+   {
+      "number":136,
+      "numberString":"136",
+      "title":"Chcemy Ciebie wielbić",
+      "text":"Chcemy Ciebie wielbić\r\nSzukać Twojej twarzy\r\nWcześnie o poranku i gdy noc kładzie cień\r\nTobie chcemy śpiewać\r\nWznieść niebiańską chwałę\r\nDając nasze serca byś je stale zmieniać mógł.\r\nNiech się wznosi dziś Twa chwała\r\nO Panie nasz\r\nTo dla Ciebie nasze serca otwarte są."
+   },
+   {
+      "number":137,
+      "numberString":"137",
+      "title":"To co jest kruche i rozsypane",
+      "text":"To co jest kruche i rozsypane\r\nW łasce zebrane\r\nZnów całym jest. Moje życie\r\nTy odzyskałeś |zbawiłeś mnie| x2\r\n\r\nRef.:\r\nCudowna jest ta łaska, co\r\nZbawiła z grzechów mnie\r\nZnalazła mnie, zwróciła wzrok\r\nI mogę widzieć Cię.\r\nJuż widzę Twoją twarz\r\nW Twych oczach widzę, jak kochasz nas\r\nZmarłeś za ten świat\r\nŻeby w zamian życie mu dać.\r\n\r\nZabierasz niemoc, zabierasz winy\r\nI wkładasz skarb swój w gliniany dzban\r\nWięc weź me serce, niech jest naczyniem\r\nNiech widzi świat Twe życie w nas."
+   },
+   {
+      "number":138,
+      "numberString":"138",
+      "title":"Pan skałą i twierdzą, i wybawieniem moim",
+      "text":"Pan skałą i twierdzą, i wybawieniem moim,\r\nBóg moją opoką, na której polegać chcę.\r\nTarczą, rogiem zbawienia mego,\r\nwarownią moją jest.\r\nWołam: niech będzie pochwalony Pan!"
+   },
+   {
+      "number":139,
+      "numberString":"139",
+      "title":"Niech słaby powie: „Mam moc”",
+      "text":"Niech słaby powie: „Mam moc”,\r\nBiedny wyzna: „Wszystko mam”,\r\nŚlepy mówi: „Widzę znów”,\r\nWe mnie to uczynił Bóg.\r\n\r\nRef.:\r\nHosanna, hosanna Barankowi, co siebie dał.\r\nHosanna, hosanna, Jezus zmarł i zmartwychwstał.\r\n\r\nWejdę w rzekę, gdzie grzechy me\r\nZmywasz, Zbawco, swoją krwią.\r\nZ niebios miłość wylewa się,\r\nŁaską swą ogarnij mnie.\r\n\r\nZ wód głębokich podniosę się\r\nWprost w ramiona, Panie, Twe\r\nI zaśpiewam nową pieśń,\r\nJezus Król uwolnił mnie."
+   },
+   {
+      "number":140,
+      "numberString":"140",
+      "title":"W czasie swym, w czasie swym",
+      "text":"W czasie swym, w czasie swym\r\nCzynisz wszystko doskonale w czasie swym\r\n\/: Panie pragnę widzieć to\r\nJak wciąż działa Twoja moc\r\nJak wypełniasz Słowo swe\r\nW czasie swym\r\n\r\nW czasie swym, w czasie swym\r\nCzynisz wszystko doskonale w czasie swym,\r\n\/: Panie dziś powierzam Ci,\r\nMoje plany, wszystkie dni,\r\nByś mnie użył jak sam chcesz\r\nW czasie swym."
+   },
+   {
+      "number":141,
+      "numberString":"141",
+      "title":"Skoro miłość zniosła śmierć",
+      "text":"Skoro miłość zniosła śmierć\r\nJak cenna jest Jezusa krew\r\nGdy piękno nieba skryło mój wstyd\r\nObrazem miłości był Twój krzyż.\r\n\r\nUznałeś, że warto znieść ten ból\r\nZ radością patrzyłeś poza grób\r\nUznałeś, że warto znieść tę śmierć.\r\n\r\nRef.:\r\nCudowny tak\r\nWspaniały tak\r\nMoc Twoich ran\r\nZwycięża świat\r\nMój cały dług\r\nSpłacony już\r\nI żyję znów\r\nPrzez łaski cud.\r\n\r\nNa zawsze już pusty Jego grób\r\nJak wielką nadzieją jest nasz Bóg\r\nPasja przebiła piekło na wskroś\r\nŚmierć pokonana, zwycięzcą On.\r\n\r\nOddałeś swą wolność za mnie\r\nWięc gdzie jest mój wstyd i gdzie mój grzech\r\nMiłością zdobyłeś serce me.\r\n\r\nKiedy widzę krzyż, widzę wolność\r\nGdy zobaczę grób, będę z Tobą\r\nI przez życie wieczne uwielbię Cię\r\nDoświadczając łaski Twej.\r\n\r\nMoja dusza wielbi Cię\r\nDoświadczając łaski Twej\r\nMoja dusza wielbi Cię."
+   },
+   {
+      "number":142,
+      "numberString":"142",
+      "title":"Nasz Ojcze nieskończony",
+      "text":"Nasz Ojcze nieskończony\r\nWszystko stworzyłeś Ty\r\nWszechmogący.\r\n\r\nŚwiętego Ducha mocą\r\nPoczęty został Syn\r\nJezus, nasz Zbawca.\r\n\r\nRef.:\r\nTak, ja wierzę w Boga Ojca\r\nW Syna, którym Jezus jest\r\nWierzę też w Świętego Ducha\r\nBóg jest w osobach trzech.\r\nWierzę także w zmartwychwstanie\r\nŻe powstaniemy znów\r\nWyznaję to\r\nWierzę w imię Jezus.\r\n\r\nNasz Sędzio, nasz Obrońco\r\nCierpiałeś za nasz grzech\r\nA nam przebaczono.\r\n\r\nTy zszedłeś do ciemności\r\nI w chwale wzniosłeś się\r\nZająłeś w niebie tron.\r\n\r\nWierzę, że Bóg jest\r\nWierzę, że pokonał śmierć\r\nWierzę, że to Chrystus Panem jest\r\n\r\nRef.:\r\nWierzę, że jest życie wieczne\r\nŻe na ziemię przyszedł Bóg\r\nWierzę we wspólnotę świętych\r\nI święty Kościół Twój\r\nWierzę w nasze zmartwychwstanie\r\nGdy Jezus przyjdzie znów\r\nWyznaję to\r\nWierzę w imię Jezus."
+   },
+   {
+      "number":143,
+      "numberString":"143",
+      "title":"Są ludzie, co pragną się dostać do nieba",
+      "text":"Są ludzie, co pragną się dostać do nieba,\r\nLecz droga nieznana im jest.\r\nZgadują, szukają, w rozterkach wciąż żyją,\r\nA ja wiem, że Bóg zbawił mnie.\r\n\r\nRef.:\r\nBo otwarłem drzwi serca,\r\nPan Jezus w nie wszedł.\r\nOn zna drogę do nieba,\r\nProwadzi tam mnie.\r\nDuch Boży poświadcza w mym sercu nadzieję;\r\nJa wiem, że Bóg zbawił mnie.\r\n\r\nSą ludzie, co wierzą, że czyny, zasługi\r\nDo nieba pozwolą im wejść.\r\nWięc mierzą swe siły, pytają o cenę,\r\nA ja wiem, że Bóg zbawił mnie."
+   },
+   {
+      "number":144,
+      "numberString":"144",
+      "title":"Kimże jestem, by nieba Król",
+      "text":"Kimże jestem, by nieba Król\r\nChciał przyjąć mnie\r\nDzięki Niemu dziś jestem tu\r\nOn pokochał mnie\r\nOn pokochał mnie.\r\n\r\nRef.:\r\nKto zaufa Ci\r\nMoże wolnym być\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\n\r\nŁaską swą On odkupił mnie\r\nW Nim wolność mam\r\nKiedy więził mnie strach i grzech\r\nJezus za mnie zmarł\r\nTak, On za mnie zmarł.\r\n\r\nRef. Kto zaufa Ci\r\nMoże wolnym być\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\nSwego domu drzwi\r\nOtworzyłeś mi\r\nJestem dzieckiem Twym\r\nUfam Ci!\r\n\r\nTy mnie kochasz\r\nNie opuszczasz\r\nNazwałeś mnie dzieckiem swym\r\nJesteś ze mną Tobie ufam\r\nNazwałeś mnie dzieckiem swym."
+   },
+   {
+      "number":145,
+      "numberString":"145",
+      "title":"Rozpal ogień, Panie, w moim sercu już",
+      "text":"Rozpal ogień, Panie, w moim sercu już,\r\nNiech jasno płonie chwaląc Ciebie wciąż!\r\nWszystko, co posiadam, jest własnością Twą.\r\nNiech mnie Twe ręce mocno objąć chcą!\r\n\r\nRef.:\r\nTyś źródłem życia i radości mej!\r\nPrzez Ciebie ciemność już rozjaśnia się.\r\nMoje modlitwy słyszysz w chwili trwóg.\r\nJezu, mój Zbawco, Tyś mój Pan i Bóg!\r\n\r\nZechciej nas odgrodzić od działania zła.\r\nNiech da mi pokój mocna ręka Twa!\r\nW ciemność świata tego Gwiazdą Swą mi świeć!\r\nBądź przy mnie, Panie, nie oddalaj się!\r\n\r\nWieczne światło Boże wnet zaświeci mi.\r\nNie trać nadziei, duszo, światło lśni!\r\nUcisz narzekania, gdy usłyszysz pieśń!\r\nPan już nadchodzi! Śpiesz Go witać, śpiesz!"
+   },
+   {
+      "number":146,
+      "numberString":"146",
+      "title":"Ty na początku byłeś Słowem",
+      "text":"Ty na początku byłeś Słowem\r\nTam, gdzie sam Najwyższy Pan\r\nSwą chwałę ukrył w tym, co stworzył\r\nLecz objawił Ciebie nam.\r\n\r\nRef.:\r\nJakie piękne jest imię Twe\r\nJakie piękne jest imię Twe\r\nTwe imię, Jezu, Królu nasz\r\nJakie piękne jest imię Twe\r\nNic z nim nie równa się\r\nJakie piękne jest imię Twe\r\nTwe imię, Jezu.\r\n\r\nNie chciałeś mieszkać w niebie bez nas\r\nWięc przyniosłeś niebo tu\r\nTwa miłość, Jezu, jest największa\r\nNic nas nie rozłączy już.\r\n\r\nŚmierć pokonana, zasłona rozdarta\r\nZamilkł już grzech i zamilkł grób\r\nGłośno grzmi niebo, chwałę Twą wielbiąc\r\nBo z martwych wstał nasz Pan i Bóg.\r\n\r\nNie masz rywala, sobie równego\r\nNa zawsze rządzisz w mocy swej\r\nTwoja jest chwała, Twoje królestwo\r\nA imię Twe najwyższe jest."
+   }
+]

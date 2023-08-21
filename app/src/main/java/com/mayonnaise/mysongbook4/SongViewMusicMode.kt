@@ -14,6 +14,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.util.FitPolicy
+import com.google.android.material.slider.Slider
 import kotlinx.coroutines.withContext
 
 class SongViewMusicMode : AppCompatActivity() {
@@ -22,10 +23,11 @@ class SongViewMusicMode : AppCompatActivity() {
         setContentView(R.layout.activity_song_view_music_mode)
 
         var pdfViewSong = findViewById<PDFView>(R.id.pdfViewSong)
-        val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
-        val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
+        val sliderSongPicker: Slider = findViewById(R.id.sliderSongPicker)
         var buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
         var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
+
+        sliderSongPicker.valueTo = DataManager.maxSongNumber.toFloat()
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
@@ -60,9 +62,9 @@ class SongViewMusicMode : AppCompatActivity() {
                 .enableSwipe(true)
                 .swipeHorizontal(false)
                 .enableDoubletap(false)
-                .pageSnap(true)
                 .autoSpacing(true)
                 .pageFling(true)
+                .nightMode(true)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load()
         }
@@ -81,54 +83,6 @@ class SongViewMusicMode : AppCompatActivity() {
             updateSong()
         } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
             Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
-        }
-
-        if (songNumber >= DataManager.maxSongNumber){
-            rightArrowButton.visibility = View.INVISIBLE
-        }
-        else{
-            rightArrowButton.visibility = View.VISIBLE
-        }
-
-        if (songNumber <= 1){
-            leftArrowButton.visibility = View.INVISIBLE
-        }
-        else{
-            leftArrowButton.visibility = View.VISIBLE
-        }
-
-
-        leftArrowButton.setOnClickListener{
-            if(songNumber > 1) {
-                songNumber--
-                updateSong()
-                if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
-                    if (rightArrowButton.visibility == View.INVISIBLE) {
-                        animateButton(rightArrowButton, true)
-                    }
-                } else {
-                    if (leftArrowButton.visibility == View.VISIBLE) {
-                        animateButton(leftArrowButton, false)
-                    }
-                }
-            }
-        }
-
-
-        rightArrowButton.setOnClickListener{
-            if(songNumber < DataManager.maxSongNumber) {
-                songNumber++
-                updateSong()
-                if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
-                    if (leftArrowButton.visibility == View.INVISIBLE) {
-                        animateButton(leftArrowButton, true)
-                    }
-                } else {
-                    if (rightArrowButton.visibility == View.VISIBLE) {
-                        animateButton(rightArrowButton, false)
-                    }
-                }
-            }
         }
 
         buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->

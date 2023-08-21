@@ -9,6 +9,8 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,10 +31,13 @@ class SongsList : AppCompatActivity() {
         var favoritesButton: Button = findViewById(R.id.favoritesButton)
         var sortButton: Button = findViewById(R.id.sortButton)
         var recyclerViewTOC: RecyclerView = findViewById(R.id.recyclerViewTOC)
+        val musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
+        val infoTV: TextView = findViewById(R.id.infoTV)
 
         var maxSongNr = DataManager.maxSongNumber
 
         lateinit var adapter: SongAdapter
+        var musicSwitch: Boolean = false
 
         val sharedPrefs by lazy {
             getSharedPreferences(
@@ -123,5 +128,33 @@ class SongsList : AppCompatActivity() {
             }
             false
         })
+
+        if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
+            musicSwitch = true
+            musicModeSwitch.setChecked(true)
+            DataManager.musicMode = true
+
+        }
+        else{
+            musicSwitch = false
+            musicModeSwitch.setChecked(false)
+            DataManager.musicMode = false
+        }
+
+
+        musicModeSwitch.setOnClickListener{
+            if(musicModeSwitch.isChecked == true){
+                musicSwitch = true
+                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                DataManager.musicMode = true
+            }
+            else{
+                musicSwitch = false
+                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                DataManager.musicMode = false
+            }
+
+        }
+
     }
 }

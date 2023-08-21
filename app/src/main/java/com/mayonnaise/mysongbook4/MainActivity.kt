@@ -41,14 +41,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val songbookRV: RecyclerView = findViewById(R.id.carousel_recycler_view)
-        //val scrollView: HorizontalScrollView = findViewById(R.id.scrollView)
-        val infoButton: Button = findViewById(R.id.buttonInfo)
         val reportButton: Button = findViewById(R.id.buttonReport)
         val reportTV: TextView = findViewById(R.id.reportTV)
-        val infoTV: TextView = findViewById(R.id.infoTV)
-       // val chooseTV: TextView = findViewById(R.id.chooseTV)
         val initializeTV: TextView = findViewById(R.id.initializeTV)
-        val musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
         val contextView: ConstraintLayout = findViewById(R.id.constraintlayout)
         val verseTV: TextView = findViewById(R.id.verseTV)
@@ -59,8 +54,6 @@ class MainActivity : AppCompatActivity() {
         val lineLayout3: LinearLayout = findViewById(R.id.lineLayout3)
 
         val reportEmail = "mysongbook.report@gmail.com"
-
-        var musicSwitch: Boolean = false
 
         var data = arrayListOf<Int>()
 
@@ -86,23 +79,6 @@ class MainActivity : AppCompatActivity() {
                 Context.MODE_PRIVATE)
         }
 
-       /* val runnable = object : Runnable {
-            override fun run() {
-                if (scrollView.scrollX >= scrollView.getChildAt(0).width - scrollView.width) {
-                    val animator = ValueAnimator.ofInt(scrollView.scrollX, 0)
-                    animator.addUpdateListener { animation ->
-                        val value = animation.animatedValue as Int
-                        scrollView.scrollTo(value, 0)
-                    }
-                    animator.duration = 1200
-                    animator.start()
-                } else {
-                    scrollView.smoothScrollBy(2, 0)
-                }
-                Handler().postDelayed(this, 20)
-            }
-        }*/
-
         fun randomVerse(){
             GlobalScope.launch(Dispatchers.IO){
                 var verseID = Random.nextInt(1, 39)
@@ -125,8 +101,6 @@ class MainActivity : AppCompatActivity() {
 
                     delay(400)
 
-                    //Handler().postDelayed(runnable, 20)
-
                     lineLayout.visibility = View.VISIBLE
                     lineLayout.alpha = 0f
                     lineLayout.animate().alpha(1f).start()
@@ -148,11 +122,8 @@ class MainActivity : AppCompatActivity() {
                 if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
                     progressBar.setVisibility(View.VISIBLE)
                     initializeTV.setVisibility(View.VISIBLE)
-                    infoTV.setVisibility(View.GONE)
                     //chooseTV.setVisibility(View.GONE)
                     songbookRV.visibility = View.GONE
-                    infoButton.setVisibility(View.GONE)
-                    musicModeSwitch.setVisibility(View.GONE)
                     reportButton.visibility = View.GONE
                     reportTV.visibility = View.GONE
                     verseTV.visibility = View.GONE
@@ -169,11 +140,8 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         initializeTV.setVisibility(View.GONE)
                         progressBar.setVisibility(View.GONE)
-                        infoTV.setVisibility(View.VISIBLE)
                         //chooseTV.setVisibility(View.VISIBLE)
                         songbookRV.visibility = View.VISIBLE
-                        infoButton.setVisibility(View.VISIBLE)
-                        musicModeSwitch.setVisibility(View.VISIBLE)
                         reportButton.visibility = View.VISIBLE
                         reportTV.visibility = View.VISIBLE
                         verseTV.visibility = View.VISIBLE
@@ -190,38 +158,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
-            musicSwitch = true
-            musicModeSwitch.setChecked(true)
-            DataManager.musicMode = true
-
-        }
-        else{
-            musicSwitch = false
-            musicModeSwitch.setChecked(false)
-            DataManager.musicMode = false
-        }
-
-
-        musicModeSwitch.setOnClickListener{
-            if(musicModeSwitch.isChecked == true){
-                musicSwitch = true
-                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                DataManager.musicMode = true
-            }
-            else{
-                musicSwitch = false
-                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                DataManager.musicMode = false
-            }
-
-        }
-
-        infoButton.setOnClickListener{
-                val infoDialog = Dialog(this)
-                infoDialog.setContentView(R.layout.music_info_dialog)
-                infoDialog.show()
-        }
 
         reportButton.setOnClickListener{
 
@@ -256,7 +192,6 @@ class MainActivity : AppCompatActivity() {
 
         else{
             verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
-            //Handler().postDelayed(runnable, 20)
             sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
         }
 

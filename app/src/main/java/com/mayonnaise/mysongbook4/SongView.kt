@@ -1,18 +1,32 @@
 package com.mayonnaise.mysongbook4
 
+import android.animation.ObjectAnimator
 import android.content.Context
+import android.content.res.Resources
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.view.View
 import android.widget.CheckBox
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.view.GestureDetectorCompat
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.Slider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Math.abs
 
 class SongView : AppCompatActivity() {
 
@@ -20,13 +34,10 @@ class SongView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songview)
 
-        val songTV: TextView = findViewById(R.id.songTV)
         val numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
-        val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
-        val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
         val buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
-        val scrollView: ScrollView = findViewById(R.id.scrollView)
-        val sliderTextSize: Slider = findViewById(R.id.sliderTextSize)
+        val sliderSongPicker: Slider = findViewById(R.id.sliderSongPicker)
+        var isUserInteraction = false
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
@@ -38,138 +49,114 @@ class SongView : AppCompatActivity() {
         val sharedPrefs by lazy {
             getSharedPreferences(
                 "${BuildConfig.APPLICATION_ID}_sharedPreferences",
-                Context.MODE_PRIVATE)
+                Context.MODE_PRIVATE
+            )
         }
 
-        var textSize = sharedPrefs.getFloat("textSize", 18.0F)
+        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
 
-        sliderTextSize.value = textSize
-        songTV.textSize = sliderTextSize.value
-        numberAndTitleTV.textSize = sliderTextSize.value+2
+        viewPager.apply {
+            clipChildren = false
+            clipToPadding = false
+            offscreenPageLimit = 3
+            (getChildAt(0) as RecyclerView).overScrollMode =
+                RecyclerView.OVER_SCROLL_NEVER
+        }
 
-        fun songFavSaving(isFav: Boolean){
+        GlobalScope.launch(Dispatchers.IO){
+            var allSongs = SongViewPagerAdapter(songDao.getAllSongsBySongbook(DataManager.chosenSongbook), applicationContext)
+            withContext(Dispatchers.Main){
+                viewPager.adapter = allSongs
+                viewPager.setCurrentItem(songNumber-1, false)
+            }
+        }
+
+        sliderSongPicker.valueTo = DataManager.maxSongNumber.toFloat()
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer((10 * Resources.getSystem().displayMetrics.density).toInt()))
+        compositePageTransformer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = (0.80f + r * 0.20f)
+        }
+
+        viewPager.setPageTransformer(compositePageTransformer)
+
+        viewPager.post {
+
+        }
+
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                GlobalScope.launch(Dispatchers.IO){
+                    var currentSong = songDao.getSongByNumber(viewPager.currentItem+1, DataManager.chosenSongbook)
+                    songNumber = viewPager.currentItem+1
+
+                    withContext(Dispatchers.Main){
+                               /* numberAndTitleTV.apply {
+                                    animate().apply {
+                                        alpha(0f)
+                                        duration = 50L
+                                        withEndAction {
+                                            text = "${currentSong.number}. ${currentSong.title}"
+                                            animate().alpha(1f).start()
+                                        }
+                                    }.start()
+                                }*/
+                            numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                            if(currentSong.isFavorite){
+                                buttonAddToFav.isChecked = true
+                            }
+                            else{
+                                buttonAddToFav.isChecked = false
+                            }
+                        isUserInteraction = false
+                        sliderSongPicker.value = currentSong.number.toFloat()
+                        isUserInteraction = true
+                    }
+                }
+
+            }
+        })
+
+        /* var textSize = sharedPrefs.getFloat("textSize", 18.0F)
+
+        sliderSongPicker.value = textSize
+        songTV.textSize = sliderSongPicker.value
+        numberAndTitleTV.textSize = sliderSongPicker.value+2*/
+
+        fun songFavSaving(isFav: Boolean) {
             currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
             currentSong.isFavorite = isFav
             songDao.updateFavoriteSongs(currentSong)
         }
 
-        fun animateText(textView: TextView, text: String,  side: Float){
-            textView.apply {
-                animate().apply {
-                    translationXBy(side)
-                    alpha(0f)
-                    duration = 70L
-                    withEndAction {
-                        textView.text = text
-                        translationX = 1f
-                        animate().alpha(1f).start()
-                    }
-                }.start()
-            }
-        }
-
-        fun animateButton(button: FloatingActionButton, visible: Boolean){
-            if (visible){
-                button.visibility = View.VISIBLE
-                button.alpha = 0f
-                button.animate().alpha(1f).setDuration(300).start()
-            }
-            else{
-                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
-            }
-        }
-
-        fun updateSong(currentSong: SongEntity, side: Float){
-            animateText(numberAndTitleTV, "${currentSong.number}. ${currentSong.title}", side)
-            animateText(songTV, currentSong.text, side)
-
-            scrollView.smoothScrollTo(1, 1)
-
-            buttonAddToFav.isChecked = currentSong.isFavorite
-        }
-
-        GlobalScope.launch(Dispatchers.IO) {
-            currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-            withContext(Dispatchers.Main) {
-                updateSong(currentSong, -songTV.width.toFloat())
-            }
-        }
-
-        if (songNumber >= DataManager.maxSongNumber){
-            animateButton(rightArrowButton, false)
-        }
-        else{
-            animateButton(rightArrowButton, true)
-        }
-
-        if (songNumber <= 1){
-            animateButton(leftArrowButton, false)
-        }
-        else{
-            animateButton(leftArrowButton, true)
-        }
-
-        rightArrowButton.setOnClickListener{
-            if (songNumber < DataManager.maxSongNumber) {
-                songNumber++
+        buttonAddToFav.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
                 GlobalScope.launch(Dispatchers.IO) {
-                    currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                    withContext(Dispatchers.Main) {
-                        updateSong(currentSong, -songTV.width.toFloat())
-
-                        if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
-                            if (leftArrowButton.visibility == View.INVISIBLE) {
-                                animateButton(leftArrowButton, true)
-                            }
-                        } else {
-                            if (rightArrowButton.visibility == View.VISIBLE) {
-                                animateButton(rightArrowButton, false)
-                            }
-                        }
-                    }
+                    songFavSaving(true)
+                }
+            } else {
+                GlobalScope.launch(Dispatchers.IO) {
+                    songFavSaving(false)
                 }
             }
         }
 
-        leftArrowButton.setOnClickListener{
-            if (songNumber > 1) {
-                songNumber--
-                GlobalScope.launch(Dispatchers.IO) {
-                    currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
-                    withContext(Dispatchers.Main) {
-                        updateSong(currentSong, songTV.width.toFloat())
-
-                        if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
-                            if (rightArrowButton.visibility == View.INVISIBLE) {
-                                animateButton(rightArrowButton, true)
-                            }
-                        } else {
-                            if (leftArrowButton.visibility == View.VISIBLE) {
-                                animateButton(leftArrowButton, false)
-                            }
-                        }
-                    }
+        sliderSongPicker.addOnChangeListener(object : Slider.OnChangeListener {
+            override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
+                if (fromUser && isUserInteraction) {
+                    isUserInteraction = true
+                    songNumber = sliderSongPicker.value.toInt()-1
+                    viewPager.setCurrentItem(songNumber, true)
+                    songNumber++
+                }
+                else{
+                    isUserInteraction = false
                 }
             }
-        }
-
-        buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
-        if (isChecked){
-            GlobalScope.launch(Dispatchers.IO) {
-                songFavSaving(true)
-            }
-        }else{
-            GlobalScope.launch(Dispatchers.IO) {
-                songFavSaving(false)
-            }
-        }
-        }
-
-        sliderTextSize.addOnChangeListener { slider, value, fromUser ->
-            songTV.textSize = sliderTextSize.value
-            numberAndTitleTV.textSize = sliderTextSize.value+2
-            sharedPrefs.edit().putFloat("textSize", sliderTextSize.value).apply()
-        }
-
+        })
     }
 }

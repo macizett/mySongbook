@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="105dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/sliderSongPicker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
@@ -60,11 +59,11 @@
 
         <CheckBox
             android:id="@+id/buttonAddToFav"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:button="@drawable/favourites_icon"
-            android:scaleX="1.45"
-            android:scaleY="1.45"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"></CheckBox>
 
@@ -74,27 +73,17 @@
 
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/rightArrowButton"
-        android:layout_width="wrap_content"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderSongPicker"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:clickable="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:stepSize="1"
+        android:valueFrom="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/arrowright" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/leftArrowButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/arrowleft" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

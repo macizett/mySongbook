@@ -24,7 +24,11 @@ class FavoriteSongsList : AppCompatActivity() {
 
         var recyclerViewFavs: RecyclerView = findViewById(R.id.recyclerViewFavorites)
         var infoTV: TextView = findViewById(R.id.infoTV)
+        var labelTV: TextView = findViewById(R.id.labelTV)
         var sortButton: Button = findViewById(R.id.sortButton)
+
+        infoTV.textSize = DataManager.textSize-4
+        labelTV.textSize = DataManager.textSize
 
         lateinit var adapter: FavoritesAdapter
 
@@ -47,6 +51,7 @@ class FavoriteSongsList : AppCompatActivity() {
             adapter = FavoritesAdapter(favoriteSongs, applicationContext)
             recyclerViewFavs.layoutManager = LinearLayoutManager(applicationContext)
             recyclerViewFavs.adapter = adapter
+
 
                 if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", false)){
                     adapter.sortAlphabetically()

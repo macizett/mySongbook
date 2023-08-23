@@ -11,6 +11,7 @@ import com.mayonnaise.mysongbook4.SongParser.coroutineExceptionHandler
 import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
@@ -39,10 +40,13 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
         val song = songEntities[position]
 
         holder.songNumberTV.text = song.number.toString()
-
         holder.songTitleTV.text = song.title
 
-            holder.itemView.setOnClickListener{
+        holder.songNumberTV.textSize = DataManager.textSize-3
+        holder.songTitleTV.textSize = DataManager.textSize-3
+
+
+        holder.itemView.setOnClickListener{
                 DataManager.chosenSong = songEntities[position].number
                 if(DataManager.musicMode){
                     val intent = Intent(holder.itemView.context,SongViewMusicMode::class.java)
@@ -74,7 +78,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
 
     }
 
-    suspend fun updateSongInDatabase(song: SongEntity) {
+    fun updateSongInDatabase(song: SongEntity) {
         val songDao = SongbookDatabase.getInstance(context2).songDao()
 
         GlobalScope.launch(Dispatchers.IO) {
@@ -100,11 +104,6 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
                 notifyDataSetChanged()
             }
         }
-    }
-
-    fun updateData(newDataList: List<SongEntity>) {
-        songEntities = newDataList
-        notifyDataSetChanged()
     }
 
 }

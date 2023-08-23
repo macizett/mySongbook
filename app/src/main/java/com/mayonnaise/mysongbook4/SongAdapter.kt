@@ -39,6 +39,9 @@ class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Ada
         holder.titleTV.text = songEntities[position].title
         holder.numberTV.text = songEntities[position].number.toString()
 
+        holder.titleTV.textSize = DataManager.textSize-3
+        holder.numberTV.textSize = DataManager.textSize-3
+
         holder.itemView.setOnClickListener{
             DataManager.chosenSong = songEntities[position].number
             if(DataManager.musicMode){

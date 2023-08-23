@@ -45,30 +45,47 @@
     <Button
         android:id="@+id/buttonReport"
         style="?attr/materialIconButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:src="@drawable/info_icon1"
         android:textColorHighlight="#9E9797"
         android:textColorLink="#888686"
         app:icon="@drawable/baseline_report_24"
+        android:text=" Zgłoś"
         app:iconGravity="textStart"
         app:iconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"></Button>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/carousel_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="64dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+
+    <Button
+        android:id="@+id/buttonSettings"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/info_icon1"
+        android:text=" Ustawienia"
+        android:textColorHighlight="#9E9797"
+        android:textColorLink="#888686"
+        app:icon="@drawable/baseline_settings_24"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginLeft="48dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/lineLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +93,7 @@
 
     <LinearLayout
         android:id="@+id/lineLayout2"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="16dp"
@@ -83,7 +101,6 @@
         android:layout_marginBottom="8dp"
         android:background="#66B7E5"
         android:orientation="horizontal"
-        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/verseTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -106,18 +123,10 @@
         />
 
     <TextView
-        android:id="@+id/reportTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="62dp"
-        android:text="Zgłoś"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonReport" />
-
-    <TextView
         android:id="@+id/verseTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_marginBottom="6dp"
         android:autoSizeMaxTextSize="18sp"
         android:fontFamily="sans-serif-medium"
@@ -137,6 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
+        android:visibility="invisible"
         android:textSize="12sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/lineLayout"

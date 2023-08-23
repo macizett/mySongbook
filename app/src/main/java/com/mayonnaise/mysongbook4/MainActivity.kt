@@ -1,38 +1,36 @@
 package com.mayonnaise.mysongbook4
 
-import android.animation.ValueAnimator
 import android.app.Dialog
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.Button
-import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.slider.Slider
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Math.abs
 import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
-
-    private val sharedPrefFile = "preference"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -40,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val songbookRV: RecyclerView = findViewById(R.id.carousel_recycler_view)
+        val viewPager: ViewPager2 = findViewById(R.id.viewPager)
         val reportButton: Button = findViewById(R.id.buttonReport)
-        val reportTV: TextView = findViewById(R.id.reportTV)
+        val settingsButton: Button = findViewById(R.id.buttonSettings)
         val initializeTV: TextView = findViewById(R.id.initializeTV)
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
         val contextView: ConstraintLayout = findViewById(R.id.constraintlayout)
@@ -51,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         val msbTV: TextView = findViewById(R.id.textViewMSB)
         val lineLayout: LinearLayout = findViewById(R.id.lineLayout)
         val lineLayout2: LinearLayout = findViewById(R.id.lineLayout2)
-        val lineLayout3: LinearLayout = findViewById(R.id.lineLayout3)
 
         val reportEmail = "mysongbook.report@gmail.com"
 
@@ -67,8 +64,6 @@ class MainActivity : AppCompatActivity() {
                 data = arrayListOf(R.drawable.duchowe_dark, R.drawable.wedrowiec_dark, R.drawable.bialy_dark)
             }
         }
-        songbookRV.adapter = CarouselAdapter(data)
-
 
         val PREF_INITIALIZED_KEY = "pref_initialized_key"
         var isInitialized = false
@@ -79,15 +74,42 @@ class MainActivity : AppCompatActivity() {
                 Context.MODE_PRIVATE)
         }
 
+        var textSize = sharedPrefs.getFloat("textSize", 20.0F)
+        DataManager.textSize = textSize
+        verseTV.textSize = DataManager.textSize
+        versePlaceTV.textSize = DataManager.textSize
+        reportButton.textSize = DataManager.textSize-5
+        settingsButton.textSize = DataManager.textSize-5
+        msbTV.textSize = DataManager.textSize-5
+
+
+        viewPager.apply {
+            clipChildren = false
+            clipToPadding = false
+            offscreenPageLimit = 3
+            (getChildAt(0) as RecyclerView).overScrollMode =
+                RecyclerView.OVER_SCROLL_NEVER
+        }
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer((20 * Resources.getSystem().displayMetrics.density).toInt()))
+        compositePageTransformer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = (0.70f + r * 0.30f)
+        }
+        viewPager.setPageTransformer(compositePageTransformer)
+
+        viewPager.adapter = CarouselAdapter(data)
+
+
+
+
         fun randomVerse(){
-            GlobalScope.launch(Dispatchers.IO){
+            lifecycleScope.launch(Dispatchers.IO){
                 var verseID = Random.nextInt(1, 39)
                 var verse = verseDao.getVerse(verseID)
 
                 withContext(Dispatchers.Main){
-                    lineLayout.animate().alpha(0f).withEndAction { lineLayout.visibility = View.INVISIBLE }.start()
-                    lineLayout2.animate().alpha(0f).withEndAction { lineLayout.visibility = View.INVISIBLE }.start()
-                    msbTV.animate().alpha(0f).withEndAction { lineLayout.visibility = View.INVISIBLE }.start()
 
                     versePlaceTV.animate().alpha(0f).withEndAction {
                         versePlaceTV.text = verse.place
@@ -98,8 +120,6 @@ class MainActivity : AppCompatActivity() {
                         verseTV.text = verse.text
                         verseTV.animate().alpha(1f).start()
                     }
-
-                    delay(400)
 
                     lineLayout.visibility = View.VISIBLE
                     lineLayout.alpha = 0f
@@ -112,6 +132,18 @@ class MainActivity : AppCompatActivity() {
                     msbTV.visibility = View.VISIBLE
                     msbTV.alpha = 0f
                     msbTV.animate().alpha(1f).start()
+
+                    verseTV.visibility = View.VISIBLE
+                    verseTV.alpha = 0f
+                    verseTV.animate().alpha(1f).start()
+
+                    versePlaceTV.visibility = View.VISIBLE
+                    versePlaceTV.alpha = 0f
+                    versePlaceTV.animate().alpha(1f).start()
+
+                    viewPager.visibility = View.VISIBLE
+                    viewPager.alpha = 0f
+                    viewPager.animate().alpha(1f).start()
                 }
             }
         }
@@ -122,16 +154,6 @@ class MainActivity : AppCompatActivity() {
                 if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
                     progressBar.setVisibility(View.VISIBLE)
                     initializeTV.setVisibility(View.VISIBLE)
-                    //chooseTV.setVisibility(View.GONE)
-                    songbookRV.visibility = View.GONE
-                    reportButton.visibility = View.GONE
-                    reportTV.visibility = View.GONE
-                    verseTV.visibility = View.GONE
-                    versePlaceTV.visibility = View.GONE
-                    lineLayout.visibility = View.GONE
-                    lineLayout2.visibility = View.GONE
-                    lineLayout3.visibility = View.GONE
-                    msbTV.visibility = View.GONE
 
                     withContext(Dispatchers.Default) {
                         SongParser.initialize(context, false)
@@ -140,16 +162,6 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         initializeTV.setVisibility(View.GONE)
                         progressBar.setVisibility(View.GONE)
-                        //chooseTV.setVisibility(View.VISIBLE)
-                        songbookRV.visibility = View.VISIBLE
-                        reportButton.visibility = View.VISIBLE
-                        reportTV.visibility = View.VISIBLE
-                        verseTV.visibility = View.VISIBLE
-                        versePlaceTV.visibility = View.VISIBLE
-                        lineLayout.visibility = View.VISIBLE
-                        lineLayout2.visibility = View.VISIBLE
-                        lineLayout3.visibility = View.VISIBLE
-                        msbTV.visibility = View.VISIBLE
                     }
                     sharedPrefs.edit().putBoolean(PREF_INITIALIZED_KEY, true).apply()
                 }
@@ -163,7 +175,8 @@ class MainActivity : AppCompatActivity() {
 
             var snackbar = Snackbar.make(contextView, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
 
-                snackbar.setAction("OK") {
+
+            snackbar.setAction("OK") {
                     val emailIntent = Intent(Intent.ACTION_SEND).apply {
                         type = "message/rfc822"
                         putExtra(Intent.EXTRA_EMAIL, arrayOf(reportEmail))
@@ -180,17 +193,50 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        GlobalScope.launch(Dispatchers.IO){
+        settingsButton.setOnClickListener {
+            val settingsDialog = Dialog(this)
+            settingsDialog.setContentView(R.layout.settings_dialog)
+            val sliderTextSize: Slider = settingsDialog.findViewById(R.id.sliderTextSize)
+            val textView2: TextView = settingsDialog.findViewById(R.id.textView2)
+            val textView3: TextView = settingsDialog.findViewById(R.id.textView3)
+
+            sliderTextSize.value = textSize
+
+            textView2.textSize = textSize-2
+            textView3.textSize = textSize-2
+
+
+
+            sliderTextSize.addOnChangeListener(object : Slider.OnChangeListener {
+                override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
+                    textView2.textSize = value-2
+                    textView3.textSize = value-2
+                    verseTV.textSize = value
+                    versePlaceTV.textSize = value-4
+                    reportButton.textSize = value-5
+                    settingsButton.textSize = value-5
+                    msbTV.textSize = value-5
+
+                    DataManager.textSize = value
+                    textSize = value
+                    sharedPrefs.edit().putFloat("textSize", sliderTextSize.value).apply()
+                }
+            })
+            settingsDialog.show()
+        }
+
+        lifecycleScope.launch(Dispatchers.IO){
             initializeSongsIfNeeded(this@MainActivity)
         }
 
         if (sharedPrefs.getBoolean("databaseStatement", false)){
-            Handler(Looper.getMainLooper()).postDelayed({
+            //Handler(Looper.getMainLooper()).postDelayed({
                 randomVerse()
-            }, 500)
+          //  }, 500)
         }
 
         else{
+            randomVerse()
             verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
             sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
         }

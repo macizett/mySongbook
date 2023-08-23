@@ -11,8 +11,9 @@
         android:id="@+id/pdfViewSong"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center_horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/sliderSongPicker"
+        app:layout_constraintBottom_toTopOf="@+id/rightArrowButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
@@ -71,20 +72,27 @@
 
     </LinearLayout>
 
-
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/sliderSongPicker"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/rightArrowButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:stepSize="1"
-        android:valueFrom="1"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@drawable/arrowright" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/leftArrowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/arrowleft" />
 
 
 

@@ -43,6 +43,7 @@
             android:id="@+id/buttonAddToFav"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginRight="8dp"
             android:button="@drawable/delete_icon"
             android:checked="true"

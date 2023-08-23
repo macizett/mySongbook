@@ -1034,4 +1034,6 @@ Zwróć myśl i serca...\n
 298. Święty, Święty, Święty...\n
 299. Z dnia na dzień...\n
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

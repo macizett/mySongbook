@@ -44,6 +44,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation("androidx.room:room-ktx:2.5.2")
 
+    implementation 'com.github.polyak01:IconSwitch:707664bd72'
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'com.github.barteksc:AndroidPdfViewer:master-SNAPSHOT'
     implementation 'androidx.appcompat:appcompat:1.6.1'

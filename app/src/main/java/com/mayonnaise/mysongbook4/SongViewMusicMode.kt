@@ -23,13 +23,15 @@ class SongViewMusicMode : AppCompatActivity() {
         setContentView(R.layout.activity_song_view_music_mode)
 
         var pdfViewSong = findViewById<PDFView>(R.id.pdfViewSong)
-        val sliderSongPicker: Slider = findViewById(R.id.sliderSongPicker)
         var buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
         var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
+        val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
+        val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
 
-        sliderSongPicker.valueTo = DataManager.maxSongNumber.toFloat()
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
+
+        numberAndTitleTV.textSize = DataManager.textSize
 
         val window: Window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -39,12 +41,17 @@ class SongViewMusicMode : AppCompatActivity() {
 
         fun animateButton(button: FloatingActionButton, visible: Boolean){
             if (visible){
-                button.visibility = View.VISIBLE
-                button.alpha = 0f
-                button.animate().alpha(1f).setDuration(800).start()
+                if(button.visibility == View.INVISIBLE){
+                    button.visibility = View.VISIBLE
+                    button.alpha = 0f
+                    button.animate().alpha(1f).setDuration(300).start()
+                }
             }
             else{
-                button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }.setDuration(100).start()
+                if(button.visibility == View.VISIBLE) {
+                    button.animate().alpha(0f).withEndAction { button.visibility = View.INVISIBLE }
+                        .setDuration(300).start()
+                }
             }
         }
 
@@ -64,7 +71,6 @@ class SongViewMusicMode : AppCompatActivity() {
                 .enableDoubletap(false)
                 .autoSpacing(true)
                 .pageFling(true)
-                .nightMode(true)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load()
         }
@@ -75,6 +81,12 @@ class SongViewMusicMode : AppCompatActivity() {
                 var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
                     numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                    if(currentSong.isFavorite){
+                        buttonAddToFav.isChecked = true
+                    }
+                    else{
+                        buttonAddToFav.isChecked = false
+                    }
                 }
             }
         }
@@ -83,6 +95,43 @@ class SongViewMusicMode : AppCompatActivity() {
             updateSong()
         } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
             Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
+        }
+
+        if (songNumber >= DataManager.maxSongNumber){
+            animateButton(rightArrowButton, false)
+        }
+        else{
+            animateButton(rightArrowButton, true)
+        }
+
+        if (songNumber <= 1){
+            animateButton(leftArrowButton, false)
+        }
+        else{
+            animateButton(leftArrowButton, true)
+        }
+
+        leftArrowButton.setOnClickListener{
+            if(songNumber > 1) {
+                songNumber--
+                updateSong()
+                if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
+                    animateButton(rightArrowButton, true)
+                } else {
+                    animateButton(leftArrowButton, false)
+                }
+            }
+        }
+        rightArrowButton.setOnClickListener{
+            if(songNumber < DataManager.maxSongNumber) {
+                songNumber++
+                updateSong()
+                if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
+                    animateButton(leftArrowButton, true)
+                } else {
+                    animateButton(rightArrowButton, false)
+                }
+            }
         }
 
         buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->

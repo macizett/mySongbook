@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -31,8 +32,8 @@ class SongsList : AppCompatActivity() {
         var favoritesButton: Button = findViewById(R.id.favoritesButton)
         var sortButton: Button = findViewById(R.id.sortButton)
         var recyclerViewTOC: RecyclerView = findViewById(R.id.recyclerViewTOC)
-        val musicModeSwitch: Switch = findViewById(R.id.switchMusicMode)
-        val infoTV: TextView = findViewById(R.id.infoTV)
+        val musicModeSwitch: IconSwitch = findViewById(R.id.switchMusicMode)
+        val tocTV: TextView = findViewById(R.id.textView)
 
         var maxSongNr = DataManager.maxSongNumber
 
@@ -44,6 +45,24 @@ class SongsList : AppCompatActivity() {
                 "${BuildConfig.APPLICATION_ID}_sharedPreferences",
                 Context.MODE_PRIVATE)
         }
+
+        if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
+            musicSwitch = true
+            musicModeSwitch.setChecked(IconSwitch.Checked.RIGHT)
+            DataManager.musicMode = true
+
+        }
+        else{
+            musicSwitch = false
+            musicModeSwitch.setChecked(IconSwitch.Checked.LEFT)
+            DataManager.musicMode = false
+        }
+
+        sortButton.textSize = DataManager.textSize-5
+        tocTV.textSize = DataManager.textSize
+        getNumber.textSize = DataManager.textSize-3
+        favoritesButton.textSize = DataManager.textSize-6
+        searchButton.textSize = DataManager.textSize-6
 
         GlobalScope.launch (Dispatchers.IO) {
             var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
@@ -129,32 +148,23 @@ class SongsList : AppCompatActivity() {
             false
         })
 
-        if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
-            musicSwitch = true
-            musicModeSwitch.setChecked(true)
-            DataManager.musicMode = true
+        musicModeSwitch.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
+            override fun onCheckChanged(current: IconSwitch.Checked?) {
+                when (current) {
+                    IconSwitch.Checked.LEFT -> {musicSwitch = false
+                        sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                        DataManager.musicMode = false
+                        Toast.makeText(this@SongsList, "Tryb standardowy", Toast.LENGTH_SHORT).show()}
 
-        }
-        else{
-            musicSwitch = false
-            musicModeSwitch.setChecked(false)
-            DataManager.musicMode = false
-        }
+                    IconSwitch.Checked.RIGHT -> {musicSwitch = true
+                        sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                        DataManager.musicMode = true
+                        Toast.makeText(this@SongsList, "Tryb muzyczny", Toast.LENGTH_SHORT).show()}
 
-
-        musicModeSwitch.setOnClickListener{
-            if(musicModeSwitch.isChecked == true){
-                musicSwitch = true
-                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                DataManager.musicMode = true
+                    else -> Toast.makeText(this@SongsList, "ERROR 2137", Toast.LENGTH_SHORT).show()
+                }
             }
-            else{
-                musicSwitch = false
-                sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
-                DataManager.musicMode = false
-            }
-
-        }
+        })
 
     }
 }

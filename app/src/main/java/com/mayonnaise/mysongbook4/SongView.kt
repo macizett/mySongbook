@@ -47,6 +47,7 @@ class SongView : AppCompatActivity() {
 
         binding.sliderSongPicker.valueTo = DataManager.maxSongNumber.toFloat()
 
+        binding.sliderSongPicker
 
         binding.viewPager.apply {
             clipChildren = false
@@ -88,9 +89,27 @@ class SongView : AppCompatActivity() {
 
         binding.sliderSongPicker.addOnChangeListener(object : Slider.OnChangeListener {
             override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
-                    songNumber = binding.sliderSongPicker.value.toInt()-1
-                    binding.viewPager.setCurrentItem(songNumber, true)
-                    songNumber++
+                songNumber = slider.value.toInt()-1
+            }
+        })
+
+
+        binding.sliderSongPicker.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+            override fun onStartTrackingTouch(slider: Slider) {
+            }
+
+            override fun onStopTrackingTouch(slider: Slider) {
+                binding.viewPager.animate()
+                    .alpha(0f)
+                    .setDuration(200L)
+                    .withEndAction {
+                        binding.viewPager.setCurrentItem(songNumber, false)
+                        binding.viewPager.animate()
+                            .alpha(1f)
+                            .setDuration(200L)
+                            .start()
+                    }
+                    .start()
             }
         })
     }

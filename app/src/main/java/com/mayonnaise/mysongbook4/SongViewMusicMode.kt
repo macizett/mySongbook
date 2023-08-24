@@ -65,22 +65,43 @@ class SongViewMusicMode : AppCompatActivity() {
         }
 
         fun displayPdfFromAsset(fileName: String) {
-            binding.pdfViewSong.fromAsset(fileName)
-                .enableSwipe(true)
-                .swipeHorizontal(false)
-                .enableDoubletap(false)
-                .autoSpacing(true)
-                .pageFling(true)
-                .pageFitPolicy(FitPolicy.WIDTH)
-                .load()
+            binding.pdfViewSong.animate()
+                .alpha(0f)
+                .setDuration(200L)
+                .withEndAction {
+                    binding.pdfViewSong.fromAsset(fileName)
+                        .enableSwipe(true)
+                        .swipeHorizontal(false)
+                        .enableDoubletap(false)
+                        .autoSpacing(true)
+                        .pageFling(true)
+                        .pageFitPolicy(FitPolicy.WIDTH)
+                        .load()
+                    binding.pdfViewSong.animate()
+                        .alpha(1f)
+                        .setDuration(200L)
+                        .start()
+                }
+                .start()
         }
 
         fun updateSong(){
             displayPdfFromAsset("${songbook}${songNumber}.pdf")
-            GlobalScope.launch(Dispatchers.IO){
+            lifecycleScope.launch(Dispatchers.IO){
                 var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
-                    binding.numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                    binding.numberAndTitleTV.animate()
+                        .alpha(0f)
+                        .setDuration(200L)
+                        .withEndAction {
+                            binding.numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                            binding.numberAndTitleTV.animate()
+                                .alpha(1f)
+                                .setDuration(200L)
+                                .start()
+                        }
+                        .start()
+
                     if(currentSong.isFavorite){
                         binding.buttonAddToFav.isChecked = true
                     }

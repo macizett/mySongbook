@@ -16,13 +16,15 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: Context, isSearchPhraseActivity: Boolean, phrase: String) : RecyclerView.Adapter<SongViewPagerAdapter.CarouselViewHolder>(){
+class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifecycle: LifecycleCoroutineScope,
+                           context: Context, isSearchPhraseActivity: Boolean, phrase: String) : RecyclerView.Adapter<SongViewPagerAdapter.CarouselViewHolder>(){
 
     var context = context
     var isSearchPhraseActivity = isSearchPhraseActivity
@@ -67,7 +69,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: 
         buttonAddToFav.setOnCheckedChangeListener { buttonView, isChecked ->
 
             if (buttonAddToFav.isChecked) {
-                GlobalScope.launch(Dispatchers.IO) {
+                lifecycle.launch(Dispatchers.IO) {
                     song.isFavorite = true
                     updateSongInDatabase(song)
                     withContext(Dispatchers.Main){
@@ -75,7 +77,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: 
                     }
                 }
             } else {
-                GlobalScope.launch(Dispatchers.IO) {
+                lifecycle.launch(Dispatchers.IO) {
                     song.isFavorite = false
                     updateSongInDatabase(song)
                     withContext(Dispatchers.Main){
@@ -91,7 +93,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: 
                     song.isFavorite = false
                     buttonAddToFav.isChecked = false
                     Toast.makeText(context, "Usunięto pieśń z Ulubionych!", Toast.LENGTH_SHORT).show()
-                    GlobalScope.launch(Dispatchers.IO) {
+                    lifecycle.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
 
@@ -99,7 +101,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: 
                     song.isFavorite = true
                     buttonAddToFav.isChecked = true
                     Toast.makeText(context, "Dodano pieśń do Ulubionych!", Toast.LENGTH_SHORT).show()
-                    GlobalScope.launch(Dispatchers.IO) {
+                    lifecycle.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
                 }
@@ -189,7 +191,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, context: 
     fun updateSongInDatabase(song: SongEntity) {
         val songDao = SongbookDatabase.getInstance(context).songDao()
 
-        GlobalScope.launch(Dispatchers.IO) {
+        lifecycle.launch(Dispatchers.IO) {
             songDao.updateFavoriteSongs(song)
         }
     }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import kotlinx.coroutines.Dispatchers
@@ -11,8 +12,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CarouselAdapter(private val carouselDataList: ArrayList<Int>) :
-    RecyclerView.Adapter<CarouselAdapter.CarouselItemViewHolder>() {
+class SongbookViewPagerAdapter(private val carouselDataList: ArrayList<Int>, var lifecycle: LifecycleCoroutineScope) :
+    RecyclerView.Adapter<SongbookViewPagerAdapter.CarouselItemViewHolder>() {
 
     class CarouselItemViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
@@ -29,7 +30,7 @@ class CarouselAdapter(private val carouselDataList: ArrayList<Int>) :
         holder.itemView.setOnClickListener{
             val songslistopen = Intent(holder.itemView.context, SongsList::class.java)
             DataManager.chosenSongbook = position+1
-            GlobalScope.launch(Dispatchers.IO) {
+            lifecycle.launch(Dispatchers.IO) {
                 DataManager.maxSongNumber = songDao.getAllSongsBySongbook(position+1).size
                 withContext(Dispatchers.Main){
                     holder.itemView.context.startActivity(songslistopen)

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mayonnaise.mysongbook4.SongParser.coroutineExceptionHandler
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
+class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var lifecycle: LifecycleCoroutineScope): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
 
     var context2 = context
 
@@ -63,14 +64,14 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context): Re
                 if (!isChecked) {
                     song.isFavorite = false
                     Toast.makeText(context2, "Usunięto pieśń z Ulubionych!", Toast.LENGTH_SHORT).show()
-                    GlobalScope.launch(Dispatchers.IO) {
+                    lifecycle.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
 
                 } else {
                     song.isFavorite = true
                     Toast.makeText(context2, "Dodano pieśń do Ulubionych!", Toast.LENGTH_SHORT).show()
-                    GlobalScope.launch(Dispatchers.IO) {
+                    lifecycle.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
                 }

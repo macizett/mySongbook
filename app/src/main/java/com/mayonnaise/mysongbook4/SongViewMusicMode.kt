@@ -8,6 +8,7 @@ import android.view.WindowManager
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -15,23 +16,22 @@ import kotlinx.coroutines.launch
 import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.util.FitPolicy
 import com.google.android.material.slider.Slider
+import com.mayonnaise.mysongbook4.databinding.ActivitySongViewMusicModeBinding
 import kotlinx.coroutines.withContext
 
 class SongViewMusicMode : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySongViewMusicModeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_song_view_music_mode)
 
-        var pdfViewSong = findViewById<PDFView>(R.id.pdfViewSong)
-        var buttonAddToFav: CheckBox = findViewById(R.id.buttonAddToFav)
-        var numberAndTitleTV: TextView = findViewById(R.id.numberAndTitleTV)
-        val leftArrowButton: FloatingActionButton = findViewById(R.id.leftArrowButton)
-        val rightArrowButton: FloatingActionButton = findViewById(R.id.rightArrowButton)
-
+        binding = ActivitySongViewMusicModeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
-        numberAndTitleTV.textSize = DataManager.textSize
+        binding.numberAndTitleTV.textSize = DataManager.textSize
 
         val window: Window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -65,7 +65,7 @@ class SongViewMusicMode : AppCompatActivity() {
         }
 
         fun displayPdfFromAsset(fileName: String) {
-            pdfViewSong.fromAsset(fileName)
+            binding.pdfViewSong.fromAsset(fileName)
                 .enableSwipe(true)
                 .swipeHorizontal(false)
                 .enableDoubletap(false)
@@ -80,12 +80,12 @@ class SongViewMusicMode : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO){
                 var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
-                    numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
+                    binding.numberAndTitleTV.text = "${currentSong.number}. ${currentSong.title}"
                     if(currentSong.isFavorite){
-                        buttonAddToFav.isChecked = true
+                        binding.buttonAddToFav.isChecked = true
                     }
                     else{
-                        buttonAddToFav.isChecked = false
+                        binding.buttonAddToFav.isChecked = false
                     }
                 }
             }
@@ -98,51 +98,52 @@ class SongViewMusicMode : AppCompatActivity() {
         }
 
         if (songNumber >= DataManager.maxSongNumber){
-            animateButton(rightArrowButton, false)
+            animateButton(binding.rightArrowButton, false)
         }
         else{
-            animateButton(rightArrowButton, true)
+            animateButton(binding.rightArrowButton, true)
         }
 
         if (songNumber <= 1){
-            animateButton(leftArrowButton, false)
+            animateButton(binding.leftArrowButton, false)
         }
         else{
-            animateButton(leftArrowButton, true)
+            animateButton(binding.leftArrowButton, true)
         }
 
-        leftArrowButton.setOnClickListener{
+        binding.leftArrowButton.setOnClickListener{
             if(songNumber > 1) {
                 songNumber--
                 updateSong()
                 if (songNumber < DataManager.maxSongNumber && songNumber > 1) {
-                    animateButton(rightArrowButton, true)
+                    animateButton(binding.rightArrowButton, true)
                 } else {
-                    animateButton(leftArrowButton, false)
-                }
-            }
-        }
-        rightArrowButton.setOnClickListener{
-            if(songNumber < DataManager.maxSongNumber) {
-                songNumber++
-                updateSong()
-                if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
-                    animateButton(leftArrowButton, true)
-                } else {
-                    animateButton(rightArrowButton, false)
+                    animateButton(binding.leftArrowButton, false)
                 }
             }
         }
 
-        buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
+        binding.rightArrowButton.setOnClickListener{
+            if(songNumber < DataManager.maxSongNumber) {
+                songNumber++
+                updateSong()
+                if (songNumber > 1 && songNumber < DataManager.maxSongNumber) {
+                    animateButton(binding.leftArrowButton, true)
+                } else {
+                    animateButton(binding.rightArrowButton, false)
+                }
+            }
+        }
+
+        binding.buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
             if (isChecked){
-                GlobalScope.launch(Dispatchers.IO) {
+                lifecycleScope.launch(Dispatchers.IO) {
                     var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                     currentSong.isFavorite = true
                     songDao.updateFavoriteSongs(currentSong)
                 }
             }else{
-                GlobalScope.launch(Dispatchers.IO) {
+                lifecycleScope.launch(Dispatchers.IO) {
                     var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                     currentSong.isFavorite = false
                     songDao.updateFavoriteSongs(currentSong)

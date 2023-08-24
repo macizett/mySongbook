@@ -1,7 +1,6 @@
 package com.mayonnaise.mysongbook4
 
 import android.app.Dialog
-import android.app.UiModeManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -11,25 +10,20 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.slider.Slider
 import com.google.android.material.snackbar.Snackbar
+import com.mayonnaise.mysongbook4.databinding.ActivityMainBinding
+import com.mayonnaise.mysongbook4.databinding.SettingsDialogBinding
 import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Math.abs
@@ -38,23 +32,14 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
-
-        val viewPager: ViewPager2 = findViewById(R.id.viewPager)
-        val reportButton: Button = findViewById(R.id.buttonReport)
-        val settingsButton: Button = findViewById(R.id.buttonSettings)
-        val initializeTV: TextView = findViewById(R.id.initializeTV)
-        val progressBar: ProgressBar = findViewById(R.id.progressBar)
-        val contextView: ConstraintLayout = findViewById(R.id.constraintlayout)
-        val verseTV: TextView = findViewById(R.id.verseTV)
-        val versePlaceTV: TextView = findViewById(R.id.verse_place_TV)
-        val msbTV: TextView = findViewById(R.id.textViewMSB)
-        val lineLayout: LinearLayout = findViewById(R.id.lineLayout)
-        val lineLayout2: LinearLayout = findViewById(R.id.lineLayout2)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         val reportEmail = "mysongbook.report@gmail.com"
 
@@ -87,14 +72,14 @@ class MainActivity : AppCompatActivity() {
 
         var textSize = sharedPrefs.getFloat("textSize", 20.0F)
         DataManager.textSize = textSize
-        verseTV.textSize = DataManager.textSize
-        versePlaceTV.textSize = DataManager.textSize
-        reportButton.textSize = DataManager.textSize-5
-        settingsButton.textSize = DataManager.textSize-5
-        msbTV.textSize = DataManager.textSize-8
+        binding.verseTV.textSize = DataManager.textSize
+        binding.versePlaceTV.textSize = DataManager.textSize-5
+        binding.buttonReport.textSize = DataManager.textSize-5
+        binding.buttonSettings.textSize = DataManager.textSize-5
+        binding.textViewMSB.textSize = DataManager.textSize-8
 
 
-        viewPager.apply {
+        binding.viewPager.apply {
             clipChildren = false
             clipToPadding = false
             offscreenPageLimit = 3
@@ -108,9 +93,9 @@ class MainActivity : AppCompatActivity() {
             val r = 1 - abs(position)
             page.scaleY = (0.70f + r * 0.30f)
         }
-        viewPager.setPageTransformer(compositePageTransformer)
+        binding.viewPager.setPageTransformer(compositePageTransformer)
 
-        viewPager.adapter = CarouselAdapter(data)
+        binding.viewPager.adapter = SongbookViewPagerAdapter(data, lifecycleScope)
 
 
 
@@ -122,39 +107,39 @@ class MainActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main){
 
-                    versePlaceTV.animate().alpha(0f).withEndAction {
-                        versePlaceTV.text = verse.place
-                        versePlaceTV.animate().alpha(1f).start()
+                    binding.versePlaceTV.animate().alpha(0f).withEndAction {
+                        binding.versePlaceTV.text = verse.place
+                        binding.versePlaceTV.animate().alpha(1f).start()
                     }
 
-                    verseTV.animate().alpha(0f).withEndAction {
-                        verseTV.text = verse.text
-                        verseTV.animate().alpha(1f).start()
+                    binding.verseTV.animate().alpha(0f).withEndAction {
+                        binding.verseTV.text = verse.text
+                        binding.verseTV.animate().alpha(1f).start()
                     }
 
-                    lineLayout.visibility = View.VISIBLE
-                    lineLayout.alpha = 0f
-                    lineLayout.animate().alpha(1f).start()
+                    binding.lineLayout.visibility = View.VISIBLE
+                    binding.lineLayout.alpha = 0f
+                    binding.lineLayout.animate().alpha(1f).start()
 
-                    lineLayout2.visibility = View.VISIBLE
-                    lineLayout2.alpha = 0f
-                    lineLayout2.animate().alpha(1f).start()
+                    binding.lineLayout2.visibility = View.VISIBLE
+                    binding.lineLayout2.alpha = 0f
+                    binding.lineLayout2.animate().alpha(1f).start()
 
-                    msbTV.visibility = View.VISIBLE
-                    msbTV.alpha = 0f
-                    msbTV.animate().alpha(1f).start()
+                    binding.textViewMSB.visibility = View.VISIBLE
+                    binding.textViewMSB.alpha = 0f
+                    binding.textViewMSB.animate().alpha(1f).start()
 
-                    verseTV.visibility = View.VISIBLE
-                    verseTV.alpha = 0f
-                    verseTV.animate().alpha(1f).start()
+                    binding.verseTV.visibility = View.VISIBLE
+                    binding.verseTV.alpha = 0f
+                    binding.verseTV.animate().alpha(1f).start()
 
-                    versePlaceTV.visibility = View.VISIBLE
-                    versePlaceTV.alpha = 0f
-                    versePlaceTV.animate().alpha(1f).start()
+                    binding.versePlaceTV.visibility = View.VISIBLE
+                    binding.versePlaceTV.alpha = 0f
+                    binding.versePlaceTV.animate().alpha(1f).start()
 
-                    viewPager.visibility = View.VISIBLE
-                    viewPager.alpha = 0f
-                    viewPager.animate().alpha(1f).start()
+                    binding.viewPager.visibility = View.VISIBLE
+                    binding.viewPager.alpha = 0f
+                    binding.viewPager.animate().alpha(1f).start()
                 }
             }
         }
@@ -163,16 +148,16 @@ class MainActivity : AppCompatActivity() {
             if (!isInitialized) {
 
                 if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
-                    progressBar.setVisibility(View.VISIBLE)
-                    initializeTV.setVisibility(View.VISIBLE)
+                    binding.progressBar.setVisibility(View.VISIBLE)
+                    binding.initializeTV.setVisibility(View.VISIBLE)
 
                     withContext(Dispatchers.Default) {
                         SongParser.initialize(context, false)
                     }
 
                     withContext(Dispatchers.Main) {
-                        initializeTV.setVisibility(View.GONE)
-                        progressBar.setVisibility(View.GONE)
+                        binding.initializeTV.setVisibility(View.GONE)
+                        binding.progressBar.setVisibility(View.GONE)
                     }
                     sharedPrefs.edit().putBoolean(PREF_INITIALIZED_KEY, true).apply()
                 }
@@ -182,9 +167,9 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        reportButton.setOnClickListener{
+        binding.buttonReport.setOnClickListener{
 
-            var snackbar = Snackbar.make(contextView, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
+            var snackbar = Snackbar.make(binding.constraintlayout, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
 
 
             snackbar.setAction("OK") {
@@ -204,18 +189,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        settingsButton.setOnClickListener {
+        binding.buttonSettings.setOnClickListener {
             val settingsDialog = Dialog(this)
-            settingsDialog.setContentView(R.layout.settings_dialog)
-            val sliderTextSize: Slider = settingsDialog.findViewById(R.id.sliderTextSize)
-            val nightModeSwitch: IconSwitch = settingsDialog.findViewById(R.id.nightModeSwitch)
-            val textView2: TextView = settingsDialog.findViewById(R.id.textView2)
-            val textView3: TextView = settingsDialog.findViewById(R.id.textView3)
+            val dialogBinding = SettingsDialogBinding.inflate(layoutInflater)
+            settingsDialog.setContentView(dialogBinding.root)
+
+            val sliderTextSize: Slider = dialogBinding.sliderTextSize
+            val nightModeSwitch: IconSwitch = dialogBinding.nightModeSwitch
 
             sliderTextSize.value = textSize
 
-            textView2.textSize = textSize-2
-            textView3.textSize = textSize-2
+            dialogBinding.textView2.textSize = textSize - 2
+            dialogBinding.textView3.textSize = textSize - 2
+
 
             when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
                 Configuration.UI_MODE_NIGHT_YES -> {
@@ -254,13 +240,13 @@ class MainActivity : AppCompatActivity() {
 
             sliderTextSize.addOnChangeListener(object : Slider.OnChangeListener {
                 override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
-                    textView2.textSize = value-2
-                    textView3.textSize = value-2
-                    verseTV.textSize = value
-                    versePlaceTV.textSize = value-4
-                    reportButton.textSize = value-5
-                    settingsButton.textSize = value-5
-                    msbTV.textSize = value-8
+                    dialogBinding.textView2.textSize = value-2
+                    dialogBinding.textView3.textSize = value-2
+                    binding.verseTV.textSize = value
+                    binding.versePlaceTV.textSize = value-5
+                    binding.buttonReport.textSize = value-5
+                    binding.buttonSettings.textSize = value-5
+                    binding.textViewMSB.textSize = value-8
 
                     DataManager.textSize = value
                     textSize = value
@@ -279,8 +265,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         else{
-            randomVerse()
-            verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
+            binding.verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
+            binding.viewPager.visibility = View.VISIBLE
+            binding.viewPager.alpha = 0f
+            binding.viewPager.animate().alpha(1f).start()
+
+            binding.lineLayout.visibility = View.VISIBLE
+            binding.lineLayout.alpha = 0f
+            binding.lineLayout.animate().alpha(1f).start()
+
+            binding.lineLayout2.visibility = View.VISIBLE
+            binding.lineLayout2.alpha = 0f
+            binding.lineLayout2.animate().alpha(1f).start()
+
+            binding.textViewMSB.visibility = View.VISIBLE
+            binding.textViewMSB.alpha = 0f
+            binding.textViewMSB.animate().alpha(1f).start()
+
+            binding.verseTV.visibility = View.VISIBLE
+            binding.verseTV.alpha = 0f
+            binding.verseTV.animate().alpha(1f).start()
+
             sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
         }
 

@@ -9,43 +9,37 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mayonnaise.mysongbook4.databinding.ActivitySongslistBinding
 import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SongsList : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySongslistBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_songslist)
 
-        val buttonGo: Button = findViewById(R.id.buttonGo)
-        val getNumber: EditText = findViewById(R.id.textInputEditText)
-        val searchButton: Button = findViewById(R.id.searchButton)
-        var favoritesButton: Button = findViewById(R.id.favoritesButton)
-        var sortButton: Button = findViewById(R.id.sortButton)
-        var recyclerViewTOC: RecyclerView = findViewById(R.id.recyclerViewTOC)
-        val musicModeSwitch: IconSwitch = findViewById(R.id.switchMusicMode)
-        val tocTV: TextView = findViewById(R.id.textView)
+        binding = ActivitySongslistBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         var maxSongNr = DataManager.maxSongNumber
 
         lateinit var adapter: SongAdapter
-        var musicSwitch: Boolean = false
 
-        sortButton.textSize = DataManager.textSize-5
-        tocTV.textSize = DataManager.textSize
-        getNumber.textSize = DataManager.textSize-3
-        favoritesButton.textSize = DataManager.textSize-6
-        searchButton.textSize = DataManager.textSize-6
+        binding.sortButton.textSize = DataManager.textSize-5
+        binding.tocTV.textSize = DataManager.textSize
+        binding.getNumber.textSize = DataManager.textSize-3
+        binding.favoritesButton.textSize = DataManager.textSize-6
+        binding.searchButton.textSize = DataManager.textSize-6
 
         val sharedPrefs by lazy {
             getSharedPreferences(
@@ -54,14 +48,12 @@ class SongsList : AppCompatActivity() {
         }
 
         if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
-            musicSwitch = true
-            musicModeSwitch.setChecked(IconSwitch.Checked.RIGHT)
+            binding.switchMusicMode.setChecked(IconSwitch.Checked.RIGHT)
             DataManager.musicMode = true
 
         }
         else{
-            musicSwitch = false
-            musicModeSwitch.setChecked(IconSwitch.Checked.LEFT)
+            binding.switchMusicMode.setChecked(IconSwitch.Checked.LEFT)
             DataManager.musicMode = false
         }
 
@@ -70,8 +62,8 @@ class SongsList : AppCompatActivity() {
             var allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
                 adapter = SongAdapter(allSongs)
-                recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
-                recyclerViewTOC.adapter = adapter
+                binding.recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
+                binding.recyclerViewTOC.adapter = adapter
                 if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", false)){
                     adapter.sortAlphabetically()
                     adapter.notifyDataSetChanged()
@@ -84,11 +76,11 @@ class SongsList : AppCompatActivity() {
         }
 
         fun goToNumber(){
-            if (getNumber.text.isEmpty()){
+            if (binding.getNumber.text!!.isEmpty()){
                 Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
             }
             else{
-                var number = getNumber.text.toString().toInt()
+                var number =  binding.getNumber.text.toString().toInt()
                 if(number <= maxSongNr && number > 0) {
                     DataManager.chosenSong = number
 
@@ -110,16 +102,16 @@ class SongsList : AppCompatActivity() {
         }
 
 
-        buttonGo.setOnClickListener{
+        binding.buttonGo.setOnClickListener{
             goToNumber()
         }
 
-        searchButton.setOnClickListener {
+        binding.searchButton.setOnClickListener {
             val searchActivity = Intent(this, SearchPhrase::class.java)
             startActivity(searchActivity)
         }
 
-        sortButton.setOnClickListener{
+        binding.sortButton.setOnClickListener{
             if(sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", true)){
                 sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", false).apply()
                 adapter.sortAlphabetically()
@@ -134,12 +126,12 @@ class SongsList : AppCompatActivity() {
             }
         }
 
-        favoritesButton.setOnClickListener{
+        binding.favoritesButton.setOnClickListener{
             val showFavoritesActivity = Intent(this, FavoriteSongsList::class.java)
             startActivity(showFavoritesActivity)
         }
 
-        getNumber.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        binding.getNumber.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
@@ -149,16 +141,16 @@ class SongsList : AppCompatActivity() {
             false
         })
 
-        musicModeSwitch.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
+        binding.switchMusicMode.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
             override fun onCheckChanged(current: IconSwitch.Checked?) {
                 when (current) {
-                    IconSwitch.Checked.LEFT -> {musicSwitch = false
-                        sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                    IconSwitch.Checked.LEFT -> {
+                        sharedPrefs.edit().putBoolean("musicSwitchStatement", false).apply()
                         DataManager.musicMode = false
                         Toast.makeText(this@SongsList, "Tryb standardowy", Toast.LENGTH_SHORT).show()}
 
-                    IconSwitch.Checked.RIGHT -> {musicSwitch = true
-                        sharedPrefs.edit().putBoolean("musicSwitchStatement", musicSwitch).apply()
+                    IconSwitch.Checked.RIGHT -> {
+                        sharedPrefs.edit().putBoolean("musicSwitchStatement", true).apply()
                         DataManager.musicMode = true
                         Toast.makeText(this@SongsList, "Tryb muzyczny", Toast.LENGTH_SHORT).show()}
 

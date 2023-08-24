@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phraseSearch"
+            android:id="@+id/phraseInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Fraza lub słowo kluczowe..."
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <TextView
-            android:id="@+id/foundQuantity"
+            android:id="@+id/foundQuantityTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top"

@@ -48,7 +48,7 @@ class FavoriteSongsList : AppCompatActivity() {
             else{
                 infoTV.visibility = View.VISIBLE
             }
-            adapter = FavoritesAdapter(favoriteSongs, applicationContext)
+            adapter = FavoritesAdapter(favoriteSongs, applicationContext, lifecycleScope)
             recyclerViewFavs.layoutManager = LinearLayoutManager(applicationContext)
             recyclerViewFavs.adapter = adapter
 

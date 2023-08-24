@@ -12,34 +12,33 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.mayonnaise.mysongbook4.databinding.ActivitySearchPhraseBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SearchPhrase : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySearchPhraseBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_phrase)
-
-        var phraseInput: EditText = findViewById(R.id.phraseSearch)
-        var searchButton: Button = findViewById(R.id.buttonSearch)
-        var viewPager: ViewPager2 = findViewById(R.id.view_pager)
-        var foundSongsTV: TextView = findViewById(R.id.foundQuantity)
-        var infoTV: TextView = findViewById(R.id.infoTV)
+        binding = ActivitySearchPhraseBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         lateinit var foundSongs: List<SongEntity>
         lateinit var phrase: String
 
-        phraseInput.textSize = DataManager.textSize-3
-        searchButton.textSize = DataManager.textSize-5
-        infoTV.textSize = DataManager.textSize-4
-        foundSongsTV.textSize = DataManager.textSize-5
+        binding.phraseInput.textSize = DataManager.textSize-3
+        binding.buttonSearch.textSize = DataManager.textSize-5
+        binding.infoTV.textSize = DataManager.textSize-4
+        binding.foundQuantityTV.textSize = DataManager.textSize-5
 
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
-        viewPager.apply {
+        binding.viewPager.apply {
             clipChildren = false
             clipToPadding = false
             offscreenPageLimit = 3
@@ -52,27 +51,27 @@ class SearchPhrase : AppCompatActivity() {
             page.scaleY = (0.95f + r * 0.05f)
         }
 
-        viewPager.setPageTransformer(compositePageTransformer)
+        binding.viewPager.setPageTransformer(compositePageTransformer)
 
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                foundSongsTV.text = "Znaleziono: ${position+1}/${foundSongs.size}"
+                binding.foundQuantityTV.text = "Znaleziono: ${position+1}/${foundSongs.size}"
             }
         })
 
         fun search(){
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
-            infoTV.visibility = View.GONE
+            binding.infoTV.visibility = View.GONE
 
-            phrase = phraseInput.text.toString()
+            phrase = binding.phraseInput.text.toString()
 
             if(phrase.isEmpty()){                                                                            //if empty
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
-                foundSongsTV.text = "Znaleziono: 0/0"
+                binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
-                infoTV.setVisibility(View.VISIBLE)
+                binding.infoTV.setVisibility(View.VISIBLE)
             }
             else{
                 phrase = phrase.replace("[.,]".toRegex(), "")
@@ -90,26 +89,26 @@ class SearchPhrase : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (foundSongs.isNotEmpty()) {
                             Toast.makeText(this@SearchPhrase, "Znaleziono ${foundSongs.size} wyników", Toast.LENGTH_SHORT).show()
-                            viewPager.adapter = SongViewPagerAdapter(foundSongs, applicationContext, true, phrase)
-                            foundSongsTV.text = "Znaleziono: 1/${foundSongs.size}"
+                            binding.viewPager.adapter = SongViewPagerAdapter(foundSongs, lifecycleScope, applicationContext, true, phrase)
+                            binding.foundQuantityTV.text = "Znaleziono: 1/${foundSongs.size}"
                         }
 
                         else{
                             Toast.makeText(this@SearchPhrase, "Nie znaleziono frazy", Toast.LENGTH_SHORT).show()
-                            foundSongsTV.text = "Znaleziono: 0/0"
+                            binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
-                            infoTV.setVisibility(View.VISIBLE)
+                            binding.infoTV.visibility = View.VISIBLE
                         }
                     }
                 }
             }
         }
 
-        searchButton.setOnClickListener{
+        binding.buttonSearch.setOnClickListener{
             search()
         }
 
-        phraseInput.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        binding.phraseInput.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     search()
                     return@OnKeyListener true

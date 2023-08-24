@@ -132,7 +132,7 @@
 
 
             <TextView
-                android:id="@+id/verse_place_TV"
+                android:id="@+id/versePlaceTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

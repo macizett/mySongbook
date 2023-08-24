@@ -135,13 +135,13 @@
         android:paddingRight="24dp"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/verse_place_TV"
+        app:layout_constraintBottom_toTopOf="@+id/versePlaceTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
-        android:id="@+id/verse_place_TV"
+        android:id="@+id/versePlaceTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

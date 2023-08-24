@@ -8,7 +8,7 @@
     android:id="@+id/constraintLayout">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tocTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SPIS TREŚCI"
@@ -67,10 +67,10 @@
         android:hint="nr. pieśni"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/tocTV">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+            android:id="@+id/getNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />

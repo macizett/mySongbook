@@ -24,9 +24,9 @@ import com.mayonnaise.mysongbook4.databinding.ActivityMainBinding
 import com.mayonnaise.mysongbook4.databinding.SettingsDialogBinding
 import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Math.abs
 import kotlin.random.Random
 
 
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         var data = arrayListOf<Int>()
 
-        val PREF_INITIALIZED_KEY = "pref_initialized_key"
         var isInitialized = false
 
         val sharedPrefs by lazy {
@@ -67,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        var verseDao = SongbookDatabase.getInstance(this).verseDao()
+        val verseDao = SongbookDatabase.getInstance(this).verseDao()
 
 
         var textSize = sharedPrefs.getFloat("textSize", 20.0F)
@@ -90,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         val compositePageTransformer = CompositePageTransformer()
         compositePageTransformer.addTransformer(MarginPageTransformer((20 * Resources.getSystem().displayMetrics.density).toInt()))
         compositePageTransformer.addTransformer { page, position ->
-            val r = 1 - abs(position)
+            val r = 1 - kotlin.math.abs(position)
             page.scaleY = (0.70f + r * 0.30f)
         }
         binding.viewPager.setPageTransformer(compositePageTransformer)
@@ -102,8 +101,8 @@ class MainActivity : AppCompatActivity() {
 
         fun randomVerse(){
             lifecycleScope.launch(Dispatchers.IO){
-                var verseID = Random.nextInt(1, 39)
-                var verse = verseDao.getVerse(verseID)
+                val verseID = Random.nextInt(1, 39)
+                val verse = verseDao.getVerse(verseID)
 
                 withContext(Dispatchers.Main){
 
@@ -147,19 +146,20 @@ class MainActivity : AppCompatActivity() {
         suspend fun initializeSongsIfNeeded(context: Context) {
             if (!isInitialized) {
 
-                if (!sharedPrefs.getBoolean(PREF_INITIALIZED_KEY, false)) {
-                    binding.progressBar.setVisibility(View.VISIBLE)
-                    binding.initializeTV.setVisibility(View.VISIBLE)
+                if (!sharedPrefs.getBoolean("pref_initialized_key", false)) {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.initializeTV.visibility = View.VISIBLE
 
                     withContext(Dispatchers.Default) {
-                        SongParser.initialize(context, false)
+                        SongParser.initialize(context, false, lifecycleScope)
                     }
+                    delay(1000)
 
                     withContext(Dispatchers.Main) {
-                        binding.initializeTV.setVisibility(View.GONE)
-                        binding.progressBar.setVisibility(View.GONE)
+                        binding.initializeTV.visibility = View.GONE
+                        binding.progressBar.visibility = View.GONE
                     }
-                    sharedPrefs.edit().putBoolean(PREF_INITIALIZED_KEY, true).apply()
+                    sharedPrefs.edit().putBoolean("pref_initialized_key", true).apply()
                 }
 
                 isInitialized = true
@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonReport.setOnClickListener{
 
-            var snackbar = Snackbar.make(binding.constraintlayout, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
+            val snackbar = Snackbar.make(binding.constraintlayout, "Użyj twojej aplikacji do obsługi Email", Snackbar.LENGTH_LONG)
 
 
             snackbar.setAction("OK") {
@@ -205,53 +205,49 @@ class MainActivity : AppCompatActivity() {
 
             when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
                 Configuration.UI_MODE_NIGHT_YES -> {
-                    nightModeSwitch.setChecked(IconSwitch.Checked.RIGHT)
+                    nightModeSwitch.checked = IconSwitch.Checked.RIGHT
                 }
                 Configuration.UI_MODE_NIGHT_NO -> {
-                    nightModeSwitch.setChecked(IconSwitch.Checked.LEFT)
+                    nightModeSwitch.checked = IconSwitch.Checked.LEFT
                 }
             }
 
-            nightModeSwitch.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
-                override fun onCheckChanged(current: IconSwitch.Checked?) {
-                    var newNightMode = AppCompatDelegate.MODE_NIGHT_NO
+            nightModeSwitch.setCheckedChangeListener { current ->
+                var newNightMode = AppCompatDelegate.MODE_NIGHT_NO
 
-                    when (current) {
-                        IconSwitch.Checked.LEFT -> {
-                            newNightMode = AppCompatDelegate.MODE_NIGHT_NO
-                        }
-
-                        IconSwitch.Checked.RIGHT -> {
-                            newNightMode = AppCompatDelegate.MODE_NIGHT_YES
-                        }
-                        else -> Toast.makeText(this@MainActivity, "ERROR 2137", Toast.LENGTH_SHORT).show()
+                when (current) {
+                    IconSwitch.Checked.LEFT -> {
+                        newNightMode = AppCompatDelegate.MODE_NIGHT_NO
                     }
 
-                    sharedPrefs.edit().putInt("nightMode", newNightMode).apply()
+                    IconSwitch.Checked.RIGHT -> {
+                        newNightMode = AppCompatDelegate.MODE_NIGHT_YES
+                    }
 
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        settingsDialog.hide()
-                        AppCompatDelegate.setDefaultNightMode(newNightMode)
-                    }, 1_000)
-
-
+                    else -> Toast.makeText(this@MainActivity, "ERROR 2137", Toast.LENGTH_SHORT)
+                        .show()
                 }
-            })
 
-            sliderTextSize.addOnChangeListener(object : Slider.OnChangeListener {
-                override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
-                    dialogBinding.textView2.textSize = value-2
-                    dialogBinding.textView3.textSize = value-2
-                    binding.verseTV.textSize = value
-                    binding.versePlaceTV.textSize = value-5
-                    binding.buttonReport.textSize = value-5
-                    binding.buttonSettings.textSize = value-5
-                    binding.textViewMSB.textSize = value-8
+                sharedPrefs.edit().putInt("nightMode", newNightMode).apply()
 
-                    DataManager.textSize = value
-                    textSize = value
-                    sharedPrefs.edit().putFloat("textSize", sliderTextSize.value).apply()
-                }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    settingsDialog.hide()
+                    AppCompatDelegate.setDefaultNightMode(newNightMode)
+                }, 1_000)
+            }
+
+            sliderTextSize.addOnChangeListener(Slider.OnChangeListener { _, value, _ ->
+                dialogBinding.textView2.textSize = value-2
+                dialogBinding.textView3.textSize = value-2
+                binding.verseTV.textSize = value
+                binding.versePlaceTV.textSize = value-5
+                binding.buttonReport.textSize = value-5
+                binding.buttonSettings.textSize = value-5
+                binding.textViewMSB.textSize = value-8
+
+                DataManager.textSize = value
+                textSize = value
+                sharedPrefs.edit().putFloat("textSize", sliderTextSize.value).apply()
             })
             settingsDialog.show()
         }

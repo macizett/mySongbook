@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -16,6 +13,7 @@ import com.mayonnaise.mysongbook4.databinding.ActivitySearchPhraseBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.math.abs
 
 class SearchPhrase : AppCompatActivity() {
 
@@ -47,7 +45,7 @@ class SearchPhrase : AppCompatActivity() {
         val compositePageTransformer = CompositePageTransformer()
 
         compositePageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
+            val r = 1 - abs(position)
             page.scaleY = (0.95f + r * 0.05f)
         }
 
@@ -62,7 +60,7 @@ class SearchPhrase : AppCompatActivity() {
 
         fun search(){
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
+            inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, 0)
             binding.infoTV.visibility = View.GONE
 
             phrase = binding.phraseInput.text.toString()
@@ -71,7 +69,7 @@ class SearchPhrase : AppCompatActivity() {
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
                 binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
-                binding.infoTV.setVisibility(View.VISIBLE)
+                binding.infoTV.visibility = View.VISIBLE
             }
             else{
                 phrase = phrase.replace("[.,]".toRegex(), "")
@@ -80,10 +78,10 @@ class SearchPhrase : AppCompatActivity() {
                 }
 
                 lifecycleScope.launch(Dispatchers.Default){
-                    var searchResults = songDao.searchForPhrase(phrase, DataManager.chosenSongbook)
-                    var searchResultsWithoutMarks = songDao.searchForPhraseWithoutMarks(phrase, DataManager.chosenSongbook)
-                    var finalSearchResults = searchResults + searchResultsWithoutMarks
-                    var finalSearchResultsWithoutDupes: List<SongEntity> = finalSearchResults.toHashSet().toList().sortedBy { it.number }
+                    val searchResults = songDao.searchForPhrase(phrase, DataManager.chosenSongbook)
+                    val searchResultsWithoutMarks = songDao.searchForPhraseWithoutMarks(phrase, DataManager.chosenSongbook)
+                    val finalSearchResults = searchResults + searchResultsWithoutMarks
+                    val finalSearchResultsWithoutDupes: List<SongEntity> = finalSearchResults.toHashSet().toList().sortedBy { it.number }
                     foundSongs = finalSearchResultsWithoutDupes
 
                     withContext(Dispatchers.Main) {
@@ -108,7 +106,7 @@ class SearchPhrase : AppCompatActivity() {
             search()
         }
 
-        binding.phraseInput.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        binding.phraseInput.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     search()
                     return@OnKeyListener true

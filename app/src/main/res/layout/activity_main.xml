@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,10 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Inicjalizowanie zasobów..."
+            android:text="@string/initialize_resources"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progressBar"></TextView>
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
     </LinearLayout>
 
@@ -56,7 +55,7 @@
         app:iconGravity="textStart"
         app:iconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"></Button>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <Button
@@ -73,7 +72,7 @@
         app:iconGravity="textStart"
         app:iconSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -151,7 +150,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/lineLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></TextView>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <LinearLayout
@@ -170,7 +169,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:letterSpacing="0.4"
-        android:text="MYSONGBOOK"
+        android:text="@string/appnamehighercase"
         android:textAlignment="center"
         android:textSize="12sp"
         android:textStyle="bold"

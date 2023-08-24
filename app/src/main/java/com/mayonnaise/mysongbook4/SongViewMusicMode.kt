@@ -5,17 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.CheckBox
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.util.FitPolicy
-import com.google.android.material.slider.Slider
 import com.mayonnaise.mysongbook4.databinding.ActivitySongViewMusicModeBinding
 import kotlinx.coroutines.withContext
 
@@ -56,7 +51,7 @@ class SongViewMusicMode : AppCompatActivity() {
         }
 
 
-        var songbook = when (DataManager.chosenSongbook){
+        val songbook = when (DataManager.chosenSongbook){
             1 -> "duchowe"
             2 -> "wedrowiec"
             3 -> "bialy"
@@ -88,7 +83,7 @@ class SongViewMusicMode : AppCompatActivity() {
         fun updateSong(){
             displayPdfFromAsset("${songbook}${songNumber}.pdf")
             lifecycleScope.launch(Dispatchers.IO){
-                var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                val currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
                     binding.numberAndTitleTV.animate()
                         .alpha(0f)
@@ -102,21 +97,12 @@ class SongViewMusicMode : AppCompatActivity() {
                         }
                         .start()
 
-                    if(currentSong.isFavorite){
-                        binding.buttonAddToFav.isChecked = true
-                    }
-                    else{
-                        binding.buttonAddToFav.isChecked = false
-                    }
+                    binding.buttonAddToFav.isChecked = currentSong.isFavorite
                 }
             }
         }
 
-        try {
-            updateSong()
-        } catch(e: com.github.barteksc.pdfviewer.exception.FileNotFoundException) {
-            Toast.makeText(this, "ERROR OPENING PDF, TRY AGAIN", Toast.LENGTH_LONG).show()
-        }
+        updateSong()
 
         if (songNumber >= DataManager.maxSongNumber){
             animateButton(binding.rightArrowButton, false)
@@ -156,16 +142,16 @@ class SongViewMusicMode : AppCompatActivity() {
             }
         }
 
-        binding.buttonAddToFav.setOnCheckedChangeListener{buttonView, isChecked ->
+        binding.buttonAddToFav.setOnCheckedChangeListener{ _, isChecked ->
             if (isChecked){
                 lifecycleScope.launch(Dispatchers.IO) {
-                    var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    val currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                     currentSong.isFavorite = true
                     songDao.updateFavoriteSongs(currentSong)
                 }
             }else{
                 lifecycleScope.launch(Dispatchers.IO) {
-                    var currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
+                    val currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                     currentSong.isFavorite = false
                     songDao.updateFavoriteSongs(currentSong)
                 }

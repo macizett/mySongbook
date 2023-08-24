@@ -7,13 +7,9 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.mayonnaise.mysongbook4.databinding.ActivitySongslistBinding
 import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +27,7 @@ class SongsList : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        var maxSongNr = DataManager.maxSongNumber
+        val maxSongNr = DataManager.maxSongNumber
 
         lateinit var adapter: SongAdapter
 
@@ -48,20 +44,20 @@ class SongsList : AppCompatActivity() {
         }
 
         if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
-            binding.switchMusicMode.setChecked(IconSwitch.Checked.RIGHT)
+            binding.switchMusicMode.checked = IconSwitch.Checked.RIGHT
             DataManager.musicMode = true
 
         }
         else{
-            binding.switchMusicMode.setChecked(IconSwitch.Checked.LEFT)
+            binding.switchMusicMode.checked = IconSwitch.Checked.LEFT
             DataManager.musicMode = false
         }
 
         lifecycleScope.launch (Dispatchers.IO) {
-            var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
-            var allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
+            val songDao = SongbookDatabase.getInstance(applicationContext).songDao()
+            val allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
-                adapter = SongAdapter(allSongs)
+                adapter = SongAdapter(allSongs, lifecycleScope)
                 binding.recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
                 binding.recyclerViewTOC.adapter = adapter
                 if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", false)){
@@ -80,11 +76,11 @@ class SongsList : AppCompatActivity() {
                 Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
             }
             else{
-                var number =  binding.getNumber.text.toString().toInt()
-                if(number <= maxSongNr && number > 0) {
+                val number =  binding.getNumber.text.toString().toInt()
+                if(number in 1..maxSongNr) {
                     DataManager.chosenSong = number
 
-                    if(DataManager.musicMode == true){
+                    if(DataManager.musicMode){
                         val showSongViewMusicMode = Intent(this, SongViewMusicMode::class.java)
                         startActivity(showSongViewMusicMode)
                     }
@@ -96,7 +92,7 @@ class SongsList : AppCompatActivity() {
                 else{
                     Toast.makeText(this, "Nieprawidłowy numer pieśni!", Toast.LENGTH_SHORT).show()
                     val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                    inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
+                    inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, 0)
                 }
             }
         }
@@ -131,33 +127,33 @@ class SongsList : AppCompatActivity() {
             startActivity(showFavoritesActivity)
         }
 
-        binding.getNumber.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        binding.getNumber.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.getWindowToken(), 0)
+                inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, 0)
                 goToNumber()
                 return@OnKeyListener true
             }
             false
         })
 
-        binding.switchMusicMode.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
-            override fun onCheckChanged(current: IconSwitch.Checked?) {
-                when (current) {
-                    IconSwitch.Checked.LEFT -> {
-                        sharedPrefs.edit().putBoolean("musicSwitchStatement", false).apply()
-                        DataManager.musicMode = false
-                        Toast.makeText(this@SongsList, "Tryb standardowy", Toast.LENGTH_SHORT).show()}
-
-                    IconSwitch.Checked.RIGHT -> {
-                        sharedPrefs.edit().putBoolean("musicSwitchStatement", true).apply()
-                        DataManager.musicMode = true
-                        Toast.makeText(this@SongsList, "Tryb muzyczny", Toast.LENGTH_SHORT).show()}
-
-                    else -> Toast.makeText(this@SongsList, "ERROR 2137", Toast.LENGTH_SHORT).show()
+        binding.switchMusicMode.setCheckedChangeListener { current ->
+            when (current) {
+                IconSwitch.Checked.LEFT -> {
+                    sharedPrefs.edit().putBoolean("musicSwitchStatement", false).apply()
+                    DataManager.musicMode = false
+                    Toast.makeText(this@SongsList, "Tryb standardowy", Toast.LENGTH_SHORT).show()
                 }
+
+                IconSwitch.Checked.RIGHT -> {
+                    sharedPrefs.edit().putBoolean("musicSwitchStatement", true).apply()
+                    DataManager.musicMode = true
+                    Toast.makeText(this@SongsList, "Tryb muzyczny", Toast.LENGTH_SHORT).show()
+                }
+
+                else -> Toast.makeText(this@SongsList, "ERROR 2137", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
 
     }
 }

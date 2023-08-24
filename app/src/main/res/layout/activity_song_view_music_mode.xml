@@ -22,17 +22,18 @@
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:baselineAligned="false">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
@@ -60,11 +61,11 @@
 
         <CheckBox
             android:id="@+id/buttonAddToFav"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:button="@drawable/favourites_icon"
-            android:scaleX="1.35"
-            android:scaleY="1.35"
+            android:scaleX="1.4"
+            android:scaleY="1.4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"></CheckBox>
 
@@ -79,6 +80,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
+        android:contentDescription="@string/rightNavigatonButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/arrowright" />
@@ -90,6 +92,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
+        android:contentDescription="@string/navigationButtonLeft"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/arrowleft" />

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Brak ulubionych - śmiało, dodaj coś!"
+        android:text="@string/brak_ulubionych"
         android:textColor="#B3B3B1"
         android:textAlignment="center"
         android:layout_marginRight="32dp"
@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Ulubione"
+        android:text="@string/ulubione"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,9 +73,8 @@
         style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
         android:clickable="true"
-        android:contentDescription="SortButton"
+        android:contentDescription="@string/sortbutton"
         android:scaleType="center"
         android:textAlignment="center"
         app:icon="@drawable/sort_icon"

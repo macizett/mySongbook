@@ -22,10 +22,10 @@ class FavoriteSongsList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite_songs_list)
 
-        var recyclerViewFavs: RecyclerView = findViewById(R.id.recyclerViewFavorites)
-        var infoTV: TextView = findViewById(R.id.infoTV)
-        var labelTV: TextView = findViewById(R.id.labelTV)
-        var sortButton: Button = findViewById(R.id.sortButton)
+        val recyclerViewFavs: RecyclerView = findViewById(R.id.recyclerViewFavorites)
+        val infoTV: TextView = findViewById(R.id.infoTV)
+        val labelTV: TextView = findViewById(R.id.labelTV)
+        val sortButton: Button = findViewById(R.id.sortButton)
 
         infoTV.textSize = DataManager.textSize-4
         labelTV.textSize = DataManager.textSize
@@ -39,8 +39,8 @@ class FavoriteSongsList : AppCompatActivity() {
         }
 
         lifecycleScope.launch (Dispatchers.Default) {
-        var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
-            var favoriteSongs = songDao.getFavoriteSongs(DataManager.chosenSongbook)
+        val songDao = SongbookDatabase.getInstance(applicationContext).songDao()
+            val favoriteSongs = songDao.getFavoriteSongs(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
             if(favoriteSongs.isNotEmpty()){
                 infoTV.visibility = View.GONE
@@ -51,7 +51,6 @@ class FavoriteSongsList : AppCompatActivity() {
             adapter = FavoritesAdapter(favoriteSongs, applicationContext, lifecycleScope)
             recyclerViewFavs.layoutManager = LinearLayoutManager(applicationContext)
             recyclerViewFavs.adapter = adapter
-
 
                 if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", false)){
                     adapter.sortAlphabetically()

@@ -15,22 +15,21 @@ import android.widget.CheckBox
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifecycle: LifecycleCoroutineScope,
-                           context: Context, isSearchPhraseActivity: Boolean, phrase: String) : RecyclerView.Adapter<SongViewPagerAdapter.CarouselViewHolder>(){
+                           var context: Context,
+                           private var isSearchPhraseActivity: Boolean,
+                           private var phrase: String
+) : RecyclerView.Adapter<SongViewPagerAdapter.CarouselViewHolder>(){
 
-    var context = context
-    var isSearchPhraseActivity = isSearchPhraseActivity
-    var phrase = phrase
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarouselViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarouselViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.song_item, parent, false)
             return CarouselViewHolder(view)
         }
@@ -47,7 +46,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
         if(isSearchPhraseActivity){
             numberAndTitleTV.setOnClickListener{
                 DataManager.chosenSong = song.number
-                if(DataManager.musicMode == true){
+                if(DataManager.musicMode){
                     val showSongViewMusicMode = Intent(context, SongViewMusicMode::class.java)
                     holder.itemView.context.startActivity(showSongViewMusicMode)
                 }
@@ -58,17 +57,12 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
             }
         }
 
-        if(song.isFavorite){
-            buttonAddToFav.isChecked = true
-        }
-        else{
-            buttonAddToFav.isChecked = false
-        }
+        buttonAddToFav.isChecked = song.isFavorite
 
 
-        buttonAddToFav.setOnCheckedChangeListener { buttonView, isChecked ->
+        buttonAddToFav.setOnCheckedChangeListener { _, isChecked ->
 
-            if (buttonAddToFav.isChecked) {
+            if (isChecked) {
                 lifecycle.launch(Dispatchers.IO) {
                     song.isFavorite = true
                     updateSongInDatabase(song)
@@ -117,7 +111,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
             return index == 0 || index == text.length || !Character.isLetterOrDigit(text[index - 1]) || !Character.isLetterOrDigit(text[index])
         }
 
-        fun scrollScrollViewToHighlightedWord(spannable: SpannableStringBuilder, originalText: String) {
+        fun scrollScrollViewToHighlightedWord(spannable: SpannableStringBuilder) {
             val highlightSpans = spannable.getSpans(0, spannable.length, ForegroundColorSpan::class.java)
             if (highlightSpans.isNotEmpty()) {
                 val firstHighlightedSpan = highlightSpans[0]
@@ -159,7 +153,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
                     ) {
 
                         spannable.setSpan(
-                            ForegroundColorSpan(holder.itemView.context.resources.getColor(R.color.foundphrase)),
+                            ForegroundColorSpan(ContextCompat.getColor(holder.itemView.context, R.color.foundphrase)),
                             startIndex,
                             endIndex,
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -169,7 +163,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
                 }
             }
 
-            scrollScrollViewToHighlightedWord(spannable, song.text)
+            scrollScrollViewToHighlightedWord(spannable)
         }
 
         else{

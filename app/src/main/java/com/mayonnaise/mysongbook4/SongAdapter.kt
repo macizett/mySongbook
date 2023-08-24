@@ -3,19 +3,19 @@ package com.mayonnaise.mysongbook4
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mayonnaise.mysongbook4.databinding.TocViewRowBinding
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
+class SongAdapter(private var songEntities: List<SongEntity>, private var lifecycle: LifecycleCoroutineScope) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
-    val coroutineExceptionHandler = CoroutineExceptionHandler{_, throwable ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
         throwable.printStackTrace()
     }
 
@@ -58,7 +58,7 @@ class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Ada
 
     fun sortAlphabetically() {
         val collator = Collator.getInstance()
-        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy {
                 collator.getCollationKey(it.title)
             }
@@ -69,7 +69,7 @@ class SongAdapter(private var songEntities: List<SongEntity>) : RecyclerView.Ada
     }
 
     fun sortNumerically() {
-        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { it.number }
             withContext(Dispatchers.Main){
                 notifyDataSetChanged()

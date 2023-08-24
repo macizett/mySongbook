@@ -11,15 +11,13 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mayonnaise.mysongbook4.SongParser.coroutineExceptionHandler
 import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var lifecycle: LifecycleCoroutineScope): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
+class FavoritesAdapter(private var songEntities: List<SongEntity>, context: Context, private var lifecycle: LifecycleCoroutineScope): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
 
-    var context2 = context
+    private var context2 = context
 
     inner class FavouritesViewHolder(binding: FavoritesViewRowBinding): ViewHolder(binding.root){
         val songTitleTV = binding.songTitleTV
@@ -60,7 +58,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var
 
             }
 
-            holder.buttonFavourites.setOnCheckedChangeListener{ buttonView, isChecked ->
+            holder.buttonFavourites.setOnCheckedChangeListener{ _, isChecked ->
                 if (!isChecked) {
                     song.isFavorite = false
                     Toast.makeText(context2, "Usunięto pieśń z Ulubionych!", Toast.LENGTH_SHORT).show()
@@ -79,10 +77,10 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var
 
     }
 
-    fun updateSongInDatabase(song: SongEntity) {
+    private fun updateSongInDatabase(song: SongEntity) {
         val songDao = SongbookDatabase.getInstance(context2).songDao()
 
-        GlobalScope.launch(Dispatchers.IO) {
+        lifecycle.launch(Dispatchers.IO) {
             songDao.updateFavoriteSongs(song)
         }
     }
@@ -90,7 +88,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var
     fun sortAlphabetically() {
         val collator = Collator.getInstance()
 
-        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { collator.getCollationKey(it.title) }
             withContext(Dispatchers.Main){
                 notifyDataSetChanged()
@@ -99,7 +97,7 @@ class FavoritesAdapter(var songEntities: List<SongEntity>, context: Context, var
     }
 
     fun sortNumerically() {
-        GlobalScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
             songEntities = songEntities.sortedBy { it.number }
             withContext(Dispatchers.Main){
                 notifyDataSetChanged()

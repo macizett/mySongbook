@@ -44,7 +44,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <Button
         android:id="@+id/buttonGo"
         style="?attr/materialIconButtonStyle"
@@ -52,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="12dp"
+        android:contentDescription="@string/rightNavigatonButton"
         app:icon="@drawable/arrowgoto"
         app:iconSize="42sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -155,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:clickable="true"
-                android:contentDescription="fabSearch"
+                android:contentDescription="@string/fabsearch"
                 android:scaleType="center"
                 app:icon="@drawable/baseline_favorite_24"
                 app:iconSize="30dp"

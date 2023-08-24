@@ -16,7 +16,7 @@
         android:textColor="#B3B3B1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
@@ -27,7 +27,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:baselineAligned="false">
 
 
         <LinearLayout
@@ -44,7 +45,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="6dp"
                 android:layout_marginBottom="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager"
@@ -52,17 +54,11 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"></androidx.viewpager2.widget.ViewPager2>
+                    android:layout_marginRight="4dp" />
             </LinearLayout>
 
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,7 +78,7 @@
                     android:id="@+id/phraseInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Fraza lub słowo kluczowe..."
+                    android:hint="@string/hintseachphrase"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,10 +96,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
-                    android:text="Znaleziono: 0/0" />
+                    android:text="@string/znaleziono" />
 
                 <Button
                     android:id="@+id/buttonSearch"
@@ -111,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="6dp"
                     android:layout_weight="0"
-                    android:text="Szukaj"
+                    android:text="@string/szukaj"
                     android:textAlignment="center"
                     android:textSize="16sp"
                     app:icon="@drawable/ic_launcher_monochrome"

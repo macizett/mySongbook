@@ -8,7 +8,6 @@ import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -24,16 +23,16 @@ class SongbookViewPagerAdapter(private val carouselDataList: ArrayList<Int>, var
 
     override fun onBindViewHolder(holder: CarouselItemViewHolder, position: Int) {
         val songDao = SongbookDatabase.getInstance(holder.itemView.context).songDao()
-        val ImageView = holder.itemView.findViewById<ShapeableImageView>(R.id.songbookImage)
-        ImageView.setImageResource(carouselDataList[position])
+        val imageView = holder.itemView.findViewById<ShapeableImageView>(R.id.songbookImage)
+        imageView.setImageResource(carouselDataList[position])
 
         holder.itemView.setOnClickListener{
-            val songslistopen = Intent(holder.itemView.context, SongsList::class.java)
+            val songsListOpen = Intent(holder.itemView.context, SongsList::class.java)
             DataManager.chosenSongbook = position+1
             lifecycle.launch(Dispatchers.IO) {
                 DataManager.maxSongNumber = songDao.getAllSongsBySongbook(position+1).size
                 withContext(Dispatchers.Main){
-                    holder.itemView.context.startActivity(songslistopen)
+                    holder.itemView.context.startActivity(songsListOpen)
                 }
             }
         }

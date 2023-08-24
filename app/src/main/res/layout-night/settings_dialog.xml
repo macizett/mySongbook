@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="12dp"
     android:background="@color/md_theme_dark_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -26,8 +26,6 @@
         android:stepSize="1"
         android:valueFrom="16"
         android:valueTo="22"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -47,6 +45,7 @@
         android:layout_height="48dp"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lineLayout13" >
 
@@ -57,15 +56,29 @@
             android:layout_marginLeft="16dp"
             android:textSize="18sp"
             android:layout_gravity="center_vertical"
-            android:text="Tryb Ciemny"
+            android:text="Tryb Interfejsu"
             android:textStyle="bold" />
 
-        <Switch
-            android:id="@+id/nightModeSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <com.polyak.iconswitch.IconSwitch
+            android:id = "@+id/nightModeSwitch"
+            android:layout_alignParentTop = "true"
+            app:isw_icon_left = "@drawable/baseline_daymode_24"
+            app:isw_icon_right = "@drawable/baseline_nightmode_24"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="8dp"/>
+            app:isw_background_color = "#014262"
+            app:isw_thumb_color_left = "#1486A9"
+            app:isw_thumb_color_right = "#1EBFEF"
+            app:isw_inactive_tint_icon_left = "#878A8B"
+            app:isw_inactive_tint_icon_right = "#878A8B"
+            app:isw_active_tint_icon_left = "#FFEB3B"
+            app:isw_active_tint_icon_right = "#FFFFFF"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_centerHorizontal = "true"
+            android:layout_centerVertical = "true"
+            app:isw_default_selection = "left"
+            app:isw_icon_size = "18dp"
+            android:layout_marginLeft="16dp"/>
     </LinearLayout>
 
 

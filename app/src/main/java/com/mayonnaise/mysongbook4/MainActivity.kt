@@ -1,21 +1,25 @@
 package com.mayonnaise.mysongbook4
 
 import android.app.Dialog
+import android.app.UiModeManager
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -23,7 +27,9 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.slider.Slider
 import com.google.android.material.snackbar.Snackbar
+import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Math.abs
@@ -54,7 +60,18 @@ class MainActivity : AppCompatActivity() {
 
         var data = arrayListOf<Int>()
 
-        var verseDao = SongbookDatabase.getInstance(this).verseDao()
+        val PREF_INITIALIZED_KEY = "pref_initialized_key"
+        var isInitialized = false
+
+        val sharedPrefs by lazy {
+            getSharedPreferences(
+                "${BuildConfig.APPLICATION_ID}_sharedPreferences",
+                Context.MODE_PRIVATE)
+        }
+
+        val nightMode = sharedPrefs.getInt("nightMode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
+        AppCompatDelegate.setDefaultNightMode(nightMode)
 
         when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
@@ -65,14 +82,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val PREF_INITIALIZED_KEY = "pref_initialized_key"
-        var isInitialized = false
+        var verseDao = SongbookDatabase.getInstance(this).verseDao()
 
-        val sharedPrefs by lazy {
-            getSharedPreferences(
-                "${BuildConfig.APPLICATION_ID}_sharedPreferences",
-                Context.MODE_PRIVATE)
-        }
 
         var textSize = sharedPrefs.getFloat("textSize", 20.0F)
         DataManager.textSize = textSize
@@ -80,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         versePlaceTV.textSize = DataManager.textSize
         reportButton.textSize = DataManager.textSize-5
         settingsButton.textSize = DataManager.textSize-5
-        msbTV.textSize = DataManager.textSize-5
+        msbTV.textSize = DataManager.textSize-8
 
 
         viewPager.apply {
@@ -197,6 +208,7 @@ class MainActivity : AppCompatActivity() {
             val settingsDialog = Dialog(this)
             settingsDialog.setContentView(R.layout.settings_dialog)
             val sliderTextSize: Slider = settingsDialog.findViewById(R.id.sliderTextSize)
+            val nightModeSwitch: IconSwitch = settingsDialog.findViewById(R.id.nightModeSwitch)
             val textView2: TextView = settingsDialog.findViewById(R.id.textView2)
             val textView3: TextView = settingsDialog.findViewById(R.id.textView3)
 
@@ -205,7 +217,40 @@ class MainActivity : AppCompatActivity() {
             textView2.textSize = textSize-2
             textView3.textSize = textSize-2
 
+            when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+                Configuration.UI_MODE_NIGHT_YES -> {
+                    nightModeSwitch.setChecked(IconSwitch.Checked.RIGHT)
+                }
+                Configuration.UI_MODE_NIGHT_NO -> {
+                    nightModeSwitch.setChecked(IconSwitch.Checked.LEFT)
+                }
+            }
 
+            nightModeSwitch.setCheckedChangeListener(object : IconSwitch.CheckedChangeListener {
+                override fun onCheckChanged(current: IconSwitch.Checked?) {
+                    var newNightMode = AppCompatDelegate.MODE_NIGHT_NO
+
+                    when (current) {
+                        IconSwitch.Checked.LEFT -> {
+                            newNightMode = AppCompatDelegate.MODE_NIGHT_NO
+                        }
+
+                        IconSwitch.Checked.RIGHT -> {
+                            newNightMode = AppCompatDelegate.MODE_NIGHT_YES
+                        }
+                        else -> Toast.makeText(this@MainActivity, "ERROR 2137", Toast.LENGTH_SHORT).show()
+                    }
+
+                    sharedPrefs.edit().putInt("nightMode", newNightMode).apply()
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        settingsDialog.hide()
+                        AppCompatDelegate.setDefaultNightMode(newNightMode)
+                    }, 1_000)
+
+
+                }
+            })
 
             sliderTextSize.addOnChangeListener(object : Slider.OnChangeListener {
                 override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
@@ -215,7 +260,7 @@ class MainActivity : AppCompatActivity() {
                     versePlaceTV.textSize = value-4
                     reportButton.textSize = value-5
                     settingsButton.textSize = value-5
-                    msbTV.textSize = value-5
+                    msbTV.textSize = value-8
 
                     DataManager.textSize = value
                     textSize = value
@@ -230,9 +275,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (sharedPrefs.getBoolean("databaseStatement", false)){
-            //Handler(Looper.getMainLooper()).postDelayed({
                 randomVerse()
-          //  }, 500)
         }
 
         else{

@@ -11,9 +11,9 @@
         android:id="@+id/textInputLayout3"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,46 +22,47 @@
             android:id="@+id/phraseSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Wpisz frazę lub słowo kluczowe"
+            android:hint="Fraza lub słowo kluczowe..."
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/buttonSearch"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="Szukaj"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:icon="@drawable/ic_launcher_monochrome"
-        app:iconGravity="textEnd"
-        app:iconPadding="6dp"
-        app:iconSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
-
-    <TextView
-        android:id="@+id/foundTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        android:text="Znaleziono:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="8dp"
-        android:text="0/0"
-        app:layout_constraintStart_toEndOf="@+id/foundTV"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        <TextView
+            android:id="@+id/foundQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Znaleziono: 0/0"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp" />
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="Szukaj"
+            android:layout_weight="0"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_launcher_monochrome"
+            app:iconGravity="textEnd"
+            app:iconPadding="6dp"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/infoTV"
@@ -69,6 +70,7 @@
         android:layout_height="wrap_content"
         android:text="Tutaj pojawią się wyniki wyszukiwania"
         android:textColor="#B3B3B1"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,86 +79,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="105dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="8dp"
         android:foreground="@drawable/shape_with_stroke"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSearch">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
-        <TextView
-            android:id="@+id/numberAndTitleTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/item_clickable_background"
-            android:clickable="true"
-            android:text="number"
-            android:textColor="@color/seed"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:visibility="invisible"></TextView>
-
-        <ScrollView
-            android:id="@+id/scrollView"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSearch">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/foundSongTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="200dp"
-                    android:paddingBottom="120dp"
-                    android:textIsSelectable="true"
-                    android:textSize="20sp"></TextView>
-
-            </LinearLayout>
-        </ScrollView>
+            android:layout_gravity="top"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"></androidx.viewpager2.widget.ViewPager2>
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/arrowLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="32dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/arrowleft" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/arrowRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/arrowright" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

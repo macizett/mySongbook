@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.polyak.iconswitch.IconSwitch
@@ -40,6 +41,12 @@ class SongsList : AppCompatActivity() {
         lateinit var adapter: SongAdapter
         var musicSwitch: Boolean = false
 
+        sortButton.textSize = DataManager.textSize-5
+        tocTV.textSize = DataManager.textSize
+        getNumber.textSize = DataManager.textSize-3
+        favoritesButton.textSize = DataManager.textSize-6
+        searchButton.textSize = DataManager.textSize-6
+
         val sharedPrefs by lazy {
             getSharedPreferences(
                 "${BuildConfig.APPLICATION_ID}_sharedPreferences",
@@ -58,13 +65,7 @@ class SongsList : AppCompatActivity() {
             DataManager.musicMode = false
         }
 
-        sortButton.textSize = DataManager.textSize-5
-        tocTV.textSize = DataManager.textSize
-        getNumber.textSize = DataManager.textSize-3
-        favoritesButton.textSize = DataManager.textSize-6
-        searchButton.textSize = DataManager.textSize-6
-
-        GlobalScope.launch (Dispatchers.IO) {
+        lifecycleScope.launch (Dispatchers.IO) {
             var songDao = SongbookDatabase.getInstance(applicationContext).songDao()
             var allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){

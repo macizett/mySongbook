@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/initializeTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Inicjalizowanie zasobów..."
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"></TextView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonReport"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/info_icon1"
+        android:textColorHighlight="#9E9797"
+        android:textColorLink="#888686"
+        android:layout_marginBottom="24dp"
+        app:icon="@drawable/baseline_report_24"
+        android:text=" Zgłoś"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></Button>
+
+
+    <Button
+        android:id="@+id/buttonSettings"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/info_icon1"
+        android:text=" Ustawienia"
+        android:layout_marginBottom="24dp"
+        android:textColorHighlight="#9E9797"
+        android:textColorLink="#888686"
+        app:icon="@drawable/baseline_settings_24"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foreground="#00FFFFFF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lineLayout3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        tools:layout_editor_absoluteX="-18dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lineLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginRight="16dp"
+                android:background="#66B7E5"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/verseTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginBottom="6dp"
+                android:autoSizeMaxTextSize="18sp"
+                android:fontFamily="sans-serif-medium"
+                android:foreground="@drawable/item_clickable_background_image"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/verse_place_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="invisible"
+                android:textSize="12sp"
+                android:textAlignment="center"></TextView>
+
+            <LinearLayout
+                android:id="@+id/lineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginRight="16dp"
+                android:background="#66B7E5"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/textViewMSB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:letterSpacing="0.4"
+                android:text="MYSONGBOOK"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lineLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/material_on_surface_stroke"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

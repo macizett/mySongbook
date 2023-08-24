@@ -36,12 +36,11 @@ class SongView : AppCompatActivity() {
         setContentView(R.layout.activity_songview)
 
         val sliderSongPicker: Slider = findViewById(R.id.sliderSongPicker)
+        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
 
         var songNumber = DataManager.chosenSong
-
-        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
 
         sliderSongPicker.valueTo = DataManager.maxSongNumber.toFloat()
 
@@ -62,7 +61,7 @@ class SongView : AppCompatActivity() {
         viewPager.setPageTransformer(compositePageTransformer)
 
         lifecycleScope.launch(Dispatchers.IO){
-            var allSongs = SongViewPagerAdapter(songDao.getAllSongsBySongbook(DataManager.chosenSongbook), applicationContext)
+            var allSongs = SongViewPagerAdapter(songDao.getAllSongsBySongbook(DataManager.chosenSongbook), applicationContext, false, "")
             withContext(Dispatchers.Main){
                 viewPager.adapter = allSongs
                 viewPager.setCurrentItem(songNumber-1, false)

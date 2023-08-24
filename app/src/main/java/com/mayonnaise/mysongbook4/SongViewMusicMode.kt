@@ -71,7 +71,7 @@ class SongViewMusicMode : AppCompatActivity() {
                 .enableDoubletap(false)
                 .autoSpacing(true)
                 .pageFling(true)
-                .pageFitPolicy(FitPolicy.BOTH)
+                .pageFitPolicy(FitPolicy.WIDTH)
                 .load()
         }
 

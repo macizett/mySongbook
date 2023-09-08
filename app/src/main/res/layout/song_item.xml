@@ -2,13 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true">
+
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="12dp"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="12dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -29,7 +31,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:maxLines="2"
-                android:paddingLeft="14dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingRight="8dp"
+                android:layout_marginLeft="12dp"
                 android:text="10"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -72,6 +77,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,14 +89,39 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
-            android:layout_marginBottom="200dp"
+            android:paddingTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:lineSpacingExtra="4sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="200dp"
+            android:paddingBottom="100dp"
             android:textAlignment="viewStart"
             android:textIsSelectable="true"
             android:textSize="16sp" />
     </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/refButtonLayout"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_curves_no_stroke"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/buttonRef"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_icon1"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
+            android:textColorHighlight="#9E9797"
+            android:textColorLink="#888686"
+            app:icon="@drawable/baseline_arrow_drop_up_24"
+            app:iconGravity="textStart"
+            app:iconSize="20dp" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

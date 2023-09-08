@@ -15,15 +15,13 @@ object SongParser {
         throwable.printStackTrace()
     }
 
-    suspend fun initialize(context: Context, isInitialized: Boolean, lifecycle: LifecycleCoroutineScope) {
-        if (!isInitialized) {
+    suspend fun initialize(context: Context, lifecycle: LifecycleCoroutineScope) {
            lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler){
                 parseAndInsertSongs(context, "duchowe.json", 1)
                 parseAndInsertSongs(context, "wedrowiec.json", 2)
                 parseAndInsertSongs(context, "bialy.json", 3)
                 parseAndInsertVerses(context, "verses.json")
             }
-        }
     }
 
     private suspend fun parseAndInsertSongs(context: Context, jsonFileName: String, songbook: Int) {
@@ -52,7 +50,10 @@ object SongParser {
 
 
             withContext(Dispatchers.IO) {
-                dao.insertAll(songsList)
+                var existingSongsList = dao.getAllSongsBySongbook(songbook)
+                var songsListAdded = songsList + existingSongsList
+                var songsListWithoutDupes = songsListAdded.toHashSet().toList()
+                dao.insertAll(songsListWithoutDupes)
             }
     }
 

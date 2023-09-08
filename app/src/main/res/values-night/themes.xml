@@ -32,13 +32,4 @@
     <style name="rounded_corner">
         <item name="cornerSize">16dp</item>
     </style>
-    <style name="ModalBottomSheet" parent="Widget.Material3.BottomSheet.Modal">
-        <!-- Apply attributes here -->
-        <item name="backgroundTint">@color/md_theme_dark_background</item>
-    </style>
-
-    <style name="ModalBottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/ModalBottomSheet</item>
-        <item name="backgroundTint">@color/md_theme_dark_background</item>
-    </style>
 </resources>

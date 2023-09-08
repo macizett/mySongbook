@@ -30,6 +30,9 @@ class FavoriteSongsList : AppCompatActivity() {
         infoTV.textSize = DataManager.textSize-4
         labelTV.textSize = DataManager.textSize
 
+        infoTV.setTypeface(null, DataManager.textStyle)
+        labelTV.setTypeface(null, DataManager.textStyle)
+
         lateinit var adapter: FavoritesAdapter
 
         val sharedPrefs by lazy {

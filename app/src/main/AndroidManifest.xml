@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MySongbook"
         tools:targetApi="31">
         <activity
+            android:name=".SendReportActivity"
+            android:exported="false" />
+        <activity
             android:name=".SongViewMusicMode"
             android:exported="false" />
         <activity

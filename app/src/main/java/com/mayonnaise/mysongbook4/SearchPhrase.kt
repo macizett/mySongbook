@@ -33,8 +33,14 @@ class SearchPhrase : AppCompatActivity() {
         binding.infoTV.textSize = DataManager.textSize-4
         binding.foundQuantityTV.textSize = DataManager.textSize-5
 
+        binding.phraseInput.setTypeface(null, DataManager.textStyle)
+        binding.buttonSearch.setTypeface(null, DataManager.textStyle)
+        binding.infoTV.setTypeface(null, DataManager.textStyle)
+        binding.foundQuantityTV.setTypeface(null, DataManager.textStyle)
+
 
         val songDao = SongbookDatabase.getInstance(this).songDao()
+        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
 
         binding.viewPager.apply {
             clipChildren = false
@@ -59,11 +65,11 @@ class SearchPhrase : AppCompatActivity() {
         })
 
         fun search(){
-            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, 0)
             binding.infoTV.visibility = View.GONE
 
             phrase = binding.phraseInput.text.toString()
+
+            println(phrase)
 
             if(phrase.isEmpty()){                                                                            //if empty
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
@@ -106,11 +112,17 @@ class SearchPhrase : AppCompatActivity() {
             search()
         }
 
+        binding.phraseInput.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
+        }
+
         binding.phraseInput.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     search()
                     return@OnKeyListener true
                 }
+                val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                inputMethodManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, 0)
                 false
         })
     }

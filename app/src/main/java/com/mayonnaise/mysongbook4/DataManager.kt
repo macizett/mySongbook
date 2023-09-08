@@ -5,5 +5,8 @@ object DataManager {
     var chosenSongbook: Int = 0
     var maxSongNumber: Int = 0
     var textSize: Float = 0F
+    var textStyle: Int = 0
+    var textAlignment: Int = 0
     var musicMode: Boolean = false
+    var isSongReported: Boolean = false
 }

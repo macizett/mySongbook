@@ -2,6 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:clickable="true"
+    android:focusable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SongView">
@@ -21,18 +24,19 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="4dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/sliderSongPicker"
+        app:layout_constraintBottom_toTopOf="@+id/getNumberLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lineLayout3">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top"></androidx.viewpager2.widget.ViewPager2>
+            android:layout_gravity="top" />
 
     </LinearLayout>
 
@@ -46,18 +50,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/sliderSongPicker"
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_curves_no_stroke"
+        app:layout_constraintBottom_toTopOf="@+id/lineLayout13"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonReport"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_icon1"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
+            android:textColorHighlight="#9E9797"
+            android:textColorLink="#888686"
+            app:icon="@drawable/baseline_report_24"
+            app:iconGravity="textStart"
+            app:iconSize="20dp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/getNumberLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:stepSize="1"
-        android:valueFrom="1"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/getNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Wpisz numer pieśni..."
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonGo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:icon="@drawable/search_icon"
+            app:iconGravity="textEnd"
+            android:text="Idź do nr. "
+            android:layout_marginTop="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_shape"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

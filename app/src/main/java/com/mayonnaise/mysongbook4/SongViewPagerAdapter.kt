@@ -11,14 +11,20 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import android.view.inputmethod.InputMethodManager
 import android.widget.CheckBox
+import android.widget.FrameLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
+import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
+import com.mayonnaise.mysongbook4.databinding.SongItemBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,21 +35,40 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
                            private var phrase: String
 ) : RecyclerView.Adapter<SongViewPagerAdapter.CarouselViewHolder>(){
 
+    class CarouselViewHolder(binding: SongItemBinding): RecyclerView.ViewHolder(binding.root) {
+        val songTV = binding.songTV
+        val buttonAddToFav = binding.buttonAddToFav
+        val scrollView = binding.scrollView
+        val numberAndTitleTV = binding.numberAndTitleTV
+        val buttonRef = binding.buttonRef
+        val refButtonLayout = binding.refButtonLayout
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarouselViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.song_item, parent, false)
-            return CarouselViewHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val songViewPagerBinding = SongItemBinding.inflate(inflater, parent, false)
+        return CarouselViewHolder(songViewPagerBinding)
         }
 
     override fun onBindViewHolder(holder: CarouselViewHolder, position: Int) {
+
         val song = songEntities[position]
         val songTV = holder.songTV
+        val buttonRef = holder.buttonRef
         val buttonAddToFav: CheckBox = holder.buttonAddToFav
         val numberAndTitleTV: TextView = holder.numberAndTitleTV
+        val refButtonLayout: FrameLayout = holder.refButtonLayout
+
+        songTV.setTypeface(null, DataManager.textStyle)
+        songTV.textAlignment = DataManager.textAlignment
+
+        numberAndTitleTV.setTypeface(null, DataManager.textStyle)
 
         songTV.textSize = DataManager.textSize+1
         numberAndTitleTV.textSize = DataManager.textSize+1
 
         if(isSearchPhraseActivity){
+            numberAndTitleTV.setBackgroundResource(R.drawable.item_clickable_background)
             numberAndTitleTV.setOnClickListener{
                 DataManager.chosenSong = song.number
                 if(DataManager.musicMode){
@@ -66,45 +91,13 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
                 lifecycle.launch(Dispatchers.IO) {
                     song.isFavorite = true
                     updateSongInDatabase(song)
-                    withContext(Dispatchers.Main){
-                        Toast.makeText(context, "Dodano pieśń do Ulubionych", Toast.LENGTH_SHORT).show()
-                    }
                 }
             } else {
                 lifecycle.launch(Dispatchers.IO) {
                     song.isFavorite = false
                     updateSongInDatabase(song)
-                    withContext(Dispatchers.Main){
-                        Toast.makeText(context, "Usunięto pieśń z Ulubionych", Toast.LENGTH_SHORT).show()
-                    }
                 }
             }
-        }
-
-        val gestureDetector = GestureDetectorCompat(songTV.context, object : GestureDetector.SimpleOnGestureListener() {
-            override fun onDoubleTap(e: MotionEvent): Boolean {
-                if (song.isFavorite) {
-                    song.isFavorite = false
-                    buttonAddToFav.isChecked = false
-                    Toast.makeText(context, "Usunięto pieśń z Ulubionych!", Toast.LENGTH_SHORT).show()
-                    lifecycle.launch(Dispatchers.IO) {
-                        updateSongInDatabase(song)
-                    }
-
-                } else {
-                    song.isFavorite = true
-                    buttonAddToFav.isChecked = true
-                    Toast.makeText(context, "Dodano pieśń do Ulubionych!", Toast.LENGTH_SHORT).show()
-                    lifecycle.launch(Dispatchers.IO) {
-                        updateSongInDatabase(song)
-                    }
-                }
-                return true
-            }
-        })
-
-        songTV.setOnTouchListener { _, event ->
-            gestureDetector.onTouchEvent(event)
         }
 
         fun isWordBoundary(text: String, index: Int): Boolean {
@@ -134,6 +127,24 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
             songTV.text = spannable
         }
 
+
+        val targetSubstring = "Ref" // Substring to scroll to
+        val fullText = song.text// Get the full text from resources
+
+        val startIndex = fullText.indexOf(targetSubstring)
+
+        if (startIndex != -1) {
+            refButtonLayout.visibility = View.VISIBLE
+        }
+        else{
+            refButtonLayout.visibility = View.INVISIBLE
+        }
+
+        buttonRef.setOnClickListener {
+            holder.songTV.post {
+                holder.scrollView.smoothScrollTo(0, holder.songTV.layout.getLineTop(holder.songTV.layout.getLineForOffset(startIndex)))
+            }
+        }
 
         if(phrase.isNotEmpty()) {
 
@@ -175,12 +186,6 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
 
     override fun getItemCount(): Int = songEntities.size
 
-    class CarouselViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val songTV: TextView = itemView.findViewById(R.id.songTV)
-        val buttonAddToFav: CheckBox = itemView.findViewById(R.id.buttonAddToFav)
-        val numberAndTitleTV: TextView = itemView.findViewById(R.id.numberAndTitleTV)
-        val scrollView: ScrollView = itemView.findViewById(R.id.scrollView)
-    }
 
     fun updateSongInDatabase(song: SongEntity) {
         val songDao = SongbookDatabase.getInstance(context).songDao()

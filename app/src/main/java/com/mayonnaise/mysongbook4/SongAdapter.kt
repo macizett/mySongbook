@@ -1,8 +1,14 @@
 package com.mayonnaise.mysongbook4
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -13,7 +19,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class SongAdapter(private var songEntities: List<SongEntity>, private var lifecycle: LifecycleCoroutineScope) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
+class SongAdapter(private var songEntities: List<SongEntity>, private var lifecycleScope: LifecycleCoroutineScope,
+                  private var recyclerView: RecyclerView, private var progressBar: ProgressBar,
+                  private var context: Context) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
         throwable.printStackTrace()
@@ -21,7 +29,7 @@ class SongAdapter(private var songEntities: List<SongEntity>, private var lifecy
 
     inner class SongViewHolder(binding: TocViewRowBinding): ViewHolder(binding.root){
         val titleTV = binding.titleTV
-        val numberTV = binding.numberAndTitleTV
+        val numberTV = binding.numberTV
 
     }
 
@@ -42,39 +50,71 @@ class SongAdapter(private var songEntities: List<SongEntity>, private var lifecy
         holder.titleTV.textSize = DataManager.textSize-3
         holder.numberTV.textSize = DataManager.textSize-3
 
+        holder.titleTV.setTypeface(null, DataManager.textStyle)
+
         holder.itemView.setOnClickListener{
             DataManager.chosenSong = songEntities[position].number
-            if(DataManager.musicMode){
-                val intent = Intent(holder.itemView.context,SongViewMusicMode::class.java)
-                holder.itemView.context.startActivity(intent)
-            }
-            else{
-                val intent = Intent(holder.itemView.context,SongView::class.java)
-                holder.itemView.context.startActivity(intent)
-            }
-
+            goToNumber(DataManager.chosenSong)
         }
 }
+    fun goToNumber(number: Int){
+                DataManager.chosenSong = number
 
-    fun sortAlphabetically() {
-        val collator = Collator.getInstance()
-        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy {
-                collator.getCollationKey(it.title)
-            }
-            withContext(Dispatchers.Main){
-                notifyDataSetChanged()
-            }
-        }
+                if(DataManager.musicMode){
+                    val showSongViewMusicMode = Intent(context, SongViewMusicMode::class.java)
+                    context.startActivity(showSongViewMusicMode)
+                }
+                else{
+                    val showSongView = Intent(context, SongView::class.java)
+                    context.startActivity(showSongView)
+                }
     }
 
-    fun sortNumerically() {
-        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy { it.number }
-            withContext(Dispatchers.Main){
-                notifyDataSetChanged()
+    fun sort(sortingPreference: Boolean) {
+        val collator = Collator.getInstance()
+        if(!sortingPreference){
+            progressBar.visibility = View.VISIBLE
+            lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+                songEntities = songEntities.sortedBy {
+                    collator.getCollationKey(it.title)
+                }
+                withContext(Dispatchers.Main){
+                    recyclerView.animate()
+                        .alpha(0f)
+                        .setDuration(50L)
+                        .withEndAction {
+                            notifyDataSetChanged()
+                            recyclerView.visibility = View.VISIBLE
+                            progressBar.visibility = View.INVISIBLE
+                            recyclerView.animate()
+                                .alpha(1f)
+                                .setDuration(150L)
+                                .start()
+                        }
+                        .start()
+                }
             }
         }
-
+        else{
+            progressBar.visibility = View.VISIBLE
+            lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+                songEntities = songEntities.sortedBy { it.number }
+                withContext(Dispatchers.Main){
+                    recyclerView.animate()
+                        .alpha(0f)
+                        .setDuration(50L)
+                        .withEndAction {
+                            notifyDataSetChanged()
+                            progressBar.visibility = View.INVISIBLE
+                            recyclerView.visibility = View.VISIBLE
+                            recyclerView.animate()
+                                .alpha(1f)
+                                .setDuration(150L)
+                                .start()
+                        }
+                        .start()
+                }
+            }
+        }
     }
 }

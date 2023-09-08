@@ -44,6 +44,8 @@ class FavoritesAdapter(private var songEntities: List<SongEntity>, context: Cont
         holder.songNumberTV.textSize = DataManager.textSize-3
         holder.songTitleTV.textSize = DataManager.textSize-3
 
+        holder.songTitleTV.setTypeface(null, DataManager.textStyle)
+
 
         holder.itemView.setOnClickListener{
                 DataManager.chosenSong = songEntities[position].number

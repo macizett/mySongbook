@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="12dp"
+    android:padding="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="12dp"
         android:textSize="18sp"
         android:text="Rozmiar tekstu:"
         android:textStyle="bold"
@@ -40,45 +40,135 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:orientation="horizontal"
-    android:gravity="center_horizontal"
-    android:layout_marginBottom="16dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/lineLayout13" >
+        android:id="@+id/linearLayoutTheme"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineLayout13">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:textSize="18sp"
-        android:layout_gravity="center_vertical"
-        android:text="Motyw"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="Motyw aplikacji"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <com.polyak.iconswitch.IconSwitch
-        android:id = "@+id/nightModeSwitch"
-        android:layout_alignParentTop = "true"
-        app:isw_icon_left = "@drawable/baseline_daymode_24"
-        app:isw_icon_right = "@drawable/baseline_nightmode_24"
-        app:isw_background_color = "#93D6F6"
-        app:isw_thumb_color_left = "#1486A9"
-        app:isw_thumb_color_right = "#1EBFEF"
-        app:isw_inactive_tint_icon_left = "#878A8B"
-        app:isw_inactive_tint_icon_right = "#878A8B"
-        app:isw_active_tint_icon_left = "#FFEB3B"
-        app:isw_active_tint_icon_right = "#FFFFFF"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="8dp"
-        android:layout_centerHorizontal = "true"
-        android:layout_centerVertical = "true"
-        app:isw_default_selection = "left"
-        app:isw_icon_size = "17dp"
-        android:layout_marginLeft="16dp"/>
-</LinearLayout>
+        <com.polyak.iconswitch.IconSwitch
+            android:id="@+id/nightModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            app:isw_active_tint_icon_left="#FFEB3B"
+            app:isw_active_tint_icon_right="#FFFFFF"
+            app:isw_background_color="#93D6F6"
+            app:isw_default_selection="left"
+            app:isw_icon_left="@drawable/baseline_daymode_24"
+            app:isw_icon_right="@drawable/baseline_nightmode_24"
+            app:isw_icon_size="17dp"
+            app:isw_inactive_tint_icon_left="#878A8B"
+            app:isw_inactive_tint_icon_right="#878A8B"
+            app:isw_thumb_color_left="#1486A9"
+            app:isw_thumb_color_right="#1EBFEF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutTheme">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="Grubość  tekstu"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.polyak.iconswitch.IconSwitch
+            android:id="@+id/textModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            app:isw_active_tint_icon_left="#000000"
+            app:isw_active_tint_icon_right="#000000"
+            app:isw_background_color="#93D6F6"
+            app:isw_default_selection="left"
+            app:isw_icon_left="@drawable/baseline_text_normal_24"
+            app:isw_icon_right="@drawable/baseline_format_bold_24"
+            app:isw_icon_size="17dp"
+            app:isw_inactive_tint_icon_left="#878A8B"
+            app:isw_inactive_tint_icon_right="#878A8B"
+            app:isw_thumb_color_left="#4EC1E5"
+            app:isw_thumb_color_right="#1EBFEF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTextAlignment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutText">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="Ułożenie tekstu"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.polyak.iconswitch.IconSwitch
+            android:id="@+id/textAlignmentSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            app:isw_active_tint_icon_left="#101010"
+            app:isw_active_tint_icon_right="#101010"
+            app:isw_background_color="#93D6F6"
+            app:isw_default_selection="left"
+            app:isw_icon_left="@drawable/baseline_format_align_left_24"
+            app:isw_icon_right="@drawable/baseline_format_align_center_24"
+            app:isw_icon_size="17dp"
+            app:isw_inactive_tint_icon_left="#878A8B"
+            app:isw_inactive_tint_icon_right="#878A8B"
+            app:isw_thumb_color_left="#4EC1E5"
+            app:isw_thumb_color_right="#1EBFEF" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

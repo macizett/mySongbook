@@ -10,28 +10,28 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mayonnaise.mysongbook4.databinding.ActivityFavoriteSongsListBinding
+import com.mayonnaise.mysongbook4.databinding.ActivitySongslistBinding
+import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FavoriteSongsList : AppCompatActivity() {
 
-
+    private lateinit var binding: ActivityFavoriteSongsListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorite_songs_list)
+        binding = ActivityFavoriteSongsListBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        val recyclerViewFavs: RecyclerView = findViewById(R.id.recyclerViewFavorites)
-        val infoTV: TextView = findViewById(R.id.infoTV)
-        val labelTV: TextView = findViewById(R.id.labelTV)
-        val sortButton: Button = findViewById(R.id.sortButton)
+        binding.infoTV.textSize = DataManager.textSize-4
+        binding.labelTV.textSize = DataManager.textSize
 
-        infoTV.textSize = DataManager.textSize-4
-        labelTV.textSize = DataManager.textSize
-
-        infoTV.setTypeface(null, DataManager.textStyle)
-        labelTV.setTypeface(null, DataManager.textStyle)
+        binding.infoTV.setTypeface(null, DataManager.textStyle)
+        binding.labelTV.setTypeface(null, DataManager.textStyle)
 
         lateinit var adapter: FavoritesAdapter
 
@@ -46,40 +46,45 @@ class FavoriteSongsList : AppCompatActivity() {
             val favoriteSongs = songDao.getFavoriteSongs(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
             if(favoriteSongs.isNotEmpty()){
-                infoTV.visibility = View.GONE
+                binding.infoTV.visibility = View.GONE
             }
             else{
-                infoTV.visibility = View.VISIBLE
+                binding.infoTV.visibility = View.VISIBLE
             }
-            adapter = FavoritesAdapter(favoriteSongs, applicationContext, lifecycleScope)
-            recyclerViewFavs.layoutManager = LinearLayoutManager(applicationContext)
-            recyclerViewFavs.adapter = adapter
+            adapter = FavoritesAdapter(favoriteSongs, applicationContext, lifecycleScope, binding.recyclerViewFavorites, binding.progressBar)
+            binding.recyclerViewFavorites.layoutManager = LinearLayoutManager(applicationContext)
+
+            binding.recyclerViewFavorites.adapter = adapter
 
                 if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", false)){
-                    adapter.sortAlphabetically()
+                    binding.switchSorting.checked = IconSwitch.Checked.LEFT
+                    adapter.sort(false)
                     adapter.notifyDataSetChanged()
                 }
                 else{
-                    adapter.sortNumerically()
+                    binding.switchSorting.checked = IconSwitch.Checked.RIGHT
+                    adapter.sort(true)
                     adapter.notifyDataSetChanged()
                 }}
         }
 
-        sortButton.setOnClickListener{
-            if(sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", true)){
-                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", false).apply()
-                adapter.sortAlphabetically()
-                adapter.notifyDataSetChanged()
-                Toast.makeText(this, "Sortowanie alfabetyczne", Toast.LENGTH_SHORT).show()
-            }
-            else{
-                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", true).apply()
-                adapter.sortNumerically()
-                adapter.notifyDataSetChanged()
-                Toast.makeText(this, "Sortowanie numeryczne", Toast.LENGTH_SHORT).show()
+        binding.switchSorting.setCheckedChangeListener{ current ->
+
+            when (current) {
+                IconSwitch.Checked.LEFT -> {
+                    sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", false).apply()
+                    adapter.sort(false)
+                    adapter.notifyDataSetChanged()
+                }
+
+                IconSwitch.Checked.RIGHT -> {
+                    sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", true).apply()
+                    adapter.sort(true)
+                    adapter.notifyDataSetChanged()
+                }
+
+                else -> Toast.makeText(this, "ERROR 2137", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
-
-    }
+}

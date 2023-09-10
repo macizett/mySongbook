@@ -75,7 +75,19 @@ class SearchPhrase : AppCompatActivity() {
                 Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
                 binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
-                binding.infoTV.visibility = View.VISIBLE
+                binding.viewPager.animate()
+                    .alpha(0f)
+                    .setDuration(200L)
+                    .withEndAction {
+                        binding.viewPager.adapter = SongViewPagerAdapter(emptyList(), lifecycleScope, applicationContext, true, "")
+                        binding.viewPager.visibility = View.GONE
+                        binding.infoTV.visibility = View.VISIBLE
+                        binding.viewPager.animate()
+                            .alpha(1f)
+                            .setDuration(200L)
+                            .start()
+                    }
+                    .start()
             }
             else{
                 phrase = phrase.replace("[.,]".toRegex(), "")
@@ -91,9 +103,22 @@ class SearchPhrase : AppCompatActivity() {
                     foundSongs = finalSearchResultsWithoutDupes
 
                     withContext(Dispatchers.Main) {
+
                         if (foundSongs.isNotEmpty()) {
+                            binding.viewPager.animate()
+                                .alpha(0f)
+                                .setDuration(100L)
+                                .withEndAction {
+                                    binding.viewPager.adapter = SongViewPagerAdapter(foundSongs, lifecycleScope, applicationContext, true, phrase)
+                                    binding.viewPager.visibility = View.VISIBLE
+                                    binding.viewPager.animate()
+                                        .alpha(1f)
+                                        .setDuration(100L)
+                                        .start()
+                                }
+                                .start()
+
                             Toast.makeText(this@SearchPhrase, "Znaleziono ${foundSongs.size} wyników", Toast.LENGTH_SHORT).show()
-                            binding.viewPager.adapter = SongViewPagerAdapter(foundSongs, lifecycleScope, applicationContext, true, phrase)
                             binding.foundQuantityTV.text = "Znaleziono: 1/${foundSongs.size}"
                         }
 

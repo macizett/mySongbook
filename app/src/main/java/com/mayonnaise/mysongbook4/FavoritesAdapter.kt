@@ -3,7 +3,9 @@ package com.mayonnaise.mysongbook4
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
@@ -11,13 +13,13 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mayonnaise.mysongbook4.SongParser.coroutineExceptionHandler
 import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class FavoritesAdapter(private var songEntities: List<SongEntity>, context: Context, private var lifecycle: LifecycleCoroutineScope): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
-
-    private var context2 = context
+class FavoritesAdapter(private var songEntities: List<SongEntity>, private var context: Context, private var lifecycleScope: LifecycleCoroutineScope,
+                       private var recyclerView: RecyclerView, private var progressBar: ProgressBar,): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
 
     inner class FavouritesViewHolder(binding: FavoritesViewRowBinding): ViewHolder(binding.root){
         val songTitleTV = binding.songTitleTV
@@ -63,15 +65,13 @@ class FavoritesAdapter(private var songEntities: List<SongEntity>, context: Cont
             holder.buttonFavourites.setOnCheckedChangeListener{ _, isChecked ->
                 if (!isChecked) {
                     song.isFavorite = false
-                    Toast.makeText(context2, "Usunięto pieśń z Ulubionych!", Toast.LENGTH_SHORT).show()
-                    lifecycle.launch(Dispatchers.IO) {
+                    lifecycleScope.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
 
                 } else {
                     song.isFavorite = true
-                    Toast.makeText(context2, "Dodano pieśń do Ulubionych!", Toast.LENGTH_SHORT).show()
-                    lifecycle.launch(Dispatchers.IO) {
+                    lifecycleScope.launch(Dispatchers.IO) {
                         updateSongInDatabase(song)
                     }
                 }
@@ -80,29 +80,58 @@ class FavoritesAdapter(private var songEntities: List<SongEntity>, context: Cont
     }
 
     private fun updateSongInDatabase(song: SongEntity) {
-        val songDao = SongbookDatabase.getInstance(context2).songDao()
+        val songDao = SongbookDatabase.getInstance(context).songDao()
 
-        lifecycle.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.IO) {
             songDao.updateFavoriteSongs(song)
         }
     }
 
-    fun sortAlphabetically() {
+    fun sort(sortingPreference: Boolean) {
         val collator = Collator.getInstance()
-
-        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy { collator.getCollationKey(it.title) }
-            withContext(Dispatchers.Main){
-                notifyDataSetChanged()
+        if(!sortingPreference){
+            progressBar.visibility = View.VISIBLE
+            lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+                songEntities = songEntities.sortedBy {
+                    collator.getCollationKey(it.title)
+                }
+                withContext(Dispatchers.Main){
+                    recyclerView.animate()
+                        .alpha(0f)
+                        .setDuration(150L)
+                        .withEndAction {
+                            notifyDataSetChanged()
+                            recyclerView.visibility = View.VISIBLE
+                            progressBar.visibility = View.INVISIBLE
+                            recyclerView.animate()
+                                .alpha(1f)
+                                .setDuration(150L)
+                                .start()
+                        }
+                        .start()
+                }
             }
         }
-    }
-
-    fun sortNumerically() {
-        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler) {
-            songEntities = songEntities.sortedBy { it.number }
-            withContext(Dispatchers.Main){
-                notifyDataSetChanged()
+        else{
+            progressBar.visibility = View.VISIBLE
+            lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+                songEntities = songEntities.sortedBy { it.number }
+                delay(200L)
+                withContext(Dispatchers.Main){
+                    recyclerView.animate()
+                        .alpha(0f)
+                        .setDuration(200L)
+                        .withEndAction {
+                            notifyDataSetChanged()
+                            progressBar.visibility = View.INVISIBLE
+                            recyclerView.visibility = View.VISIBLE
+                            recyclerView.animate()
+                                .alpha(1f)
+                                .setDuration(200L)
+                                .start()
+                        }
+                        .start()
+                }
             }
         }
     }

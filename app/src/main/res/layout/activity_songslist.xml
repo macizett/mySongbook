@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SongsList"
+    android:fitsSystemWindows="true"
     android:id="@+id/constraintLayout">
 
     <TextView
@@ -14,34 +15,82 @@
         android:text="SPIS TREŚCI"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:layout_marginTop="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sortButton" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAction" />
 
-    <com.polyak.iconswitch.IconSwitch
-        android:layout_alignParentTop = "true"
-        app:isw_icon_left = "@drawable/baseline_text_24"
-        app:isw_icon_right = "@drawable/baseline_music_note_24"
-        app:isw_background_color = "#014262"
-        app:isw_thumb_color_left = "#1486A9"
-        app:isw_thumb_color_right = "#1EBFEF"
-        app:isw_inactive_tint_icon_left = "#36CBF8"
-        app:isw_inactive_tint_icon_right = "#36CBF8"
-        app:isw_active_tint_icon_left = "#FFFFFF"
-        app:isw_active_tint_icon_right = "#FFFFFF"
-        android:id = "@+id/switchMusicMode"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:id="@+id/linearLayoutAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_centerHorizontal = "true"
-        android:layout_centerVertical = "true"
-        app:isw_default_selection = "left"
-        app:isw_icon_size = "17dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start">
+
+            <com.polyak.iconswitch.IconSwitch
+                android:id="@+id/switchSorting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:isw_active_tint_icon_left="#FFFFFF"
+                app:isw_active_tint_icon_right="#FFFFFF"
+                app:isw_background_color="#014262"
+                app:isw_default_selection="left"
+                app:isw_icon_left="@drawable/baseline_sort_by_alpha_24"
+                app:isw_icon_right="@drawable/baseline_format_list_numbered_24"
+                app:isw_icon_size="17dp"
+                app:isw_inactive_tint_icon_left="#36CBF8"
+                app:isw_inactive_tint_icon_right="#36CBF8"
+                app:isw_thumb_color_left="#58AAD0"
+                app:isw_thumb_color_right="#58AAD0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end">
+
+            <com.polyak.iconswitch.IconSwitch
+                android:id="@+id/switchMusicMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:isw_active_tint_icon_left="#FFFFFF"
+                app:isw_active_tint_icon_right="#FFFFFF"
+                app:isw_background_color="#014262"
+                app:isw_default_selection="left"
+                app:isw_icon_left="@drawable/baseline_text_24"
+                app:isw_icon_right="@drawable/baseline_music_note_24"
+                app:isw_icon_size="17dp"
+                app:isw_inactive_tint_icon_left="#36CBF8"
+                app:isw_inactive_tint_icon_right="#36CBF8"
+                app:isw_thumb_color_left="#58AAD0"
+                app:isw_thumb_color_right="#58AAD0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 
     <Button
@@ -63,7 +112,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="160dp"
         android:layout_height="65dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:hint="nr. pieśni"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,25 +125,6 @@
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/sortButton"
-        style="?attr/materialIconButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="2dp"
-        android:clickable="true"
-        android:contentDescription="SortButton"
-        android:scaleType="center"
-        android:text=" Sortowanie"
-        android:textSize="14sp"
-        android:textAlignment="center"
-        app:icon="@drawable/sort_icon"
-        app:iconSize="20sp"
-        app:layout_anchorGravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -103,10 +133,8 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
         android:foreground="@drawable/shape_with_stroke"
         android:orientation="vertical"
-        android:paddingBottom="2dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +176,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
@@ -160,7 +188,6 @@
                 style="?attr/materialIconButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:clickable="true"
                 android:contentDescription="@string/fabsearch"
                 android:scaleType="center"
@@ -174,8 +201,16 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"
+            android:background="@color/material_on_surface_stroke"></LinearLayout>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
@@ -186,7 +221,6 @@
             style="?attr/materialIconButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:clickable="true"
             android:contentDescription="SearchButton"
             android:scaleType="center"

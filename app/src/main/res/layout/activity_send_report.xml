@@ -4,44 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".SendReportActivity">
 
-    <EditText
-        android:id="@+id/emailSubject"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="Temat zgłoszenia"
-        android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@+id/sendButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/sendButton"
-        style="?attr/materialIconButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="44dp"
-        android:clickable="true"
-        android:contentDescription="SendButton"
-        android:scaleType="center"
-        android:textAlignment="center"
-        app:icon="@drawable/baseline_send_24"
-        app:iconSize="30dp"
-        app:layout_anchorGravity="center"
+    <LinearLayout
+        android:id="@+id/linearLayoutSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/emailSubject"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Temat zgłoszenia"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/sendButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:contentDescription="SendButton"
+            android:scaleType="center"
+            android:textAlignment="center"
+            app:icon="@drawable/baseline_send_24"
+            app:iconSize="30dp" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/emailText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape_with_stroke"
@@ -56,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailSubject" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSubject" />
 
     <TextView
         android:id="@+id/textView7"
@@ -66,7 +71,7 @@
         android:layout_marginLeft="16dp"
         android:textAlignment="center"
         android:text="Do wysłania zgłoszenia użyj twojej aplikacji do obsługi wiadomości Email."
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

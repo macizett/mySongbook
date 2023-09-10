@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         val uiMode = sharedPrefs.getInt("nightMode", AppCompatDelegate.MODE_NIGHT_NO)
 
         DataManager.textStyle = sharedPrefs.getInt("textStyle", Typeface.NORMAL)
-        DataManager.textSize = sharedPrefs.getFloat("textSize", 20.0F)
+        DataManager.textSize = sharedPrefs.getFloat("textSize", 17.0F)
         DataManager.textAlignment = sharedPrefs.getInt("textAlignment", View.TEXT_ALIGNMENT_TEXT_START)
 
         AppCompatDelegate.setDefaultNightMode(uiMode)

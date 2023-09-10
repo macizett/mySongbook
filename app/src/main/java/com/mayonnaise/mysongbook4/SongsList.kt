@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
-import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -31,17 +30,15 @@ class SongsList : AppCompatActivity() {
 
         val maxSongNr = DataManager.maxSongNumber
 
-        lateinit var adapter: SongAdapter
+        lateinit var adapter: TOCAdapter
 
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
 
-        binding.sortButton.textSize = DataManager.textSize-5
         binding.tocTV.textSize = DataManager.textSize
         binding.getNumber.textSize = DataManager.textSize-3
         binding.favoritesButton.textSize = DataManager.textSize-6
         binding.searchButton.textSize = DataManager.textSize-6
 
-        binding.sortButton.setTypeface(null, DataManager.textStyle)
         binding.tocTV.setTypeface(null, DataManager.textStyle)
         binding.getNumber.setTypeface(null, DataManager.textStyle)
         binding.favoritesButton.setTypeface(null, DataManager.textStyle)
@@ -53,7 +50,7 @@ class SongsList : AppCompatActivity() {
                 Context.MODE_PRIVATE)
         }
 
-        var sortingPreference = sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", true)
+        var sortingPreference = sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", false)
 
         if(sharedPrefs.getBoolean("musicSwitchStatement", false)){
             binding.switchMusicMode.checked = IconSwitch.Checked.RIGHT
@@ -65,11 +62,19 @@ class SongsList : AppCompatActivity() {
             DataManager.musicMode = false
         }
 
+        if(sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", false) == false){
+            binding.switchSorting.checked = IconSwitch.Checked.LEFT
+
+        }
+        else{
+            binding.switchSorting.checked = IconSwitch.Checked.RIGHT
+        }
+
         lifecycleScope.launch (Dispatchers.IO) {
             val songDao = SongbookDatabase.getInstance(applicationContext).songDao()
             val allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
-                adapter = SongAdapter(allSongs, lifecycleScope, binding.recyclerViewTOC, binding.progressBar!!, this@SongsList)
+                adapter = TOCAdapter(allSongs, lifecycleScope, binding.recyclerViewTOC, binding.progressBar, this@SongsList)
                 binding.recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
                 binding.recyclerViewTOC.adapter = adapter
                 adapter.sort(sortingPreference)
@@ -97,21 +102,6 @@ class SongsList : AppCompatActivity() {
         binding.searchButton.setOnClickListener {
             val searchActivity = Intent(this, SearchPhrase::class.java)
             startActivity(searchActivity)
-        }
-
-        binding.sortButton.setOnClickListener{
-            if(sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY", true)){
-                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", false).apply()
-                sortingPreference = false
-                adapter.sort(sortingPreference)
-                Toast.makeText(this, "Sortowanie alfabetyczne", Toast.LENGTH_SHORT).show()
-            }
-            else{
-                sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", true).apply()
-                sortingPreference = true
-                adapter.sort(sortingPreference)
-                Toast.makeText(this, "Sortowanie numeryczne", Toast.LENGTH_SHORT).show()
-            }
         }
 
         binding.favoritesButton.setOnClickListener{
@@ -153,6 +143,23 @@ class SongsList : AppCompatActivity() {
                     sharedPrefs.edit().putBoolean("musicSwitchStatement", true).apply()
                     DataManager.musicMode = true
                     Toast.makeText(this@SongsList, "Tryb muzyczny", Toast.LENGTH_SHORT).show()
+                }
+
+                else -> Toast.makeText(this@SongsList, "ERROR 2137", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.switchSorting.setCheckedChangeListener{ current ->
+
+            when (current) {
+                IconSwitch.Checked.LEFT -> {
+                    sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", false).apply()
+                    adapter.sort(false)
+                }
+
+                IconSwitch.Checked.RIGHT -> {
+                    sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY", true).apply()
+                    adapter.sort(true)
                 }
 
                 else -> Toast.makeText(this@SongsList, "ERROR 2137", Toast.LENGTH_SHORT).show()

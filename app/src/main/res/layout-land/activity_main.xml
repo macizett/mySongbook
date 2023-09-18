@@ -109,21 +109,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginBottom="12dp"
                 android:layout_marginRight="16dp"
                 android:background="#66B7E5"
+                android:layout_weight="0.1"
                 android:orientation="horizontal"
                 />
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="10">
 
                 <TextView
                     android:id="@+id/verseTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6dp"
+                    android:paddingTop="6dp"
                     android:autoSizeMaxTextSize="18sp"
                     android:fontFamily="sans-serif-medium"
                     android:foreground="@drawable/item_clickable_background_image"
@@ -140,14 +142,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
-                android:textSize="12sp"
-                android:textAlignment="center"></TextView>
+                android:layout_weight="0.1"
+                android:textAlignment="center"
+                android:textSize="12sp"></TextView>
 
             <LinearLayout
                 android:id="@+id/lineLayout"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_weight="0.1"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="12dp"
                 android:layout_marginRight="16dp"
@@ -161,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:letterSpacing="0.4"
+                android:layout_weight="0.2"
                 android:text="MYSONGBOOK"
                 android:textAlignment="center"
                 android:textSize="12sp"

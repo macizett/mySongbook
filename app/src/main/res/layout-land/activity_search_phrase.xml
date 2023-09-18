@@ -67,29 +67,54 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phraseInputLayout"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="6dp"
-                app:errorEnabled="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phraseInput"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phraseInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="6dp"
+                    app:errorEnabled="true"
+                    android:layout_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phraseInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/hintseachphrase"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/buttonSearch"
+                    style="?attr/materialIconButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/hintseachphrase"
-                    android:singleLine="true" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:icon="@drawable/search_icon"
+                    app:iconGravity="textStart"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:scaleX="1.35"
+                    android:scaleY="1.35"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_weight="6"
+                    app:iconSize="25sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-8dp"
+                android:layout_marginTop="4dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
@@ -98,27 +123,11 @@
                     android:id="@+id/foundQuantityTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:textAlignment="textEnd"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_weight="1"
                     android:text="@string/znaleziono" />
-
-                <Button
-                    android:id="@+id/buttonSearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="6dp"
-                    android:layout_weight="0"
-                    android:text="@string/szukaj"
-                    android:textAlignment="center"
-                    android:textSize="16sp"
-                    app:icon="@drawable/search_icon"
-                    app:iconGravity="textEnd"
-                    app:iconPadding="6dp"
-                    app:iconSize="30dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
             </LinearLayout>
 

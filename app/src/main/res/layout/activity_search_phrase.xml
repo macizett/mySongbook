@@ -8,60 +8,73 @@
     tools:context=".SearchPhrase">
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phraseInputLayout"
+    <LinearLayout
+        android:id="@+id/phraseInputLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="6dp"
-        app:errorEnabled="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phraseInput"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phraseInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hintseachphrase"
-            android:singleLine="true" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phraseInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintseachphrase"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonSearch"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:icon="@drawable/search_icon"
+            app:iconGravity="textStart"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="6"
+            app:iconSize="25sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="2dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phraseInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/phraseInputLinearLayout">
 
         <TextView
             android:id="@+id/foundQuantityTV"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
+            android:textAlignment="textEnd"
             android:text="@string/znaleziono"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
             android:layout_weight="1"
             android:layout_marginStart="16dp" />
-
-        <Button
-            android:id="@+id/buttonSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:text="@string/szukaj"
-            android:layout_weight="0"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:icon="@drawable/search_icon"
-            app:iconGravity="textEnd"
-            app:iconPadding="6dp"
-            app:iconSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     </LinearLayout>
 

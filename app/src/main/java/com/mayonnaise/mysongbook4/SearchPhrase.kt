@@ -30,7 +30,7 @@ class SearchPhrase : AppCompatActivity() {
 
         binding.phraseInput.textSize = DataManager.textSize-3
         binding.buttonSearch.textSize = DataManager.textSize-5
-        binding.infoTV.textSize = DataManager.textSize-4
+        binding.infoTV.textSize = DataManager.textSize-3
         binding.foundQuantityTV.textSize = DataManager.textSize-5
 
         binding.phraseInput.setTypeface(null, DataManager.textStyle)
@@ -69,10 +69,12 @@ class SearchPhrase : AppCompatActivity() {
 
             phrase = binding.phraseInput.text.toString()
 
+            binding.phraseInputLayout.error = null
+
             println(phrase)
 
-            if(phrase.isEmpty()){                                                                            //if empty
-                Toast.makeText(this, "Wpisz frazę lub słowo kluczowe", Toast.LENGTH_LONG).show()
+            if(phrase.isEmpty()){ //if empty
+                binding.phraseInputLayout.error = getString(R.string.errorNoPhraseInserted)
                 binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
                 binding.viewPager.animate()
@@ -82,10 +84,6 @@ class SearchPhrase : AppCompatActivity() {
                         binding.viewPager.adapter = SongViewPagerAdapter(emptyList(), lifecycleScope, applicationContext, true, "")
                         binding.viewPager.visibility = View.GONE
                         binding.infoTV.visibility = View.VISIBLE
-                        binding.viewPager.animate()
-                            .alpha(1f)
-                            .setDuration(200L)
-                            .start()
                     }
                     .start()
             }
@@ -118,12 +116,11 @@ class SearchPhrase : AppCompatActivity() {
                                 }
                                 .start()
 
-                            Toast.makeText(this@SearchPhrase, "Znaleziono ${foundSongs.size} wyników", Toast.LENGTH_SHORT).show()
                             binding.foundQuantityTV.text = "Znaleziono: 1/${foundSongs.size}"
                         }
 
                         else{
-                            Toast.makeText(this@SearchPhrase, "Nie znaleziono frazy", Toast.LENGTH_SHORT).show()
+                            binding.phraseInputLayout.error = getString(R.string.errorNoPhraseFound)
                             binding.foundQuantityTV.text = "Znaleziono: 0/0"
 
                             binding.infoTV.visibility = View.VISIBLE

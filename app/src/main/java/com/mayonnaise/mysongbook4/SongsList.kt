@@ -30,16 +30,14 @@ class SongsList : AppCompatActivity() {
 
         val maxSongNr = DataManager.maxSongNumber
 
-        lateinit var adapter: TOCAdapter
+        lateinit var adapter: SongListAdapter
 
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
 
-        binding.tocTV.textSize = DataManager.textSize
         binding.getNumber.textSize = DataManager.textSize-3
         binding.favoritesButton.textSize = DataManager.textSize-6
         binding.searchButton.textSize = DataManager.textSize-6
 
-        binding.tocTV.setTypeface(null, DataManager.textStyle)
         binding.getNumber.setTypeface(null, DataManager.textStyle)
         binding.favoritesButton.setTypeface(null, DataManager.textStyle)
         binding.searchButton.setTypeface(null, DataManager.textStyle)
@@ -74,28 +72,10 @@ class SongsList : AppCompatActivity() {
             val songDao = SongbookDatabase.getInstance(applicationContext).songDao()
             val allSongs = songDao.getAllSongsBySongbook(DataManager.chosenSongbook)
             withContext(Dispatchers.Main){
-                adapter = TOCAdapter(allSongs, lifecycleScope, binding.recyclerViewTOC, binding.progressBar, this@SongsList)
+                adapter = SongListAdapter(allSongs, lifecycleScope, binding.recyclerViewTOC, binding.progressBar, this@SongsList)
                 binding.recyclerViewTOC.layoutManager = LinearLayoutManager(applicationContext)
                 binding.recyclerViewTOC.adapter = adapter
                 adapter.sort(sortingPreference)
-            }
-        }
-
-        binding.buttonGo.setOnClickListener{
-            if (binding.getNumber.text!!.isEmpty()){
-                Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
-                inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
-            }
-            else{
-                val number =  binding.getNumber.text.toString().toInt()
-                if(number in 1..maxSongNr) {
-                    adapter.goToNumber(number)
-                    inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
-                }
-                else{
-                    Toast.makeText(this, "Nieprawidłowy numer pieśni!", Toast.LENGTH_SHORT).show()
-                    inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
-                }
             }
         }
 
@@ -110,9 +90,10 @@ class SongsList : AppCompatActivity() {
         }
 
         binding.getNumber.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
+            binding.textInputLayout.error = null
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 if (binding.getNumber.text!!.isEmpty()){
-                    Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
+                    binding.textInputLayout.error = getString(R.string.errorNumberEmpty)
                     inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
                 }
                 else{
@@ -122,7 +103,7 @@ class SongsList : AppCompatActivity() {
                         adapter.goToNumber(number)
                     }
                     else{
-                        Toast.makeText(this, "Nieprawidłowy numer pieśni!", Toast.LENGTH_SHORT).show()
+                        binding.textInputLayout.error = getString(R.string.errorNumber)
                         inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0)
                     }
                 }

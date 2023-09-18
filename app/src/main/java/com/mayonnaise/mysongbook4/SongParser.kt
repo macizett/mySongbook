@@ -1,9 +1,12 @@
 package com.mayonnaise.mysongbook4
 
 import android.content.Context
+import android.view.View
+import android.widget.LinearLayout
 import androidx.lifecycle.LifecycleCoroutineScope
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -15,12 +18,18 @@ object SongParser {
         throwable.printStackTrace()
     }
 
-    suspend fun initialize(context: Context, lifecycle: LifecycleCoroutineScope) {
-           lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler){
-                parseAndInsertSongs(context, "duchowe.json", 1)
-                parseAndInsertSongs(context, "wedrowiec.json", 2)
-                parseAndInsertSongs(context, "bialy.json", 3)
-                parseAndInsertVerses(context, "verses.json")
+    fun initialize(context: Context, lifecycle: LifecycleCoroutineScope, initializeLayout: LinearLayout) {
+        initializeLayout.visibility = View.VISIBLE
+
+        lifecycle.launch(Dispatchers.Default + coroutineExceptionHandler){
+               delay(1_000)
+               parseAndInsertSongs(context, "duchowe.json", 1)
+               parseAndInsertSongs(context, "wedrowiec.json", 2)
+               parseAndInsertSongs(context, "bialy.json", 3)
+               parseAndInsertVerses(context, "verses.json")
+               withContext(Dispatchers.Main){
+                   initializeLayout.visibility = View.GONE
+               }
             }
     }
 
@@ -50,10 +59,7 @@ object SongParser {
 
 
             withContext(Dispatchers.IO) {
-                var existingSongsList = dao.getAllSongsBySongbook(songbook)
-                var songsListAdded = songsList + existingSongsList
-                var songsListWithoutDupes = songsListAdded.toHashSet().toList()
-                dao.insertAll(songsListWithoutDupes)
+                dao.insertAll(songsList)
             }
     }
 

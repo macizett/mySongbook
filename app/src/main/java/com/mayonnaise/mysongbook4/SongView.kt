@@ -41,6 +41,7 @@ class SongView : AppCompatActivity() {
         binding.buttonGo.textSize = DataManager.textSize-6
 
         fun goToNumber(){
+            binding.getNumberLayout.error = null
             var previousSongNumber = songNumber
             var number = binding.getNumber.text.toString()
 
@@ -51,7 +52,7 @@ class SongView : AppCompatActivity() {
                     var side = when{
                         songNumber > previousSongNumber -> binding.viewPager.width.toFloat()
                         songNumber < previousSongNumber -> -binding.viewPager.width.toFloat()
-                        else -> -binding.viewPager.width.toFloat()
+                        else -> 0F
                     }
 
                     binding.getNumber.text?.clear()
@@ -72,11 +73,11 @@ class SongView : AppCompatActivity() {
 
                 }
                 else{
-                    Toast.makeText(this, "Nieprawidłowy numer pieśni", Toast.LENGTH_SHORT).show()
+                    binding.getNumberLayout.error = getString(R.string.errorNumber)
                 }
             }
             else{
-                Toast.makeText(this, "Wpisz numer pieśni!", Toast.LENGTH_SHORT).show()
+                binding.getNumberLayout.error = getString(R.string.errorNumberEmpty)
             }
         }
 

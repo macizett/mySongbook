@@ -32,4 +32,5 @@
     <style name="rounded_corner">
         <item name="cornerSize">16dp</item>
     </style>
+
 </resources>

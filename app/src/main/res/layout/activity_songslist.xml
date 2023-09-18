@@ -8,17 +8,35 @@
     android:fitsSystemWindows="true"
     android:id="@+id/constraintLayout">
 
-    <TextView
-        android:id="@+id/tocTV"
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutGoTo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SPIS TREŚCI"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAction" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAction">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_gravity="center_vertical"
+            android:hint="nr. pieśni">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/getNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutAction"
@@ -62,6 +80,27 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tocTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPIS TREŚCI"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutAction" />
+
+    </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,74 +132,40 @@
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/buttonGo"
-        style="?attr/materialIconButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:contentDescription="@string/rightNavigatonButton"
-        app:icon="@drawable/arrowgoto"
-        app:iconSize="42sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="160dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:hint="nr. pieśni"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tocTV">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/getNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:foreground="@drawable/shape_with_stroke"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutGoTo"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
-
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewTOC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:focusable="true"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:visibility="gone" />
 
 
     </LinearLayout>
@@ -207,7 +212,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_gravity="center"
-            android:background="@color/material_on_surface_stroke"></LinearLayout>
+            android:background="#1E001F2A"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -224,7 +229,7 @@
             android:clickable="true"
             android:contentDescription="SearchButton"
             android:scaleType="center"
-            app:icon="@drawable/ic_launcher_monochrome"
+            app:icon="@drawable/search_icon"
             android:text="  Szukaj frazy"
             app:iconSize="30dp"
             android:textAlignment="center"

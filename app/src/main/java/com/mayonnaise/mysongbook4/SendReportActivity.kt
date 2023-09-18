@@ -41,6 +41,13 @@ class SendReportActivity : AppCompatActivity() {
 
         var reportMail = "mysongbook.report@gmail.com"
 
+        var songbook = when (DataManager.chosenSongbook){
+            1 -> "Pieśni Duchowe"
+            2 -> "Wędrowiec"
+            3 -> "Śpiewnik Młodzieżowy"
+            else -> "Nieznany śpiewnik"
+        }
+
         reportDialog.show()
 
         if(DataManager.isSongReported){
@@ -51,15 +58,13 @@ class SendReportActivity : AppCompatActivity() {
                     reportedSong = song
 
                     var editableText = Editable.Factory.getInstance().newEditable("""
-Poprawka tekstu w pieśni o nr: ${reportedSong.number}
-
-Nowy tekst (proszę dodatkowo sprawdzić przed opublikowaniem wysłaniem):
+Nowy tekst (proszę dodatkowo sprawdzić przed wysłaniem oraz opublikowaniem):
 
 ${song.text}
 
 Poprawka zostanie sprawdzona i wprowadzona.""".trimIndent())
 
-                    var editableNumberAndTitle = Editable.Factory.getInstance().newEditable("${song.number}. ${song.title}")
+                    var editableNumberAndTitle = Editable.Factory.getInstance().newEditable("Poprawka tekstu w pieśni o nr: ${reportedSong.number} w śpiewniku “${songbook}”")
                     binding.emailText.text = editableText
                     binding.emailSubject.text = editableNumberAndTitle
                 }

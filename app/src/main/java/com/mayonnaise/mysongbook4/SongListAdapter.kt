@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -18,9 +17,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class TOCAdapter(private var songEntities: List<SongEntity>, private var lifecycleScope: LifecycleCoroutineScope,
-                 private var recyclerView: RecyclerView, private var progressBar: ProgressBar,
-                 private var context: Context) : RecyclerView.Adapter<TOCAdapter.SongViewHolder>() {
+class SongListAdapter(private var songEntities: List<SongEntity>, private var lifecycleScope: LifecycleCoroutineScope,
+                      private var recyclerView: RecyclerView, private var progressBar: ProgressBar,
+                      private var context: Context) : RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
         throwable.printStackTrace()
@@ -70,8 +69,8 @@ class TOCAdapter(private var songEntities: List<SongEntity>, private var lifecyc
 
     fun sort(sortingPreference: Boolean) {
         val collator = Collator.getInstance()
+        progressBar.visibility = View.VISIBLE
         if(!sortingPreference){
-            progressBar.visibility = View.VISIBLE
             lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
                 songEntities = songEntities.sortedBy {
                     collator.getCollationKey(it.title)
@@ -82,8 +81,8 @@ class TOCAdapter(private var songEntities: List<SongEntity>, private var lifecyc
                         .setDuration(200L)
                         .withEndAction {
                             notifyDataSetChanged()
+                            progressBar.visibility = View.GONE
                             recyclerView.visibility = View.VISIBLE
-                            progressBar.visibility = View.INVISIBLE
                             recyclerView.animate()
                                 .alpha(1f)
                                 .setDuration(200L)
@@ -94,7 +93,6 @@ class TOCAdapter(private var songEntities: List<SongEntity>, private var lifecyc
             }
         }
         else{
-            progressBar.visibility = View.VISIBLE
             lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
                 songEntities = songEntities.sortedBy { it.number }
                 delay(200L)

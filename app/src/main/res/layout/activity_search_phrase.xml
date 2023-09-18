@@ -9,12 +9,13 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/phraseInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="6dp"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,10 +32,10 @@
         android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/phraseInputLayout">
 
         <TextView
             android:id="@+id/foundQuantityTV"
@@ -55,7 +56,7 @@
             android:layout_weight="0"
             android:textAlignment="center"
             android:textSize="16sp"
-            app:icon="@drawable/ic_launcher_monochrome"
+            app:icon="@drawable/search_icon"
             app:iconGravity="textEnd"
             app:iconPadding="6dp"
             app:iconSize="30dp"
@@ -81,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="6dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="8dp"
         android:foreground="@drawable/shape_with_stroke"

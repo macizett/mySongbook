@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -18,8 +17,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.Collator
 
-class FavoritesAdapter(private var songEntities: List<SongEntity>, private var context: Context, private var lifecycleScope: LifecycleCoroutineScope,
-                       private var recyclerView: RecyclerView, private var progressBar: ProgressBar,): RecyclerView.Adapter<FavoritesAdapter.FavouritesViewHolder>() {
+class FavoriteSongsListAdapter(private var songEntities: List<SongEntity>, private var context: Context, private var lifecycleScope: LifecycleCoroutineScope,
+                               private var recyclerView: RecyclerView): RecyclerView.Adapter<FavoriteSongsListAdapter.FavouritesViewHolder>() {
 
     inner class FavouritesViewHolder(binding: FavoritesViewRowBinding): ViewHolder(binding.root){
         val songTitleTV = binding.songTitleTV
@@ -90,22 +89,21 @@ class FavoritesAdapter(private var songEntities: List<SongEntity>, private var c
     fun sort(sortingPreference: Boolean) {
         val collator = Collator.getInstance()
         if(!sortingPreference){
-            progressBar.visibility = View.VISIBLE
             lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+                delay(200L)
                 songEntities = songEntities.sortedBy {
                     collator.getCollationKey(it.title)
                 }
                 withContext(Dispatchers.Main){
                     recyclerView.animate()
                         .alpha(0f)
-                        .setDuration(150L)
+                        .setDuration(200L)
                         .withEndAction {
                             notifyDataSetChanged()
                             recyclerView.visibility = View.VISIBLE
-                            progressBar.visibility = View.INVISIBLE
                             recyclerView.animate()
                                 .alpha(1f)
-                                .setDuration(150L)
+                                .setDuration(200L)
                                 .start()
                         }
                         .start()
@@ -113,17 +111,15 @@ class FavoritesAdapter(private var songEntities: List<SongEntity>, private var c
             }
         }
         else{
-            progressBar.visibility = View.VISIBLE
             lifecycleScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
-                songEntities = songEntities.sortedBy { it.number }
                 delay(200L)
+                songEntities = songEntities.sortedBy { it.number }
                 withContext(Dispatchers.Main){
                     recyclerView.animate()
                         .alpha(0f)
                         .setDuration(200L)
                         .withEndAction {
                             notifyDataSetChanged()
-                            progressBar.visibility = View.INVISIBLE
                             recyclerView.visibility = View.VISIBLE
                             recyclerView.animate()
                                 .alpha(1f)

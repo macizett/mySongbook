@@ -11,9 +11,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/progressBarLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,6 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Inicjalizowanie zasobów..."
-            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/progressBar"></TextView>
 
@@ -48,7 +47,6 @@
         style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/info_icon1"
         android:textColorHighlight="#9E9797"
         android:textColorLink="#888686"
         app:icon="@drawable/baseline_report_24"
@@ -64,7 +62,6 @@
         style="?attr/materialIconButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/info_icon1"
         android:text=" Ustawienia"
         android:textColorHighlight="#9E9797"
         android:textColorLink="#888686"
@@ -98,10 +95,13 @@
             />
 
         <LinearLayout
+            android:id="@+id/verseLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:gravity="center_horizontal"
+            android:layout_marginRight="16dp"
+            android:visibility="invisible"
+            android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
@@ -113,22 +113,26 @@
                 android:layout_marginRight="16dp"
                 android:background="#66B7E5"
                 android:orientation="horizontal"
-                android:visibility="invisible"
                 />
 
-            <TextView
-                android:id="@+id/verseTV"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:layout_marginBottom="6dp"
-                android:autoSizeMaxTextSize="18sp"
-                android:fontFamily="sans-serif-medium"
-                android:foreground="@drawable/item_clickable_background_image"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:textAlignment="center"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/verseTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:foreground="@drawable/item_clickable_background_image"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+            </ScrollView>
 
 
             <TextView
@@ -137,7 +141,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="8dp"
-                android:visibility="invisible"
                 android:textSize="12sp"
                 android:textAlignment="center"></TextView>
 
@@ -150,7 +153,6 @@
                 android:layout_marginRight="16dp"
                 android:background="#66B7E5"
                 android:orientation="horizontal"
-                android:visibility="invisible"
                 />
 
             <TextView
@@ -163,7 +165,6 @@
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:visibility="invisible"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -173,7 +174,7 @@
         android:id="@+id/lineLayout3"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/material_on_surface_stroke"
+        android:background="#1E001F2A"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/buttonReport"
         app:layout_constraintEnd_toEndOf="parent"

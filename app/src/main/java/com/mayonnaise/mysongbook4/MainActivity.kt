@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         val verseDao = SongbookDatabase.getInstance(this).verseDao()
 
-        var data = arrayListOf<Int>()
+        var viewPagerDrawables = arrayListOf<Int>()
 
         val sharedPrefs by lazy {
             getSharedPreferences(
@@ -61,10 +61,10 @@ class MainActivity : AppCompatActivity() {
 
         when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                data = arrayListOf(R.drawable.duchowe_light, R.drawable.wedrowiec_light, R.drawable.bialy_light)
+                viewPagerDrawables = arrayListOf(R.drawable.duchowe_light, R.drawable.wedrowiec_light, R.drawable.bialy_light)
             }
             Configuration.UI_MODE_NIGHT_NO -> {
-                data = arrayListOf(R.drawable.duchowe_dark, R.drawable.wedrowiec_dark, R.drawable.bialy_dark)
+                viewPagerDrawables = arrayListOf(R.drawable.duchowe_dark, R.drawable.wedrowiec_dark, R.drawable.bialy_dark)
             }
         }
 
@@ -76,10 +76,10 @@ class MainActivity : AppCompatActivity() {
             binding.buttonSettings.textSize = DataManager.textSize-5
             binding.buttonSettings.setTypeface(null, DataManager.textStyle)
 
-            binding.verseTV.textSize = DataManager.textSize
+            binding.verseTV.textSize = DataManager.textSize+1
             binding.verseTV.setTypeface(null, DataManager.textStyle)
 
-            binding.versePlaceTV.textSize = DataManager.textSize-5
+            binding.versePlaceTV.textSize = DataManager.textSize-4
             binding.versePlaceTV.setTypeface(null, DataManager.textStyle)
 
             binding.textViewMSB.textSize = DataManager.textSize-8
@@ -88,56 +88,34 @@ class MainActivity : AppCompatActivity() {
 
         fun initializeActivity (){
             lifecycleScope.launch(Dispatchers.IO){
-                val verseID = Random.nextInt(1, 39)
+                val random = Random(System.currentTimeMillis())
+                val verseID = random.nextInt(1, 39)
                 val verse = verseDao.getVerse(verseID)
 
                 withContext(Dispatchers.Main){
 
                     if (sharedPrefs.getBoolean("databaseStatement", false)){
 
-                        binding.textViewMSB.visibility = View.VISIBLE
-                        binding.textViewMSB.alpha = 0f
-                        binding.textViewMSB.animate().alpha(1f).start()
-
-                        binding.lineLayout.visibility = View.VISIBLE
-                        binding.lineLayout.alpha = 0f
-                        binding.lineLayout.animate().alpha(1f).start()
-
-                        binding.lineLayout2.visibility = View.VISIBLE
-                        binding.lineLayout2.alpha = 0f
-                        binding.lineLayout2.animate().alpha(1f).start()
-
-                        binding.versePlaceTV.animate()
+                        binding.verseLinearLayout.animate()
                             .alpha(0f)
                             .setDuration(200L)
                             .withEndAction {
-                                binding.versePlaceTV.visibility = View.VISIBLE
                                 binding.versePlaceTV.text = verse.place
-                                binding.versePlaceTV.animate()
+                                binding.verseTV.text = verse.text
+                                binding.verseLinearLayout.visibility = View.VISIBLE
+                                binding.verseLinearLayout.animate()
                                     .alpha(1f)
                                     .setDuration(200L)
                                     .start()
                             }
                             .start()
 
-                        binding.verseTV.animate()
-                            .alpha(0f)
-                            .setDuration(200L)
-                            .withEndAction {
-                                binding.verseTV.visibility = View.VISIBLE
-                                binding.verseTV.text = verse.text
-                                binding.verseTV.animate()
-                                    .alpha(1f)
-                                    .setDuration(200L)
-                                    .start()
-                            }
-                            .start()
 
                         binding.viewPager.animate()
                             .alpha(0f)
                             .setDuration(200L)
                             .withEndAction {
-                                binding.viewPager.adapter = SongbookViewPagerAdapter(data, lifecycleScope)
+                                binding.viewPager.adapter = SongbookViewPagerAdapter(viewPagerDrawables, lifecycleScope, this@MainActivity)
                                 binding.viewPager.visibility = View.VISIBLE
                                 binding.viewPager.animate()
                                     .alpha(1f)
@@ -147,33 +125,14 @@ class MainActivity : AppCompatActivity() {
                             .start()
                     }
                     else{
-                        binding.progressBar.visibility = View.VISIBLE
-                        binding.initializeTV.visibility = View.VISIBLE
-
-                        SongParser.initialize(this@MainActivity, lifecycleScope)
-
-                        binding.initializeTV.visibility = View.GONE
-                        binding.progressBar.visibility = View.GONE
-
-                        binding.versePlaceTV.visibility = View.GONE
-
-                        binding.textViewMSB.visibility = View.VISIBLE
-                        binding.textViewMSB.alpha = 0f
-                        binding.textViewMSB.animate().alpha(1f).start()
-
-                        binding.lineLayout.visibility = View.VISIBLE
-                        binding.lineLayout.alpha = 0f
-                        binding.lineLayout.animate().alpha(1f).start()
-
-                        binding.lineLayout2.visibility = View.VISIBLE
-                        binding.lineLayout2.alpha = 0f
-                        binding.lineLayout2.animate().alpha(1f).start()
+                        SongParser.initialize(this@MainActivity, lifecycleScope, binding.progressBarLayout)
+                        sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
 
                         binding.viewPager.animate()
                             .alpha(0f)
                             .setDuration(200L)
                             .withEndAction {
-                                binding.viewPager.adapter = SongbookViewPagerAdapter(data, lifecycleScope)
+                                binding.viewPager.adapter = SongbookViewPagerAdapter(viewPagerDrawables, lifecycleScope, this@MainActivity)
                                 binding.viewPager.visibility = View.VISIBLE
                                 binding.viewPager.animate()
                                     .alpha(1f)
@@ -182,20 +141,19 @@ class MainActivity : AppCompatActivity() {
                             }
                             .start()
 
-                        binding.verseTV.animate()
+                        binding.verseLinearLayout.animate()
                             .alpha(0f)
                             .setDuration(200L)
                             .withEndAction {
-                                binding.verseTV.visibility = View.VISIBLE
+                                binding.versePlaceTV.visibility = View.GONE
+                                binding.verseLinearLayout.visibility = View.VISIBLE
                                 binding.verseTV.text = "Witamy w MySongbook! Zapraszamy do zapoznania się z wszystkimi funkcjami naszej aplikacji :)"
-                                binding.verseTV.animate()
+                                binding.verseLinearLayout.animate()
                                     .alpha(1f)
                                     .setDuration(200L)
                                     .start()
                             }
                             .start()
-
-                        sharedPrefs.edit().putBoolean("databaseStatement", true).apply()
                     }
                 }
             }
@@ -328,15 +286,15 @@ class MainActivity : AppCompatActivity() {
 
                 sharedPrefs.edit().putInt("textStyle", newTextStyle).apply()
             }
-
+  
             dialogBinding.sliderTextSize.addOnChangeListener(Slider.OnChangeListener { _, value, _ ->
-                dialogBinding.textView2.textSize = value-2
-                dialogBinding.textView3.textSize = value-2
-                dialogBinding.textView4.textSize = value-2
-                dialogBinding.textView5.textSize = value-2
+                dialogBinding.textView2.textSize = value-4
+                dialogBinding.textView3.textSize = value-4
+                dialogBinding.textView4.textSize = value-4
+                dialogBinding.textView5.textSize = value-4
 
-                binding.verseTV.textSize = value
-                binding.versePlaceTV.textSize = value-5
+                binding.verseTV.textSize = value+1
+                binding.versePlaceTV.textSize = value-4
                 binding.buttonReport.textSize = value-5
                 binding.buttonSettings.textSize = value-5
                 binding.textViewMSB.textSize = value-8

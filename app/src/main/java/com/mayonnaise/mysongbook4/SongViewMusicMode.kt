@@ -30,9 +30,6 @@ class SongViewMusicMode : AppCompatActivity() {
 
         binding.numberAndTitleTV.setTypeface(null, DataManager.textStyle)
 
-        val window: Window = window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = getColor(R.color.status_bar_color)
 
         var songNumber = DataManager.chosenSong
 
@@ -80,6 +77,10 @@ class SongViewMusicMode : AppCompatActivity() {
                         .start()
                 }
                 .start()
+
+            binding.pdfViewSong.minZoom = 0.5F
+            binding.pdfViewSong.maxZoom = 1F
+
         }
 
         fun updateSong(){

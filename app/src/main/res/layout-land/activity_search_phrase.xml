@@ -68,10 +68,12 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout3"
+                android:id="@+id/phraseInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:layout_marginRight="6dp"
+                app:errorEnabled="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -87,7 +89,7 @@
                 android:id="@+id/linearLayout10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="-8dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
@@ -111,7 +113,7 @@
                     android:text="@string/szukaj"
                     android:textAlignment="center"
                     android:textSize="16sp"
-                    app:icon="@drawable/ic_launcher_monochrome"
+                    app:icon="@drawable/search_icon"
                     app:iconGravity="textEnd"
                     app:iconPadding="6dp"
                     app:iconSize="30dp"

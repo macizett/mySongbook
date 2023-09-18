@@ -60,6 +60,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5">
+        </LinearLayout>
+
         <Button
             android:id="@+id/buttonReport"
             style="?attr/materialIconButtonStyle"
@@ -67,29 +73,28 @@
             android:layout_height="match_parent"
             android:scaleX="1.35"
             android:scaleY="1.35"
-            android:layout_marginBottom="16dp"
-            android:layout_weight="2.8"
+            android:layout_weight="3.8"
             android:textColorHighlight="#9E9797"
             android:textColorLink="#888686"
             app:icon="@drawable/baseline_report_24"
             app:iconGravity="textStart"
-            app:iconSize="25sp" />
+            app:iconSize="20dp" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/getNumberLayout"
+            style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            app:errorEnabled="true"
-            android:layout_marginBottom="6dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="64dp"
+            android:layout_weight="3"
+            app:errorEnabled="false"
+            android:layout_marginTop="2dp"
             android:layout_marginLeft="4dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/getNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -103,15 +108,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:icon="@drawable/search_icon"
-            android:layout_marginBottom="16dp"
-            app:iconGravity="textStart"
-            android:scaleX="1.35"
-            android:scaleY="1.35"
+            app:iconGravity="textEnd"
+            android:layout_marginTop="9dp"
+            android:scaleX="1.45"
+            android:scaleY="1.45"
             android:clickable="true"
             android:focusable="true"
-            android:layout_weight="2.8"
-            app:iconSize="25sp" />
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3.8"
+            app:iconSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5">
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

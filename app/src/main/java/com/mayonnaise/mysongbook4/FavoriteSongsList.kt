@@ -4,14 +4,10 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.mayonnaise.mysongbook4.databinding.ActivityFavoriteSongsListBinding
-import com.mayonnaise.mysongbook4.databinding.ActivitySongslistBinding
 import com.polyak.iconswitch.IconSwitch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,9 +27,8 @@ class FavoriteSongsList : AppCompatActivity() {
         binding.labelTV.textSize = DataManager.textSize
 
         binding.infoTV.setTypeface(null, DataManager.textStyle)
-        binding.labelTV.setTypeface(null, DataManager.textStyle)
 
-        lateinit var adapter: FavoritesAdapter
+        lateinit var adapter: FavoriteSongsListAdapter
 
         val sharedPrefs by lazy {
             getSharedPreferences(
@@ -51,21 +46,19 @@ class FavoriteSongsList : AppCompatActivity() {
             else{
                 binding.infoTV.visibility = View.VISIBLE
             }
-            adapter = FavoritesAdapter(favoriteSongs, applicationContext, lifecycleScope, binding.recyclerViewFavorites, binding.progressBar)
+            adapter = FavoriteSongsListAdapter(favoriteSongs, applicationContext, lifecycleScope, binding.recyclerViewFavorites)
             binding.recyclerViewFavorites.layoutManager = LinearLayoutManager(applicationContext)
 
             binding.recyclerViewFavorites.adapter = adapter
 
-                if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", false)){
-                    binding.switchSorting.checked = IconSwitch.Checked.LEFT
-                    adapter.sort(false)
-                    adapter.notifyDataSetChanged()
-                }
-                else{
-                    binding.switchSorting.checked = IconSwitch.Checked.RIGHT
-                    adapter.sort(true)
-                    adapter.notifyDataSetChanged()
-                }}
+            if(!sharedPrefs.getBoolean("SORTING_PREFERENCE_KEY_FAVS", false)){
+                binding.switchSorting.checked = IconSwitch.Checked.LEFT
+                adapter.sort(false)
+            }
+            else{
+                binding.switchSorting.checked = IconSwitch.Checked.RIGHT
+                adapter.sort(true)
+            }}
         }
 
         binding.switchSorting.setCheckedChangeListener{ current ->
@@ -74,13 +67,11 @@ class FavoriteSongsList : AppCompatActivity() {
                 IconSwitch.Checked.LEFT -> {
                     sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", false).apply()
                     adapter.sort(false)
-                    adapter.notifyDataSetChanged()
                 }
 
                 IconSwitch.Checked.RIGHT -> {
                     sharedPrefs.edit().putBoolean("SORTING_PREFERENCE_KEY_FAVS", true).apply()
                     adapter.sort(true)
-                    adapter.notifyDataSetChanged()
                 }
 
                 else -> Toast.makeText(this, "ERROR 2137", Toast.LENGTH_SHORT).show()

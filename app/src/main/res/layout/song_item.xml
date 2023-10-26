@@ -93,7 +93,7 @@
             android:paddingTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:lineSpacingExtra="4sp"
-            android:paddingBottom="100dp"
+            android:paddingBottom="300dp"
             android:textAlignment="viewStart"
             android:textIsSelectable="true"
             android:textSize="16sp" />

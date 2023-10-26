@@ -12,5 +12,6 @@ data class SongEntity(
     val number: Int,
     val title: String,
     val songbook: Int,
+    val strophes: Int,
     var isFavorite: Boolean
 )

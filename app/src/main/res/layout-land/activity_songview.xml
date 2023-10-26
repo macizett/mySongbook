@@ -80,6 +80,20 @@
             app:iconGravity="textStart"
             app:iconSize="20dp" />
 
+        <Button
+            android:id="@+id/buttonShare"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
+            android:layout_weight="3.8"
+            android:textColorHighlight="#9E9797"
+            android:textColorLink="#888686"
+            app:icon="@drawable/baseline_share_24"
+            app:iconGravity="textStart"
+            app:iconSize="20dp" />
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/getNumberLayout"

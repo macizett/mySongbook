@@ -1,8 +1,9 @@
 package com.mayonnaise.mysongbook4
 
 object DataManager {
-    var chosenSong: Int = 0
+    var songNumber: Int = 0
     var chosenSongbook: Int = 0
+    var chosenSongbookName: String = ""
     var maxSongNumber: Int = 0
     var textSize: Float = 0F
     var textStyle: Int = 0

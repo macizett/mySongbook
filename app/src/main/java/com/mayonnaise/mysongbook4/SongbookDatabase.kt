@@ -4,7 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-@Database(entities = [SongEntity::class, VerseEntity::class], version = 1)
+
+@Database(entities = [SongEntity::class, VerseEntity::class], version = 2)
 abstract class SongbookDatabase: RoomDatabase() {
 
     abstract fun songDao(): SongInterfaceDao
@@ -22,7 +23,7 @@ abstract class SongbookDatabase: RoomDatabase() {
                         context.applicationContext,
                         SongbookDatabase::class.java,
                         "songbook_database"
-                    ).fallbackToDestructiveMigration().build()
+                    ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration().build()
 
                     INSTANCE = instance
                 }

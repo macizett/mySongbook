@@ -50,9 +50,10 @@ object SongParser {
                 val title = songJsonObject.getString("title")
                 val text = songJsonObject.getString("text")
                 val number = songJsonObject.getInt("number")
+                val strophes = songJsonObject.getInt("strophes")
                 val textNormalized = text.replace(Regex("[,.]"), "")
 
-                val song = SongEntity(title = title, text = text, textNormalized = textNormalized, number = number, songbook = songbook, id = id, isFavorite = false)
+                val song = SongEntity(title = title, text = text, textNormalized = textNormalized, number = number, songbook = songbook, id = id, strophes = strophes ,isFavorite = false)
                 songsList.add(song)
                 id++
             }

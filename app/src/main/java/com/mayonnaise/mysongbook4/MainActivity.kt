@@ -61,10 +61,10 @@ class MainActivity : AppCompatActivity() {
 
         when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                viewPagerDrawables = arrayListOf(R.drawable.duchowe_light, R.drawable.wedrowiec_light, R.drawable.bialy_light)
+                viewPagerDrawables = arrayListOf(R.drawable.wedrowiec_light, R.drawable.bialy_light)
             }
             Configuration.UI_MODE_NIGHT_NO -> {
-                viewPagerDrawables = arrayListOf(R.drawable.duchowe_dark, R.drawable.wedrowiec_dark, R.drawable.bialy_dark)
+                viewPagerDrawables = arrayListOf(R.drawable.wedrowiec_dark, R.drawable.bialy_dark)
             }
         }
 
@@ -113,7 +113,6 @@ class MainActivity : AppCompatActivity() {
 
                         binding.viewPager.animate()
                             .alpha(0f)
-                            .setDuration(200L)
                             .withEndAction {
                                 binding.viewPager.adapter = SongbookViewPagerAdapter(viewPagerDrawables, lifecycleScope, this@MainActivity)
                                 binding.viewPager.visibility = View.VISIBLE
@@ -130,7 +129,6 @@ class MainActivity : AppCompatActivity() {
 
                         binding.viewPager.animate()
                             .alpha(0f)
-                            .setDuration(200L)
                             .withEndAction {
                                 binding.viewPager.adapter = SongbookViewPagerAdapter(viewPagerDrawables, lifecycleScope, this@MainActivity)
                                 binding.viewPager.visibility = View.VISIBLE

@@ -31,7 +31,7 @@ class SearchPhrase : AppCompatActivity() {
         binding.phraseInput.textSize = DataManager.textSize-3
         binding.buttonSearch.textSize = DataManager.textSize-5
         binding.infoTV.textSize = DataManager.textSize-3
-        binding.foundQuantityTV.textSize = DataManager.textSize-5
+        binding.foundQuantityTV.textSize = DataManager.textSize-4
 
         binding.phraseInput.setTypeface(null, DataManager.textStyle)
         binding.buttonSearch.setTypeface(null, DataManager.textStyle)

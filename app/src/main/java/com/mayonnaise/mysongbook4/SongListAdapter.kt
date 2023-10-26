@@ -51,12 +51,12 @@ class SongListAdapter(private var songEntities: List<SongEntity>, private var li
         holder.titleTV.setTypeface(null, DataManager.textStyle)
 
         holder.itemView.setOnClickListener{
-            DataManager.chosenSong = songEntities[position].number
-            goToNumber(DataManager.chosenSong)
+            DataManager.songNumber = songEntities[position].number
+            goToNumber(DataManager.songNumber)
         }
 }
     fun goToNumber(number: Int){
-        DataManager.chosenSong = number
+        DataManager.songNumber = number
         if(DataManager.musicMode){
             val showSongViewMusicMode = Intent(context, SongViewMusicMode::class.java)
             context.startActivity(showSongViewMusicMode)

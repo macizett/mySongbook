@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -49,7 +48,7 @@ class FavoriteSongsListAdapter(private var songEntities: List<SongEntity>, priva
 
 
         holder.itemView.setOnClickListener{
-                DataManager.chosenSong = songEntities[position].number
+                DataManager.songNumber = songEntities[position].number
                 if(DataManager.musicMode){
                     val intent = Intent(holder.itemView.context,SongViewMusicMode::class.java)
                     holder.itemView.context.startActivity(intent)

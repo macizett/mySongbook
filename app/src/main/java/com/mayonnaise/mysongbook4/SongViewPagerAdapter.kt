@@ -5,29 +5,19 @@ import android.content.Intent
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
-import android.view.GestureDetector
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
-import android.view.inputmethod.InputMethodManager
 import android.widget.CheckBox
 import android.widget.FrameLayout
-import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.RecyclerView
-import com.mayonnaise.mysongbook4.databinding.FavoritesViewRowBinding
 import com.mayonnaise.mysongbook4.databinding.SongItemBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifecycle: LifecycleCoroutineScope,
                            var context: Context,
@@ -70,7 +60,7 @@ class SongViewPagerAdapter(private val songEntities: List<SongEntity>, var lifec
         if(isSearchPhraseActivity){
             numberAndTitleTV.setBackgroundResource(R.drawable.item_clickable_background)
             numberAndTitleTV.setOnClickListener{
-                DataManager.chosenSong = song.number
+                DataManager.songNumber = song.number
                 if(DataManager.musicMode){
                     val showSongViewMusicMode = Intent(context, SongViewMusicMode::class.java)
                     holder.itemView.context.startActivity(showSongViewMusicMode)

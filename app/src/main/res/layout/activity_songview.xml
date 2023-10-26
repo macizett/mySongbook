@@ -32,11 +32,11 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 
@@ -46,16 +46,17 @@
         android:layout_height="1dp"
         android:background="#295D7B"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintBottom_toTopOf="@+id/getNumberLinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/getNumberLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -65,26 +66,28 @@
             style="?attr/materialIconButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="26dp"
+            android:layout_weight="2.8"
             android:scaleX="1.35"
             android:scaleY="1.35"
-            android:layout_marginBottom="16dp"
-            android:layout_weight="2.8"
             android:textColorHighlight="#9E9797"
             android:textColorLink="#888686"
             app:icon="@drawable/baseline_report_24"
             app:iconGravity="textStart"
             app:iconSize="25sp" />
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/getNumberLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            app:errorEnabled="true"
-            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp"
             android:layout_marginTop="4dp"
-            android:layout_marginLeft="4dp">
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1.6"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/getNumber"
@@ -94,7 +97,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:hint="nr. pieśni..."
-                android:inputType="number"/>
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -102,16 +105,36 @@
             style="?attr/materialIconButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:icon="@drawable/search_icon"
-            android:layout_marginBottom="16dp"
-            app:iconGravity="textStart"
-            android:scaleX="1.35"
-            android:scaleY="1.35"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="26dp"
+            android:layout_weight="2.8"
             android:clickable="true"
             android:focusable="true"
+            android:scaleX="1.35"
+            android:scaleY="1.35"
+            app:icon="@drawable/search_icon"
+            app:iconGravity="textStart"
+            app:iconSize="25sp" />
+
+        <Button
+            android:id="@+id/buttonShare"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="26dp"
             android:layout_weight="2.8"
+            android:scaleX="1.30"
+            android:scaleY="1.30"
+            android:textColorHighlight="#9E9797"
+            android:textColorLink="#888686"
+            app:icon="@drawable/baseline_share_24"
+            app:iconGravity="textStart"
             app:iconSize="25sp" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,7 +12,6 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.mayonnaise.mysongbook4.databinding.ActivitySendReportBinding
 import com.mayonnaise.mysongbook4.databinding.ReportDialogBinding
-import com.mayonnaise.mysongbook4.databinding.SettingsDialogBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -41,18 +40,11 @@ class SendReportActivity : AppCompatActivity() {
 
         var reportMail = "mysongbook.report@gmail.com"
 
-        var songbook = when (DataManager.chosenSongbook){
-            1 -> "Pieśni Duchowe"
-            2 -> "Wędrowiec"
-            3 -> "Śpiewnik Młodzieżowy"
-            else -> "Nieznany śpiewnik"
-        }
-
         reportDialog.show()
 
         if(DataManager.isSongReported){
             lifecycleScope.launch(Dispatchers.Default){
-                var song = songDao.getSongByNumber(DataManager.chosenSong, DataManager.chosenSongbook)
+                var song = songDao.getSongByNumber(DataManager.songNumber, DataManager.chosenSongbook)
 
                 withContext(Dispatchers.Main){
                     reportedSong = song
@@ -64,7 +56,7 @@ ${song.text}
 
 Poprawka zostanie sprawdzona i wprowadzona.""".trimIndent())
 
-                    var editableNumberAndTitle = Editable.Factory.getInstance().newEditable("Poprawka tekstu w pieśni o nr: ${reportedSong.number} w śpiewniku “${songbook}”")
+                    var editableNumberAndTitle = Editable.Factory.getInstance().newEditable("Poprawka tekstu w pieśni o nr: ${reportedSong.number} w śpiewniku “${DataManager.chosenSongbookName}”")
                     binding.emailText.text = editableText
                     binding.emailSubject.text = editableNumberAndTitle
                 }

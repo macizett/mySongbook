@@ -1,17 +1,15 @@
 package com.mayonnaise.mysongbook4
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.github.barteksc.pdfviewer.util.FitPolicy
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.mayonnaise.mysongbook4.databinding.ActivitySongViewMusicModeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import com.github.barteksc.pdfviewer.util.FitPolicy
-import com.mayonnaise.mysongbook4.databinding.ActivitySongViewMusicModeBinding
 import kotlinx.coroutines.withContext
 
 class SongViewMusicMode : AppCompatActivity() {
@@ -31,7 +29,7 @@ class SongViewMusicMode : AppCompatActivity() {
         binding.numberAndTitleTV.setTypeface(null, DataManager.textStyle)
 
 
-        var songNumber = DataManager.chosenSong
+        var songNumber = DataManager.songNumber
 
         fun animateButton(button: FloatingActionButton, visible: Boolean){
             if (visible){
@@ -84,7 +82,7 @@ class SongViewMusicMode : AppCompatActivity() {
         }
 
         fun updateSong(){
-            displayPdfFromAsset("${songbook}${songNumber}.pdf")
+            displayPdfFromAsset("pdf/${songbook}${songNumber}.pdf")
             lifecycleScope.launch(Dispatchers.IO){
                 val currentSong = songDao.getSongByNumber(songNumber, DataManager.chosenSongbook)
                 withContext(Dispatchers.Main){
